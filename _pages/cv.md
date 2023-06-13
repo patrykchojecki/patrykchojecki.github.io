@@ -11,22 +11,22 @@ redirect_from:
 
 Education
 ======
-* 2020-2022 | International Master's Program in International Studies **National Chengchi Univeristy, Taipei, Taiwan**
+## 2020-2022 | International Master's Program in International Studies *National Chengchi Univeristy, Taipei, Taiwan*
   * *Thesis*: When Do BRI Participants Fall into Debt Traps?: Case Studies of Six Developing Countries
   * Recipient of the Taiwan International Higher Education Scholarship issued by TaiwanICDF
-* 2016-2020 | Bachelor's Degree in East Asia Studies **Jagiellonian University, Cracow, Poland**
+## 2016-2020 | Bachelor's Degree in East Asia Studies *Jagiellonian University, Cracow, Poland*
   * *Thesis*: China-Taiwan Relations After 2008
   * Held the position of Director of Finance at the International Relations Students' Association of the Jagiellonian University (100-150 members)
 
 Work Experience
 ======
-* 03/2022 - Present | Research Assistant at **Academia Sinica**
+## 03/2022 - Present | Research Assistant at *Academia Sinica*
   * Collected data on quantitative projects encompassing all branches of the U.S. government
   * Played a key role in creating multiple advanced datasets and data coding schemes
   * Demonstrated strong cooperative skills by assisting in managing a team of research assistants
   Performed various administrative duties, including proficient document preparation in Chinese language
 
-* 07/2021 - 07/2022 | Contributing Researcher at **Taiwan Architecture & Building Center**
+## 07/2021 - 07/2022 | Contributing Researcher at *Taiwan Architecture & Building Center*
   * Wrote numerous articles on governance, economy, and ESG investing (published in Chinese & English)
   * Introduced a service that utilizes generative design and AI to assist business owners with regulatory compliance
   * Won the Excellence Award at the 2021 DIGI+ X TCA Global Digital Talent Awards
@@ -36,10 +36,10 @@ Work Experience
   
 Languages
 ======
-* English C2
-* Polish C2
-* Mandarin Chinese B1/B2
-* German A2
+* 🇬🇧 English C2
+* 🇵🇱 Polish C2
+* 🇹🇼 Mandarin Chinese B1/B2
+* 🇩🇪 German A2
 
 Digital Skills
 ======
