@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Patryk Chojecki"
 title_separator          : "-"
 name                     : &name "Patryk Chojecki"
-description              : &description "personal description"
+description              : &description "Patryk Chojecki - personal website"
 url                      : https://patrykchojecki.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "patrykchojecki/patrykchojecki.github.io"
@@ -82,7 +82,7 @@ analytics:
 author:
   name             : "Patryk Chojecki"
   avatar           : "profile.png"
-  bio              : "Your biography for the left-hand sidebar"
+  bio              : ""
   location         : "Taipei, Taiwan"
   employer         :
   pubmed           : 
