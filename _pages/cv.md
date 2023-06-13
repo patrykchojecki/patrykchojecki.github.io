@@ -8,6 +8,7 @@ redirect_from:
 ---
 
 {% include base_path %}
+Last updated: 13 June 2023
 
 ## Professional Profile
 
@@ -51,7 +52,7 @@ Motivated international relations graduate with a strong passion for research an
 
 ## Digital Skills
 
-* macOS, iWork, Microsoft Windows, Microsoft Office, Google Workspace, Reference Management Software, Basic HTML/CSS, Markdown
+* macOS, iWork, Microsoft Windows, Microsoft Office, Google Workspace, Reference Management Software, HTML/CSS, Markdown
 
 ## Additional
 
