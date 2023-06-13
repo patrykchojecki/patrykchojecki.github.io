@@ -1,7 +1,7 @@
 ---
 permalink: /
-title: "Who am I?"
-excerpt: "About me"
+title: "About me"
+excerpt: "Hi, I’m Patryk 👋"
 author_profile: true
 redirect_from: 
   - /about/

@@ -11,9 +11,13 @@ redirect_from:
 
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+* International Master's Program in International Studies
+*National Chengchi Univeristy, Taipei, Taiwan*
+  * Thesis: When Do BRI Participants Fall into Debt Traps?: Case Studies of Six Developing Countries
+  * Recipient of the Taiwan International Higher Education Scholarship issued by TaiwanICDF
+* Bachelor's Degree in East Asia Studies
+* Jagiellonian University, Cracow, Poland
+  * Thesis
 
 Work experience
 ======
