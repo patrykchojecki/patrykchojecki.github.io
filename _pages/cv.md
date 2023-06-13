@@ -11,53 +11,41 @@ redirect_from:
 
 Education
 ======
-* International Master's Program in International Studies
-*National Chengchi Univeristy, Taipei, Taiwan*
-  * Thesis: When Do BRI Participants Fall into Debt Traps?: Case Studies of Six Developing Countries
+* 2020-2022 | International Master's Program in International Studies **National Chengchi Univeristy, Taipei, Taiwan**
+  * *Thesis*: When Do BRI Participants Fall into Debt Traps?: Case Studies of Six Developing Countries
   * Recipient of the Taiwan International Higher Education Scholarship issued by TaiwanICDF
-* Bachelor's Degree in East Asia Studies
-* Jagiellonian University, Cracow, Poland
-  * Thesis
+* 2016-2020 | Bachelor's Degree in East Asia Studies **Jagiellonian University, Cracow, Poland**
+  * *Thesis*: China-Taiwan Relations After 2008
+  * Held the position of Director of Finance at the International Relations Students' Association of the Jagiellonian University (100-150 members)
 
-Work experience
+Work Experience
 ======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* 03/2022 - Present | Research Assistant at **Academia Sinica**
+  * Collected data on quantitative projects encompassing all branches of the U.S. government
+  * Played a key role in creating multiple advanced datasets and data coding schemes
+  * Demonstrated strong cooperative skills by assisting in managing a team of research assistants
+  Performed various administrative duties, including proficient document preparation in Chinese language
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* 07/2021 - 07/2022 | Contributing Researcher at **Taiwan Architecture & Building Center**
+  * Wrote numerous articles on governance, economy, and ESG investing (published in Chinese & English)
+  * Introduced a service that utilizes generative design and AI to assist business owners with regulatory compliance
+  * Won the Excellence Award at the 2021 DIGI+ X TCA Global Digital Talent Awards
+  * Established long-term partnerships with European companies through successful negotiations
+  * Collaborated with colleagues from diverse nationalities on research projects related to governance and economy
+  * Actively engaged in business conferences with a focus on green financing and sustainability
   
-Skills
+Languages
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* English C2
+* Polish C2
+* Mandarin Chinese B1/B2
+* German A2
 
-Publications
+Digital Skills
 ======
-  <ul>{% for post in site.publications %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
+* macOS, iWork, Microsoft Windows, Microsoft Office, Google Workspace, Reference Management Software, Basic HTML/CSS, Markdown
+
+Additional
 ======
-  <ul>{% for post in site.talks %}
-    {% include archive-single-talk-cv.html %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+* Organized workshops promoting European culture to students from Neihu Community College (80-100 attendees) - 11/2021 & 08/2022
+* Assisted the Polish Office in Taipei during Taipei International Book Exhibition - 06/2022
