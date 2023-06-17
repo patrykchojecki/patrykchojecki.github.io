@@ -10,7 +10,7 @@ redirect_from:
 
 # Hi, I’m Patryk 👋  
 
-I am 25 years old, and I come from Poland. Taipei is the city that I love the most, and I am fortunate enough to call it my current home. I moved here shortly after I graduated from [the Jagiellonian University in Cracow](https://en.uj.edu.pl/en_GB/start). I am fluent in three languages. Those include English, Chinese, and Polish. In the future I plan to learn Japanese.  
+I am 25 years old, and I come from Poland. I've lived in Taipei for almost 5 years at this point and I hope to stay here for longer. I moved here shortly after I graduated from [the Jagiellonian University in Cracow](https://en.uj.edu.pl/en_GB/start). I am fluent in three languages. Those include English, Chinese, and Polish. In the future I plan to learn Japanese.
   
 As of right now, I work as a full-time research assistant at [Academia Sinica](https://www.sinica.edu.tw/en). Most of my duties involve categorizing and coding data on projects related to the US government. In the future, the fields I would like to conduct my independent research are international political economy, development economics, and emerging technology policy.  
   
