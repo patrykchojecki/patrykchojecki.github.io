@@ -1,7 +1,7 @@
 ---
 title: 'TSMC’s Arizona Investment & the Security of Taiwan'
 date: 2022-12-11
-permalink: /posts/TSMCinArizona
+permalink: /posts/TSMC-in-Arizona
 tags:
   - tech
   - TSMC
