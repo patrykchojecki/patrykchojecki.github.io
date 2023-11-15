@@ -30,8 +30,8 @@ body { margin: 0; }
 }
 
 ::selection {
-  color: #fff;
-  background: #000;
+  color: #000;
+  background: $hermes-desaturated;
 }
 
 /* Display HTML5 elements in IE6-9 and FF3 */
@@ -67,7 +67,7 @@ audio:not([controls]) {
 }
 
 a {
-  color: $link-color;
+  color: $info-color;
 }
 
 /* Apply focus state */
