@@ -84,7 +84,7 @@ author:
   avatar           : "bio-photo.jpg"
   bio              : ""
   location         : "Taipei, Taiwan"
-  employer         : "Academia Sinica"
+  employer         : "CellTech Innovation Venture Studio"
   pubmed           : 
   googlescholar    : 
   email            : "patryk.chojecki@gmail.com"
@@ -115,7 +115,6 @@ author:
   xing             :
   youtube          :
   wikipedia        :
-  mastodon         : "@cherrysandwich@mastodon.world"
 
 
 # Reading Files
