@@ -56,6 +56,8 @@ alexa_site_verification  :
 yandex_site_verification :
 
 # Social Sharing
+mastodon:
+  username               : "mastodon.world/@cherrysandwich"
 twitter:
   username               : &twitter
 facebook:
@@ -115,6 +117,7 @@ author:
   xing             :
   youtube          :
   wikipedia        :
+  mastodon         : "mastodon.world/@cherrysandwich"
 
 
 # Reading Files
