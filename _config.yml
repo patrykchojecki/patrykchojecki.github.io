@@ -58,8 +58,6 @@ yandex_site_verification :
 # Social Sharing
 twitter:
   username               : &twitter
-mastodon:
-  username               : mastodon.world/@cherrysandwich
 facebook:
   username               :
   app_id                 :
@@ -105,15 +103,18 @@ author:
   impactstory      : 
   lastfm           :
   linkedin         : "patryk-chojecki/"
+  orcid            : 
   pinterest        :
   soundcloud       :
   stackoverflow    : 
   steam            :
   tumblr           :
   twitter          : 
+  vine             :
+  weibo            :
+  xing             :
   youtube          :
   wikipedia        :
-  mastodon         : "mastodon.world/@cherrysandwich"
 
 
 # Reading Files
