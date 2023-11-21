@@ -1,19 +1,19 @@
 ---
-title: 'Apple Forced to Allow Outside App Stores'
+title: 'Apple Forced to Allow Alternative App Stores'
 date: 2022-12-17
-permalink: /posts/Outside-AppStores
+permalink: /posts/Alternative-AppStores
 tags:
   - tech
   - Apple
   - EU
 ---
 
-*Link:* [Bloomberg](https://www.bloomberg.com/news/articles/2022-12-13/will-apple-allow-users-to-install-third-party-app-stores-sideload-in-europe)
-
 Mark Gurman, reporting for Bloomberg:
 > Apple Inc. is preparing to allow alternative app stores on its iPhones and iPads, part of a sweeping overhaul aimed at complying with strict European Union requirements coming in 2024.
 > …
 > Apple is applying a significant amount of resources to the companywide endeavor. It hasn’t been a popular initiative within Apple, considering that the company has spent years decrying the need for “sideloading” — the process of installing software without using the official App Store. In lobbying against the new European laws, Apple has argued that sideloading could put unsafe apps on consumers’ devices and undermine privacy.
+
+*Link:* [Bloomberg](https://www.bloomberg.com/news/articles/2022-12-13/will-apple-allow-users-to-install-third-party-app-stores-sideload-in-europe)
 
 Apple has been under a lot of pressure from EU regulators for years. I view strong institutions that can guide corporations in the right direction as a necessity. So far, I've seen most of the regulations imposed on the company from California as an advantage for Apple customers and EU citizens. However, I can't say the same about the idea of introducing alternative app stores on iOS and iPadOS.
 
@@ -31,4 +31,4 @@ We should be careful what we wish for as the future is truly unpredictable.
 
 Others on the topic of alternative app stores:
 - [Daring Fireball - If a Third-Party App Store Falls in the Forest and No One Uses It, Does It Make a Sound?](https://daringfireball.net/2022/12/third_party_app_store_forest)
-- [Connected - #428: Timery (Taylor's Version) starts at 1:01:06](https://www.relay.fm/connected/428)
+- [Connected - #428: Timery (Taylor's Version)](https://www.relay.fm/connected/428) starts at 1:01:06
