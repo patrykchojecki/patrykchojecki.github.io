@@ -7,7 +7,6 @@ tags:
   - Apple
   - EU
 ---
-
 Mark Gurman, reporting for Bloomberg:
 > Apple Inc. is preparing to allow alternative app stores on its iPhones and iPads, part of a sweeping overhaul aimed at complying with strict European Union requirements coming in 2024.
 > …
