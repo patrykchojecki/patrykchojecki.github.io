@@ -58,7 +58,7 @@ Motivated international relations graduate with a strong passion for research an
 
 * 🇬🇧 English C2
 * 🇵🇱 Polish C2
-* 🇹🇼 Mandarin Chinese B1/B2
+* 🇹🇼 Mandarin Chinese B2
 * 🇩🇪 German A2
 
 ## Digital Skills
