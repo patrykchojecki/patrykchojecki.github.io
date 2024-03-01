@@ -4,10 +4,21 @@ title: "Now"
 permalink: /now/
 author_profile: true
 redirect_from:
-  -/now.html
+  - /now.html
 ---
 
 {% include base_path %}
+
+{% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
+  {% include page__hero.html %}
+{% endif %}
+
+{% if page.url != "/" and site.breadcrumbs %}
+  {% unless paginator %}
+    {% include breadcrumbs.html %}
+  {% endunless %}
+{% endif %}
+
 Last updated on 1 March 2024 in Taipei, Taiwan 🇹🇼.
 
 This is a /now page inspired by [Derek Sivers](https://sive.rs). This is the place where I describe what I've been up to recently, what I'm currently focused on, and talk about some short-term goals. When I first learned about this concept, it immediately appeared very appealing to me because I don't use most social media.
