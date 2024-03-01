@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 {% include base_path %}
-Last updated: 26 August 2023
+Last updated on 26 August 2023 in Taipei, Taiwan 🇹🇼.
 
 ## Professional Profile
 
