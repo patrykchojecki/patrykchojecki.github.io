@@ -19,11 +19,11 @@ redirect_from:
   {% endunless %}
 {% endif %}
 
-Last updated on 1 March 2024 in Taipei, Taiwan 🇹🇼.
+Last updated on 4 March 2024 in Taipei, Taiwan 🇹🇼.
 
-This is a /now page inspired by [Derek Sivers](https://sive.rs). This is the place where I describe what I've been up to recently, what I'm currently focused on, and talk about some short-term goals. When I first learned about this concept, it immediately appeared very appealing to me because I don't use most social media.
+This is a /now page inspired by [Derek Sivers](https://sive.rs). This is the place where I describe what I've been up to recently, what I'm currently focused on, and talk about some short-term goals. When I first learned about this concept, it immediately appeared very appealing to me because I rarely use social media.
 
-The concept is quite straightforward, and if you would like to learn more about it, visit [this website](https://nownownow.com/about). If you have your own personal website, you may want to consider making one too.
+The concept is quite straightforward, and if you would like to learn more about it, visit [this website](https://nownownow.com/about). If you have your own personal website, you may want to consider making a /now page too.
 
 # What I'm Doing Now
 
@@ -31,8 +31,8 @@ The concept is quite straightforward, and if you would like to learn more about 
 
 My [yearly theme](https://www.youtube.com/watch?v=NVGuFdX5guE&embeds_referring_euri=https%3A%2F%2Fwww.themesystem.com%2F&source_ve_path=MjM4NTE&feature=emb_title) for 2024 is the year of focus. I want to focus on areas I am already involved in and stop exploring new things that I may potentially be interested in. The last few years for me have definitely been full of experimentation; I certainly found it productive and insightful, but that phase should cease now.
 
-Key areas of focus:
-- learning about finance and venture building,
+**Key areas of focus:**
+- learning about finance and venture building (plus making money by utilizing that knowledge),
 - improving my Chinese,
 - taking better care of my family members.
 
@@ -40,12 +40,20 @@ Key areas of focus:
 
 Since the end of last summer, I started a new job in a field that is completely new to me -- biotechnology. I joined a startup accelerator that is mainly focused on providing new cell and gene therapy (CGT) ventures with assistance and expertise in fundraising and business development.
 
-Transitioning into this new field has not been easy. In the last few months, I've spent countless hours learning about the most important concepts in regenerative medicine and venture building at the same time. There is still a long way ahead of me, but for now, I feel quite satisfied with the progress I've achieved.
+Transitioning into this new field has not been easy. In the last few months, I've spent countless hours learning about the most important concepts in regenerative medicine and startup development at the same time. There is still a long way ahead of me, but for now, I feel quite satisfied with the progress I've achieved.
 
-So far, I found the venture building/finance-related part of my job most interesting and accessible. This is the list of resources I've been studying whenever I have some free time (most of them I'm still going through):
-- [Principles of Corporate Finance](https://www.amazon.com/Principles-Corporate-Finance-Richard-Brealey/dp/1260565556) by Richard Brealey, Stewart Myers, and Franklin Allen - this book does an incredible job of explaining all sorts of financial terms in an easy-to-understand way.
+So far, I found the venture building/finance-related part of my job most interesting and accessible. This is the list of resources I've been studying whenever I have some free time (some of them I'm still going through):
+- [Principles of Corporate Finance](https://www.amazon.com/Principles-Corporate-Finance-Richard-Brealey/dp/1260565556) by Richard Brealey, Stewart Myers, and Franklin Allen - this book does an incredible job of explaining all sorts of financial terms and concepts in an easy-to-understand way.
 - [Valuation](https://pages.stern.nyu.edu/~adamodar/New_Home_Page/equity.html) by [Aswath Damodaran](https://pages.stern.nyu.edu/~adamodar/) - Aswath teaches finance and valuation at NYU, I've used many resources from his website/blog and watched hours of his lectures from the *very expensive* NYU courses that are published on [YouTube](https://www.youtube.com/playlist?list=PLUkh9m2BorqkHJz49csCvaCXf3diCLRLl) for *free*.
 - [7.016 Introductory Biology](https://ocw.mit.edu/courses/7-016-introductory-biology-fall-2018/) by the MIT Biology Department - exactly what it says; my brain still struggles with understanding some of these introductory concepts.
+
+## What Is on My Mind
+
+- I play squash and football almost every week.
+- I got infected with COVID-19 last month, and I'm still recovering from it. Once I'm fully recovered, I want to go back to running at least once a week.
+- I try to watch all Arsenal games that are not broadcasted in the middle of the night. One of the worst parts about living in Asia is being able to rarely watch live football matches.
+- I am quite excited for the 2024 European elections. I plan to vote here in Taipei.
+- Hoping to visit my family in Poland during the summer, but I have yet to start planning the trip.
 
 ## What I'm Currently Reading
 
@@ -60,10 +68,6 @@ So far, I found the venture building/finance-related part of my job most interes
 - [Super Mario 3D All-Stars](https://en.wikipedia.org/wiki/Super_Mario_3D_All-Stars) on Nintendo Switch
 - [Captain Toad: Treasure Tracker](https://en.wikipedia.org/wiki/Captain_Toad:_Treasure_Tracker) on Nintendo Switch
 
-## Miscellaneous
+## Most Recent Quote I Saved
 
-- I play squash and football almost every week.
-- I got infected with COVID-19 last month, and I'm still recovering from it. Once I'm fully recovered, I want to go back to running at least once a week.
-- I try to watch all Arsenal games that are not broadcasted in the middle of the night. One of the worst parts about living in Taiwan is being able to rarely watch live football matches.
-- I am quite excited for the 2024 European elections. I plan to vote here in Taipei.
-- Hoping to visit Poland during the summer, but I have yet to start planning the trip.
+"Because the human heart, even when it wants to die, quite often wants at the same time to eat some tteokbokki, too." - found in [I Want to Die but I Want to Eat Tteokbokki: A Memoir](https://www.amazon.com/Want-Die-but-Eat-Tteokbokki/dp/1635579384) by Baek Sehee
