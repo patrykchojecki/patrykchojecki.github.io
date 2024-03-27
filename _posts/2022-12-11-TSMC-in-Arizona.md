@@ -5,8 +5,8 @@ permalink: /posts/TSMC-in-Arizona
 tags:
   - tech
   - TSMC
-  - semiconductor
 ---
+
 Last week, multiple media outlets reported that Taiwan Semiconductor Manufacturing (TSMC) would triple its planned investment at its Arizona chip plant. This obviously tells us that the company is feeling bullish about its offshore manufacturing expansion.
 
 There is no doubt that this is great news for the semiconductor world, the supply chain, Apple, Nvidia, TSMC shareholders, and the US. However, I am curious about how this business decision is going to affect the safety and security of Taiwanese people.
