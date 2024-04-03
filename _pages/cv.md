@@ -14,6 +14,8 @@ Last updated on 26 August 2023 in Taipei, Taiwan 🇹🇼.
 
 Motivated international relations graduate with a strong passion for research and development. Well-versed in subjects encompassing international relations and political economy. Possesses valuable experience in the Taiwanese work environment, demonstrating adaptability and cultural understanding.
 
+---
+
 ## 🎓 Education
 
 ### 🇹🇼 2020-2022 | International Master's Program in International Studies | *National Chengchi Univeristy, Taipei, Taiwan*
@@ -28,6 +30,8 @@ Motivated international relations graduate with a strong passion for research an
 
 ### 🇹🇼 2018-2019 | Intensive Mandarin Chinese Course | *Chinese Culture University, Taipei, Taiwan*
   * Recipient of Huayu Enrichment Scholarship issued by the Ministry of Education, Republic of China (Taiwan)
+
+---
 
 ## 👨‍💻 Work Experience
 
@@ -53,7 +57,9 @@ Motivated international relations graduate with a strong passion for research an
   * Introduced a range of 20 new product to Taiwanese affiliates
   * Managed a team of 15 employees during trade fairs and exhibitions
   * Advised the design team during the creation of graphics used at trade events in Asia
-  
+
+---
+
 ## Languages
 
 * 🇬🇧 English C2
@@ -61,9 +67,13 @@ Motivated international relations graduate with a strong passion for research an
 * 🇹🇼 Mandarin Chinese B2
 * 🇩🇪 German A2
 
+---
+
 ## Digital Skills
 
 * macOS, iWork, Microsoft Windows, Microsoft Office, Google Workspace, Reference Management Software, HTML/CSS, Markdown
+
+---
 
 ## Additional
 
