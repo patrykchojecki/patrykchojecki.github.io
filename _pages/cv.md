@@ -35,6 +35,11 @@ Motivated international relations graduate with a strong passion for research an
 
 ## 👨‍💻 Work Experience
 
+### 🇹🇼 08/2023 - Now | Research Associate at *CellTech Innovation Venture Studio*
+- Collaborated with startup founders, providing support in business and corporate development, fundraising, and marketing initiatives.
+- Worked directly with the CEO and scientific consultants on guiding startups, offering strategic direction and access to networks and resources.
+-	Established strategic partnerships with key stakeholders, including academic institutions, investment firms, and international industry partners (CRO, CMO, CDMO).
+
 ### 🇹🇼 03/2022 - 07/2023 | Research Assistant at *Academia Sinica*
   * Collected data on quantitative projects encompassing all branches of the U.S. government
   * Played a key role in creating multiple advanced datasets and data coding schemes
