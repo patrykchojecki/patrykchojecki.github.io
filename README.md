@@ -4,3 +4,5 @@ This website uses basic analytics provided by Cloudflare. I do not keep any info
 
 Resources that helped me in creating this site:
 - [Configure Custom Domain and Sub-domain with GitHub Pages in Cloudflare](https://ictsolved.github.io/configure-custom-domain-and-sub-domain-with-github-pages-in-cloudflare/)
+
+This is a test of a small change to the readme file.
