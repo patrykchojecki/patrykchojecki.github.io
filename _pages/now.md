@@ -19,7 +19,7 @@ redirect_from:
   {% endunless %}
 {% endif %}
 
-Last updated on 30 October 2024 in Taipei, Taiwan 🇹🇼.
+Last updated on 4 March 2024 in Taipei, Taiwan 🇹🇼.
 
 This is a /now page inspired by [Derek Sivers](https://sive.rs). This is the place where I describe what I've been up to recently, what I'm currently focused on, and talk about some short-term goals. When I first learned about this concept, it immediately appeared very appealing to me because I rarely use social media.
 
@@ -46,19 +46,28 @@ So far, I found the venture building/finance-related part of my job most interes
 - [Principles of Corporate Finance](https://www.amazon.com/Principles-Corporate-Finance-Richard-Brealey/dp/1260565556) by Richard Brealey, Stewart Myers, and Franklin Allen - this book does an incredible job of explaining all sorts of financial terms and concepts in an easy-to-understand way.
 - [Valuation](https://pages.stern.nyu.edu/~adamodar/New_Home_Page/equity.html) by [Aswath Damodaran](https://pages.stern.nyu.edu/~adamodar/) - Aswath teaches finance and valuation at NYU, I've used many resources from his website/blog and watched hours of his lectures from the *very expensive* NYU courses that are published on [YouTube](https://www.youtube.com/playlist?list=PLUkh9m2BorqkHJz49csCvaCXf3diCLRLl) for *free*.
 - [7.016 Introductory Biology](https://ocw.mit.edu/courses/7-016-introductory-biology-fall-2018/) by the MIT Biology Department - exactly what it says; my brain still struggles with understanding some of these introductory concepts.
-v
-## Books I'm Currently Reading
 
-- [The Snowball: Warren Buffett and the Business of Life](https://www.amazon.com/Snowball-Warren-Buffett-Business-Life/dp/0553384619) by Alice Schroeder
-- [Liar's Poker](https://www.amazon.com/Liars-Poker-Norton-Paperback-Michael/dp/039333869X_ by Michael Lewis
+## What Is on My Mind
+
+- I play squash and football almost every week.
+- I got infected with COVID-19 last month, and I'm still recovering from it. Once I'm fully recovered, I want to go back to running at least once a week.
+- I try to watch all Arsenal games that are not broadcasted in the middle of the night. One of the worst parts about living in Asia is being able to rarely watch live football matches.
+- I am quite excited for the 2024 European elections. I plan to vote here in Taipei.
+- Hoping to visit my family in Poland during the summer, but I have yet to start planning the trip.
+
+## What I'm Currently Reading
+
+- [The Wind-Up Bird Chronicle](https://www.amazon.com/Wind-Up-Bird-Chronicle-Novel/dp/0679775439) by Haruki Murakami
+- [When McKinsey Comes to Town: The Hidden Influence of the World's Most Powerful Consulting Firm](https://www.amazon.com/When-McKinsey-Comes-Town-Consulting/dp/0593663322) by Walt Bogdanich & Michael Forsythe
 - [The Partnership: The Making of Goldman Sachs](https://www.amazon.com/Partnership-Making-Goldman-Sachs/dp/0143116126) by Charles D. Ellis
 
 ## What I'm Currently Playing
 
-- [Diablo® IV: Vessel of Hatred](https://www.xbox.com/en-US/games/store/diablo-iv-vessel-of-hatred-expansion-pack/9N6PP30W8MX5) on Xbox Series S
-- [Mario vs. Donkey Kong](https://www.nintendo.com/us/store/products/mario-vs-donkey-kong-switch/?srsltid=AfmBOooqxyS1tA_5KAIq6eWP6rJ49HxFfmgt9ePSzojeCEQgLZzL3oDz) on Nintendo Switch
-- [Balatro +](https://apps.apple.com/pl/app/balatro/id6502451661) on iPhone
+- [Dead Islands 2](https://www.xbox.com/en-us/games/store/dead-island-2/c3l4j3h7h12r) on Xbox
+- [Forza Motorsport](https://www.xbox.com/en-US/games/store/forza-motorsport/9p0trpthg7vf) on Xbox
+- [Super Mario 3D All-Stars](https://en.wikipedia.org/wiki/Super_Mario_3D_All-Stars) on Nintendo Switch
+- [Captain Toad: Treasure Tracker](https://en.wikipedia.org/wiki/Captain_Toad:_Treasure_Tracker) on Nintendo Switch
 
 ## Most Recent Quote I Saved
 
-"Be long-term greedy, not short-term greedy." - Warren Buffet
+"Because the human heart, even when it wants to die, quite often wants at the same time to eat some tteokbokki, too." - found in [I Want to Die but I Want to Eat Tteokbokki: A Memoir](https://www.amazon.com/Want-Die-but-Eat-Tteokbokki/dp/1635579384) by Baek Sehee
