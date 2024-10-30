@@ -2,7 +2,7 @@ This is a personal website created and mantained by Patryk Chojecki. This websit
 
 This website uses basic analytics provided by Cloudflare. I do not keep any information about the visitors besides what Cloudflare gives me.
 
+This website is a hobby project of mine. The previous version of my website was running on [Tumblr](https://www.tumblr.com); however, I became quite dissatisfied with the company's policies, and I decided to challenge myself to create my own independent website.
+
 Resources that helped me in creating this site:
 - [Configure Custom Domain and Sub-domain with GitHub Pages in Cloudflare](https://ictsolved.github.io/configure-custom-domain-and-sub-domain-with-github-pages-in-cloudflare/)
-
-This is a test of a small change to the readme file.
