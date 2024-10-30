@@ -10,7 +10,7 @@ redirect_from:
 
 # Hi, I’m Patryk 👋  
 
-I am 26 years old. I've lived in Taipei for almost 5 years at this point. I moved here shortly after I graduated from [the Jagiellonian University in Cracow](https://en.uj.edu.pl/en_GB/start). I am fluent in three languages. Those include English, Chinese, and Polish.
+I am 27 years old. I've lived in Taipei for almost 5 years at this point. I moved here shortly after I graduated from [the Jagiellonian University in Cracow](https://en.uj.edu.pl/en_GB/start). I am fluent in three languages. Those include English, Chinese, and Polish.
 
 If you would like to know what I'm currently up to you should visit my [/now page](https://chojecki.net/now/).
   
@@ -22,4 +22,4 @@ From mid 2022 to mid 2023,  I worked  as a full-time research assistant at [Acad
 
 Currently, I work as a research associate for a cell & gene therapy (CGT) startup accelerator. We advise new ventures on how to reach the market and optimize their technology. If you would like to learn more about what we do, you should visit our [LinkedIn](https://www.linkedin.com/company/celltech-accelerator/).
 
-In my free time, I enjoy playing football, squash, and tennis, reading about emerging technologies and philosophy as well as exploring unknown to me parts of Taiwan. I also love to discover various macOS tools and sometimes even write about them.
+In my free time, I enjoy playing football, squash, and tennis, reading about emerging technologies and philosophy as well as exploring unknown to me parts of Asia. I also love to discover various macOS tools and sometimes even write about them.
