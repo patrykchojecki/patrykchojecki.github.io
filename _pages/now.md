@@ -36,7 +36,7 @@ My [yearly theme](https://www.youtube.com/watch?v=NVGuFdX5guE&embeds_referring_e
 - improving my Chinese,
 - taking better care of my family members.
 
-## Work/Learning Update
+## Learning Update
 
 Since the end of last summer, I started a new job in a field that is completely new to me -- biotechnology. I joined a startup accelerator that is mainly focused on providing new cell and gene therapy (CGT) ventures with assistance and expertise in fundraising and business development.
 
@@ -51,11 +51,12 @@ So far, I found the venture building/finance-related part of my job most interes
 
 - [The Snowball: Warren Buffett and the Business of Life](https://www.amazon.com/Snowball-Warren-Buffett-Business-Life/dp/0553384619) by Alice Schroeder
 - [Liar's Poker](https://www.amazon.com/Liars-Poker-Norton-Paperback-Michael/dp/039333869X_) by Michael Lewis
-- [The Partnership: The Making of Goldman Sachs](https://www.amazon.com/Partnership-Making-Goldman-Sachs/dp/0143116126) by Charles D. Ellis0143116126) by Charles D. Ellis
+- [The Partnership: The Making of Goldman Sachs](https://www.amazon.com/Partnership-Making-Goldman-Sachs/dp/0143116126) by Charles D. Ellis
 
 ## What I'm Currently Playing
 
 - [Diablo® IV: Vessel of Hatred](https://www.xbox.com/en-US/games/store/diablo-iv-vessel-of-hatred-expansion-pack/9N6PP30W8MX5) on Xbox Series S
+- [Call of Duty: Black Ops 6](https://www.xbox.com/en-US/games/call-of-duty-black-ops-6) on Xbox Series S
 - [Mario vs. Donkey Kong](https://www.nintendo.com/us/store/products/mario-vs-donkey-kong-switch/?srsltid=AfmBOooqxyS1tA_5KAIq6eWP6rJ49HxFfmgt9ePSzojeCEQgLZzL3oDz) on Nintendo Switch
 - [Balatro +](https://apps.apple.com/pl/app/balatro/id6502451661) on iPhone
 
