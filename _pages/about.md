@@ -7,6 +7,8 @@ redirect_from:
   - /about/
   - /about.html
 ---
+<a rel="me" href="https://mastodon.world/@cherrysandwich">Mastodon</a>
+---
 
 # Hi, I’m Patryk 👋  
 
