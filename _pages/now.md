@@ -21,8 +21,6 @@ redirect_from:
 
 ## About this Page
 
-Last updated on 14 February 2025 in Taipei, Taiwan 🇹🇼.
-
 This is a /now page inspired by [Derek Sivers](https://sive.rs). This is the place where I describe what I've been up to recently, what I'm currently focused on, and talk about some short-term goals. When I first learned about this concept, it immediately appeared very appealing to me because I rarely use social media.
 
 The concept is quite straightforward, and if you would like to learn more about it, visit [this website](https://nownownow.com/about). If you have your own personal website, you may want to consider making a /now page too.
@@ -63,3 +61,7 @@ In the future, I plan to create a dedicated page outlining all the learning reso
 > There are two things in business that matter, and you can learn this in two minutes—you don’t have to go to business school for two years: high gross margins and cash flow. All the other financial metrics you can forget. The accountants can get the numbers into the boxes eventually, but if you have a product with high gross margins, and Fairchild did, it generates huge cash flow. And that means you can grow the company as fast as the market will allow.
 
 - Donald T. Valentine
+
+---
+
+Last updated on 14 February 2025 in Taipei, Taiwan 🇹🇼.
