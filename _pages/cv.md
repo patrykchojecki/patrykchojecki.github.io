@@ -19,7 +19,7 @@ Experienced Associate at Asia’s first Cell & Gene Therapy startup accelerator,
 ## 👨‍💻 Work Experience
 
 ### 🇹🇼 08/2023 - Now | Research Associate at *CellTech Innovation Venture Studio*
-  * Joined as the first hire, playing a key role in establishing the company’s core processes and shaping its culture.
+  * Joined as the **first hire**, playing a key role in establishing the company’s core processes and shaping its culture.
   * Worked directly with the CEO and partners to guide startups, providing strategic direction and connecting them to networks and financial resources across the APAC region.
   * Supported early-stage startup founders in corporate/business development, fundraising, and marketing initiatives.
   * Organized pitch events, conferences, and symposiums in Taiwan and Japan, featuring industry leaders and investors
