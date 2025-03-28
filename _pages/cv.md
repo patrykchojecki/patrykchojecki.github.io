@@ -8,22 +8,23 @@ redirect_from:
 ---
 
 {% include base_path %}
-Last updated on 6 January 2025 in Taipei, Taiwan 🇹🇼.
+Last updated on 28 March 2025 in Taipei, Taiwan 🇹🇼.
 
 ## Professional Profile
 
-Experienced Associate at Asia’s first Cell & Gene Therapy startup accelerator, specializing in venture development, fundraising, and cross-border market entry. Skilled in building strategic partnerships and empowering early-stage companies to achieve growth and global recognition. Combines a strong background in international relations with hands-on experience in driving innovation, making a valuable contribution to the venture capital ecosystem.
+Experienced Associate at Asia’s first cell & gene therapy startup accelerator, specializing in venture development, fundraising, and cross-border market entry. Proven track record in building strategic partnerships and guiding founders toward growth and global recognition. Deeply connected to Taiwan and Japan’s biotech ecosystems, bringing substantial value to the venture capital landscape.
 
 ---
 
 ## 👨‍💻 Work Experience
 
 ### 🇹🇼 08/2023 - Now | Research Associate at *CellTech Innovation Venture Studio*
-  * Joined as the **first hire**, playing a key role in establishing the company’s core processes and shaping its culture.
-  * Worked directly with the CEO and partners to guide startups, providing strategic direction and connecting them to networks and financial resources across the APAC region.
-  * Supported early-stage startup founders in corporate/business development, fundraising, and marketing initiatives.
-  * Organized pitch events, conferences, and symposiums in Taiwan and Japan, featuring industry leaders and investors
-  * Forged multiple strategic international partnerships with key stakeholders, including startup founders, academic institutions, government agencies, investment firms, and industry players (CRO, CMO, CDMO).
+  * Joined as the **first hire**, playing a key role in establishing core processes and shaping company culture.
+  * Collaborated closely with the CEO to guide biotech startups, providing strategic direction and connecting them to networks and financial resources across the APAC region.
+  * Led the discovery and evaluation of over 200 early-stage and growth-stage biotech startups, identifying high-potential opportunities.
+  * Prepared investment reports and pitch books for cross-border deal opportunities, tailored to the buy-side.
+  * Developed industry insights and go-to-market strategies for international startups seeking early-stage funding.
+  * Organized and managed pitch events, conferences, and symposiums in Taiwan and Japan.
 
 ### 🇹🇼 03/2022 - 07/2023 | Research Assistant at *Academia Sinica*
   * Collected data on quantitative projects encompassing all branches of the U.S. government.
@@ -78,7 +79,7 @@ Experienced Associate at Asia’s first Cell & Gene Therapy startup accelerator,
 
 ## Digital Skills
 
-* macOS, iWork, Microsoft Office, Google Workspace, Affinity, Basic HTML/CSS, Markdown
+* macOS, Microsoft Office (Incl. Excel), Markdown, Basic Python/R/HTML/CSS, CRM and database management
 
 ---
 
