@@ -60,6 +60,8 @@ mastodon:
   username               : "mastodon.world/@cherrysandwich"
 twitter:
   username               : &twitter
+bluesky:
+  username               : "https://bsky.app/profile/chojecki.net"
 facebook:
   username               :
   app_id                 :
@@ -84,9 +86,9 @@ analytics:
 author:
   name             : "Patryk Chojecki"
   avatar           : "bio-photo.jpg"
-  bio              : "Research & Business Development"
+  bio              : "Venture Building & Cross-Border Fundraising"
   location         : "Taipei, Taiwan"
-  employer         : 
+  employer         : "CellTech Accelerator"
   pubmed           : 
   googlescholar    : 
   email            : "contact.patryk@icloud.com"
@@ -108,7 +110,7 @@ author:
   orcid            : 
   pinterest        :
   soundcloud       :
-  stackoverflow    : 
+  stackoverflow    :
   steam            :
   tumblr           :
   twitter          : 
