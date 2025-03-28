@@ -46,6 +46,9 @@
       {% if author.mastodon %}
         <li><a rel="me" href="https://{{ author.mastodon }}"><i class="fab fa-fw fa-mastodon" aria-hidden="true" style="padding-right: 1.5em;"></i>Mastodon</a></li>
       {% endif %}
+      {% if author.bluesky %}
+        <li><a href="{{ author.bluesky }}"><i class="fab fa-fw fa-bluesky" aria-hidden="true"></i> Bluesky</a></li>
+      {% endif %}
       {% if author.facebook %}
         <li><a href="https://www.facebook.com/{{ author.facebook }}"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
       {% endif %}
@@ -67,9 +70,11 @@
       {% if author.bitbucket %}
         <li><a href="https://bitbucket.org/{{ author.bitbucket }}"><i class="fab fa-fw fa-bitbucket" aria-hidden="true"></i> Bitbucket</a></li>
       {% endif %}
+      {% comment %}
       {% if author.github %}
         <li><a href="https://github.com/{{ author.github }}"><i class="fab fa-fw fa-github" aria-hidden="true"></i> Github</a></li>
       {% endif %}
+      {% endcomment %}
       {% if author.stackoverflow %}
         <li><a href="https://www.stackoverflow.com/users/{{ author.stackoverflow }}"><i class="fab fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow</a></li>
       {% endif %}
