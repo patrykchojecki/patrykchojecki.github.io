@@ -239,7 +239,8 @@ body:hover .visually-hidden button {
     color: $pinterest-color;
   }
 
-  .fa-mastodon {
+  .fa-mastodon
+  .fa-mastodon-square {
     color: $mastodon-color;
   }
 
@@ -274,6 +275,12 @@ body:hover .visually-hidden button {
 
   .fa-vine {
     color: $vine-color;
+  }
+
+  .fa-bluesky,
+  .fa-bluesky-square,
+  .fa-bluesky-play {
+    color: $bluesky-color;
   }
 
   .fa-youtube,
