@@ -10,6 +10,12 @@ redirect_from:
 {% include base_path %}
 Last updated on 28 March 2025 in Taipei, Taiwan 🇹🇼.
 
+## 📄 Downloadable CV
+
+You can view or download my CV as a PDF by [clicking here](/assets/Patryk Chojecki - CV.pdf).
+
+---
+
 ## Professional Profile
 
 Experienced Associate at Asia’s first cell & gene therapy startup accelerator, specializing in venture development, fundraising, and cross-border market entry. Proven track record in building strategic partnerships and guiding founders toward growth and global recognition. Deeply connected to Taiwan and Japan’s biotech ecosystems, bringing substantial value to the venture capital landscape.
