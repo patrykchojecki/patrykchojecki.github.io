@@ -10,8 +10,6 @@ redirect_from:
 {% include base_path %}
 Last updated on 28 March 2025 in Taipei, Taiwan 🇹🇼.
 
----
-
 You can view and download my CV as a PDF by [clicking here](/assets/Patryk Chojecki - CV.pdf).
 
 ---
