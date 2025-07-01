@@ -16,6 +16,8 @@ html {
 
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+
+  scroll-behavior: smooth;
 }
 
 /* Remove margin */
@@ -25,13 +27,15 @@ body { margin: 0; }
 /* Selected elements */
 
 ::-moz-selection {
-  color: #000;
-  background: $hermes-desaturated;
+  color: #222;
+  background: rgba(243, 112, 33, 0.25);
+  text-shadow: none;
 }
 
 ::selection {
-  color: #000;
-  background: $hermes-desaturated;
+  color: #222;
+  background: rgba(243, 112, 33, 0.25);
+  text-shadow: none;
 }
 
 /* Display HTML5 elements in IE6-9 and FF3 */
