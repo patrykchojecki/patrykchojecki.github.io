@@ -47,7 +47,7 @@ $type-size-8                : 0.625em;  // ~10px
    Colors
    ========================================================================== */
 
-$gray                       : #7a8288;
+$gray                       : #8a8f98;;
 $dark-gray                  : mix(#000, $gray, 40%);
 $darker-gray                : mix(#000, $gray, 60%);
 $light-gray                 : mix(#fff, $gray, 50%);
@@ -56,11 +56,6 @@ $lighter-gray               : mix(#fff, $gray, 90%);
 $hermes                     : #f37021;
 $hermes-desaturated         : #de7536;
 $hermes-saturated           : #ff6a07;
-
-$cherry                     : #d20a2e;
-$dark-cherry                : #93021f;
-$maroon                     : #6b1627;
-$gold                       : #ffd700;
 
 $body-color                 : #fff;
 $background-color           : #fff;
@@ -105,7 +100,7 @@ $link-color                 : $info-color;
 $link-color-hover           : $hermes-desaturated;
 $link-color-visited         : mix(#fff, $link-color, 25%);
 $masthead-link-color        : $primary-color;
-$masthead-link-color-hover  : mix(#000, $primary-color, 25%);
+$masthead-link-color-hover  : $hermes-desaturated;
 
 
 /*
@@ -158,7 +153,7 @@ $susy: (
    ========================================================================== */
 
 $border-radius              : 4px;
-$box-shadow                 : 0 1px 1px rgba(0, 0, 0, 0.125);
+$box-shadow                 : 0 4px 16px rgba(0,0,0,0.06);
 $navicon-width              : 28px;
 $navicon-height             : 4px;
 $global-transition          : all 0.2s ease-in-out;
