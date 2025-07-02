@@ -454,10 +454,14 @@ body:hover .visually-hidden button {
 
 .footnotes {
   color: mix(#fff, $gray, 25%);
+  margin-top: 2em;
+  border-top: 1px solid $light-gray;
+  padding-top: 1em;
 
   ol, li, p {
-    margin-bottom: 0;
-    font-size: $type-size-6;
+    margin-bottom: 0.5em;
+    font-size: inherit;
+    line-height:1.6;
   }
 }
 
@@ -467,6 +471,7 @@ a.reversefootnote {
 
   &:hover {
     text-decoration: underline;
+    color: $hermes-desaturated;
   }
 }
 
