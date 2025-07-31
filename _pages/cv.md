@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 {% include base_path %}
-Last updated on 1 July 2025 in Taipei, Taiwan 🇹🇼.
+Last updated on 31 July 2025 in Taipei, Taiwan 🇹🇼.
 
 You can view and download my CV as a PDF by [clicking here](/assets/Patryk Chojecki - CV.pdf).
 
@@ -36,7 +36,6 @@ Associate at Asia’s first cell & gene therapy accelerator, advising early-stag
   * Contributed to creating advanced datasets and data coding schemes used for academic research.
   * Supervised and coordinated a team of 5+ research assistants to ensure timely delivery and data accuracy.
   * Analyzed databases and surveys in the area of foreign policy.
-  * Ad-hoc performed various administrative duties, including proficient document preparation in Chinese language.
 
 ### 🇹🇼 07/2021 - 07/2022 | Contributing Researcher at *Taiwan Architecture & Building Center*
   * Published over 10 articles on governance, economy, and ESG investing (Chinese & English).
