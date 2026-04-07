@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 {% include base_path %}
-Last updated on 31 July 2025 in Taipei, Taiwan 🇹🇼.
+Last updated on 7 April 2026 in Taipei, Taiwan 🇹🇼.
 
 You can view and download my CV as a PDF by [clicking here](/assets/Patryk Chojecki - CV.pdf).
 
@@ -16,33 +16,32 @@ You can view and download my CV as a PDF by [clicking here](/assets/Patryk Choje
 
 ## Professional Profile
 
-Associate at Asia’s first cell & gene therapy accelerator, advising early-stage biotech founders on fundraising, Taiwan soft-landing, and international corporate partnership building. Developed investor and corporate partnerships for 50+ biotech startups, helping several secure seed funding and expand internationally. Actively engaged with startups and investment groups across APAC, with a focus on biotechnology and technology.
+Experienced in advising 30+ biotech founders on fundraising, market entry, and investor relations across APAC. Strong background in deal sourcing, due diligence, and portfolio support. Seeking to join a startup accelerator or venture capital team focused on early- and growth-stage cross-border opportunities, where I can contribute to sourcing, evaluating, and supporting high-potential companies.
 
 ---
 
 ## 👨‍💻 Work Experience
 
-### 🇹🇼 08/2023 - Now | Associate at *CellTech Accelerator*
-  * Joined as the *first hire*, playing a key role in establishing core processes and shaping company culture.
-  * Worked with biotech startup founders to provide strategic direction and connect them with networks and financial resources across the APAC region.
-  * Led the discovery and evaluation of 200+ early-stage and growth-stage biotech startups, ensuring thorough due diligence and identifying high-potential opportunities.
-  * Prepared investment reports and pitch books for cross-border deal opportunities, tailored to the buy-side.
-  * Represented portfolio startups in investor meetings, pitching their technology and business plans to VCs and corporate partners.
-  * Developed go-to-market strategies for international startups seeking early-stage funding.
-  * Organized and managed 10+ pitch events, conferences, and symposiums in Taiwan and Japan.
+### 🇹🇼 2023-2026 | Associate at *CellTech Accelerator*
+  * Joined as the first full-time member and helped build the company’s main processes and cross-border network.
+  * Contributed to the creation and launch of new ventures by shaping business plans, validating market opportunities, and preparing investor-ready narratives from concept stage.
+  * Represented portfolio startups in executive-level meetings, pitching their technology and business plans to investors and corporate partners.
+  * Supported 30+ founders by securing industry partnerships and financial resources across the APAC region.
+  * Sourced and evaluated 200+ early-stage life-science startups for investment and partnership opportunities.
+  * Created pitch decks, due diligence materials, and financial models for early- and growth-stage startups.
+  * Headed 10+ investment and networking events in Taiwan and Japan, connecting 300+ investors, founders, and industry experts.
 
-### 🇹🇼 03/2022 - 07/2023 | Research Assistant at *Academia Sinica*
-  * Collected and processed data on U.S. political institutions for quantitative research projects.
-  * Contributed to creating advanced datasets and data coding schemes used for academic research.
-  * Supervised and coordinated a team of 5+ research assistants to ensure timely delivery and data accuracy.
-  * Analyzed databases and surveys in the area of foreign policy.
+### 🇹🇼 2022-2023 | Research Assistant at *Academia Sinica*
+  * Collected and processed data on U.S. political institutions for academic publications and policy papers.
+  * Produced advanced datasets and data coding schemes used in academic research.
+  * Supervised and coordinated a team of 5+ research assistants to ensure accurate and on-time results.
 
-### 🇹🇼 07/2021 - 07/2022 | Contributing Researcher at *Taiwan Architecture & Building Center*
-  * Published over 10 articles on governance, economy, and ESG investing (Chinese & English).
-  * Won the Excellence Award at the 2021 DIGI+ X TCA 全球數位新星大賞 Global Digital Talent Awards.
-  * Co-developed an AI-driven generative design tool that streamlines regulatory compliance for local businesses.
+### 🇹🇼 2021-2022 | Contributing Researcher at *Taiwan Architecture & Building Center*
+  * Co-developed a prototype of an AI generative-design tool that improved regulatory compliance for SMEs.
+  * Published 10+ articles on governance and sustainable finance (English & Chinese) reaching industry leaders.
+  * Successfully negotiated long-term partnerships with three European companies.
 
-### 🌏 05/2021 - 05/2022 | Foreign Representative at *Owolovo*
+### 🌏 2021-2022 | Foreign Representative at *Owolovo*
   * Represented the company during consultations with partners in Taiwan and Singapore
   * Supervised product sales and orders to Taiwan
   * Introduced a range of 20 new product to Taiwanese affiliates
@@ -72,12 +71,6 @@ Associate at Asia’s first cell & gene therapy accelerator, advising early-stag
 * 🇵🇱 Polish C2
 * 🇹🇼 Mandarin Chinese B2
 * 🇩🇪 German A2
-
----
-
-## Digital Skills
-
-* Microsoft Office, Python/R/HTML/CSS, CRM and database management
 
 ---
 
