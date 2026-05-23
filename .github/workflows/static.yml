@@ -27,6 +27,8 @@ jobs:
         with:
           ruby-version: '3.3'
           bundler-cache: true   # runs bundle install and caches gems
+        env:
+          BUNDLE_WITHOUT: development
 
       - name: Configure GitHub Pages
         id: pages
