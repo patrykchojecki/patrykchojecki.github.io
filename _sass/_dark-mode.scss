@@ -189,6 +189,12 @@ html[data-theme="dark"] {
     border-color: #2e2e2e;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
+    @include breakpoint($large) {
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+    }
+
     // dropdown triangle — outer (border)
     &:before {
       border-color: #2e2e2e transparent;
