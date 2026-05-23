@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Patryk Chojecki"
 title_separator          : "-"
 name                     : &name "Patryk Chojecki"
-description              : &description "Hi, I'm Patryk. I help biotech startups grow, innovate, and scale globally."
+description              : &description "Hi, I'm Patryk. I help startups grow, innovate, and scale globally."
 url                      : https://chojecki.net # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "patrykchojecki/patrykchojecki.github.io"
@@ -77,7 +77,7 @@ social:
 
 # Analytics
 analytics:
-  provider               :  "false" # false (default), "google", "google-universal", "custom"
+  provider               :  false # false (default), "google", "google-universal", "custom"
   google:
     tracking_id          :
 
@@ -86,7 +86,7 @@ analytics:
 author:
   name             : "Patryk Chojecki"
   avatar           : "bio-photo.jpg"
-  bio              : "Venture Building & Cross-Border Fundraising"
+  bio              : "Venture Building & Cross-Border Innovation"
   location         : "Taipei, Taiwan"
   employer         : 
   pubmed           : 
@@ -101,7 +101,6 @@ author:
   facebook         :
   foursquare       :
   github           : "patrykchojecki"
-  google_plus      :
   keybase          :
   instagram        :
   impactstory      : 
@@ -114,7 +113,6 @@ author:
   steam            :
   tumblr           :
   twitter          : 
-  vine             :
   weibo            :
   xing             :
   youtube          :

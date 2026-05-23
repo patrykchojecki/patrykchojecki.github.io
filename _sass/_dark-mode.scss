@@ -1,0 +1,505 @@
+/* ==========================================================================
+   DARK MODE
+   ========================================================================== */
+
+/*
+   Palette
+   --bg:       #1a1a1a  main background
+   --surface:  #1e1e1e  elevated surfaces (popups, code blocks)
+   --surface2: #252525  more elevated (table headers, code badge)
+   --border:   #2e2e2e  all borders
+   --text:     #e0ddd8  main text (slightly warm white)
+   --muted:    #888888  secondary text / icons
+   --link:     #e8935a  links (lighter orange for contrast on dark bg)
+   --nav-link: #b8b4b0  masthead nav links
+   --masthead: #141414  masthead bg (slightly darker than body)
+   --footer:   #0f0f0f  footer bg (darkest)
+   ========================================================================== */
+
+html[data-theme="dark"] {
+
+  background-color: #1a1a1a;
+
+  // -------------------------------------------------------------------------
+  // Base
+  // -------------------------------------------------------------------------
+
+  body {
+    background-color: #1a1a1a;
+    color: #e0ddd8;
+  }
+
+  // Global link colour (set in _reset.scss)
+  a {
+    color: #e8935a;
+  }
+
+  // Horizontal rules
+  hr {
+    border-top-color: #2e2e2e;
+  }
+
+  // Abbreviations
+  abbr[title],
+  abbr[data-original-title] {
+    border-bottom-color: #888;
+  }
+
+  // Underline / insert
+  u,
+  ins {
+    border-bottom-color: #888;
+  }
+
+  // Blockquotes
+  blockquote {
+    border-left-color: #e8935a;
+  }
+
+  // Figure captions
+  figcaption {
+    color: #888;
+
+    a {
+      border-bottom-color: #2e2e2e;
+
+      &:hover {
+        color: #e0ddd8;
+        border-bottom-color: #e0ddd8;
+      }
+    }
+  }
+
+  // -------------------------------------------------------------------------
+  // Inline code and code blocks
+  // -------------------------------------------------------------------------
+
+  p > code,
+  a > code,
+  li > code,
+  figcaption > code,
+  td > code {
+    background: #252525;
+    border-color: #2e2e2e;
+    box-shadow: none;
+  }
+
+  div.highlighter-rouge,
+  figure.highlight {
+    background-color: #1e1e1e;
+    border-color: #2e2e2e;
+    box-shadow: none;
+
+    &:before {
+      background-color: #252525;
+      color: #888;
+    }
+  }
+
+  // -------------------------------------------------------------------------
+  // Masthead
+  // -------------------------------------------------------------------------
+
+  .masthead {
+    background-color: #141414;
+    border-bottom-color: #2e2e2e;
+  }
+
+  .greedy-nav {
+    background: #141414;
+
+    a {
+      color: #b8b4b0;
+
+      &:hover {
+        color: #e8935a;
+      }
+    }
+
+    // hamburger button
+    button:not(.theme-toggle) {
+      background-color: #2a2a2a;
+    }
+
+    // nav underline indicator
+    .visible-links a:before {
+      background: mix(#1a1a1a, #e8935a, 50%);
+    }
+
+    // overflow dropdown
+    .hidden-links {
+      background: #1e1e1e;
+      border-color: #2e2e2e;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+      a:hover {
+        background: #252525;
+        color: #e8935a;
+      }
+
+      // dropdown arrow border (outer)
+      &:before {
+        border-color: #2e2e2e transparent;
+      }
+
+      // dropdown arrow fill (inner)
+      &:after {
+        border-color: #1e1e1e transparent;
+      }
+    }
+  }
+
+  // -------------------------------------------------------------------------
+  // Theme toggle button
+  // -------------------------------------------------------------------------
+
+  .theme-toggle {
+    color: #b8b4b0;
+
+    &:hover {
+      color: #e8935a;
+      background-color: #252525;
+    }
+  }
+
+  // -------------------------------------------------------------------------
+  // Sidebar / author profile
+  // -------------------------------------------------------------------------
+
+  .author__avatar img {
+    border-color: #2e2e2e;
+  }
+
+  // "Follow" button
+  .btn.btn--inverse {
+    background-color: #252525;
+    color: #e0ddd8 !important;
+    border-color: #2e2e2e !important;
+
+    &:hover {
+      background-color: #1a1a1a;
+      color: #e0ddd8 !important;
+      border-color: #e8935a !important;
+    }
+  }
+
+  // Social links dropdown (mobile)
+  .author__urls {
+    background: #1e1e1e;
+    border-color: #2e2e2e;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+    // dropdown triangle — outer (border)
+    &:before {
+      border-color: #2e2e2e transparent;
+    }
+
+    // dropdown triangle — inner (fill)
+    &:after {
+      border-color: #1e1e1e transparent;
+    }
+  }
+
+  // -------------------------------------------------------------------------
+  // Navigation (pagination, toc, nav list)
+  // -------------------------------------------------------------------------
+
+  .pagination {
+    a {
+      color: #888;
+      border-color: #2e2e2e;
+
+      &:hover {
+        color: #e8935a;
+      }
+
+      &.current {
+        color: #fff;
+        background: #3a3a3a;
+      }
+
+      &.disabled {
+        color: #555;
+      }
+    }
+
+    &--pager {
+      color: #888;
+      border-color: #2e2e2e;
+
+      &:hover {
+        color: #e8935a;
+      }
+
+      &.disabled {
+        color: #555;
+      }
+    }
+  }
+
+  .page__content + .pagination,
+  .page__meta + .pagination,
+  .page__share + .pagination,
+  .page__comments + .pagination {
+    border-top-color: #2e2e2e;
+  }
+
+  // Table of contents
+  .toc {
+    color: #888;
+    background-color: #1e1e1e;
+    border-color: #2e2e2e;
+
+    .nav__title {
+      color: #fff;
+      background: #2a2a2a;
+    }
+  }
+
+  .toc__menu {
+    a {
+      color: #888;
+      border-bottom-color: #2e2e2e;
+
+      &:hover {
+        color: #e0ddd8;
+        background: #252525;
+      }
+    }
+  }
+
+  // Nav list (sidebar navigation)
+  .nav__list {
+    .active {
+      color: #fff;
+      background: #2a2a2a;
+    }
+  }
+
+  .nav__sub-title {
+    border-bottom-color: #2e2e2e;
+  }
+
+  // -------------------------------------------------------------------------
+  // Page content
+  // -------------------------------------------------------------------------
+
+  .page__content {
+    h2 {
+      border-bottom-color: #2e2e2e;
+    }
+  }
+
+  .page__share {
+    border-top-color: #2e2e2e;
+  }
+
+  .page__meta {
+    color: #888;
+  }
+
+  .page__date {
+    color: #888;
+  }
+
+  // Related posts title
+  .page__related {
+    border-top-color: #2e2e2e;
+  }
+
+  // -------------------------------------------------------------------------
+  // Archive
+  // -------------------------------------------------------------------------
+
+  .archive__subtitle {
+    color: #888;
+    border-bottom-color: #2e2e2e;
+  }
+
+  // -------------------------------------------------------------------------
+  // Footer
+  // -------------------------------------------------------------------------
+
+  .page__footer {
+    background-color: #0f0f0f;
+    border-top-color: #2e2e2e;
+    color: #888;
+
+    .fas,
+    .fab,
+    .far,
+    .fal {
+      color: #888;
+    }
+
+    a {
+      color: #888;
+
+      &:hover {
+        color: #e8935a;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // -------------------------------------------------------------------------
+  // Tables
+  // -------------------------------------------------------------------------
+
+  table {
+    border-color: #2e2e2e;
+  }
+
+  thead {
+    background-color: #252525;
+    border-bottom-color: #2e2e2e;
+  }
+
+  th {
+    border-right-color: #2e2e2e;
+  }
+
+  td {
+    border-bottom-color: #2e2e2e;
+    border-right-color: #2e2e2e;
+  }
+
+  // -------------------------------------------------------------------------
+  // Forms and inputs
+  // -------------------------------------------------------------------------
+
+  input,
+  textarea,
+  select {
+    background-color: #252525;
+    color: #e0ddd8;
+    border-color: #2e2e2e;
+  }
+
+  // -------------------------------------------------------------------------
+  // Navicons (hamburger bars) — white bars on dark background
+  // -------------------------------------------------------------------------
+
+  .navicon,
+  .navicon:before,
+  .navicon:after {
+    background: #b8b4b0;
+  }
+
+  // -------------------------------------------------------------------------
+  // Utilities
+  // -------------------------------------------------------------------------
+
+  // Skip-to-content focus link
+  .screen-reader-text:focus,
+  .screen-reader-shortcut:focus {
+    background: #1e1e1e;
+    color: #e0ddd8;
+  }
+
+  // Modal overlay
+  .show-modal:before {
+    background-color: rgba(0, 0, 0, 0.85);
+  }
+
+  // Modal dialog
+  .modal {
+    background: #1e1e1e;
+    border-color: #2e2e2e;
+  }
+
+  // Well
+  .well {
+    background-color: #252525;
+    border-color: #2e2e2e;
+  }
+
+  // -------------------------------------------------------------------------
+  // Syntax highlighting — Monokai-style dark theme
+  // -------------------------------------------------------------------------
+
+  div.highlighter-rouge .highlight,
+  figure.highlight .highlight {
+    .c   { color: #75715e } /* Comment */
+    .err { color: #f8f8f2 } /* Error */
+    .g   { color: #f8f8f2 } /* Generic */
+    .k   { color: #66d9ef } /* Keyword */
+    .l   { color: #f8f8f2 } /* Literal */
+    .n   { color: #f8f8f2 } /* Name */
+    .o   { color: #f92672 } /* Operator */
+    .x   { color: #ae81ff } /* Other */
+    .p   { color: #f8f8f2 } /* Punctuation */
+    .cm  { color: #75715e } /* Comment.Multiline */
+    .cp  { color: #75715e } /* Comment.Preproc */
+    .c1  { color: #75715e } /* Comment.Single */
+    .cs  { color: #75715e } /* Comment.Special */
+    .gd  { color: #f92672 } /* Generic.Deleted */
+    .ge  { color: #f8f8f2; font-style: italic } /* Generic.Emph */
+    .gr  { color: #f92672 } /* Generic.Error */
+    .gh  { color: #a6e22e; font-weight: bold } /* Generic.Heading */
+    .gi  { color: #a6e22e } /* Generic.Inserted */
+    .go  { color: #75715e } /* Generic.Output */
+    .gp  { color: #75715e } /* Generic.Prompt */
+    .gs  { color: #f8f8f2; font-weight: bold } /* Generic.Strong */
+    .gu  { color: #a6e22e } /* Generic.Subheading */
+    .gt  { color: #f92672 } /* Generic.Traceback */
+    .kc  { color: #66d9ef } /* Keyword.Constant */
+    .kd  { color: #66d9ef } /* Keyword.Declaration */
+    .kn  { color: #f92672 } /* Keyword.Namespace */
+    .kp  { color: #66d9ef } /* Keyword.Pseudo */
+    .kr  { color: #66d9ef } /* Keyword.Reserved */
+    .kt  { color: #66d9ef } /* Keyword.Type */
+    .ld  { color: #e6db74 } /* Literal.Date */
+    .m   { color: #ae81ff } /* Literal.Number */
+    .s   { color: #e6db74 } /* Literal.String */
+    .na  { color: #a6e22e } /* Name.Attribute */
+    .nb  { color: #f8f8f2 } /* Name.Builtin */
+    .nc  { color: #a6e22e } /* Name.Class */
+    .no  { color: #66d9ef } /* Name.Constant */
+    .nd  { color: #a6e22e } /* Name.Decorator */
+    .ni  { color: #f8f8f2 } /* Name.Entity */
+    .ne  { color: #a6e22e } /* Name.Exception */
+    .nf  { color: #a6e22e } /* Name.Function */
+    .nl  { color: #f8f8f2 } /* Name.Label */
+    .nn  { color: #f8f8f2 } /* Name.Namespace */
+    .nx  { color: #a6e22e } /* Name.Other */
+    .py  { color: #f8f8f2 } /* Name.Property */
+    .nt  { color: #f92672 } /* Name.Tag */
+    .nv  { color: #f8f8f2 } /* Name.Variable */
+    .ow  { color: #f92672 } /* Operator.Word */
+    .w   { color: #75715e } /* Text.Whitespace */
+    .mf  { color: #ae81ff } /* Literal.Number.Float */
+    .mh  { color: #ae81ff } /* Literal.Number.Hex */
+    .mi  { color: #ae81ff } /* Literal.Number.Integer */
+    .mo  { color: #ae81ff } /* Literal.Number.Oct */
+    .sb  { color: #e6db74 } /* Literal.String.Backtick */
+    .sc  { color: #e6db74 } /* Literal.String.Char */
+    .sd  { color: #e6db74 } /* Literal.String.Doc */
+    .s2  { color: #e6db74 } /* Literal.String.Double */
+    .se  { color: #ae81ff } /* Literal.String.Escape */
+    .sh  { color: #e6db74 } /* Literal.String.Heredoc */
+    .si  { color: #e6db74 } /* Literal.String.Interpol */
+    .sx  { color: #e6db74 } /* Literal.String.Other */
+    .sr  { color: #e6db74 } /* Literal.String.Regex */
+    .s1  { color: #e6db74 } /* Literal.String.Single */
+    .ss  { color: #e6db74 } /* Literal.String.Symbol */
+    .bp  { color: #f8f8f2 } /* Name.Builtin.Pseudo */
+    .vc  { color: #f8f8f2 } /* Variable.Class */
+    .vg  { color: #f8f8f2 } /* Variable.Global */
+    .vi  { color: #f8f8f2 } /* Variable.Instance */
+    .il  { color: #ae81ff } /* Literal.Number.Integer.Long */
+  }
+}
+
+// -------------------------------------------------------------------------
+// Smooth transitions on toggle (added to body after first paint via JS)
+// -------------------------------------------------------------------------
+
+html.theme-transitions,
+html.theme-transitions body,
+html.theme-transitions .masthead,
+html.theme-transitions .greedy-nav,
+html.theme-transitions .author__urls,
+html.theme-transitions .page__footer {
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease !important;
+}
