@@ -21,6 +21,8 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      BUNDLE_WITHOUT: development
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -30,8 +32,6 @@ jobs:
         with:
           ruby-version: '3.3'
           bundler-cache: true
-        env:
-          BUNDLE_WITHOUT: development
 
       - name: Configure GitHub Pages
         id: pages
