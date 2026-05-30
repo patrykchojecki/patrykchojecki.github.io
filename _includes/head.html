@@ -5,11 +5,22 @@
 <!-- Theme: apply before stylesheet to prevent flash of unstyled content -->
 <script>
   (function () {
+    var theme = 'light';
+    var stored = null;
+
     try {
-      var stored = localStorage.getItem('theme');
-      var t = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', t);
+      stored = localStorage.getItem('theme');
     } catch (e) {}
+
+    if (stored === 'dark' || stored === 'light') {
+      theme = stored;
+    } else if (window.matchMedia) {
+      try {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      } catch (e) {}
+    }
+
+    document.documentElement.setAttribute('data-theme', theme);
   }());
 </script>
 
@@ -31,5 +42,14 @@
 <link rel="stylesheet" href="{{ base_path }}/assets/css/main.css">
 
 <meta name="theme-color" content="#de7536">
+<script>
+  (function () {
+    var meta = document.querySelector('meta[name="theme-color"]');
+    var theme = document.documentElement.getAttribute('data-theme');
+    if (meta && theme === 'dark') {
+      meta.setAttribute('content', '#141414');
+    }
+  }());
+</script>
 
 <meta http-equiv="cleartype" content="on">

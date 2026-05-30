@@ -4,7 +4,7 @@
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
-        <button><div class="navicon"></div></button>
+        <button type="button" aria-label="Toggle menu"><div class="navicon"></div></button>
         <ul class="visible-links">
           <li class="masthead__menu-item masthead__menu-item--lg"><a href="{{ base_path }}/">{{ site.title }}</a></li>
           {% for link in site.data.navigation.main %}
@@ -18,7 +18,7 @@
         </ul>
         <ul class="hidden-links hidden"></ul>
       </nav>
-      <button id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode">
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
         <i class="fas fa-fw fa-moon" aria-hidden="true"></i>
       </button>
     </div>

@@ -4,14 +4,26 @@
   var STORAGE_KEY = 'theme';
   var DARK        = 'dark';
   var LIGHT       = 'light';
+  var mql         = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
 
   function currentTheme() {
     return document.documentElement.getAttribute('data-theme') || LIGHT;
   }
 
-  function applyTheme(theme) {
+  function storedTheme() {
+    try {
+      var theme = localStorage.getItem(STORAGE_KEY);
+      return theme === DARK || theme === LIGHT ? theme : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function setTheme(theme, persist) {
     document.documentElement.setAttribute('data-theme', theme);
-    try { localStorage.setItem(STORAGE_KEY, theme); } catch (e) {}
+    if (persist) {
+      try { localStorage.setItem(STORAGE_KEY, theme); } catch (e) {}
+    }
     updateButton(theme);
     updateThemeColor(theme);
   }
@@ -28,14 +40,15 @@
     }
     btn.setAttribute('aria-label',
       theme === DARK ? 'Switch to light mode' : 'Switch to dark mode');
+    btn.setAttribute('aria-pressed', theme === DARK ? 'true' : 'false');
   }
 
   // Update the browser chrome / PWA theme colour meta tag
   function updateThemeColor(theme) {
-    var meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) {
+    var metas = document.querySelectorAll('meta[name="theme-color"]');
+    Array.prototype.forEach.call(metas, function (meta) {
       meta.setAttribute('content', theme === DARK ? '#141414' : '#de7536');
-    }
+    });
   }
 
   // Enable smooth cross-fade only after first paint so the FOUC script's
@@ -51,7 +64,7 @@
     var btn = document.getElementById('theme-toggle');
     if (btn) {
       btn.addEventListener('click', function () {
-        applyTheme(currentTheme() === DARK ? LIGHT : DARK);
+        setTheme(currentTheme() === DARK ? LIGHT : DARK, true);
       });
     }
 
@@ -60,13 +73,17 @@
   });
 
   // Follow system preference changes when the user has no stored override
-  if (window.matchMedia) {
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
-      try {
-        if (!localStorage.getItem(STORAGE_KEY)) {
-          applyTheme(e.matches ? DARK : LIGHT);
-        }
-      } catch (err) {}
-    });
+  function handleSystemThemeChange(e) {
+    if (!storedTheme()) {
+      setTheme(e.matches ? DARK : LIGHT, false);
+    }
+  }
+
+  if (mql) {
+    if (mql.addEventListener) {
+      mql.addEventListener('change', handleSystemThemeChange);
+    } else if (mql.addListener) {
+      mql.addListener(handleSystemThemeChange);
+    }
   }
 }());
