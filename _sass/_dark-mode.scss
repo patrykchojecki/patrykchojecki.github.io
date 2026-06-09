@@ -30,15 +30,17 @@ html[data-theme="dark"] {
     color: #e0ddd8;
   }
 
-  ::selection {
-    color: #fff;
-    background: rgba(232, 147, 90, 0.4);
+  ::selection,
+  *::selection {
+    color: #fff !important;
+    background: #8f4317 !important;
     text-shadow: none;
   }
 
-  ::-moz-selection {
-    color: #fff;
-    background: rgba(232, 147, 90, 0.4);
+  ::-moz-selection,
+  *::-moz-selection {
+    color: #fff !important;
+    background: #8f4317 !important;
     text-shadow: none;
   }
 
@@ -150,6 +152,10 @@ html[data-theme="dark"] {
         color: #e8935a;
       }
 
+      li {
+        border-bottom-color: #2e2e2e;
+      }
+
       // dropdown arrow border (outer)
       &:before {
         border-color: #2e2e2e transparent;
@@ -216,6 +222,20 @@ html[data-theme="dark"] {
     // dropdown triangle — inner (fill)
     &:after {
       border-color: #1e1e1e transparent;
+    }
+  }
+
+  .social-icons {
+    &.author__urls > li > .fa,
+    .fa-map-marker,
+    .fa-link,
+    .fa-envelope,
+    .fa-key,
+    .fa-graduation-cap,
+    .fa-github,
+    .fa-github-alt,
+    .fa-github-square {
+      color: #b8b4b0 !important;
     }
   }
 
@@ -427,10 +447,36 @@ html[data-theme="dark"] {
     }
   }
 
+  legend {
+    color: #e0ddd8;
+    border-bottom-color: #2e2e2e;
+  }
+
+  select option,
+  select optgroup {
+    background-color: #252525;
+    color: #e0ddd8;
+  }
+
   input::placeholder,
   textarea::placeholder {
     color: #9a9692;
     opacity: 1;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    -webkit-text-fill-color: #e0ddd8;
+    caret-color: #e0ddd8;
+    box-shadow: 0 0 0 1000px #252525 inset;
+    border-color: #e8935a;
   }
 
   input[type="file"] {
@@ -444,6 +490,32 @@ html[data-theme="dark"] {
 
   label {
     color: #e0ddd8;
+  }
+
+  input[disabled],
+  select[disabled],
+  textarea[disabled],
+  input[readonly],
+  select[readonly],
+  textarea[readonly] {
+    background-color: #202020;
+    color: #908a84;
+    border-color: #2a2a2a;
+    opacity: 1;
+  }
+
+  .page__comments-form.disabled {
+    input,
+    button,
+    textarea,
+    label {
+      opacity: 0.75;
+    }
+  }
+
+  .help-block,
+  .help-inline {
+    color: #d88956;
   }
 
   .form:before {

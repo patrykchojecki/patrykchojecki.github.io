@@ -1,6 +1,6 @@
 # Develop override settings
 
-url: http://patrykchojecki.github.io
+url: ""
 
 analytics:
   provider: false
