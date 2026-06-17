@@ -1,0 +1,20 @@
+<script>
+  (function () {
+    var theme = 'light';
+    var stored = null;
+
+    try {
+      stored = localStorage.getItem('theme');
+    } catch (e) {}
+
+    if (stored === 'dark' || stored === 'light') {
+      theme = stored;
+    } else if (window.matchMedia) {
+      try {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      } catch (e) {}
+    }
+
+    document.documentElement.setAttribute('data-theme', theme);
+  }());
+</script>

@@ -1,0 +1,117 @@
+plain:
+  - key: location
+    icon: "fa fa-fw fa-map-marker"
+  - key: employer
+    icon: "fa fa-fw fa-map-marker"
+
+links:
+  - key: uri
+    label: Website
+    label_key: website_label
+    icon: "fas fa-fw fa-link"
+  - key: email
+    label: Email
+    label_key: email_label
+    icon: "fas fa-fw fa-envelope"
+    prefix: "mailto:"
+  - key: keybase
+    label: Keybase
+    icon: "fas fa-fw fa-key"
+    prefix: "https://keybase.io/"
+  - key: linkedin
+    label: LinkedIn
+    icon: "fab fa-fw fa-linkedin"
+    prefix: "https://www.linkedin.com/in/"
+  - key: researchgate
+    label: ResearchGate
+    icon: "fab fa-fw fa-researchgate"
+  - key: twitter
+    label: Twitter
+    icon: "fab fa-fw fa-twitter-square"
+    prefix: "https://twitter.com/"
+  - key: mastodon
+    label: Mastodon
+    icon: "fab fa-fw fa-mastodon"
+    prefix: "https://"
+    rel: "me"
+  - key: bluesky
+    label: Bluesky
+    icon: "fab fa-fw fa-bluesky"
+  - key: facebook
+    label: Facebook
+    icon: "fab fa-fw fa-facebook-square"
+    prefix: "https://www.facebook.com/"
+  - key: xing
+    label: XING
+    icon: "fab fa-fw fa-xing-square"
+    prefix: "https://www.xing.com/profile/"
+  - key: instagram
+    label: Instagram
+    icon: "fab fa-fw fa-instagram"
+    prefix: "https://instagram.com/"
+  - key: tumblr
+    label: Tumblr
+    icon: "fab fa-fw fa-tumblr-square"
+    prefix: "https://"
+    suffix: ".tumblr.com"
+  - key: bitbucket
+    label: Bitbucket
+    icon: "fab fa-fw fa-bitbucket"
+    prefix: "https://bitbucket.org/"
+  - key: stackoverflow
+    label: Stackoverflow
+    icon: "fab fa-fw fa-stack-overflow"
+    prefix: "https://www.stackoverflow.com/users/"
+  - key: lastfm
+    label: Last.fm
+    icon: "fab fa-fw fa-lastfm-square"
+    prefix: "https://lastfm.com/user/"
+  - key: dribbble
+    label: Dribbble
+    icon: "fab fa-fw fa-dribbble-square"
+    prefix: "https://dribbble.com/"
+  - key: pinterest
+    label: Pinterest
+    icon: "fab fa-fw fa-pinterest"
+    prefix: "https://www.pinterest.com/"
+  - key: foursquare
+    label: Foursquare
+    icon: "fab fa-fw fa-foursquare"
+    prefix: "https://foursquare.com/"
+  - key: steam
+    label: Steam
+    icon: "fab fa-fw fa-steam-square"
+    prefix: "https://steamcommunity.com/id/"
+  - key: youtube
+    label: YouTube
+    icon: "fab fa-fw fa-youtube"
+    prefix: "https://www.youtube.com/user/"
+  - key: soundcloud
+    label: Soundcloud
+    icon: "fab fa-fw fa-soundcloud"
+    prefix: "https://soundcloud.com/"
+  - key: weibo
+    label: Weibo
+    icon: "fab fa-fw fa-weibo"
+    prefix: "https://www.weibo.com/"
+  - key: flickr
+    label: Flickr
+    icon: "fab fa-fw fa-flickr"
+    prefix: "https://www.flickr.com/"
+  - key: codepen
+    label: CodePen
+    icon: "fab fa-fw fa-codepen"
+    prefix: "https://codepen.io/"
+  - key: googlescholar
+    label: Google Scholar
+    icon: "fas fa-fw fa-graduation-cap"
+  - key: pubmed
+    label: PubMed
+    icon: "ai ai-pubmed-square ai-fw"
+  - key: orcid
+    label: ORCID
+    icon: "ai ai-orcid-square ai-fw"
+  - key: wikipedia
+    label: Wikipedia
+    icon: "fab fa-fw fa-wikipedia-w"
+    prefix: "https://en.wikipedia.org/wiki/User:"

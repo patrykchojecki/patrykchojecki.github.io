@@ -1,0 +1,26 @@
+{% assign profile_links = site.data.author_profile_links %}
+
+{% for item in profile_links.plain %}
+  {% assign value = author[item.key] %}
+  {% if value %}
+    <li><i class="{{ item.icon }}" aria-hidden="true"></i> {{ value }}</li>
+  {% endif %}
+{% endfor %}
+
+{% for item in profile_links.links %}
+  {% assign value = author[item.key] %}
+  {% if value %}
+    {% assign href = value %}
+    {% if item.prefix %}
+      {% assign href = item.prefix | append: value %}
+    {% endif %}
+    {% if item.suffix %}
+      {% assign href = href | append: item.suffix %}
+    {% endif %}
+    <li>
+      <a href="{{ href }}"{% if item.rel %} rel="{{ item.rel }}"{% endif %}>
+        <i class="{{ item.icon }}" aria-hidden="true"></i> {{ site.data.ui-text[site.locale][item.label_key] | default: item.label }}
+      </a>
+    </li>
+  {% endif %}
+{% endfor %}
