@@ -195,6 +195,11 @@ html[data-theme="dark"] {
 
   .author__avatar img {
     border-color: #2e2e2e;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+  }
+
+  .author__bio {
+    color: #b8b4b0;
   }
 
   // "Follow" button
@@ -208,6 +213,11 @@ html[data-theme="dark"] {
       color: #e0ddd8 !important;
       border-color: #e8935a !important;
     }
+  }
+
+  .author__urls a:hover {
+    background: #252525;
+    color: #e8935a;
   }
 
   // Social links dropdown (mobile)

@@ -13,7 +13,9 @@ body {
   padding-bottom: 9em;
   color: $text-color;
   font-family: $global-font-family;
-  line-height: 1.5;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 
   &.overflow--hidden {
     /* when primary navigation is visible, the content in the background won't scroll */
@@ -119,6 +121,14 @@ a {
   &:hover,
   &:active {
     outline: 0;
+  }
+}
+
+button,
+.btn {
+  &:focus-visible {
+    outline: 2px solid $warning-color;
+    outline-offset: 3px;
   }
 }
 
