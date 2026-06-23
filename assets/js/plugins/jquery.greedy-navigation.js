@@ -12,6 +12,10 @@ var $hlinks = $('#site-nav .hidden-links');
 
 var breaks = [];
 
+function setMenuExpanded(expanded) {
+  $btn.attr('aria-expanded', expanded ? 'true' : 'false');
+}
+
 function updateNav() {
 
   var availableSpace = $btn.hasClass('hidden') ? $nav.width() : $nav.width() - $btn.width() - 30;
@@ -45,6 +49,8 @@ function updateNav() {
     if(breaks.length < 1) {
       $btn.addClass('hidden');
       $hlinks.addClass('hidden');
+      $btn.removeClass('close');
+      setMenuExpanded(false);
     }
   }
 
@@ -66,7 +72,9 @@ $(window).resize(function() {
 
 $btn.on('click', function() {
   $hlinks.toggleClass('hidden');
-  $(this).toggleClass('close');
+  var expanded = !$hlinks.hasClass('hidden');
+  $(this).toggleClass('close', expanded);
+  setMenuExpanded(expanded);
 });
 
 updateNav();

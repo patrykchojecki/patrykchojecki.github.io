@@ -20,8 +20,8 @@
   </div>
 
   <div class="author__urls-wrapper">
-    <button class="btn btn--inverse">Follow</button>
-    <ul class="author__urls social-icons">
+    <button class="btn btn--inverse" type="button" aria-controls="author-links" aria-expanded="false">Follow</button>
+    <ul id="author-links" class="author__urls social-icons">
       {% include author-profile-links.html %}
     </ul>
   </div>

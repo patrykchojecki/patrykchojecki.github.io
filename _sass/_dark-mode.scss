@@ -134,6 +134,10 @@ html[data-theme="dark"] {
     // hamburger button
     button:not(.theme-toggle) {
       background-color: #2a2a2a;
+
+      &:focus {
+        outline-color: #e8935a;
+      }
     }
 
     // nav underline indicator
@@ -178,6 +182,10 @@ html[data-theme="dark"] {
     &:hover {
       color: #e8935a;
       background-color: #252525;
+    }
+
+    &:focus {
+      outline-color: #e8935a;
     }
   }
 

@@ -26,6 +26,10 @@ $(document).ready(function(){
   // init sticky sidebar
   $(".sticky").Stickyfill();
 
+  var setAuthorLinksExpanded = function(expanded) {
+    $(".author__urls-wrapper button").attr("aria-expanded", expanded ? "true" : "false");
+  };
+
   var stickySideBar = function(){
     var show = $(".author__urls-wrapper button").length === 0 ? $(window).width() > 1024 : !$(".author__urls-wrapper button").is(":visible");
     // console.log("has button: " + $(".author__urls-wrapper button").length === 0);
@@ -37,10 +41,12 @@ $(document).ready(function(){
       Stickyfill.rebuild();
       Stickyfill.init();
       $(".author__urls").show();
+      setAuthorLinksExpanded(true);
     } else {
       // unfix
       Stickyfill.stop();
       $(".author__urls").hide();
+      setAuthorLinksExpanded(false);
     }
   };
 
@@ -53,8 +59,14 @@ $(document).ready(function(){
   // Follow menu drop down
 
   $(".author__urls-wrapper button").on("click", function() {
-    $(".author__urls").fadeToggle("fast", function() {});
-    $(".author__urls-wrapper button").toggleClass("open");
+    var $button = $(this);
+    var $urls = $button.closest(".author__urls-wrapper").find(".author__urls");
+
+    $urls.stop(true, true).fadeToggle("fast", function() {
+      var expanded = $urls.is(":visible");
+      $button.toggleClass("open", expanded);
+      $button.attr("aria-expanded", expanded ? "true" : "false");
+    });
   });
 
   // init smooth scroll
