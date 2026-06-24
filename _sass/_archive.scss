@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .archive {
-  margin-bottom: 2em;
+  margin-bottom: 0;
 
   @include breakpoint($medium) {
     @include span(12 of 12);
@@ -24,6 +24,10 @@
         box-shadow: 0 0 10px rgba(#000, 0.25);
       }
     }
+  }
+
+  > :last-child {
+    margin-bottom: 0;
   }
 }
 

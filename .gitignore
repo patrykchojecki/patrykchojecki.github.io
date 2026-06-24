@@ -4,3 +4,16 @@ _site/
 .bundle/
 node_modules/
 .DS_Store
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+*_rsa
+credentials*.json
+secrets*.json

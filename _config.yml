@@ -143,8 +143,21 @@ exclude:
   - log
   - node_modules
   - package.json
+  - package-lock.json
   - tmp
   - vendor
+  - .env
+  - .env.*
+  - .github
+  - .gitignore
+  - "*.pem"
+  - "*.key"
+  - "*.p12"
+  - "*.pfx"
+  - "id_rsa*"
+  - "*_rsa"
+  - "credentials*.json"
+  - "secrets*.json"
 keep_files:
   - .git
   - .svn
