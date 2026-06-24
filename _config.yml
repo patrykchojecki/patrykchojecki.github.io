@@ -8,9 +8,10 @@
 # Site Settings
 locale                   : "en-US"
 title                    : "Patryk Chojecki"
+tagline                  : "Venture Capital & Cross-Border Innovation in Taiwan"
 title_separator          : "-"
 name                     : &name "Patryk Chojecki"
-description              : &description "Hi, I'm Patryk. I help startups grow, innovate, and scale globally."
+description              : &description "Patryk Chojecki is a Taipei-based venture capital and startup accelerator professional helping biotech and technology founders with fundraising, market entry, investor relations, and cross-border growth across APAC."
 url                      : https://chojecki.net # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of the site, e.g. "/blog"
 repository               : "patrykchojecki/patrykchojecki.github.io"
@@ -62,13 +63,17 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 :  # Open Graph/Twitter default site image
+og_image                 : "profile.png" # Open Graph/Twitter default site image
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
-  type                   : # Person or Organization (defaults to Person)
-  name                   : # If the user or organization name differs from the site's name
+  type                   : "Person"
+  name                   : "Patryk Chojecki"
   links: # An array of links to social media profiles
+    - "https://www.linkedin.com/in/patryk-chojecki/"
+    - "https://github.com/patrykchojecki"
+    - "https://bsky.app/profile/chojecki.net"
+    - "https://mastodon.world/@cherrysandwich"
 
 
 # Analytics
@@ -89,7 +94,7 @@ author:
   googlescholar    : 
   email            : "hi@chojecki.net"
   researchgate     :  
-  uri              :
+  uri              : "https://chojecki.net/"
   bitbucket        :
   codepen          :
   dribbble         :

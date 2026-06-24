@@ -3,95 +3,92 @@
 <!-- begin SEO -->
 {% if site.url %}
   {% assign seo_url = site.url | append: site.baseurl %}
+{% else %}
+  {% assign seo_url = site.github.url %}
 {% endif %}
-{% assign seo_url = seo_url | default: site.github.url %}
 
-{% if page.title %}
+{% if page.seo_title %}
+  {% assign seo_title = page.seo_title %}
+{% elsif page.url == "/" and site.tagline %}
+  {% assign seo_title = site.title | append: " " | append: site.title_separator | append: " " | append: site.tagline %}
+{% elsif page.title %}
   {% assign seo_title = page.title | append: " " | append: site.title_separator | append: " " | append: site.title %}
+{% else %}
+  {% assign seo_title = site.title %}
 {% endif %}
 
-{% if seo_title %}
-  {% assign seo_title = seo_title | markdownify | strip_html | strip_newlines | escape_once %}
-{% endif %}
-
-{% if site.url %}
-  {% assign canonical_url = page.url | replace: "index.html", "" | prepend: site.url %}
-{% endif %}
-
-<title>{{ seo_title | default: site.title }}{% if paginator %}{% unless paginator.page == 1 %} {{ site.title_separator }} {{ site.data.ui-text[site.locale].page | default: "Page" }} {{ paginator.page }}{% endunless %}{% endif %}</title>
+{% assign seo_title_plain = seo_title | strip_html | strip_newlines %}
+{% assign seo_title = seo_title_plain | escape_once %}
 
 {% assign seo_description = page.description | default: page.excerpt | default: site.description %}
 {% if seo_description %}
-  {% assign seo_description = seo_description | markdownify | strip_html | strip_newlines | escape_once %}
+  {% assign seo_description_plain = seo_description | strip_html | strip_newlines %}
+  {% assign seo_description = seo_description_plain | escape_once %}
 {% endif %}
 
-{% assign seo_author = page.author | default: page.author[0] | default: site.author[0] %}
-{% if seo_author %}
-  {% if seo_author.twitter %}
-    {% assign seo_author_twitter = seo_author.twitter %}
+{% assign canonical_path = page.url | replace: "index.html", "" %}
+{% assign canonical_url = canonical_path | prepend: seo_url | replace: "/index.html", "/" %}
+{% assign robots_directive = page.robots | default: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" %}
+
+{% assign seo_image = page.image | default: page.header.image | default: page.header.overlay_image | default: site.og_image %}
+{% if seo_image %}
+  {% assign seo_image_first_char = seo_image | slice: 0 %}
+  {% if seo_image contains "://" %}
+    {% assign seo_image_url = seo_image %}
+  {% elsif seo_image_first_char == "/" %}
+    {% assign seo_image_url = seo_image | prepend: seo_url %}
   {% else %}
-    {% if site.data.authors and site.data.authors[seo_author] %}
-      {% assign seo_author_twitter = site.data.authors[seo_author].twitter  %}
-    {% else %}
-      {% assign seo_author_twitter = seo_author  %}
-    {% endif %}
+    {% assign seo_image_url = seo_image | prepend: "/images/" | prepend: seo_url %}
   {% endif %}
-  {% assign seo_author_twitter = seo_author_twitter | replace: "@", "" %}
 {% endif %}
+
+{% assign og_type = "website" %}
+{% if page.date %}
+  {% assign og_type = "article" %}
+{% elsif page.url == "/" %}
+  {% assign og_type = "profile" %}
+{% endif %}
+
+<title>{{ seo_title }}{% if paginator %}{% unless paginator.page == 1 %} {{ site.title_separator }} {{ site.data.ui-text[site.locale].page | default: "Page" }} {{ paginator.page }}{% endunless %}{% endif %}</title>
+<meta name="description" content="{{ seo_description }}">
+<meta name="robots" content="{{ robots_directive }}">
+<meta name="author" content="{{ site.author.name | default: site.name }}">
+
+<link rel="canonical" href="{{ canonical_url }}">
 
 <meta property="og:locale" content="{{ site.locale | default: "en" }}">
 <meta property="og:site_name" content="{{ site.title }}">
-<meta property="og:title" content="{{ page.title | default: site.title | markdownify | strip_html | strip_newlines | escape_once }}">
+<meta property="og:type" content="{{ og_type }}">
+<meta property="og:title" content="{{ seo_title }}">
+<meta property="og:description" content="{{ seo_description }}">
+<meta property="og:url" content="{{ canonical_url }}">
 
-{% if seo_url %}
-  <link rel="canonical" href="{{ page.url | prepend: seo_url | replace: "/index.html", "/" }}">
-  <meta property="og:url" content="{{ page.url | prepend: seo_url | replace: "/index.html", "/" }}">
+{% if page.url == "/" %}
+  <meta property="profile:first_name" content="Patryk">
+  <meta property="profile:last_name" content="Chojecki">
 {% endif %}
 
-{% if page.excerpt %}
-  <meta property="og:description" content="{{ seo_description }}">
+{% if seo_image_url %}
+  <meta property="og:image" content="{{ seo_image_url }}">
+  <meta property="og:image:alt" content="{{ site.title }} profile image">
 {% endif %}
 
+<meta name="twitter:card" content="{% if seo_image_url %}summary{% else %}summary{% endif %}">
+<meta name="twitter:title" content="{{ seo_title }}">
+<meta name="twitter:description" content="{{ seo_description }}">
+<meta name="twitter:url" content="{{ canonical_url }}">
 {% if site.twitter.username %}
   <meta name="twitter:site" content="@{{ site.twitter.username | replace: "@", "" }}">
-  <meta name="twitter:title" content="{{ page.title | default: site.title | markdownify | strip_html | strip_newlines | escape_once }}">
-  <meta name="twitter:description" content="{{ seo_description }}">
-  <meta name="twitter:url" content="{{ canonical_url }}">
-
-  {% if page.header.image %}
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="{% if page.header.image contains "://" %}{{ page.header.image }}{% else %}{{ page.header.image | prepend: "/images/" | prepend: base_path }}{% endif %}">
-  {% else %}
-    <meta name="twitter:card" content="summary">
-    {% if site.og_image %}
-      <meta name="twitter:image" content="{{ site.og_image | prepend: "/images/" | prepend: base_path }}">
-    {% endif %}
-  {% endif %}
-
-  {% if seo_author_twitter %}
-    <meta name="twitter:creator" content="@{{ seo_author_twitter }}">
-  {% endif %}
 {% endif %}
-
-{% if site.facebook %}
-  {% if site.facebook.publisher %}
-    <meta property="article:publisher" content="{{ site.facebook.publisher }}">
-  {% endif %}
-
-  {% if site.facebook.app_id %}
-    <meta property="fb:app_id" content="{{ site.facebook.app_id }}">
-  {% endif %}
-{% endif %}
-
-{% if page.header.image %}
-  <meta property="og:image" content="{% if page.header.image contains "://" %}{{ page.header.image }}{% else %}{{ page.header.image | prepend: "/images/" | prepend: base_path }}{% endif %}">
-{% elsif page.header.overlay_image %}
-  <meta property="og:image" content="{% if page.header.overlay_image contains "://" %}{{ page.header.overlay_image }}{% else %}{{ page.header.overlay_image | prepend: "/images/" | prepend: base_path }}{% endif %}">
+{% if seo_image_url %}
+  <meta name="twitter:image" content="{{ seo_image_url }}">
+  <meta name="twitter:image:alt" content="{{ site.title }} profile image">
 {% endif %}
 
 {% if page.date %}
-  <meta property="og:type" content="article">
   <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+  {% assign article_modified_time = page.modified | default: page.last_modified_at | default: page.date %}
+  <meta property="article:modified_time" content="{{ article_modified_time | date_to_xmlschema }}">
 {% endif %}
 
 {% if paginator.previous_page %}
@@ -101,27 +98,137 @@
   <link rel="next" href="{{ paginator.next_page_path | prepend: seo_url }}">
 {% endif %}
 
-{% if site.og_image %}
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "url": {{ seo_url | jsonify }},
-      "logo": {{ site.og_image | prepend: "/images/" | prepend: base_path | jsonify }}
-    }
-  </script>
+{% assign website_id = seo_url | append: "/#website" %}
+{% assign person_id = seo_url | append: "/#person" %}
+{% assign webpage_id = canonical_url | append: "#webpage" %}
+{% assign author_image = site.author.avatar | default: site.og_image %}
+{% if author_image %}
+  {% assign author_image_first_char = author_image | slice: 0 %}
+  {% if author_image contains "://" %}
+    {% assign author_image_url = author_image %}
+  {% elsif author_image_first_char == "/" %}
+    {% assign author_image_url = author_image | prepend: seo_url %}
+  {% else %}
+    {% assign author_image_url = author_image | prepend: "/images/" | prepend: seo_url %}
+  {% endif %}
 {% endif %}
 
-{% if site.social %}
-  <script type="application/ld+json">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": {{ website_id | jsonify }},
+  "url": {{ seo_url | append: "/" | jsonify }},
+  "name": {{ site.title | jsonify }},
+  "description": {{ site.description | jsonify }},
+  "inLanguage": {{ site.locale | default: "en-US" | jsonify }},
+  "publisher": {
+    "@id": {{ person_id | jsonify }}
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": {{ person_id | jsonify }},
+  "name": {{ site.name | default: site.title | jsonify }},
+  "url": {{ seo_url | append: "/" | jsonify }},
+  "image": {{ author_image_url | jsonify }},
+  "jobTitle": "Venture Capital and Cross-Border Innovation Professional",
+  "description": {{ site.description | jsonify }},
+  "email": {{ site.author.email | prepend: "mailto:" | jsonify }},
+  "sameAs": {{ site.social.links | jsonify }},
+  "knowsAbout": [
+    "venture capital",
+    "startup accelerators",
+    "biotech startups",
+    "fundraising",
+    "investor relations",
+    "market entry",
+    "cross-border innovation",
+    "Taiwan",
+    "Japan",
+    "Southeast Asia",
+    "APAC"
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": {{ site.author.employer | jsonify }}
+  },
+  "workLocation": {
+    "@type": "Place",
+    "name": {{ site.author.location | jsonify }}
+  },
+  "alumniOf": [
     {
-      "@context" : "https://schema.org",
-      "@type" : "{% if site.social.type %}{{ site.social.type }}{% else %}Person{% endif %}",
-      "name" : "{{ site.social.name | default: site.name }}",
-      "url" : {{ seo_url | jsonify }},
-      "sameAs" : {{ site.social.links | jsonify }}
+      "@type": "CollegeOrUniversity",
+      "name": "Jagiellonian University"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "National Chengchi University"
     }
-  </script>
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": {{ webpage_id | jsonify }},
+  "url": {{ canonical_url | jsonify }},
+  "name": {{ seo_title_plain | jsonify }},
+  "description": {{ seo_description_plain | jsonify }},
+  "inLanguage": {{ site.locale | default: "en-US" | jsonify }},
+  "isPartOf": {
+    "@id": {{ website_id | jsonify }}
+  },
+  "about": {
+    "@id": {{ person_id | jsonify }}
+  }
+}
+</script>
+
+{% if page.url == "/" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "@id": {{ canonical_url | append: "#profilepage" | jsonify }},
+  "url": {{ canonical_url | jsonify }},
+  "name": {{ seo_title_plain | jsonify }},
+  "description": {{ seo_description_plain | jsonify }},
+  "mainEntity": {
+    "@id": {{ person_id | jsonify }}
+  }
+}
+</script>
+{% endif %}
+
+{% if page.date %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": {{ canonical_url | append: "#article" | jsonify }},
+  "headline": {{ page.title | jsonify }},
+  "description": {{ seo_description_plain | jsonify }},
+  "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+  "dateModified": {{ article_modified_time | date_to_xmlschema | jsonify }},
+  "author": {
+    "@id": {{ person_id | jsonify }}
+  },
+  "publisher": {
+    "@id": {{ person_id | jsonify }}
+  },
+  "mainEntityOfPage": {
+    "@id": {{ webpage_id | jsonify }}
+  }
+}
+</script>
 {% endif %}
 
 {% if site.google_site_verification %}

@@ -3,6 +3,8 @@ layout: archive
 title: "Portfolio"
 permalink: /portfolio/
 author_profile: false
+sitemap: false
+robots: "noindex, follow"
 ---
 
 {% include base_path %}
@@ -11,4 +13,3 @@ author_profile: false
 {% for post in site.portfolio %}
   {% include archive-single.html %}
 {% endfor %}
-

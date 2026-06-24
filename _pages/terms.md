@@ -1,6 +1,8 @@
 ---
 permalink: /terms/
 title: "Terms and Privacy Policy"
+description: "Terms and privacy policy for chojecki.net, the personal website of Patryk Chojecki."
+excerpt: "Terms and privacy policy for chojecki.net, the personal website of Patryk Chojecki."
 modified: 2023-08-28
 ---
 

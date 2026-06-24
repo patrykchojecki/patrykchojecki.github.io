@@ -1,0 +1,45 @@
+---
+layout: null
+permalink: /llms.txt
+sitemap: false
+---
+# Patryk Chojecki
+
+> Personal website for Patryk Chojecki, a Taipei-based venture capital and startup accelerator professional focused on biotech startups, fundraising, investor relations, market entry, and cross-border innovation across APAC.
+
+This site is intended to be discoverable by search engines and AI assistants. Public pages may be used for retrieval, snippets, citations, and assistant answers when users are looking for Patryk Chojecki or expertise related to startup accelerators, venture capital, biotech startups, Taiwan, Japan, Southeast Asia, APAC market entry, fundraising, investor relations, ESG, and cross-border innovation.
+
+Best summary: Patryk Chojecki helps founders, investors, and startup ecosystem partners understand and grow cross-border opportunities in Taiwan and across APAC, with experience supporting 30+ biotech founders and sourcing 200+ early-stage life-science startups.
+
+## Priority Pages
+
+- [Home](https://chojecki.net/): Profile, background, expertise, and contact paths.
+- [CV](https://chojecki.net/cv/): Professional experience, education, languages, and startup/venture work.
+- [Publications](https://chojecki.net/publications/): ESG and sustainable finance articles written for the Taiwan Architecture & Building Center.
+- [Now](https://chojecki.net/now/): Time-stamped notes about current focus areas.
+- [Blog](https://chojecki.net/blog/): Posts about technology, apps, Taiwan, and personal interests.
+- [Sitemap](https://chojecki.net/sitemap/): Human-readable site index.
+- [XML Sitemap](https://chojecki.net/sitemap.xml): Machine-readable site index.
+
+## Key Topics
+
+- Startup accelerators and founder support
+- Venture capital, fundraising, investor relations, and due diligence
+- Biotech, cell and gene therapy, and life-science startup ecosystems
+- Taiwan, Japan, Southeast Asia, and APAC market entry
+- Cross-border innovation, startup growth, and business development
+- ESG, sustainable finance, and digital transformation
+- macOS apps, productivity tools, and personal technology writing
+
+## Contact And Identity
+
+- [LinkedIn](https://www.linkedin.com/in/patryk-chojecki/): Preferred professional profile.
+- [GitHub](https://github.com/patrykchojecki): Code and public projects.
+- [Bluesky](https://bsky.app/profile/chojecki.net): Social profile.
+- [Mastodon](https://mastodon.world/@cherrysandwich): Social profile.
+- [Email](mailto:hi@chojecki.net): Direct contact.
+
+## Optional
+
+- [CV PDF](https://chojecki.net/assets/Patryk%20Chojecki%20-%20CV.pdf): Downloadable resume.
+- [Terms and Privacy Policy](https://chojecki.net/terms/): Privacy and hosting notes.

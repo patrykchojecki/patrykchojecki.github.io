@@ -1,11 +1,17 @@
 ---
 layout: archive
 title: "Publications"
+seo_title: "Publications - Patryk Chojecki"
+description: "Articles by Patryk Chojecki on ESG, sustainable finance, greenwashing, urban governance, green finance, and regional economic policy."
+excerpt: "Articles by Patryk Chojecki on ESG, sustainable finance, greenwashing, urban governance, green finance, and regional economic policy."
 permalink: /publications/
 author_profile: true
+last_modified_at: 2026-06-24
 ---
 
-## Articles I wrote for the Taiwan Architecture & Building Center:
+## Articles I wrote for the Taiwan Architecture & Building Center
+
+These articles cover ESG, sustainable finance, greenwashing, regional economic policy, green finance, and urban governance.
 
   * [可持續投資世界中的“漂綠”問題 The Issue of Greenwashing in the World of Sustainable Investment](https://www.esgtaiwan.com/%E5%89%AF%E6%9C%AC-%E7%82%BA%E4%BB%80%E9%BA%BC%E6%8A%95%E8%B3%87%E8%80%85%E9%97%9C%E5%BF%83-esg-%E6%BE%B3%E5%A4%A7%E5%88%A9%E4%BA%9E%E7%9A%84%E7%A4%BE%E6%9C%83%E8%B2%AC%E4%BB%BB%E6%8A%95%E8%B3%87)
   * [區域全面經濟夥伴關係和 ESG 法規 Regional Comprehensive Economic Partnership & ESG Regulations](https://www.esgtaiwan.com/%E5%8D%80%E5%9F%9F%E5%85%A8%E9%9D%A2%E7%B6%93%E6%BF%9F%E5%A4%A5%E4%BC%B4%E9%97%9C%E4%BF%82%E5%92%8Cesg%E6%B3%95%E8%A6%8F)

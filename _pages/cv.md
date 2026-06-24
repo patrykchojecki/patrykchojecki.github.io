@@ -1,8 +1,12 @@
 ---
 layout: archive
 title: "CV"
+seo_title: "Patryk Chojecki CV - Startup Accelerator, Venture Capital & Biotech Fundraising"
+description: "CV for Patryk Chojecki, a Taipei-based venture capital and startup accelerator professional with experience supporting biotech founders, fundraising, market entry, due diligence, and investor relations across APAC."
+excerpt: "CV for Patryk Chojecki, focused on startup accelerators, venture capital, biotech fundraising, market entry, due diligence, and investor relations across APAC."
 permalink: /cv/
 author_profile: true
+last_modified_at: 2026-06-24
 redirect_from:
   - /resume
 ---
@@ -17,6 +21,8 @@ You can view and download my CV as a PDF by [clicking here](/assets/Patryk Choje
 ## Professional Profile
 
 Experienced in advising 30+ biotech founders on fundraising, market entry, and investor relations across APAC. Strong background in deal sourcing, due diligence, and portfolio support. Seeking to join a startup accelerator or venture capital team focused on early- and growth-stage cross-border opportunities, where I can contribute to sourcing, evaluating, and supporting high-potential companies.
+
+Core focus areas: startup accelerators, venture capital, biotech and life-science startups, fundraising strategy, investor relations, due diligence, market entry, and cross-border innovation between Taiwan, Japan, Southeast Asia, and Europe.
 
 ---
 
