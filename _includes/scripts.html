@@ -1,5 +1,7 @@
-<script src="{{ base_path }}/assets/js/main.min.js"></script>
-<script src="{{ base_path }}/assets/js/theme-toggle.js"></script>
+{% assign asset_version = site.github.build_revision | default: site.asset_version %}
+{% unless asset_version %}{% assign asset_version = site.time | date: '%s' %}{% endunless %}
+<script src="{{ base_path }}/assets/js/main.min.js?v={{ asset_version }}" defer></script>
+<script src="{{ base_path }}/assets/js/theme-toggle.js?v={{ asset_version }}" defer></script>
 
 {% include analytics.html %}
 {% include /comments-providers/scripts.html %}

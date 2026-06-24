@@ -5,6 +5,8 @@ seo_title: "Publications - Patryk Chojecki"
 description: "Articles by Patryk Chojecki on ESG, sustainable finance, greenwashing, urban governance, green finance, and regional economic policy."
 excerpt: "Articles by Patryk Chojecki on ESG, sustainable finance, greenwashing, urban governance, green finance, and regional economic policy."
 permalink: /publications/
+sitemap: false
+robots: "noindex, follow"
 author_profile: true
 last_modified_at: 2026-06-24
 ---
