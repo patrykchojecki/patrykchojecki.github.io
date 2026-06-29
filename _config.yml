@@ -15,7 +15,7 @@ description              : &description "Patryk Chojecki is a Taipei-based ventu
 url                      : https://chojecki.net # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of the site, e.g. "/blog"
 repository               : "patrykchojecki/patrykchojecki.github.io"
-asset_version            : "2026-06-29"
+asset_version            : "2026-06-29-2"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160

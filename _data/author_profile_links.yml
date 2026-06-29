@@ -5,10 +5,6 @@ plain:
     icon: "fas fa-fw fa-briefcase"
 
 links:
-  - key: uri
-    label: Website
-    label_key: website_label
-    icon: "fas fa-fw fa-link"
   - key: email
     label: Email
     label_key: email_label
