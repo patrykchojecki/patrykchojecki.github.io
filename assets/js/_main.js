@@ -34,27 +34,6 @@
     });
   }
 
-  function outerHeight(element) {
-    var styles = window.getComputedStyle(element);
-    return element.offsetHeight + parseFloat(styles.marginTop || 0) + parseFloat(styles.marginBottom || 0);
-  }
-
-  function initStickyFooter() {
-    var footer = document.querySelector(".page__footer");
-
-    if (!footer) {
-      return;
-    }
-
-    function bumpIt() {
-      document.body.style.marginBottom = outerHeight(footer) + "px";
-    }
-
-    bumpIt();
-    onResize(bumpIt);
-    window.addEventListener("load", bumpIt);
-  }
-
   function initResponsiveVideos() {
     var main = document.getElementById("main");
     var style = document.getElementById("fit-vids-style");
@@ -296,7 +275,6 @@
   window.addEventListener("resize", runResizeCallbacks, { passive: true });
 
   ready(function () {
-    initStickyFooter();
     initResponsiveVideos();
     initAuthorLinks();
     initGreedyNav();

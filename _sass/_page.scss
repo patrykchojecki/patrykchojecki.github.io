@@ -6,7 +6,8 @@
   @include container;
   @include clearfix;
   width: 100%;
-  margin-top: 2em;
+  max-width: 860px;
+  margin-top: 1.35em;
   margin-bottom: 0.75em;
   padding-left: 1em;
   padding-right: 1em;
@@ -14,7 +15,7 @@
   animation-delay: 0.35s;
 
   @include breakpoint($x-large) {
-    max-width: $x-large;
+    max-width: 860px;
   }
 }
 
@@ -55,7 +56,9 @@
 
 .page__title {
   margin-top: 0;
-  line-height: 1;
+  font-weight: 400;
+  line-height: 1.15;
+  text-wrap: balance;
 
   & + .page__meta {
     margin-top: -0.5em;
@@ -68,7 +71,7 @@
 }
 
 .page__content {
-  line-height: 1.65;
+  line-height: 1.58;
 
   h2 {
     padding-bottom: 0.5em;
@@ -81,7 +84,7 @@
 
   /* paragraph indents */
   p {
-    max-width: 70ch;
+    max-width: 64ch;
     margin: 0 0 $indent-var;
 
     /* sibling indentation*/
@@ -99,12 +102,13 @@
 
   a {
     text-decoration: underline;
-    text-decoration-thickness: 0.08em;
-    text-underline-offset: 0.18em;
+    text-decoration-thickness: 0.06em;
+    text-underline-offset: 0.16em;
 
     &:hover {
+      color: $link-color-hover;
       text-decoration: underline;
-      text-decoration-thickness: 0.12em;
+      text-decoration-thickness: 0.1em;
 
       img {
         box-shadow: 0 0 10px rgba(#000, 0.25);
