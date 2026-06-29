@@ -1,0 +1,199 @@
+/* ==========================================================================
+   PROJECTS
+   ========================================================================== */
+
+.projects-page {
+  max-width: 100%;
+  min-width: 0;
+}
+
+.projects-intro {
+  max-width: 70ch;
+  margin-bottom: 1.5rem;
+  color: mix(#000, $gray, 15%);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+
+  @include breakpoint($small) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+}
+
+.project-card__media {
+  display: block;
+  max-width: 100%;
+  min-width: 0;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: $lighter-gray;
+
+  img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.project-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+}
+
+.project-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  font-family: $sans-serif;
+  font-size: $type-size-7;
+  color: mix(#000, $gray, 12%);
+  text-transform: uppercase;
+}
+
+.project-status {
+  padding: 0.2rem 0.45rem;
+  color: #6f3515;
+  background: #f8e3d2;
+  border: 1px solid #f0c8a8;
+  border-radius: 999px;
+}
+
+.project-card__title {
+  margin: 0;
+  font-size: $type-size-4;
+  line-height: 1.2;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.project-card__summary {
+  margin: 0;
+  font-size: $type-size-6;
+  overflow-wrap: anywhere;
+}
+
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    padding: 0.18rem 0.45rem;
+    font-family: $sans-serif;
+    font-size: $type-size-7;
+    color: $primary-color;
+    background: $lighter-gray;
+    border: 1px solid $border-color;
+    border-radius: 999px;
+  }
+}
+
+.project-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: auto;
+  font-family: $sans-serif;
+  font-size: $type-size-6;
+
+  a {
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+  }
+}
+
+.project-card__private {
+  color: mix(#000, $gray, 12%);
+}
+
+.project-detail-image {
+  max-width: 48rem;
+  margin: 1rem 0 1.5rem;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  overflow: hidden;
+
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+html[data-theme="dark"] {
+  .projects-intro {
+    color: #b8b4b0;
+  }
+
+  .project-card {
+    background: #1e1e1e;
+    border-color: #2e2e2e;
+  }
+
+  .project-card__media {
+    background: #252525;
+  }
+
+  .project-card__meta {
+    color: #888;
+  }
+
+  .project-status {
+    color: #f0c8a8;
+    background: #3a2115;
+    border-color: #6f3515;
+  }
+
+  .project-card__tags li {
+    color: #e0ddd8;
+    background: #252525;
+    border-color: #2e2e2e;
+  }
+
+  .project-card__private {
+    color: #888;
+  }
+
+  .project-detail-image {
+    border-color: #2e2e2e;
+  }
+}
+
+@include breakpoint(max-width $small) {
+  .projects-page {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .project-grid,
+  .project-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+}

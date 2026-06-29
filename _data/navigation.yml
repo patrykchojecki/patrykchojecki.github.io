@@ -6,11 +6,8 @@ main:
   - title: "CV"
     url: /cv/
 
+  - title: "Projects"
+    url: /projects/
+
   - title: "Now"
     url: /now/
-
-  - title: "Blog"
-    url: /blog/
-
-  - title: "Publications"
-    url: /publications/

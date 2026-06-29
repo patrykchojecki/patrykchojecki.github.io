@@ -1,0 +1,47 @@
+{% assign project = include.project %}
+{% assign project_image = project.image | default: project.header.teaser %}
+
+<article class="project-card">
+  {% if project_image %}
+    <a class="project-card__media" href="{{ project.url | relative_url }}" aria-label="Open {{ project.title }}">
+      <img src="{{ project_image | relative_url }}" alt="{{ project.image_alt | default: project.title }}">
+    </a>
+  {% endif %}
+
+  <div class="project-card__body">
+    <div class="project-card__meta">
+      {% if project.status %}<span class="project-status">{{ project.status }}</span>{% endif %}
+      {% if project.year %}<span>{{ project.year }}</span>{% endif %}
+    </div>
+
+    <h2 class="project-card__title">
+      <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
+    </h2>
+
+    {% if project.summary %}
+      <p class="project-card__summary">{{ project.summary }}</p>
+    {% elsif project.excerpt %}
+      <p class="project-card__summary">{{ project.excerpt | strip_html }}</p>
+    {% endif %}
+
+    {% if project.tech %}
+      <ul class="project-card__tags" aria-label="Technologies used">
+        {% for item in project.tech %}
+          <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    <div class="project-card__links">
+      <a href="{{ project.url | relative_url }}">Notes</a>
+      {% if project.github %}
+        <a href="{{ project.github }}">GitHub</a>
+      {% elsif project.repo_visibility == "private" %}
+        <span class="project-card__private">Private repo</span>
+      {% endif %}
+      {% if project.demo %}
+        <a href="{{ project.demo }}">Live site</a>
+      {% endif %}
+    </div>
+  </div>
+</article>

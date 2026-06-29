@@ -15,9 +15,8 @@ Best summary: Patryk Chojecki helps founders, investors, and startup ecosystem p
 
 - [Home](https://chojecki.net/): Profile, background, expertise, and contact paths.
 - [CV](https://chojecki.net/cv/): Professional experience, education, languages, and startup/venture work.
-- [Publications](https://chojecki.net/publications/): ESG and sustainable finance articles written for the Taiwan Architecture & Building Center.
+- [Hobby Projects](https://chojecki.net/projects/): Personal archive of hobby projects, experiments, and public GitHub repositories.
 - [Now](https://chojecki.net/now/): Time-stamped notes about current focus areas.
-- [Blog](https://chojecki.net/blog/): Posts about technology, apps, Taiwan, and personal interests.
 - [Sitemap](https://chojecki.net/sitemap/): Human-readable site index.
 - [XML Sitemap](https://chojecki.net/sitemap.xml): Machine-readable site index.
 
@@ -29,7 +28,7 @@ Best summary: Patryk Chojecki helps founders, investors, and startup ecosystem p
 - Taiwan, Japan, Southeast Asia, and APAC market entry
 - Cross-border innovation, startup growth, and business development
 - ESG, sustainable finance, and digital transformation
-- macOS apps, productivity tools, and personal technology writing
+- Personal websites, static sites, and hobby software projects
 
 ## Contact And Identity
 

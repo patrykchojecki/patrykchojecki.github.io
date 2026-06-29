@@ -1,15 +1,28 @@
 ---
 layout: archive
-title: "Portfolio"
-permalink: /portfolio/
-author_profile: false
-sitemap: false
-robots: "noindex, follow"
+title: "Hobby Projects"
+seo_title: "Hobby Projects - Patryk Chojecki"
+description: "A personal archive of hobby projects, experiments, and public GitHub repositories by Patryk Chojecki."
+excerpt: "A personal archive of hobby projects, experiments, and public GitHub repositories by Patryk Chojecki."
+permalink: /projects/
+author_profile: true
+redirect_from:
+  - /portfolio/
 ---
 
 {% include base_path %}
 
+<div class="projects-page">
+  <div class="projects-intro">
+    <p>
+      A small archive of things I build for fun, learning, and keeping my own web presence independent. Most of these live on GitHub, and the notes here are meant to capture the story behind the repo rather than just the code.
+    </p>
+  </div>
 
-{% for post in site.portfolio %}
-  {% include archive-single.html %}
-{% endfor %}
+  {% assign projects = site.portfolio | sort: "order" %}
+  <div class="project-grid">
+    {% for project in projects %}
+      {% include project-card.html project=project %}
+    {% endfor %}
+  </div>
+</div>

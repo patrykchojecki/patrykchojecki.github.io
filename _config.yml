@@ -15,7 +15,7 @@ description              : &description "Patryk Chojecki is a Taipei-based ventu
 url                      : https://chojecki.net # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of the site, e.g. "/blog"
 repository               : "patrykchojecki/patrykchojecki.github.io"
-asset_version            : "2026-06-24"
+asset_version            : "2026-06-29"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
@@ -46,6 +46,8 @@ staticman:
         format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
 atom_feed:
   path                   : # blank (default) uses feed.xml
+feed:
+  posts_limit            : 0 # temporarily hide blog posts from the generated feed
 
 # SEO Related
 google_site_verification :
@@ -201,7 +203,7 @@ collections:
     permalink: /:collection/:path/
   portfolio:
     output: true
-    permalink: /:collection/:path/
+    permalink: /projects/:path/
   talks:
     output: true
     permalink: /:collection/:path/
@@ -220,6 +222,8 @@ defaults:
       comments: true
       share: true
       related: true
+      sitemap: false
+      robots: "noindex, follow"
   # _pages
   - scope:
       path: ""
@@ -245,6 +249,8 @@ defaults:
       author_profile: true
       share: true
       comments: true
+      sitemap: false
+      robots: "noindex, follow"
   # _portfolio
   - scope:
       path: ""
