@@ -2,7 +2,7 @@ plain:
   - key: location
     icon: "fa fa-fw fa-map-marker"
   - key: employer
-    icon: "fa fa-fw fa-map-marker"
+    icon: "fas fa-fw fa-briefcase"
 
 links:
   - key: uri
