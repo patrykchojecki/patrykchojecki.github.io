@@ -1,9 +1,9 @@
 ---
 permalink: /
 title: "Patryk Chojecki"
-seo_title: "Patryk Chojecki - Venture Capital & Startup Accelerator Professional in Taiwan"
-description: "Taipei-based venture capital and startup accelerator professional focused on biotech startups, fundraising, investor relations, market entry, and cross-border innovation across APAC."
-excerpt: "Taipei-based venture capital and startup accelerator professional focused on biotech startups, fundraising, investor relations, market entry, and cross-border innovation across APAC."
+seo_title: "Patryk Chojecki - Startup Accelerator & Venture Capital in Taiwan"
+description: "Taipei-based startup accelerator and venture capital professional focused on biotech startups, fundraising, investor relations, market entry, and cross-border innovation across Taiwan and APAC."
+excerpt: "Taipei-based startup accelerator and venture capital professional focused on biotech startups, fundraising, investor relations, market entry, and cross-border innovation across Taiwan and APAC."
 author_profile: true
 last_modified_at: 2026-06-24
 redirect_from: 

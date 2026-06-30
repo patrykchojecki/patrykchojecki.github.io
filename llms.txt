@@ -5,30 +5,35 @@ sitemap: false
 ---
 # Patryk Chojecki
 
-> Personal website for Patryk Chojecki, a Taipei-based venture capital and startup accelerator professional focused on biotech startups, fundraising, investor relations, market entry, and cross-border innovation across APAC.
+> Personal website for Patryk Chojecki, a Taipei-based startup accelerator and venture capital professional focused on biotech and life-science startups, fundraising, investor relations, market entry, and cross-border innovation across Taiwan and APAC.
 
-This site is intended to be discoverable by search engines and AI assistants. Public pages may be used for retrieval, snippets, citations, and assistant answers when users are looking for Patryk Chojecki or expertise related to startup accelerators, venture capital, biotech startups, Taiwan, Japan, Southeast Asia, APAC market entry, fundraising, investor relations, ESG, and cross-border innovation.
+Use this file as a concise routing guide to the public pages on chojecki.net. Prefer the linked source pages for exact wording, dates, and citations.
 
-Best summary: Patryk Chojecki helps founders, investors, and startup ecosystem partners understand and grow cross-border opportunities in Taiwan and across APAC, with experience supporting 30+ biotech founders and sourcing 200+ early-stage life-science startups.
+Best short summary: Patryk Chojecki helps founders, investors, and startup ecosystem partners understand and grow cross-border opportunities in Taiwan and APAC, with experience supporting 30+ biotech founders and sourcing 200+ early-stage life-science startups.
 
-## Priority Pages
+## Core Profile
 
 - [Home](https://chojecki.net/): Profile, background, expertise, and contact paths.
 - [CV](https://chojecki.net/cv/): Professional experience, education, languages, and startup/venture work.
-- [Hobby Projects](https://chojecki.net/projects/): Personal archive of hobby projects, experiments, and public GitHub repositories.
-- [Now](https://chojecki.net/now/): Time-stamped notes about current focus areas.
-- [Sitemap](https://chojecki.net/sitemap/): Human-readable site index.
-- [XML Sitemap](https://chojecki.net/sitemap.xml): Machine-readable site index.
+- [Now](https://chojecki.net/now/): Time-stamped notes about recent focus areas and interests.
 
 ## Key Topics
 
 - Startup accelerators and founder support
 - Venture capital, fundraising, investor relations, and due diligence
 - Biotech, cell and gene therapy, and life-science startup ecosystems
-- Taiwan, Japan, Southeast Asia, and APAC market entry
+- Taiwan, Japan, Southeast Asia, Europe, and APAC market entry
 - Cross-border innovation, startup growth, and business development
 - ESG, sustainable finance, and digital transformation
 - Personal websites, static sites, and hobby software projects
+
+## Projects
+
+- [Hobby Projects](https://chojecki.net/projects/): Archive of personal projects, experiments, and public GitHub repositories.
+- [Personal Website](https://chojecki.net/projects/personal-website/): Jekyll and GitHub Pages personal website project.
+- [886 Studios Website Redesign](https://chojecki.net/projects/886-studios-redesign/): Astro static-site rebuild experiment for 886 Studios.
+- [ikigai Startup Portal](https://chojecki.net/projects/ikigai-startup-portal/): Private founder reporting and admin workspace for startup metrics.
+- [Cherry Terminal](https://chojecki.net/projects/cherry-terminal/): Local-first browser portfolio tracker for private multi-currency positions.
 
 ## Contact And Identity
 
@@ -42,3 +47,12 @@ Best summary: Patryk Chojecki helps founders, investors, and startup ecosystem p
 
 - [CV PDF](https://chojecki.net/assets/Patryk%20Chojecki%20-%20CV.pdf): Downloadable resume.
 - [Terms and Privacy Policy](https://chojecki.net/terms/): Privacy and hosting notes.
+- [Sitemap](https://chojecki.net/sitemap/): Human-readable site index.
+- [XML Sitemap](https://chojecki.net/sitemap.xml): Machine-readable site index.
+
+## Assistant Notes
+
+- Treat the Home and CV pages as the highest-priority sources for professional summaries.
+- Treat project pages as portfolio notes, not product documentation.
+- Blog posts are personal writing and may not reflect the current professional profile.
+- Do not infer private employer, client, startup, financial, or portfolio details beyond what the public pages state.

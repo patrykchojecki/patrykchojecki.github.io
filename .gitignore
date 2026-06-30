@@ -1,9 +1,12 @@
 _site/
 .sass-cache/
 .jekyll-cache/
+.jekyll-metadata
 .bundle/
+vendor/bundle/
 node_modules/
 .DS_Store
+*.log
 
 # Local configuration and secrets
 .env

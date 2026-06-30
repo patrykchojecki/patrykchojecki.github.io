@@ -2,7 +2,7 @@
 layout: archive
 title: "CV"
 seo_title: "Patryk Chojecki CV - Startup Accelerator, Venture Capital & Biotech Fundraising"
-description: "CV for Patryk Chojecki, a Taipei-based venture capital and startup accelerator professional with experience supporting biotech founders, fundraising, market entry, due diligence, and investor relations across APAC."
+description: "CV for Patryk Chojecki, a Taipei-based startup accelerator and venture capital professional with experience supporting biotech founders, fundraising, market entry, due diligence, and investor relations across APAC."
 excerpt: "CV for Patryk Chojecki, focused on startup accelerators, venture capital, biotech fundraising, market entry, due diligence, and investor relations across APAC."
 permalink: /cv/
 author_profile: true
@@ -56,7 +56,7 @@ Core focus areas: startup accelerators, venture capital, biotech and life-scienc
 
 ## 🎓 Education
 
-### 🇹🇼 2020-2022 | International Master's Program in International Studies | *National Chengchi Univeristy, Taipei, Taiwan*
+### 🇹🇼 2020-2022 | International Master's Program in International Studies | *National Chengchi University, Taipei, Taiwan*
   * **Thesis**: When Do BRI Participants Fall into Debt Traps?: Case Studies of Six Developing Countries
   * **Notable coursework**: International Relations Theory, Seminar on Energy and Environment, Political Economy, Development Economics, Advanced Research Methods
   * Recipient of the *Taiwan International Higher Education Scholarship* issued by TaiwanICDF

@@ -2,8 +2,11 @@
 layout: null
 permalink: /robots.txt
 ---
+# LLM-readable site guide: {{ site.url }}{{ site.baseurl }}/llms.txt
+
 User-agent: *
 Allow: /
+Allow: /llms.txt
 
 User-agent: Googlebot
 Allow: /
