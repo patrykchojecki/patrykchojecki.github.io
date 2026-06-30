@@ -273,6 +273,7 @@ defaults:
 sass:
   sass_dir: _sass
   style: compressed
+  sourcemap: never
 
 # Outputting
 permalink: /:categories/:title/

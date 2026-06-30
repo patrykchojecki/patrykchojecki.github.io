@@ -29,10 +29,10 @@
   },
   "scripts": {
     "build": "run-s build:js build:site",
-    "build:site": "bundle exec jekyll build",
+    "build:site": "JEKYLL_ENV=production bundle exec jekyll build",
     "check": "npm run build",
     "serve": "bundle exec jekyll serve --config _config.yml,_config.dev.yml --host 127.0.0.1 --port 4001",
-    "serve:prod": "bundle exec jekyll serve --host 127.0.0.1 --port 4001",
+    "serve:prod": "JEKYLL_ENV=production bundle exec jekyll serve --host 127.0.0.1 --port 4001",
     "uglify": "terser assets/js/_main.js -c -m -o assets/js/main.min.js",
     "watch:js": "onchange \"assets/js/**/*.js\" -e \"assets/js/main.min.js\" -- npm run build:js",
     "build:js": "npm run uglify"
