@@ -12,7 +12,7 @@ tech:
   - JavaScript
   - Cloudflare Pages
   - Local storage
-  - Yahoo Finance
+  - Yahoo Finance API
 image: "/images/projects/cherry-terminal.png"
 image_alt: "Screenshot of the Cherry Terminal portfolio tracker"
 ---
@@ -21,7 +21,7 @@ image_alt: "Screenshot of the Cherry Terminal portfolio tracker"
   <img src="/images/projects/cherry-terminal.png" alt="Screenshot of the Cherry Terminal portfolio tracker">
 </figure>
 
-Cherry Terminal is a local-first browser app for tracking manually entered portfolio positions, live quotes, global indexes, allocation, and currency exposure.
+Cherry Terminal is a local-first web app for tracking portfolio positions, live quotes, global indexes, allocation, and currency exposure.
 
 [Live site](https://cherry-terminal.pages.dev){: .btn}
 
@@ -31,7 +31,7 @@ A private browser-based portfolio tracker with static HTML pages, native JavaScr
 
 ## Why I made it
 
-I wanted a focused way to track positions, currency exposure, indexes, and history without creating an account or putting portfolio data into a server-side database.
+I wanted a focused way to track positions, currency exposure, indexes, and history without creating an account or putting portfolio data into a server-side database. I originally created this tool for myself. After some consideration and positive feedback, I've decided to make it public and let others benefit from it too.
 
 ## What I learned
 

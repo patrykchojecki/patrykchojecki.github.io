@@ -1,13 +1,13 @@
 ---
 title: "886 Studios Website Redesign"
 excerpt: "A small Astro static-site rebuild focused on making the 886 Studios website easier to maintain."
-summary: "An Astro static-site rebuild for 886 Studios, structured around data-driven content, reusable components, and a deployable Vercel preview."
+summary: "An Astro static-site rebuild for 886 Studios, structured around data-driven content, and reusable components."
 collection: portfolio
 order: 2
 year: 2026
-status: "experiment"
+status: "active"
 github: "https://github.com/886-Studios/886studios-redesign"
-demo: "https://886studios-redesign.vercel.app"
+demo: "https://886studios.com"
 tech:
   - Astro
   - TypeScript
@@ -21,18 +21,18 @@ image_alt: "Screenshot of the 886 Studios website redesign project"
   <img src="/images/projects/886studios-redesign.png" alt="Screenshot of the 886 Studios website redesign project">
 </figure>
 
-This project is a rebuild of the 886 Studios website as a maintainable Astro site. The goal is not to reinvent the brand, but to keep the visual direction recognizable while making the underlying structure easier to work with.
+This project is a rebuild of the 886 Studios website as a maintainable Astro site. The goal was to reinvent the brand and make the underlying structure easier to work with. The previous website was just a Notion page, which was difficult to maintain and not visually appealing.
 
 [GitHub](https://github.com/886-Studios/886studios-redesign){: .btn}
-[Live preview](https://886studios-redesign.vercel.app){: .btn}
+[Live preview](https://886studios.com){: .btn}
 
 ## What it is
 
-An Astro static-site codebase for 886 Studios with route-level pages, reusable page components, shared layouts, centralized content data, and a production-style Vercel preview.
+An Astro static-site codebase for my company with route-level pages, reusable page components, shared layouts, centralized content data, and a production-style Vercel preview.
 
 ## Why I made it
 
-I wanted a cleaner way to iterate on the site without treating every page as a one-off file. Moving the structure into Astro makes local preview, component reuse, events/content updates, and future changes more straightforward.
+Together with my colleague, we wanted a cleaner way to iterate on the site without treating every page as a one-off file. Moving the structure into Astro makes local preview, component reuse, events/content updates, and future changes more straightforward.
 
 ## What I learned
 

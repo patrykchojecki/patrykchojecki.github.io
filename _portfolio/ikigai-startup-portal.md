@@ -28,7 +28,7 @@ A Vite, React, and TypeScript app backed by Supabase Auth, Postgres, Row Level S
 
 ## Why I made it
 
-The accelerator workflow needed something more structured than scattered notes and spreadsheets, but still smaller than a full CRM. The portal keeps recurring reporting lightweight while making historical updates and KPI trends easier to review.
+The accelerator workflow needed something more structured than scattered notes, Slack messages, and spreadsheets, but still smaller than a full CRM. The portal keeps recurring reporting lightweight while making historical updates and KPI trends easier to review.
 
 ## What I learned
 
