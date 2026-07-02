@@ -31,12 +31,8 @@ The concept is quite straightforward, and if you would like to learn more about 
 
 ---
 
-## July 2025 Notes
-
-- I was preparing for a trip to Poland and looking forward to seeing my family and friends, and eating lots of quality bread.
-- In terms of fundraising, the biotech sector seems to be slowing down. Many investors I've met recently are hesitant to deploy capital due to the uncertain macro environment. The M&A transactions I've been working on have also experienced some soft delays. Many startups are stuck in limbo.
-- I still believe there’s a lot of untapped value in Japanese life science startups, especially those in niche areas. Many of these companies have existed for years, are run by scientists, and have struggled to attract investor attention. This seems to be an area significantly overlooked by both global and regional VCs. I've been thinking about writing a longer piece on the potential of Japanese pre-clinical biotechs, the success they can aim for when going global, and the challenges they will need to overcome.
+I feel a bit guilty for not updating this page in such a long time. I guess a lot of things have gotten in the way. In April, I started a new job, and it’s been keeping me pretty busy. I’ll update this page as soon as I have some free time!
 
 ---
 
-Last updated on 31 July 2025 in Taipei, Taiwan 🇹🇼.
+Last updated on 2 July 2026 in Taipei, Taiwan 🇹🇼.

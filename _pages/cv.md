@@ -6,13 +6,13 @@ description: "CV for Patryk Chojecki, a Taipei-based startup accelerator and ven
 excerpt: "CV for Patryk Chojecki, focused on startup accelerators, venture capital, biotech fundraising, market entry, due diligence, and investor relations across APAC."
 permalink: /cv/
 author_profile: true
-last_modified_at: 2026-06-24
+last_modified_at: 2026-07-02
 redirect_from:
   - /resume
 ---
 
 {% include base_path %}
-Last updated on 7 April 2026 in Taipei, Taiwan 🇹🇼.
+Last updated on 2 July 2026 in Taipei, Taiwan 🇹🇼.
 
 You can view and download my CV as a PDF by [clicking here](/assets/Patryk Chojecki - CV.pdf).
 
@@ -20,13 +20,14 @@ You can view and download my CV as a PDF by [clicking here](/assets/Patryk Choje
 
 ## Professional Profile
 
-Experienced in advising 30+ biotech founders on fundraising, market entry, and investor relations across APAC. Strong background in deal sourcing, due diligence, and portfolio support. Seeking to join a startup accelerator or venture capital team focused on early- and growth-stage cross-border opportunities, where I can contribute to sourcing, evaluating, and supporting high-potential companies.
-
-Core focus areas: startup accelerators, venture capital, biotech and life-science startups, fundraising strategy, investor relations, due diligence, market entry, and cross-border innovation between Taiwan, Japan, Southeast Asia, and Europe.
+Experienced in supporting early-stage founders on fundraising, product strategy, market entry, and investor relations across APAC. Strong background in startup accelerators, venture capital, deal sourcing, due diligence, and portfolio support. Passionate about working with ambitious founders and helping them build and scale high-growth technology companies.
 
 ---
 
 ## 👨‍💻 Work Experience
+
+### 🇹🇼 2026-Present | Program Manager at *886 Studios*
+  * This section will be updated soon.
 
 ### 🇹🇼 2023-2026 | Associate at *CellTech Accelerator*
   * Joined as the first full-time member and helped build the company’s main processes and cross-border network.
@@ -77,10 +78,3 @@ Core focus areas: startup accelerators, venture capital, biotech and life-scienc
 * 🇵🇱 Polish C2
 * 🇹🇼 Mandarin Chinese B2
 * 🇩🇪 German A2
-
----
-
-## Additional
-
-* Organized workshops promoting European/Polish culture to students from Neihu Community College (80-100 attendees) - 11/2021 & 08/2022
-* Assisted the Polish Office in Taipei during Taipei International Book Exhibition - 06/2022
