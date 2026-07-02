@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Patryk Chojecki"
+title: "Hi, I’m Patryk 👋"
 seo_title: "Patryk Chojecki - Program Manager at 886 Studios in Taipei"
 description: "Patryk Chojecki is a Taipei-based Program Manager at 886 Studios focused on startup accelerators, consumer tech, fundraising, and APAC market entry."
 excerpt: "Taipei-based startup accelerator and venture professional at 886 Studios focused on consumer tech startups, fundraising, investor relations, and APAC market entry."
@@ -10,8 +10,6 @@ redirect_from:
   - /about/
   - /about.html
 ---
-
-# Hi, I’m Patryk 👋
 
 I’m based in Taipei, where I work with consumer tech startups on fundraising, product development, investor relations, market entry, and cross-border innovation across APAC. Originally from Poland, I’ve spent the past several years in Taiwan at the intersection of technology, entrepreneurship, and venture capital. I currently work at [886 Studios](https://www.886studios.com/), a venture firm supported by [Lifelike Capital](https://www.lifelikecap.com/). At 886 Studios, we’re always looking for exceptional founders to back.
 

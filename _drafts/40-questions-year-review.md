@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "40 Questions to Ask Yourself Every Year"
-date: "2026-07-02"
+date: "2026-12-30"
 categories:
   - Reflections
 tags:
@@ -18,7 +18,9 @@ Steph Ango's [40 questions to ask yourself every year](https://stephango.com/40-
 
 **Prompt:** What did I try, build, visit, or do for the first time this year?
 
-**Answer:**
+**Answer:** In April, for the first time ever I visited [Miyakojima](https://en.wikipedia.org/wiki/Miyakojima,_Okinawa), a tiny Japanese island just 50 minutes away by plane from Taiwan. There, I've seen the most beautiful beaches in my life and enjoyed some of the best dishes I've ever tried. Highly recommended.
+
+I've also built many vibe coding tools, which is something very new to me. I share more about them [here](https://chojecki.net/projects/).
 
 
 ### 2. Resolutions
@@ -32,21 +34,21 @@ Steph Ango's [40 questions to ask yourself every year](https://stephango.com/40-
 
 **Prompt:** Did anyone close to me welcome a child, family member, or other major new presence into their life?
 
-**Answer:**
+**Answer:** Not yet.
 
 
 ### 4. Losses
 
 **Prompt:** Did anyone close to me pass away, leave, or become absent in a meaningful way?
 
-**Answer:**
+**Answer:** No.
 
 
 ### 5. Places
 
 **Prompt:** Which cities, regions, or countries did I spend time in this year?
 
-**Answer:**
+**Answer:** Taiwan, Poland, Japan, South Korea - in the order from most to least.
 
 
 ### 6. What Was Missing
@@ -67,7 +69,7 @@ Steph Ango's [40 questions to ask yourself every year](https://stephango.com/40-
 
 **Prompt:** What achievement am I most proud of this year?
 
-**Answer:**
+**Answer:** Joining the amazing team at [886 Studios](https://886studios.com).
 
 
 ### 9. Biggest Miss
@@ -270,7 +272,7 @@ Steph Ango's [40 questions to ask yourself every year](https://stephango.com/40-
 
 **Prompt:** Who did I miss?
 
-**Answer:**
+**Answer:** My family - my parents and grandparents are always the people I miss the most.
 
 
 ### 38. New People
