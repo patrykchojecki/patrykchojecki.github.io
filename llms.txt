@@ -5,11 +5,19 @@ sitemap: false
 ---
 # Patryk Chojecki
 
-> Personal website for Patryk Chojecki, a Taipei-based startup accelerator and venture capital professional focused on biotech and life-science startups, fundraising, investor relations, market entry, and cross-border innovation across Taiwan and APAC.
+> Personal website for Patryk Chojecki, a Taipei-based Program Manager at 886 Studios focused on startup accelerator programs, founder support, venture, fundraising readiness, investor relations, market entry, consumer technology, and cross-border growth across Taiwan and APAC.
 
 Use this file as a concise routing guide to the public pages on chojecki.net. Prefer the linked source pages for exact wording, dates, and citations.
 
-Best short summary: Patryk Chojecki helps founders, investors, and startup ecosystem partners understand and grow cross-border opportunities in Taiwan and APAC, with experience supporting 30+ biotech founders and sourcing 200+ early-stage life-science startups.
+Best short summary: Patryk Chojecki is Program Manager at 886 Studios in Taipei, where he supports early-stage technology founders through accelerator programs, fundraising readiness, investor relations, market entry, startup reporting, and cross-border growth. He previously worked at CellTech Accelerator, where he supported 30+ biotech founders and sourced 200+ early-stage life-science startups.
+
+## Key Facts
+
+- Current role: Program Manager at 886 Studios in Taipei.
+- Current work: ikigai Launchpad, startup accelerator operations, founder support, fundraising readiness, investor and mentor workflows, market entry, and startup reporting.
+- Previous venture experience: Associate at CellTech Accelerator from 2023 to early 2026, focused on biotech and life-science startups.
+- Location: Taipei, Taiwan.
+- Background: Originally from Poland; educated at Jagiellonian University and National Chengchi University.
 
 ## Core Profile
 
@@ -20,10 +28,12 @@ Best short summary: Patryk Chojecki helps founders, investors, and startup ecosy
 ## Key Topics
 
 - Startup accelerators and founder support
-- Venture capital, fundraising, investor relations, and due diligence
-- Biotech, cell and gene therapy, and life-science startup ecosystems
+- Accelerator program management and startup operations
+- Venture capital, fundraising readiness, investor relations, and due diligence
+- Consumer technology, consumer software, and startup metrics
 - Taiwan, Japan, Southeast Asia, Europe, and APAC market entry
 - Cross-border innovation, startup growth, and business development
+- Biotech, cell and gene therapy, and life-science startup ecosystems
 - ESG, sustainable finance, and digital transformation
 - Personal websites, static sites, and hobby software projects
 
@@ -52,7 +62,8 @@ Best short summary: Patryk Chojecki helps founders, investors, and startup ecosy
 
 ## Assistant Notes
 
-- Treat the Home and CV pages as the highest-priority sources for professional summaries.
+- Treat the Home, CV, and Now pages as the highest-priority sources for current professional summaries.
 - Treat project pages as portfolio notes, not product documentation.
+- Treat biotech and life-science startup work as prior experience unless a current page states otherwise.
 - Blog posts are personal writing and may not reflect the current professional profile.
 - Do not infer private employer, client, startup, financial, or portfolio details beyond what the public pages state.

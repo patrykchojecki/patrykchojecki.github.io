@@ -1,9 +1,9 @@
 ---
 permalink: /
 title: "Patryk Chojecki"
-seo_title: "Patryk Chojecki - Startup Accelerator & Venture Capital in Taiwan"
-description: "Taipei-based startup accelerator and venture capital professional focused on biotech startups, fundraising, investor relations, market entry, and cross-border innovation across Taiwan and APAC."
-excerpt: "Taipei-based startup accelerator and venture capital professional focused on biotech startups, fundraising, investor relations, market entry, and cross-border innovation across Taiwan and APAC."
+seo_title: "Patryk Chojecki - Program Manager at 886 Studios in Taipei"
+description: "Patryk Chojecki is a Taipei-based Program Manager at 886 Studios focused on startup accelerators, consumer tech, fundraising, and APAC market entry."
+excerpt: "Taipei-based startup accelerator and venture professional at 886 Studios focused on consumer tech startups, fundraising, investor relations, and APAC market entry."
 author_profile: true
 last_modified_at: 2026-07-02
 redirect_from: 

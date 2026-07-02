@@ -1,9 +1,9 @@
 ---
 layout: archive
 title: "CV"
-seo_title: "Patryk Chojecki CV - Startup Accelerator, Venture Capital & Biotech Fundraising"
-description: "CV for Patryk Chojecki, a Taipei-based startup accelerator and venture capital professional with experience supporting biotech founders, fundraising, market entry, due diligence, and investor relations across APAC."
-excerpt: "CV for Patryk Chojecki, focused on startup accelerators, venture capital, biotech fundraising, market entry, due diligence, and investor relations across APAC."
+seo_title: "Patryk Chojecki CV - Startup Accelerator & Venture Professional"
+description: "CV for Patryk Chojecki, Program Manager at 886 Studios, covering startup accelerators, venture, fundraising, investor relations, and APAC market entry."
+excerpt: "CV for Patryk Chojecki, focused on startup accelerators, venture, fundraising, investor relations, market entry, and APAC founder support."
 permalink: /cv/
 author_profile: true
 last_modified_at: 2026-07-02

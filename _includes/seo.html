@@ -75,6 +75,7 @@
 <meta name="author" content="{{ site.author.name | default: site.name }}">
 
 <link rel="canonical" href="{{ canonical_url }}">
+<link rel="author" href="{{ seo_url | append: "/" }}">
 
 <meta property="og:locale" content="{{ site.locale | default: "en" }}">
 <meta property="og:site_name" content="{{ site.title }}">
@@ -130,6 +131,7 @@
 
 {% assign website_id = seo_url | append: "/#website" %}
 {% assign person_id = seo_url | append: "/#person" %}
+{% assign employer_id = seo_url | append: "/#organization-886-studios" %}
 {% assign webpage_id = canonical_url | append: "#webpage" %}
 {% assign author_image = site.author.avatar | default: site.og_image %}
 {% if author_image %}
@@ -154,9 +156,29 @@
   "inLanguage": {{ site.locale | default: "en-US" | jsonify }},
   "publisher": {
     "@id": {{ person_id | jsonify }}
+  },
+  "about": {
+    "@id": {{ person_id | jsonify }}
   }
 }
 </script>
+
+{% if site.author.employer and site.author.employer_url %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": {{ employer_id | jsonify }},
+  "name": {{ site.author.employer | jsonify }},
+  "url": {{ site.author.employer_url | jsonify }},
+  "description": "886 Studios is a Taipei-based startup accelerator and venture platform supporting early-stage technology founders through programs including ikigai Launchpad.",
+  "location": {
+    "@type": "Place",
+    "name": "Taipei, Taiwan"
+  }
+}
+</script>
+{% endif %}
 
 <script type="application/ld+json">
 {
@@ -172,28 +194,55 @@
   "description": {{ site.description | jsonify }},
   "email": {{ site.author.email | prepend: "mailto:" | jsonify }},
   "sameAs": {{ site.social.links | jsonify }},
+  "hasOccupation": {
+    "@type": "Occupation",
+    "name": "Startup accelerator program manager",
+    "occupationLocation": {
+      "@type": "City",
+      "name": "Taipei"
+    }
+  },
   "knowsAbout": [
     "startup accelerators",
+    "accelerator program management",
+    "founder support",
     "venture capital",
-    "biotech startups",
-    "life-science startups",
     "fundraising",
+    "fundraising readiness",
     "investor relations",
+    "pitch decks",
+    "startup due diligence",
     "market entry",
     "cross-border innovation",
-    "Taiwan",
+    "consumer technology startups",
+    "consumer software",
+    "startup metrics",
+    "Taiwan startup ecosystem",
+    "biotech startups",
+    "life-science startups",
     "Japan",
     "Southeast Asia",
     "APAC"
   ],
   "worksFor": {
-    "@type": "Organization",
-    "name": {{ site.author.employer | jsonify }}
+    "@id": {{ employer_id | jsonify }}
   },
   "workLocation": {
     "@type": "Place",
     "name": {{ site.author.location | jsonify }}
   },
+  "subjectOf": [
+    {
+      "@type": "WebPage",
+      "name": "Patryk Chojecki CV",
+      "url": {{ seo_url | append: "/cv/" | jsonify }}
+    },
+    {
+      "@type": "WebPage",
+      "name": "Patryk Chojecki Projects",
+      "url": {{ seo_url | append: "/projects/" | jsonify }}
+    }
+  ],
   "alumniOf": [
     {
       "@type": "CollegeOrUniversity",

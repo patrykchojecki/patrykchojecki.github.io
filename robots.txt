@@ -11,7 +11,16 @@ Allow: /llms.txt
 User-agent: Googlebot
 Allow: /
 
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
 User-agent: Bingbot
+Allow: /
+
+User-agent: CCBot
 Allow: /
 
 User-agent: Applebot
