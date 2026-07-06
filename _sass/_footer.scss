@@ -41,6 +41,14 @@
     }
   }
 
+  @include breakpoint(max-width $small) {
+    a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+    }
+  }
+
   .fas,
   .fab,
   .far,
@@ -78,6 +86,13 @@
   a {
     padding-right: 10px;
     font-weight: bold;
+  }
+
+  @include breakpoint(max-width $small) {
+    li {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
   }
 
   .social-icons {
