@@ -11,7 +11,9 @@ redirect_from:
   - /about.html
 ---
 
-I’m based in Taipei, where I work with consumer tech startups on fundraising, product development, investor relations, market entry, and cross-border innovation across APAC. Originally from Poland, I’ve spent the past several years in Taiwan at the intersection of technology, entrepreneurship, and venture capital. I currently work at [886 Studios](https://www.886studios.com/), a venture firm supported by [Lifelike Capital](https://www.lifelikecap.com/). At 886 Studios, we’re always looking for exceptional founders to back.
+I’m based in Taipei, where I work with consumer tech startups on fundraising, product development, investor relations, market entry, and cross-border innovation across APAC. Originally from Poland, I’ve spent the past several years in Taiwan at the intersection of technology, entrepreneurship, and venture capital. I'm currently at  [886 Studios](https://www.886studios.com/), working with [Lifelike Capital](https://www.lifelikecap.com/) to scale our venture investments.
+
+At 886 Studios, we’re always looking for exceptional founders to back - so make sure to reach out 😄.
 
 ## My Journey
 
