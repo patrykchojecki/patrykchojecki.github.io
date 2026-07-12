@@ -124,14 +124,19 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
+  align-items: center;
   margin-top: auto;
   font-family: $sans-serif;
   font-size: $type-size-6;
 
-  a {
+  > a,
+  > .project-card__private {
     display: inline-flex;
     align-items: center;
     min-height: 44px;
+  }
+
+  a {
     text-decoration: underline;
     text-underline-offset: 0.18em;
   }
