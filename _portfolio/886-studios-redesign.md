@@ -32,7 +32,7 @@ An Astro static-site codebase for our company with route-level pages, reusable p
 
 ## Why I made it
 
-Together with my colleague, we wanted a cleaner way to iterate on the site without treating every page as a one-off file. The previous version on this website was basically a [Notion](https://www.notion.com/), which was not only ugly but also difficult to manage.
+Together with my colleague, we wanted a cleaner way to iterate on the site without treating every page as a one-off file. The previous version of this website was basically a [Notion](https://www.notion.com/) page, which was not only ugly but also difficult to manage and maintain. Redesigning it was a complete no-brainer.
 
 ## What I learned
 
