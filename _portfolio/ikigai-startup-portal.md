@@ -20,7 +20,7 @@ image_alt: "Screenshot of the ikigai Startup Portal founder metrics workspace"
   <img src="/images/projects/ikigai-startup-portal.png" alt="Screenshot of the ikigai Startup Portal founder metrics workspace">
 </figure>
 
-ikigai Startup Portal is a private internal product for 886 Studios. It gives founders a structured place to submit traction updates while giving the 886 team a focused workspace to review progress, manage access, and keep metrics consistent across startups.
+ikigai Startup Portal is a private internal product for 886 Studios. It gives founders a structured place to submit traction updates while giving the 886 team a focused workspace to review progress, manage access, and keep metrics consistent across startups. It is similar to [Bookface](https://bookface.ycombinator.com/) created by [Y Combinator](https://www.ycombinator.com/).
 
 ## What it is
 

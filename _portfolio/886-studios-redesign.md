@@ -1,6 +1,6 @@
 ---
 title: "886 Studios Website Redesign"
-excerpt: "A small Astro static-site rebuild focused on making the 886 Studios website easier to maintain."
+excerpt: "A complete redesign of the 886 Studios website."
 summary: "An Astro static-site rebuild for 886 Studios, structured around data-driven content, and reusable components."
 collection: portfolio
 order: 2
@@ -28,14 +28,14 @@ This project is a rebuild of the 886 Studios website as a maintainable Astro sit
 
 ## What it is
 
-An Astro static-site codebase for my company with route-level pages, reusable page components, shared layouts, centralized content data, and a production-style Vercel preview.
+An Astro static-site codebase for our company with route-level pages, reusable page components, shared layouts, centralized content data.
 
 ## Why I made it
 
-Together with my colleague, we wanted a cleaner way to iterate on the site without treating every page as a one-off file. Moving the structure into Astro makes local preview, component reuse, events/content updates, and future changes more straightforward.
+Together with my colleague, we wanted a cleaner way to iterate on the site without treating every page as a one-off file. The previous version on this website was basically a [Notion](https://www.notion.com/), which was not only ugly but also difficult to manage.
 
 ## What I learned
 
 - How to structure a small Astro site around reusable page sections.
 - How to separate site copy from visual layout.
-- How to preserve an existing visual identity while improving maintainability.
+- How to create a new visual identity for a brand and improve maintainability.
