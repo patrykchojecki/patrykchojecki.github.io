@@ -35,7 +35,7 @@ Most of my gaming happens on Xbox. My current stats and recently played games ar
 
 <div class="xbox-profile-card">
   <a class="xbox-profile-card__image" href="https://www.trueachievements.com/gamer/Cherry+Sando">
-    <img src="https://www.trueachievements.com/gamercards/Cherry+Sando.png" alt="TrueAchievements Gamercard for Cherry Sando showing Xbox gaming stats and recently played games" loading="lazy" decoding="async">
+    <img src="https://images.weserv.nl/?url=https%3A%2F%2Fwww.trueachievements.com%2Fgamercards%2FCherry%2BSando.png%3Fv%3D{{ site.time | date: '%Y-%m-%d' }}&amp;output=png" alt="TrueAchievements Gamercard for Cherry Sando showing Xbox gaming stats and recently played games" loading="lazy" decoding="async" referrerpolicy="no-referrer">
   </a>
   <p class="xbox-profile-card__caption"><a href="https://www.trueachievements.com/gamer/Cherry+Sando">View my full profile on TrueAchievements</a>.</p>
 </div>
