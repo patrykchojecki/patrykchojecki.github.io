@@ -6,7 +6,7 @@ description: "A time-stamped now page from Patryk Chojecki with notes about work
 excerpt: "A time-stamped now page from Patryk Chojecki with notes about work, travel, startups, technology, personal interests, and life in Taiwan."
 permalink: /now/
 author_profile: true
-last_modified_at: 2026-07-02
+last_modified_at: 2026-07-28
 redirect_from:
   - /now.html
 ---
@@ -29,10 +29,21 @@ This is a /now page inspired by [Derek Sivers](https://sive.rs). This is the pla
 
 The concept is quite straightforward, and if you would like to learn more about it, visit [this website](https://nownownow.com/about). If you have your own personal website, you may want to consider making a /now page too.
 
+## Recently on Xbox
+
+Most of my gaming happens on Xbox. My current stats and recently played games are updated automatically by TrueAchievements.
+
+<div class="xbox-profile-card">
+  <a class="xbox-profile-card__image" href="https://www.trueachievements.com/gamer/Cherry+Sando">
+    <img src="https://www.trueachievements.com/gamercards/Cherry+Sando.png" alt="TrueAchievements Gamercard for Cherry Sando showing Xbox gaming stats and recently played games" loading="lazy" decoding="async">
+  </a>
+  <p class="xbox-profile-card__caption"><a href="https://www.trueachievements.com/gamer/Cherry+Sando">View my full profile on TrueAchievements</a>.</p>
+</div>
+
 ---
 
 I feel a bit guilty for not updating this page in such a long time. I guess a lot of things have gotten in the way. In April, I started a new job, and it’s been keeping me pretty busy. I’ll update this page as soon as I have some free time!
 
 ---
 
-Last updated on 2 July 2026 in Taipei, Taiwan 🇹🇼.
+Last updated on 28 July 2026 in Taipei, Taiwan 🇹🇼.

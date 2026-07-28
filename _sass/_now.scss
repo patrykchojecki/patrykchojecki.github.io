@@ -1,0 +1,42 @@
+/* ==========================================================================
+   NOW PAGE
+   ========================================================================== */
+
+.xbox-profile-card {
+  max-width: 38rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.xbox-profile-card__image {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  line-height: 0;
+
+  img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    border-radius: 0;
+  }
+}
+
+.xbox-profile-card__caption {
+  margin: 0.65rem 0 0;
+  color: mix(#fff, $text-color, 25%);
+  font-size: $type-size-6;
+}
+
+html[data-theme="dark"] {
+  .xbox-profile-card__image {
+    border-color: #2e2e2e;
+  }
+
+  .xbox-profile-card__caption {
+    color: #888;
+  }
+}
