@@ -1,0 +1,22 @@
+profile:
+  gamertag: "Cherry Sandwich"
+  gamerscore: 86350
+  gamerscoreLabel: "86,350"
+  avatarUrl: "/images/bio-photo.jpg"
+  profileUrl: "https://account.xbox.com/en-us/Profile?gamertag=Cherry%20Sandwich"
+  activityLabel: "7h ago"
+game:
+  name: "Forza Horizon 6"
+  imageUrl: "/images/projects/cherry-terminal.png"
+  lastPlayedAt: "2026-07-28T10:00:00.000Z"
+  lastPlayedLabel: "7h ago"
+achievement:
+  name: "Storyteller"
+  gameName: "Forza Horizon 6"
+  imageUrl: "/images/projects/cmdz.png"
+  gamerscore: 10
+  unlockedAt: "2026-07-28T09:30:00.000Z"
+  unlockedLabel: "2d ago"
+updatedAt: "2026-07-28T12:00:00.000Z"
+updatedLabel: "Updated today"
+source: "Local preview"

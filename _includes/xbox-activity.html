@@ -1,0 +1,104 @@
+{% assign xbox = site.data.xbox %}
+{% if xbox == nil and jekyll.environment != "production" %}
+  {% assign xbox = site.data.xbox_preview %}
+{% endif %}
+
+{% if xbox and xbox.profile and xbox.game %}
+<section class="xbox-activity" aria-labelledby="xbox-activity-title">
+  <header class="xbox-activity__header">
+    <h2 id="xbox-activity-title" class="xbox-activity__title">What I’m Playing</h2>
+  </header>
+
+  <div class="xbox-activity__profile">
+    {% if xbox.profile.avatarUrl %}
+      <img
+        class="xbox-activity__avatar"
+        src="{{ xbox.profile.avatarUrl | escape }}"
+        alt=""
+        width="64"
+        height="64"
+        loading="lazy"
+        decoding="async"
+        referrerpolicy="no-referrer"
+      >
+    {% endif %}
+    <div class="xbox-activity__profile-copy">
+      <p class="xbox-activity__gamertag">{{ xbox.profile.gamertag | escape }}</p>
+      <p class="xbox-activity__stats">
+        {% if xbox.profile.gamerscoreLabel %}
+          <span class="xbox-activity__score">
+            <span class="xbox-activity__score-mark" aria-hidden="true">G</span>
+            <span>{{ xbox.profile.gamerscoreLabel | escape }} G</span>
+          </span>
+        {% endif %}
+        {% if xbox.profile.activityLabel %}
+          <span class="xbox-activity__activity">
+            <span class="xbox-activity__status-dot" aria-hidden="true"></span>
+            <span>{{ xbox.profile.activityLabel | escape }}</span>
+          </span>
+        {% endif %}
+      </p>
+    </div>
+  </div>
+
+  <div class="xbox-activity__row">
+    {% if xbox.game.imageUrl %}
+      <img
+        class="xbox-activity__art"
+        src="{{ xbox.game.imageUrl | escape }}"
+        alt=""
+        width="84"
+        height="84"
+        loading="lazy"
+        decoding="async"
+        referrerpolicy="no-referrer"
+      >
+    {% endif %}
+    <div class="xbox-activity__row-copy">
+      <p class="xbox-activity__label">Last played</p>
+      <p class="xbox-activity__name">{{ xbox.game.name | escape }}</p>
+      {% if xbox.game.lastPlayedLabel %}
+        <time
+          class="xbox-activity__meta"
+          datetime="{{ xbox.game.lastPlayedAt | escape }}"
+        >{{ xbox.game.lastPlayedLabel | escape }}</time>
+      {% endif %}
+    </div>
+  </div>
+
+  {% if xbox.achievement %}
+    <div class="xbox-activity__row">
+      {% if xbox.achievement.imageUrl %}
+        <img
+          class="xbox-activity__art"
+          src="{{ xbox.achievement.imageUrl | escape }}"
+          alt=""
+          width="84"
+          height="84"
+          loading="lazy"
+          decoding="async"
+          referrerpolicy="no-referrer"
+        >
+      {% endif %}
+      <div class="xbox-activity__row-copy">
+        <p class="xbox-activity__label">Latest unlock</p>
+        <p class="xbox-activity__name">{{ xbox.achievement.name | escape }}</p>
+        <p class="xbox-activity__achievement-meta">
+          {% if xbox.achievement.gamerscore %}
+            <span>{{ xbox.achievement.gamerscore | escape }} G</span>
+          {% endif %}
+          {% if xbox.achievement.gameName %}
+            <span class="xbox-activity__game-name">{{ xbox.achievement.gameName | escape }}</span>
+          {% endif %}
+        </p>
+      </div>
+    </div>
+  {% endif %}
+
+  <footer class="xbox-activity__footer">
+    <span>{{ xbox.updatedLabel | default: "Updated today" | escape }}</span>
+    <span aria-hidden="true">·</span>
+    <a href="{{ xbox.profile.profileUrl | escape }}">Xbox profile <span aria-hidden="true">→</span></a>
+  </footer>
+</section>
+{% endif %}

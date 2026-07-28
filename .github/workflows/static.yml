@@ -4,8 +4,8 @@ on:
   push:
     branches: ["master"]
   schedule:
-    # Refresh the dated TrueAchievements Gamercard proxy URL each day.
-    - cron: "17 2 * * *"
+    # Refresh the OpenXBL snapshot every six hours.
+    - cron: "17 */6 * * *"
   workflow_dispatch:
 
 permissions: {}
@@ -43,6 +43,14 @@ jobs:
         run: |
           npm ci
           npm run build:js
+
+      - name: Test OpenXBL data mapping
+        run: node --test scripts/fetch-openxbl.test.mjs
+
+      - name: Fetch Xbox activity
+        run: node scripts/fetch-openxbl.mjs
+        env:
+          OPENXBL_API_KEY: ${{ secrets.OPENXBL_API_KEY }}
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
