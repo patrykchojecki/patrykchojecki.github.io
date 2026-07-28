@@ -44,6 +44,7 @@ Best short summary: Patryk Chojecki is Program Manager at 886 Studios in Taipei,
 - [886 Studios Website Redesign](https://chojecki.net/projects/886-studios-redesign/): Astro static-site rebuild experiment for 886 Studios.
 - [ikigai Startup Portal](https://chojecki.net/projects/ikigai-startup-portal/): Private founder reporting and admin workspace for startup metrics.
 - [Cherry Terminal](https://chojecki.net/projects/cherry-terminal/): Local-first browser portfolio tracker for private multi-currency positions.
+- [CmdZ](https://chojecki.net/projects/cmdz/): Chrome extension for restoring closed tabs with Command+Z or Ctrl+Z without breaking page-level Undo.
 
 ## Contact And Identity
 

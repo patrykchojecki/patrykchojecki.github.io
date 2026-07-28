@@ -147,7 +147,9 @@
 }
 
 .project-detail-image {
+  width: 100%;
   max-width: 48rem;
+  min-width: 0;
   margin: 1rem 0 1.5rem;
   border: 1px solid $border-color;
   border-radius: 8px;
@@ -156,6 +158,9 @@
   img {
     display: block;
     width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin-bottom: 0;
   }
 }
 
