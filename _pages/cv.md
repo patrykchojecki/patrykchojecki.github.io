@@ -12,9 +12,7 @@ redirect_from:
 ---
 
 {% include base_path %}
-Last updated on 2 July 2026 in Taipei, Taiwan 🇹🇼.
-
-You can view and download my CV as a PDF by [clicking here](/assets/Patryk Chojecki - CV.pdf).
+Last updated on 10 August 2026 in Taipei, Taiwan 🇹🇼.
 
 ---
 
@@ -27,7 +25,9 @@ Experienced in supporting early-stage founders on fundraising, product strategy,
 ## 👨‍💻 Work Experience
 
 ### 🇹🇼 2026-Present | Program Manager at *886 Studios*
-  * This section will be updated soon.
+  * Ran 886 Studios’ early-stage accelerator, managing the program and working directly with founders, investors, and mentors.
+  * Sourced and evaluated early-stage startups, managing the application pipeline and assessing companies for accelerator investment.
+  * Supported portfolio founders on strategy, fundraising, and growth, connecting them with relevant investors, mentors, and partners.
 
 ### 🇹🇼 2023-2026 | Associate at *CellTech Accelerator*
   * Joined as the first full-time member and helped build the company’s main processes and cross-border network.
@@ -48,11 +48,6 @@ Experienced in supporting early-stage founders on fundraising, product strategy,
   * Published 10+ articles on governance and sustainable finance (English & Chinese) reaching industry leaders.
   * Successfully negotiated long-term partnerships with three European companies.
 
-### 🌏 2021-2022 | Foreign Representative at *Owolovo*
-  * Represented the company during consultations with partners in Taiwan and Singapore
-  * Supervised product sales and orders to Taiwan
-  * Introduced a range of 20 new product to Taiwanese affiliates
-
 ---
 
 ## 🎓 Education
@@ -65,7 +60,6 @@ Experienced in supporting early-stage founders on fundraising, product strategy,
 ### 🇵🇱 2016-2020 | Bachelor's Degree in East Asia Studies | *Jagiellonian University, Cracow, Poland*
   * **Thesis**: China-Taiwan Relations After 2008
   * **Notable coursework**: Political Systems of Asia, Diplomatic Protocol, Economic Systems of Asia
-  * Held the position of Director of Finance at the International Relations Students' Association of the Jagiellonian University - KSSM UJ (100-150 members)
 
 ### 🇹🇼 2018-2019 | Intensive Mandarin Chinese Course | *Chinese Culture University, Taipei, Taiwan*
   * Recipient of Huayu Enrichment Scholarship issued by the Ministry of Education, Republic of China (Taiwan)
