@@ -30,7 +30,16 @@ layout: default
     <div class="page__inner-wrap">
       {% unless page.header.overlay_color or page.header.overlay_image %}
         <header>
-          {% if page.title %}<h1 class="page__title" itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}
+          {% if page.title %}
+            {% if page.url == "/" %}
+              <h1 class="page__title page__title--home" itemprop="headline" aria-label="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">
+                <span class="page__title-home-greeting" aria-hidden="true">Hi, I’m</span>
+                <span class="page__title-home-name" aria-hidden="true">Patryk <span class="page__title-home-wave">👋</span></span>
+              </h1>
+            {% else %}
+              <h1 class="page__title" itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>
+            {% endif %}
+          {% endif %}
           {% if page.read_time %}
             <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
           {% endif %}
