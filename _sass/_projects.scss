@@ -1,3 +1,4 @@
+@use "sass:color";
 /* ==========================================================================
    PROJECTS
    ========================================================================== */
@@ -10,7 +11,7 @@
 .projects-intro {
   max-width: 64ch;
   margin-bottom: 1.5rem;
-  color: mix(#000, $gray, 15%);
+  color: color.mix(#000, $gray, 15%);
 }
 
 .project-grid {
@@ -68,7 +69,7 @@
   font-family: $sans-serif;
   font-size: $type-size-8;
   font-weight: 700;
-  color: mix(#000, $gray, 12%);
+  color: color.mix(#000, $gray, 12%);
   text-transform: uppercase;
 }
 
@@ -143,7 +144,7 @@
 }
 
 .project-card__private {
-  color: mix(#000, $gray, 12%);
+  color: color.mix(#000, $gray, 12%);
 }
 
 .project-detail-image {

@@ -1,3 +1,4 @@
+@use "sass:map";
 // Float Isolation API
 // ===================
 
@@ -7,7 +8,7 @@
 // - [$flow]  : ltr | rtl
 @mixin isolate-output(
   $push,
-  $flow: map-get($susy-defaults, flow)
+  $flow: map.get($susy-defaults, flow)
 ) {
   $to: to($flow);
   $from: from($flow);

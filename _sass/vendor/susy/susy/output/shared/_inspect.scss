@@ -1,3 +1,5 @@
+@use "sass:list";
+@use "sass:meta";
 // Debugging
 // =========
 
@@ -14,12 +16,12 @@
   $show: false;
 
   @each $item in $inspect {
-    @if index($item, inspect) {
+    @if list.index($item, inspect) {
       $show: true;
     }
   }
 
   @if $show or susy-get(debug inspect) {
-    -susy-#{$mixin}: inspect($inspect);
+    -susy-#{$mixin}: meta.inspect($inspect);
   }
 }

@@ -1,3 +1,4 @@
+@use "sass:map";
 // Context Syntax
 // ==============
 
@@ -27,10 +28,10 @@
   $inspect  : $context;
   $context  : parse-span($context);
   $old      : susy-get(columns);
-  $susy     : map-merge($susy, (columns: nested($context))) !global;
+  $susy     : map.merge($susy, (columns: nested($context))) !global;
 
   @include susy-inspect(nested, $inspect);
   @content;
 
-  $susy     : map-merge($susy, (columns: $old)) !global;
+  $susy     : map.merge($susy, (columns: $old)) !global;
 }

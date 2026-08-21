@@ -1,3 +1,6 @@
+@use "sass:list";
+@use "sass:map";
+@use "sass:math";
 // Padding Syntax
 // ==============
 
@@ -9,13 +12,13 @@
   $span
 ) {
   $inspect  : $span;
-  $span     : map-merge((spread: wide), parse-span($span));
+  $span     : map.merge((spread: wide), parse-span($span));
   $flow     : susy-get(flow, $span);
   $width    : span($span);
 
   @if is-inside($span) {
     $gutter: gutter($span);
-    $width: if($gutter and comparable($width, $gutter), $width + $gutter, $width);
+    $width: if(sass($gutter and math.compatible($width, $gutter)): $width + $gutter; else: $width);
   }
 
   @include susy-inspect(prefix, $inspect);
@@ -30,13 +33,13 @@
   $span
 ) {
   $inspect  : $span;
-  $span     : map-merge((spread: wide), parse-span($span));
+  $span     : map.merge((spread: wide), parse-span($span));
   $flow     : susy-get(flow, $span);
   $width    : span($span);
 
   @if is-inside($span) {
     $gutter: gutter($span);
-    $width: if($gutter and comparable($width, $gutter), $width + $gutter, $width);
+    $width: if(sass($gutter and math.compatible($width, $gutter)): $width + $gutter; else: $width);
   }
 
   @include susy-inspect(suffix, $inspect);
@@ -53,15 +56,15 @@
   $post: false
 ) {
   $inspect  : ($pre, $post);
-  $pre      : map-merge((spread: wide), parse-span($pre));
+  $pre      : map.merge((spread: wide), parse-span($pre));
 
   @if $post {
-    $post: map-merge((spread: wide), parse-span($post));
+    $post: map.merge((spread: wide), parse-span($post));
   } @else {
     $span: susy-get(span, $pre);
-    @if length($span) > 1 {
-      $pre: map-merge($pre, (span: nth($span, 1)));
-      $post: map-merge($pre, (span: nth($span, 2)));
+    @if list.length($span) > 1 {
+      $pre: map.merge($pre, (span: list.nth($span, 1)));
+      $post: map.merge($pre, (span: list.nth($span, 2)));
     } @else {
       $post: $pre;
     }

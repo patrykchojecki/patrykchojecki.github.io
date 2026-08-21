@@ -1,3 +1,5 @@
+@use "sass:map";
+@use "sass:meta";
 // Settings
 // ========
 
@@ -29,7 +31,7 @@ $susy: () !default;
 @mixin susy-defaults(
   $defaults
 ) {
-  $susy-defaults: map-merge($susy-defaults, $defaults) !global;
+  $susy-defaults: map.merge($susy-defaults, $defaults) !global;
 }
 
 
@@ -52,7 +54,7 @@ $susy: () !default;
 // - $layout  : <settings>
 @function susy-get(
   $key,
-  $layout: map-merge($susy-defaults, $susy)
+  $layout: map.merge($susy-defaults, $susy)
 ) {
   $layout: parse-grid($layout);
   $_options: $layout $susy $susy-defaults;
@@ -60,7 +62,7 @@ $susy: () !default;
   $_return: null;
 
   @each $opt in $_options {
-    @if type-of($opt) == map and not($_break) {
+    @if meta.type-of($opt) == map and not($_break) {
       $_keyset: _susy-deep-has-key($opt, $key...);
       @if $_keyset {
         $_return: _susy-deep-get($opt, $key...);

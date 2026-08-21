@@ -1,5 +1,12 @@
+@use "sass:list";
+@use "sass:map";
+@use "sass:meta";
+@use "sass:color";
+
 // Background Grid Syntax
 // ======================
+
+@use "sass:math";
 
 $susy-overlay-grid-head-exists: false;
 
@@ -38,15 +45,15 @@ $susy-overlay-grid-head-exists: false;
   $inspect  : $grid;
   $_output  : get-background($grid);
 
-  @if length($_output) > 0 {
+  @if list.length($_output) > 0 {
     $_flow: susy-get(flow, $grid);
 
     $_image: ();
-    @each $name, $layer in map-get($_output, image) {
-      $_direction: if($name == baseline, to bottom, to to($_flow));
-      $_image: append($_image, linear-gradient($_direction, $layer), comma);
+    @each $name, $layer in map.get($_output, image) {
+      $_direction: if(sass($name == baseline): to bottom; else: to to($_flow));
+      $_image: list.append($_image, linear-gradient($_direction, $layer), comma);
     }
-    $_output: map-merge($_output, (image: $_image));
+    $_output: map.merge($_output, (image: $_image));
 
     @include background-grid-output($_output...);
     @include susy-inspect(background-grid, $inspect);
@@ -112,8 +119,8 @@ $susy-overlay-grid-head-exists: false;
   $_vert: null;
 
   @each $side in $_toggle {
-    $_horz: if($side == left or $side == right, $side, $_horz);
-    $_vert: if($side == top or $side == bottom, $side, $_vert);
+    $_horz: if(sass($side == left or $side == right): $side; else: $_horz);
+    $_vert: if(sass($side == top or $side == bottom): $side; else: $_vert);
   }
 
   display: block;
@@ -153,19 +160,19 @@ $susy-overlay-grid-head-exists: false;
 
   $_color         : debug-get(color);
   $_trans         : transparent;
-  $_light         : lighten($_color, 15%);
+  $_light         : color.adjust($_color, $lightness: 15%, $space: hsl);
 
   $_end           : 1 + $_gutters;
-  $_after         : percentage(1/$_end);
+  $_after         : math.percentage(math.div(1, $_end));
   $_stops         : ();
   $_size          : span(1 $grid wide);
 
   @if is-inside($grid) {
     $_stops: $_color, $_light;
   } @else if is-split($grid) {
-    $_split: $_gutters/2;
-    $_before: percentage($_split/$_end);
-    $_after: percentage((1 + $_split)/$_end);
+    $_split: $_gutters*0.5;
+    $_before: math.percentage(math.div($_split, $_end));
+    $_after: math.percentage(math.div(1 + $_split, $_end));
     $_stops: $_trans $_before, $_color $_before, $_light $_after, $_trans $_after;
   } @else {
     $_stops: $_color, $_light $_after, $_trans $_after;
@@ -194,29 +201,29 @@ $susy-overlay-grid-head-exists: false;
   $_columns : susy-get(columns, $grid);
 
   $_color   : debug-get(color);
-  $_light   : lighten($_color, 15%);
+  $_light   : color.adjust($_color, $lightness: 15%, $space: hsl);
   $_stops   : ();
 
   @for $location from 1 through susy-count($_columns) {
     $this-stop: ();
 
     @if $location == 1 {
-      $this-stop: append($this-stop, $_color, comma);
+      $this-stop: list.append($this-stop, $_color, comma);
     } @else {
       $start: parse-span(1 at $location $grid);
       $start: get-isolation($start);
-      $this-stop: append($this-stop, $_color $start, comma);
+      $this-stop: list.append($this-stop, $_color $start, comma);
     }
 
     @if $location == susy-count($_columns) {
-      $this-stop: append($this-stop, $_light, comma);
+      $this-stop: list.append($this-stop, $_light, comma);
     } @else {
       $_end: parse-span(1 at ($location + 1) $grid);
       $_end: get-isolation($_end);
-      $this-stop: append($this-stop, $_light $_end, comma);
+      $this-stop: list.append($this-stop, $_light $_end, comma);
     }
 
-    $_stops: join($_stops, $this-stop, comma);
+    $_stops: list.join($_stops, $this-stop, comma);
   }
 
   @return $_stops;
@@ -233,7 +240,7 @@ $susy-overlay-grid-head-exists: false;
   $_columns : susy-get(columns, $grid);
 
   $_color   : debug-get(color);
-  $_light   : lighten($_color, 15%);
+  $_light   : color.adjust($_color, $lightness: 15%, $space: hsl);
   $_stops   : ();
 
   @for $location from 1 through susy-count($_columns) {
@@ -241,14 +248,14 @@ $susy-overlay-grid-head-exists: false;
 
     $start: parse-span(1 at $location $grid);
     $start: get-isolation($start);
-    $this-stop: append($this-stop, transparent $start, comma);
-    $this-stop: append($this-stop, $_color $start, comma);
+    $this-stop: list.append($this-stop, transparent $start, comma);
+    $this-stop: list.append($this-stop, $_color $start, comma);
 
     $_end: $start + span(1 at $location $grid);
-    $this-stop: append($this-stop, $_light $_end, comma);
-    $this-stop: append($this-stop, transparent $_end, comma);
+    $this-stop: list.append($this-stop, $_light $_end, comma);
+    $this-stop: list.append($this-stop, transparent $_end, comma);
 
-    $_stops: join($_stops, $this-stop, comma);
+    $_stops: list.join($_stops, $this-stop, comma);
   }
 
   @return $_stops;
@@ -265,7 +272,7 @@ $susy-overlay-grid-head-exists: false;
   $_columns : susy-get(columns, $grid);
 
   $_color   : debug-get(color);
-  $_light   : lighten($_color, 15%);
+  $_light   : color.adjust($_color, $lightness: 15%, $space: hsl);
   $_trans   : transparent;
   $_stops   : ();
 
@@ -273,15 +280,15 @@ $susy-overlay-grid-head-exists: false;
     $this-stop: ();
 
     @if $location == 1 {
-      $this-stop: append($this-stop, $_color, comma);
+      $this-stop: list.append($this-stop, $_color, comma);
     } @else {
       $start: parse-span(1 at $location $grid);
       $start: get-isolation($start);
-      $this-stop: append($this-stop, $_color $start, comma);
+      $this-stop: list.append($this-stop, $_color $start, comma);
     }
 
     @if $location == susy-count($_columns) {
-      $this-stop: append($this-stop, $_light, comma);
+      $this-stop: list.append($this-stop, $_light, comma);
     } @else {
       $gutter: get-span-width(first $location $grid);
 
@@ -289,10 +296,10 @@ $susy-overlay-grid-head-exists: false;
       $_end: get-isolation($_end);
 
       $gutter: $_light $gutter, $_trans $gutter, $_trans $_end;
-      $this-stop: join($this-stop, $gutter, comma);
+      $this-stop: list.join($this-stop, $gutter, comma);
     }
 
-    $_stops: join($_stops, $this-stop, comma);
+    $_stops: list.join($_stops, $this-stop, comma);
   }
 
   @return $_stops;
@@ -334,38 +341,38 @@ $susy-overlay-grid-head-exists: false;
 
     @if $_show != 'show-baseline' {
       $_sym: is-symmetrical($_columns);
-      $_return: if($_sym, get-background-sym($grid), get-background-asym($grid));
-      $_return: map-merge($_return, (clip: content-box));
+      $_return: if(sass($_sym): get-background-sym($grid); else: get-background-asym($grid));
+      $_return: map.merge($_return, (clip: content-box));
     }
 
     @if $_show != 'show-columns'
-      and global-variable-exists(base-line-height)
-      and type-of($base-line-height) == 'number'
-      and not unitless($base-line-height) {
-      $_color: variable-exists('grid-background-baseline-color');
-      $_color: if($_color, $grid-background-baseline-color, #000);
+      and meta.global-variable-exists(base-line-height)
+      and meta.type-of($base-line-height) == 'number'
+      and not math.is-unitless($base-line-height) {
+      $_color: meta.variable-exists('grid-background-baseline-color');
+      $_color: if(sass($_color): $grid-background-baseline-color; else: #000);
 
-      $_image: map-get($_return, image);
-      $_size: map-get($_return, size);
+      $_image: map.get($_return, image);
+      $_size: map.get($_return, size);
       $_baseline: (baseline: ($_color 1px, transparent 1px));
       $_baseline-size: 100% $base-line-height;
 
-      $_return: map-merge($_return, (
-        image: if($_image, map-merge($_image, $_baseline), $_baseline),
-        size: if($_size, ($_size, $_baseline-size), $_baseline-size),
+      $_return: map.merge($_return, (
+        image: if(sass($_image): map.merge($_image, $_baseline); else: $_baseline),
+        size: if(sass($_size): ($_size, $_baseline-size); else: $_baseline-size),
       ));
 
       @if $_show == 'show' {
-        $_clip: map-get($_return, clip);
-        $_return: map-merge($_return, (clip: join($_clip, border-box, comma)));
+        $_clip: map.get($_return, clip);
+        $_return: map.merge($_return, (clip: list.join($_clip, border-box, comma)));
       }
     } @else if $_show == 'show-baseline' {
       @warn 'Please provide a $base-line-height with the desired height and units';
     }
   }
 
-  @if map-get($_return, image) {
-    $_return: map-merge($_return, (flow: susy-get(flow, $grid)));
+  @if map.get($_return, image) {
+    $_return: map.merge($_return, (flow: susy-get(flow, $grid)));
   }
 
   @return $_return;
@@ -380,6 +387,6 @@ $susy-overlay-grid-head-exists: false;
   $key,
   $grid: $susy
 ) {
-  $key: join(debug, $key, space);
+  $key: list.join(debug, $key, space);
   @return susy-get($key, $grid);
 }

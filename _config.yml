@@ -284,6 +284,11 @@ sass:
   sass_dir: _sass
   style: compressed
   sourcemap: never
+  # Susy 2 and Breakpoint share global Sass state and cannot be safely converted
+  # to modules in isolation. All other active deprecations are migrated; keep
+  # the legacy import boundary explicit until those retired dependencies go.
+  silence_deprecations:
+    - import
 
 # Outputting
 permalink: /:categories/:title/

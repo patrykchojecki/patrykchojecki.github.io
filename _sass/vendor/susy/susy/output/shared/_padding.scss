@@ -1,3 +1,4 @@
+@use "sass:map";
 // Padding API
 // ===========
 
@@ -9,7 +10,7 @@
 @mixin padding-output(
   $before,
   $after,
-  $flow: map-get($susy-defaults, flow)
+  $flow: map.get($susy-defaults, flow)
 ) {
   $to: to($flow);
   $from: from($flow);

@@ -1,3 +1,5 @@
+@use "sass:math";
+@use "sass:meta";
 // Math Validation
 // ===============
 
@@ -9,21 +11,21 @@
   $columns,
   $silent: false
 ) {
-  $type: type-of($columns);
+  $type: meta.type-of($columns);
   $return: null;
 
-  @if $type == number and unitless($columns) {
+  @if $type == number and math.is-unitless($columns) {
     $return: $columns;
   } @else if $type == list {
     $fail: null;
     @each $col in $columns {
-      @if type-of($col) == number {
-        $fail: $fail or if(unitless($col), null, true);
+      @if meta.type-of($col) == number {
+        $fail: $fail or if(not sass(math.is-unitless($col)): true);
       } @else {
         $fail: true;
       }
     }
-    $return: if($fail, $return, $columns);
+    $return: if(sass($fail): $return; else: $columns);
   }
 
   @if $return != $columns and not($silent) {
@@ -43,10 +45,10 @@
   $gutters,
   $silent: false
 ) {
-  $type: type-of($gutters);
+  $type: meta.type-of($gutters);
   $return: null;
 
-  @if $type == number and unitless($gutters) {
+  @if $type == number and math.is-unitless($gutters) {
     $return: $gutters;
   } @else if not($silent) {
     $warn: '$gutters must be a unitless number.';

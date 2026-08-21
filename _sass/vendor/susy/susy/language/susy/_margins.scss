@@ -1,3 +1,5 @@
+@use "sass:list";
+@use "sass:map";
 // Margin Syntax
 // =============
 
@@ -9,12 +11,12 @@
   $span
 ) {
   $inspect: $span;
-  $span   : map-merge((spread: wide), parse-span($span));
+  $span   : map.merge((spread: wide), parse-span($span));
   $flow   : susy-get(flow, $span);
-  $split  : if(susy-get(gutter-position, $span) == split, true, false);
+  $split  : if(sass(susy-get(gutter-position, $span) == split): true; else: false);
   $gutter : gutter($span);
   $span   : span($span);
-  $width  : if($split and $gutter, $span + $gutter, $span);
+  $width  : if(sass($split and $gutter): $span + $gutter; else: $span);
 
   @include susy-inspect(pre, $inspect);
   @include margin-output($width, null, $flow);
@@ -28,10 +30,10 @@
   $span
 ) {
   $inspect  : $span;
-  $span     : map-merge((spread: wide), parse-span($span));
+  $span     : map.merge((spread: wide), parse-span($span));
   $flow     : susy-get(flow, $span);
-  $split    : if(susy-get(gutter-position, $span) == split, true, false);
-  $width    : if($split, span($span) + gutter($span), span($span));
+  $split    : if(sass(susy-get(gutter-position, $span) == split): true; else: false);
+  $width    : if(sass($split): span($span) + gutter($span); else: span($span));
 
   @include susy-inspect(post, $inspect);
   @include margin-output(null, $width, $flow);
@@ -55,10 +57,10 @@
   $span
 ) {
   $inspect  : $span;
-  $span     : map-merge((spread: wide), parse-span($span));
+  $span     : map.merge((spread: wide), parse-span($span));
   $flow     : susy-get(flow, $span);
-  $split    : if(susy-get(gutter-position, $span) == split, true, false);
-  $width    : if($split, 0 - span($span) + gutter($span), 0 - span($span));
+  $split    : if(sass(susy-get(gutter-position, $span) == split): true; else: false);
+  $width    : if(sass($split): 0 - span($span) + gutter($span); else: 0 - span($span));
 
   @include susy-inspect(pull, $inspect);
   @include margin-output($width, null, $flow);
@@ -74,15 +76,15 @@
   $post: false
 ) {
   $inspect      : ($pre, $post);
-  $pre          : map-merge((spread: wide), parse-span($pre));
+  $pre          : map.merge((spread: wide), parse-span($pre));
 
   @if $post {
-    $post: map-merge((spread: wide), parse-span($post));
+    $post: map.merge((spread: wide), parse-span($post));
   } @else {
     $span: susy-get(span, $pre);
-    @if length($span) > 1 {
-      $pre: map-merge($pre, (span: nth($span, 1)));
-      $post: map-merge($pre, (span: nth($span, 2)));
+    @if list.length($span) > 1 {
+      $pre: map.merge($pre, (span: list.nth($span, 1)));
+      $post: map.merge($pre, (span: list.nth($span, 2)));
     } @else {
       $post: $pre;
     }

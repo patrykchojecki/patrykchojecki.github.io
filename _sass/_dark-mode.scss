@@ -1,3 +1,4 @@
+@use "sass:color";
 /* ==========================================================================
    DARK MODE
    ========================================================================== */
@@ -19,68 +20,68 @@
 html[data-theme="dark"] {
 
   color-scheme: dark;
-  background-color: #1a1a1a;
+  background-color: $dark-background-color;
 
   // -------------------------------------------------------------------------
   // Base
   // -------------------------------------------------------------------------
 
   body {
-    background-color: #1a1a1a;
-    color: #e0ddd8;
+    background-color: $dark-background-color;
+    color: $dark-text-color;
   }
 
   ::selection,
   *::selection {
-    color: #fff !important;
-    background: #8f4317 !important;
+    color: $dark-text-strong-color !important;
+    background: $dark-selection-color !important;
     text-shadow: none;
   }
 
   ::-moz-selection,
   *::-moz-selection {
-    color: #fff !important;
-    background: #8f4317 !important;
+    color: $dark-text-strong-color !important;
+    background: $dark-selection-color !important;
     text-shadow: none;
   }
 
   // Global link colour (set in _reset.scss)
   a {
-    color: #e8935a;
+    color: $dark-link-color;
   }
 
   // Horizontal rules
   hr {
-    border-top-color: #2e2e2e;
+    border-top-color: $dark-border-color;
   }
 
   // Abbreviations
   abbr[title],
   abbr[data-original-title] {
-    border-bottom-color: #888;
+    border-bottom-color: $dark-muted-color;
   }
 
   // Underline / insert
   u,
   ins {
-    border-bottom-color: #888;
+    border-bottom-color: $dark-muted-color;
   }
 
   // Blockquotes
   blockquote {
-    border-left-color: #e8935a;
+    border-left-color: $dark-link-color;
   }
 
   // Figure captions
   figcaption {
-    color: #888;
+    color: $dark-muted-color;
 
     a {
-      border-bottom-color: #2e2e2e;
+      border-bottom-color: $dark-border-color;
 
       &:hover {
-        color: #e0ddd8;
-        border-bottom-color: #e0ddd8;
+        color: $dark-text-color;
+        border-bottom-color: $dark-text-color;
       }
     }
   }
@@ -94,20 +95,20 @@ html[data-theme="dark"] {
   li > code,
   figcaption > code,
   td > code {
-    background: #252525;
-    border-color: #2e2e2e;
+    background: $dark-surface-raised-color;
+    border-color: $dark-border-color;
     box-shadow: none;
   }
 
   div.highlighter-rouge,
   figure.highlight {
-    background-color: #1e1e1e;
-    border-color: #2e2e2e;
+    background-color: $dark-surface-color;
+    border-color: $dark-border-color;
     box-shadow: none;
 
     &:before {
-      background-color: #252525;
-      color: #888;
+      background-color: $dark-surface-raised-color;
+      color: $dark-muted-color;
     }
   }
 
@@ -116,58 +117,58 @@ html[data-theme="dark"] {
   // -------------------------------------------------------------------------
 
   .masthead {
-    background-color: #141414;
-    border-bottom-color: #2e2e2e;
+    background-color: $dark-masthead-color;
+    border-bottom-color: $dark-border-color;
   }
 
   .greedy-nav {
-    background: #141414;
+    background: $dark-masthead-color;
 
     a {
-      color: #b8b4b0;
+      color: $dark-text-secondary-color;
 
       &:hover {
-        color: #e8935a;
+        color: $dark-link-color;
       }
     }
 
     // hamburger button
     button:not(.theme-toggle) {
-      background-color: #2a2a2a;
+      background-color: $dark-control-color;
 
       &:focus {
-        outline-color: #e8935a;
+        outline-color: $dark-link-color;
       }
     }
 
     // nav underline indicator
     .visible-links a:before {
-      background: mix(#1a1a1a, #e8935a, 50%);
+      background: color.mix($dark-background-color, $dark-link-color, 50%);
     }
 
     // overflow dropdown
     .hidden-links {
-      background: #1e1e1e;
-      border-color: #2e2e2e;
+      background: $dark-surface-color;
+      border-color: $dark-border-color;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
       a:hover {
-        background: #252525;
-        color: #e8935a;
+        background: $dark-surface-raised-color;
+        color: $dark-link-color;
       }
 
       li {
-        border-bottom-color: #2e2e2e;
+        border-bottom-color: $dark-border-color;
       }
 
       // dropdown arrow border (outer)
       &:before {
-        border-color: #2e2e2e transparent;
+        border-color: $dark-border-color transparent;
       }
 
       // dropdown arrow fill (inner)
       &:after {
-        border-color: #1e1e1e transparent;
+        border-color: $dark-surface-color transparent;
       }
     }
   }
@@ -177,15 +178,15 @@ html[data-theme="dark"] {
   // -------------------------------------------------------------------------
 
   .theme-toggle {
-    color: #b8b4b0;
+    color: $dark-text-secondary-color;
 
     &:hover {
-      color: #e8935a;
-      background-color: #252525;
+      color: $dark-link-color;
+      background-color: $dark-surface-raised-color;
     }
 
     &:focus {
-      outline-color: #e8935a;
+      outline-color: $dark-link-color;
     }
   }
 
@@ -194,36 +195,36 @@ html[data-theme="dark"] {
   // -------------------------------------------------------------------------
 
   .author__avatar img {
-    border-color: #2e2e2e;
+    border-color: $dark-border-color;
     box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
   }
 
   .author__bio {
-    color: #b8b4b0;
+    color: $dark-text-secondary-color;
   }
 
   // "Follow" button
   .btn.btn--inverse {
-    background-color: #252525;
-    color: #e0ddd8 !important;
-    border-color: #2e2e2e !important;
+    background-color: $dark-surface-raised-color;
+    color: $dark-text-color !important;
+    border-color: $dark-border-color !important;
 
     &:hover {
-      background-color: #1a1a1a;
-      color: #e0ddd8 !important;
-      border-color: #e8935a !important;
+      background-color: $dark-background-color;
+      color: $dark-text-color !important;
+      border-color: $dark-link-color !important;
     }
   }
 
   .author__urls a:hover {
-    background: #252525;
-    color: #e8935a;
+    background: $dark-surface-raised-color;
+    color: $dark-link-color;
   }
 
   // Social links dropdown (mobile)
   .author__urls {
-    background: #1e1e1e;
-    border-color: #2e2e2e;
+    background: $dark-surface-color;
+    border-color: $dark-border-color;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
     @include breakpoint($large) {
@@ -234,12 +235,12 @@ html[data-theme="dark"] {
 
     // dropdown triangle — outer (border)
     &:before {
-      border-color: #2e2e2e transparent;
+      border-color: $dark-border-color transparent;
     }
 
     // dropdown triangle — inner (fill)
     &:after {
-      border-color: #1e1e1e transparent;
+      border-color: $dark-surface-color transparent;
     }
   }
 
@@ -253,7 +254,7 @@ html[data-theme="dark"] {
     .fa-github,
     .fa-github-alt,
     .fa-github-square {
-      color: #b8b4b0 !important;
+      color: $dark-text-secondary-color !important;
     }
   }
 
@@ -263,33 +264,33 @@ html[data-theme="dark"] {
 
   .pagination {
     a {
-      color: #888;
-      border-color: #2e2e2e;
+      color: $dark-muted-color;
+      border-color: $dark-border-color;
 
       &:hover {
-        color: #e8935a;
+        color: $dark-link-color;
       }
 
       &.current {
-        color: #fff;
-        background: #3a3a3a;
+        color: $dark-text-strong-color;
+        background: $dark-active-color;
       }
 
       &.disabled {
-        color: #555;
+        color: $dark-disabled-color;
       }
     }
 
     &--pager {
-      color: #888;
-      border-color: #2e2e2e;
+      color: $dark-muted-color;
+      border-color: $dark-border-color;
 
       &:hover {
-        color: #e8935a;
+        color: $dark-link-color;
       }
 
       &.disabled {
-        color: #555;
+        color: $dark-disabled-color;
       }
     }
   }
@@ -298,29 +299,29 @@ html[data-theme="dark"] {
   .page__meta + .pagination,
   .page__share + .pagination,
   .page__comments + .pagination {
-    border-top-color: #2e2e2e;
+    border-top-color: $dark-border-color;
   }
 
   // Table of contents
   .toc {
-    color: #888;
-    background-color: #1e1e1e;
-    border-color: #2e2e2e;
+    color: $dark-muted-color;
+    background-color: $dark-surface-color;
+    border-color: $dark-border-color;
 
     .nav__title {
-      color: #fff;
-      background: #2a2a2a;
+      color: $dark-text-strong-color;
+      background: $dark-control-color;
     }
   }
 
   .toc__menu {
     a {
-      color: #888;
-      border-bottom-color: #2e2e2e;
+      color: $dark-muted-color;
+      border-bottom-color: $dark-border-color;
 
       &:hover {
-        color: #e0ddd8;
-        background: #252525;
+        color: $dark-text-color;
+        background: $dark-surface-raised-color;
       }
     }
   }
@@ -328,13 +329,13 @@ html[data-theme="dark"] {
   // Nav list (sidebar navigation)
   .nav__list {
     .active {
-      color: #fff;
-      background: #2a2a2a;
+      color: $dark-text-strong-color;
+      background: $dark-control-color;
     }
   }
 
   .nav__sub-title {
-    border-bottom-color: #2e2e2e;
+    border-bottom-color: $dark-border-color;
   }
 
   // -------------------------------------------------------------------------
@@ -343,51 +344,51 @@ html[data-theme="dark"] {
 
   .page__content {
     h2 {
-      border-bottom-color: #2e2e2e;
+      border-bottom-color: $dark-border-color;
     }
   }
 
   .page__share {
-    border-top-color: #2e2e2e;
+    border-top-color: $dark-border-color;
   }
 
   .page__comments-title,
   .comment:not(:last-child) {
-    border-color: #2e2e2e;
+    border-color: $dark-border-color;
   }
 
   .page__comments-form {
-    background: #1e1e1e;
+    background: $dark-surface-color;
   }
 
   .page__taxonomy-item {
-    border-color: #2e2e2e;
+    border-color: $dark-border-color;
 
     &:hover {
-      border-color: #e8935a;
-      color: #fff;
+      border-color: $dark-link-color;
+      color: $dark-text-strong-color;
     }
   }
 
   .comment__avatar {
-    border-color: #2e2e2e;
+    border-color: $dark-border-color;
   }
 
   .page__meta {
-    color: #888;
+    color: $dark-muted-color;
   }
 
   .page__date {
-    color: #888;
+    color: $dark-muted-color;
   }
 
   // Related posts title
   .page__related {
-    border-top-color: #2e2e2e;
+    border-top-color: $dark-border-color;
   }
 
   .feature__wrapper {
-    border-bottom-color: #2e2e2e;
+    border-bottom-color: $dark-border-color;
   }
 
   // -------------------------------------------------------------------------
@@ -395,8 +396,8 @@ html[data-theme="dark"] {
   // -------------------------------------------------------------------------
 
   .archive__subtitle {
-    color: #888;
-    border-bottom-color: #2e2e2e;
+    color: $dark-muted-color;
+    border-bottom-color: $dark-border-color;
   }
 
   // -------------------------------------------------------------------------
@@ -404,22 +405,22 @@ html[data-theme="dark"] {
   // -------------------------------------------------------------------------
 
   .page__footer {
-    background-color: #0f0f0f;
-    border-top-color: #2e2e2e;
-    color: #888;
+    background-color: $dark-footer-color;
+    border-top-color: $dark-border-color;
+    color: $dark-muted-color;
 
     .fas,
     .fab,
     .far,
     .fal {
-      color: #888;
+      color: $dark-muted-color;
     }
 
     a {
-      color: #888;
+      color: $dark-muted-color;
 
       &:hover {
-        color: #e8935a;
+        color: $dark-link-color;
         text-decoration: underline;
       }
     }
@@ -430,21 +431,21 @@ html[data-theme="dark"] {
   // -------------------------------------------------------------------------
 
   table {
-    border-color: #2e2e2e;
+    border-color: $dark-border-color;
   }
 
   thead {
-    background-color: #252525;
-    border-bottom-color: #2e2e2e;
+    background-color: $dark-surface-raised-color;
+    border-bottom-color: $dark-border-color;
   }
 
   th {
-    border-right-color: #2e2e2e;
+    border-right-color: $dark-border-color;
   }
 
   td {
-    border-bottom-color: #2e2e2e;
-    border-right-color: #2e2e2e;
+    border-bottom-color: $dark-border-color;
+    border-right-color: $dark-border-color;
   }
 
   // -------------------------------------------------------------------------
@@ -454,31 +455,31 @@ html[data-theme="dark"] {
   input,
   textarea,
   select {
-    background-color: #252525;
-    color: #e0ddd8;
-    border-color: #2e2e2e;
+    background-color: $dark-surface-raised-color;
+    color: $dark-text-color;
+    border-color: $dark-border-color;
     box-shadow: none;
 
     &:hover,
     &:focus {
-      border-color: #e8935a;
+      border-color: $dark-link-color;
     }
   }
 
   legend {
-    color: #e0ddd8;
-    border-bottom-color: #2e2e2e;
+    color: $dark-text-color;
+    border-bottom-color: $dark-border-color;
   }
 
   select option,
   select optgroup {
-    background-color: #252525;
-    color: #e0ddd8;
+    background-color: $dark-surface-raised-color;
+    color: $dark-text-color;
   }
 
   input::placeholder,
   textarea::placeholder {
-    color: #9a9692;
+    color: $dark-text-tertiary-color;
     opacity: 1;
   }
 
@@ -491,10 +492,10 @@ html[data-theme="dark"] {
   select:-webkit-autofill,
   select:-webkit-autofill:hover,
   select:-webkit-autofill:focus {
-    -webkit-text-fill-color: #e0ddd8;
-    caret-color: #e0ddd8;
-    box-shadow: 0 0 0 1000px #252525 inset;
-    border-color: #e8935a;
+    -webkit-text-fill-color: $dark-text-color;
+    caret-color: $dark-text-color;
+    box-shadow: 0 0 0 1000px $dark-surface-raised-color inset;
+    border-color: $dark-link-color;
   }
 
   input[type="file"] {
@@ -503,11 +504,11 @@ html[data-theme="dark"] {
 
   input[type="checkbox"],
   input[type="radio"] {
-    accent-color: #de7536;
+    accent-color: $hermes-desaturated;
   }
 
   label {
-    color: #e0ddd8;
+    color: $dark-text-color;
   }
 
   input[disabled],
@@ -516,9 +517,9 @@ html[data-theme="dark"] {
   input[readonly],
   select[readonly],
   textarea[readonly] {
-    background-color: #202020;
-    color: #908a84;
-    border-color: #2a2a2a;
+    background-color: $dark-code-inline-color;
+    color: $dark-text-subtle-color;
+    border-color: $dark-control-color;
     opacity: 1;
   }
 
@@ -533,7 +534,7 @@ html[data-theme="dark"] {
 
   .help-block,
   .help-inline {
-    color: #d88956;
+    color: $dark-link-hover-color;
   }
 
   .form:before {
@@ -541,9 +542,9 @@ html[data-theme="dark"] {
   }
 
   #goog-wm-qt {
-    background-color: #252525;
-    color: #e0ddd8;
-    border-color: #2e2e2e !important;
+    background-color: $dark-surface-raised-color;
+    color: $dark-text-color;
+    border-color: $dark-border-color !important;
     box-shadow: none;
   }
 
@@ -557,36 +558,36 @@ html[data-theme="dark"] {
   .notice--warning,
   .notice--success,
   .notice--danger {
-    background-color: #252525;
-    color: #e0ddd8;
-    border-left: 4px solid #555;
+    background-color: $dark-surface-raised-color;
+    color: $dark-text-color;
+    border-left: 4px solid $dark-disabled-color;
     box-shadow: none;
 
     code {
-      background-color: #1a1a1a;
-      border-color: #2e2e2e;
+      background-color: $dark-background-color;
+      border-color: $dark-border-color;
     }
   }
 
   .notice,
   .notice--primary {
-    border-left-color: #e8935a;
+    border-left-color: $dark-link-color;
   }
 
   .notice--info {
-    border-left-color: #58a6d6;
+    border-left-color: $dark-info-color;
   }
 
   .notice--warning {
-    border-left-color: #d6aa58;
+    border-left-color: $dark-warning-color;
   }
 
   .notice--success {
-    border-left-color: #73b276;
+    border-left-color: $dark-success-color;
   }
 
   .notice--danger {
-    border-left-color: #d86c6c;
+    border-left-color: $dark-danger-color;
   }
 
   // -------------------------------------------------------------------------
@@ -595,18 +596,18 @@ html[data-theme="dark"] {
 
   .footnote,
   .footnotes {
-    color: #9a9692;
+    color: $dark-text-tertiary-color;
   }
 
   .footnotes {
-    border-top-color: #2e2e2e;
+    border-top-color: $dark-border-color;
   }
 
   a.reversefootnote {
-    color: #b8b4b0;
+    color: $dark-text-secondary-color;
 
     &:hover {
-      color: #e8935a;
+      color: $dark-link-color;
     }
   }
 
@@ -617,7 +618,7 @@ html[data-theme="dark"] {
   .navicon,
   .navicon:before,
   .navicon:after {
-    background: #b8b4b0;
+    background: $dark-text-secondary-color;
   }
 
   // -------------------------------------------------------------------------
@@ -627,8 +628,8 @@ html[data-theme="dark"] {
   // Skip-to-content focus link
   .screen-reader-text:focus,
   .screen-reader-shortcut:focus {
-    background: #1e1e1e;
-    color: #e0ddd8;
+    background: $dark-surface-color;
+    color: $dark-text-color;
   }
 
   // Modal overlay
@@ -638,18 +639,18 @@ html[data-theme="dark"] {
 
   // Modal dialog
   .modal {
-    background: #1e1e1e;
-    border-color: #2e2e2e;
+    background: $dark-surface-color;
+    border-color: $dark-border-color;
   }
 
   .modal__actions {
-    border-top-color: #2e2e2e;
+    border-top-color: $dark-border-color;
   }
 
   // Well
   .well {
-    background-color: #252525;
-    border-color: #2e2e2e;
+    background-color: $dark-surface-raised-color;
+    border-color: $dark-border-color;
     box-shadow: none;
   }
 
@@ -659,74 +660,74 @@ html[data-theme="dark"] {
 
   div.highlighter-rouge .highlight,
   figure.highlight .highlight {
-    .c   { color: #75715e } /* Comment */
-    .err { color: #f8f8f2 } /* Error */
-    .g   { color: #f8f8f2 } /* Generic */
-    .k   { color: #66d9ef } /* Keyword */
-    .l   { color: #f8f8f2 } /* Literal */
-    .n   { color: #f8f8f2 } /* Name */
-    .o   { color: #f92672 } /* Operator */
-    .x   { color: #ae81ff } /* Other */
-    .p   { color: #f8f8f2 } /* Punctuation */
-    .cm  { color: #75715e } /* Comment.Multiline */
-    .cp  { color: #75715e } /* Comment.Preproc */
-    .c1  { color: #75715e } /* Comment.Single */
-    .cs  { color: #75715e } /* Comment.Special */
-    .gd  { color: #f92672 } /* Generic.Deleted */
-    .ge  { color: #f8f8f2; font-style: italic } /* Generic.Emph */
-    .gr  { color: #f92672 } /* Generic.Error */
-    .gh  { color: #a6e22e; font-weight: bold } /* Generic.Heading */
-    .gi  { color: #a6e22e } /* Generic.Inserted */
-    .go  { color: #75715e } /* Generic.Output */
-    .gp  { color: #75715e } /* Generic.Prompt */
-    .gs  { color: #f8f8f2; font-weight: bold } /* Generic.Strong */
-    .gu  { color: #a6e22e } /* Generic.Subheading */
-    .gt  { color: #f92672 } /* Generic.Traceback */
-    .kc  { color: #66d9ef } /* Keyword.Constant */
-    .kd  { color: #66d9ef } /* Keyword.Declaration */
-    .kn  { color: #f92672 } /* Keyword.Namespace */
-    .kp  { color: #66d9ef } /* Keyword.Pseudo */
-    .kr  { color: #66d9ef } /* Keyword.Reserved */
-    .kt  { color: #66d9ef } /* Keyword.Type */
-    .ld  { color: #e6db74 } /* Literal.Date */
-    .m   { color: #ae81ff } /* Literal.Number */
-    .s   { color: #e6db74 } /* Literal.String */
-    .na  { color: #a6e22e } /* Name.Attribute */
-    .nb  { color: #f8f8f2 } /* Name.Builtin */
-    .nc  { color: #a6e22e } /* Name.Class */
-    .no  { color: #66d9ef } /* Name.Constant */
-    .nd  { color: #a6e22e } /* Name.Decorator */
-    .ni  { color: #f8f8f2 } /* Name.Entity */
-    .ne  { color: #a6e22e } /* Name.Exception */
-    .nf  { color: #a6e22e } /* Name.Function */
-    .nl  { color: #f8f8f2 } /* Name.Label */
-    .nn  { color: #f8f8f2 } /* Name.Namespace */
-    .nx  { color: #a6e22e } /* Name.Other */
-    .py  { color: #f8f8f2 } /* Name.Property */
-    .nt  { color: #f92672 } /* Name.Tag */
-    .nv  { color: #f8f8f2 } /* Name.Variable */
-    .ow  { color: #f92672 } /* Operator.Word */
-    .w   { color: #75715e } /* Text.Whitespace */
-    .mf  { color: #ae81ff } /* Literal.Number.Float */
-    .mh  { color: #ae81ff } /* Literal.Number.Hex */
-    .mi  { color: #ae81ff } /* Literal.Number.Integer */
-    .mo  { color: #ae81ff } /* Literal.Number.Oct */
-    .sb  { color: #e6db74 } /* Literal.String.Backtick */
-    .sc  { color: #e6db74 } /* Literal.String.Char */
-    .sd  { color: #e6db74 } /* Literal.String.Doc */
-    .s2  { color: #e6db74 } /* Literal.String.Double */
-    .se  { color: #ae81ff } /* Literal.String.Escape */
-    .sh  { color: #e6db74 } /* Literal.String.Heredoc */
-    .si  { color: #e6db74 } /* Literal.String.Interpol */
-    .sx  { color: #e6db74 } /* Literal.String.Other */
-    .sr  { color: #e6db74 } /* Literal.String.Regex */
-    .s1  { color: #e6db74 } /* Literal.String.Single */
-    .ss  { color: #e6db74 } /* Literal.String.Symbol */
-    .bp  { color: #f8f8f2 } /* Name.Builtin.Pseudo */
-    .vc  { color: #f8f8f2 } /* Variable.Class */
-    .vg  { color: #f8f8f2 } /* Variable.Global */
-    .vi  { color: #f8f8f2 } /* Variable.Instance */
-    .il  { color: #ae81ff } /* Literal.Number.Integer.Long */
+    .c   { color: $dark-syntax-muted-color } /* Comment */
+    .err { color: $dark-syntax-text-color } /* Error */
+    .g   { color: $dark-syntax-text-color } /* Generic */
+    .k   { color: $dark-syntax-blue-color } /* Keyword */
+    .l   { color: $dark-syntax-text-color } /* Literal */
+    .n   { color: $dark-syntax-text-color } /* Name */
+    .o   { color: $dark-syntax-red-color } /* Operator */
+    .x   { color: $dark-syntax-purple-color } /* Other */
+    .p   { color: $dark-syntax-text-color } /* Punctuation */
+    .cm  { color: $dark-syntax-muted-color } /* Comment.Multiline */
+    .cp  { color: $dark-syntax-muted-color } /* Comment.Preproc */
+    .c1  { color: $dark-syntax-muted-color } /* Comment.Single */
+    .cs  { color: $dark-syntax-muted-color } /* Comment.Special */
+    .gd  { color: $dark-syntax-red-color } /* Generic.Deleted */
+    .ge  { color: $dark-syntax-text-color; font-style: italic } /* Generic.Emph */
+    .gr  { color: $dark-syntax-red-color } /* Generic.Error */
+    .gh  { color: $dark-syntax-green-color; font-weight: bold } /* Generic.Heading */
+    .gi  { color: $dark-syntax-green-color } /* Generic.Inserted */
+    .go  { color: $dark-syntax-muted-color } /* Generic.Output */
+    .gp  { color: $dark-syntax-muted-color } /* Generic.Prompt */
+    .gs  { color: $dark-syntax-text-color; font-weight: bold } /* Generic.Strong */
+    .gu  { color: $dark-syntax-green-color } /* Generic.Subheading */
+    .gt  { color: $dark-syntax-red-color } /* Generic.Traceback */
+    .kc  { color: $dark-syntax-blue-color } /* Keyword.Constant */
+    .kd  { color: $dark-syntax-blue-color } /* Keyword.Declaration */
+    .kn  { color: $dark-syntax-red-color } /* Keyword.Namespace */
+    .kp  { color: $dark-syntax-blue-color } /* Keyword.Pseudo */
+    .kr  { color: $dark-syntax-blue-color } /* Keyword.Reserved */
+    .kt  { color: $dark-syntax-blue-color } /* Keyword.Type */
+    .ld  { color: $dark-syntax-yellow-color } /* Literal.Date */
+    .m   { color: $dark-syntax-purple-color } /* Literal.Number */
+    .s   { color: $dark-syntax-yellow-color } /* Literal.String */
+    .na  { color: $dark-syntax-green-color } /* Name.Attribute */
+    .nb  { color: $dark-syntax-text-color } /* Name.Builtin */
+    .nc  { color: $dark-syntax-green-color } /* Name.Class */
+    .no  { color: $dark-syntax-blue-color } /* Name.Constant */
+    .nd  { color: $dark-syntax-green-color } /* Name.Decorator */
+    .ni  { color: $dark-syntax-text-color } /* Name.Entity */
+    .ne  { color: $dark-syntax-green-color } /* Name.Exception */
+    .nf  { color: $dark-syntax-green-color } /* Name.Function */
+    .nl  { color: $dark-syntax-text-color } /* Name.Label */
+    .nn  { color: $dark-syntax-text-color } /* Name.Namespace */
+    .nx  { color: $dark-syntax-green-color } /* Name.Other */
+    .py  { color: $dark-syntax-text-color } /* Name.Property */
+    .nt  { color: $dark-syntax-red-color } /* Name.Tag */
+    .nv  { color: $dark-syntax-text-color } /* Name.Variable */
+    .ow  { color: $dark-syntax-red-color } /* Operator.Word */
+    .w   { color: $dark-syntax-muted-color } /* Text.Whitespace */
+    .mf  { color: $dark-syntax-purple-color } /* Literal.Number.Float */
+    .mh  { color: $dark-syntax-purple-color } /* Literal.Number.Hex */
+    .mi  { color: $dark-syntax-purple-color } /* Literal.Number.Integer */
+    .mo  { color: $dark-syntax-purple-color } /* Literal.Number.Oct */
+    .sb  { color: $dark-syntax-yellow-color } /* Literal.String.Backtick */
+    .sc  { color: $dark-syntax-yellow-color } /* Literal.String.Char */
+    .sd  { color: $dark-syntax-yellow-color } /* Literal.String.Doc */
+    .s2  { color: $dark-syntax-yellow-color } /* Literal.String.Double */
+    .se  { color: $dark-syntax-purple-color } /* Literal.String.Escape */
+    .sh  { color: $dark-syntax-yellow-color } /* Literal.String.Heredoc */
+    .si  { color: $dark-syntax-yellow-color } /* Literal.String.Interpol */
+    .sx  { color: $dark-syntax-yellow-color } /* Literal.String.Other */
+    .sr  { color: $dark-syntax-yellow-color } /* Literal.String.Regex */
+    .s1  { color: $dark-syntax-yellow-color } /* Literal.String.Single */
+    .ss  { color: $dark-syntax-yellow-color } /* Literal.String.Symbol */
+    .bp  { color: $dark-syntax-text-color } /* Name.Builtin.Pseudo */
+    .vc  { color: $dark-syntax-text-color } /* Variable.Class */
+    .vg  { color: $dark-syntax-text-color } /* Variable.Global */
+    .vi  { color: $dark-syntax-text-color } /* Variable.Instance */
+    .il  { color: $dark-syntax-purple-color } /* Literal.Number.Integer.Long */
   }
 }
 

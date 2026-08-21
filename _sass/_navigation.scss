@@ -1,3 +1,4 @@
+@use "sass:color";
 /* ==========================================================================
    NAVIGATION
    ========================================================================== */
@@ -83,7 +84,7 @@
       line-height: 1.5;
       text-align: center;
       text-decoration: none;
-      color: mix(#fff, $gray, 25%);
+      color: color.mix(#fff, $gray, 25%);
       border: 1px solid $light-gray;
       border-radius: 0;
 
@@ -97,7 +98,7 @@
       }
 
       &.disabled {
-        color: mix(#fff, $gray, 75%);
+        color: color.mix(#fff, $gray, 75%);
         pointer-events: none;
         cursor: not-allowed;
       }
@@ -131,7 +132,7 @@
     font-weight: bold;
     text-align: center;
     text-decoration: none;
-    color: mix(#fff, $gray, 50%);
+    color: color.mix(#fff, $gray, 50%);
     border: 1px solid $light-gray;
     border-radius: $border-radius;
 
@@ -151,7 +152,7 @@
     }
 
     &.disabled {
-      color: mix(#fff, $gray, 75%);
+      color: color.mix(#fff, $gray, 75%);
       pointer-events: none;
       cursor: not-allowed;
     }
@@ -240,7 +241,7 @@
         left: 0;
         bottom: 0;
         height: 4px;
-        background: mix(#fff, $primary-color, 50%);
+        background: color.mix(#fff, $primary-color, 50%);
         width: 100%;
         -webkit-transition: $global-transition;
         transition: $global-transition;
@@ -287,7 +288,7 @@
 
       &:hover {
         color: $masthead-link-color-hover;
-        background: mix(#fff, $primary-color, 75%);
+        background: color.mix(#fff, $primary-color, 75%);
       }
     }
 

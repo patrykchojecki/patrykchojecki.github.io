@@ -1,3 +1,4 @@
+@use "sass:color";
 /* ==========================================================================
    NOW PAGE
    ========================================================================== */
@@ -66,7 +67,7 @@
   align-items: center;
   gap: 0.55rem 0.75rem;
   margin-top: 0.3rem;
-  color: mix(#fff, $text-color, 22%);
+  color: color.mix(#fff, $text-color, 22%);
   font-size: $type-size-6;
 }
 
@@ -124,7 +125,7 @@
 .xbox-activity__label,
 .xbox-activity__meta,
 .xbox-activity__game-name {
-  color: mix(#fff, $text-color, 28%);
+  color: color.mix(#fff, $text-color, 28%);
 }
 
 .xbox-activity__label,
@@ -166,7 +167,7 @@
   gap: 0.35rem 0.7rem;
   align-items: center;
   margin-top: 1rem;
-  color: mix(#fff, $text-color, 28%);
+  color: color.mix(#fff, $text-color, 28%);
   font-size: $type-size-6;
 
   a {

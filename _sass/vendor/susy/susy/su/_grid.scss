@@ -1,3 +1,5 @@
+@use "sass:list";
+@use "sass:meta";
 // Column math
 // ===========
 
@@ -10,7 +12,7 @@
   $columns: susy-get(columns)
 ) {
   $columns: valid-columns($columns);
-  @return if(type-of($columns) == number, $columns, null);
+  @return if(sass(meta.type-of($columns) == number): $columns);
 }
 
 
@@ -22,7 +24,7 @@
   $columns: susy-get(columns)
 ) {
   $columns: valid-columns($columns);
-  @return is-symmetrical($columns) or length($columns);
+  @return is-symmetrical($columns) or list.length($columns);
 }
 
 
@@ -40,7 +42,7 @@
   $columns: valid-columns($columns);
   $gutters: valid-gutters($gutters);
 
-  $spread: if($spread == wide, 0, if($spread == wider, 1, -1));
+  $spread: if(sass($spread == wide): 0; else: if(sass($spread == wider): 1; else: -1));
   $gutter-sum: (susy-count($columns) + $spread) * $gutters;
   $column-sum: is-symmetrical($columns);
 
@@ -72,7 +74,7 @@
     $location: $location or 1;
     $sub-columns: ();
     @for $i from $location to ($location + $span) {
-      $sub-columns: append($sub-columns, nth($columns, $i));
+      $sub-columns: list.append($sub-columns, list.nth($columns, $i));
     }
   }
 

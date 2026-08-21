@@ -1,3 +1,4 @@
+@use "sass:map";
 // Direction Helpers
 // =================
 
@@ -14,11 +15,11 @@
 // - [$flow]  : ltr | rtl
 // - [$key]   : from | to
 @function get-direction(
-  $flow: map-get($susy-defaults, flow),
+  $flow: map.get($susy-defaults, flow),
   $key: from
 ) {
-  $return: if($flow == rtl, (from: right, to: left), (from: left, to: right));
-  @return map-get($return, $key);
+  $return: if(sass($flow == rtl): (from: right, to: left); else: (from: left, to: right));
+  @return map.get($return, $key);
 }
 
 // To
@@ -26,7 +27,7 @@
 // Return the 'to' direction of a flow
 // - [$flow]  : ltr | rtl
 @function to(
-  $flow: map-get($susy-defaults, flow)
+  $flow: map.get($susy-defaults, flow)
 ) {
   @return get-direction($flow, to);
 }
@@ -36,7 +37,7 @@
 // Return the 'from' direction of a flow
 // - [$flow]  : ltr | rtl
 @function from(
-  $flow: map-get($susy-defaults, flow)
+  $flow: map.get($susy-defaults, flow)
 ) {
   @return get-direction($flow, from);
 }

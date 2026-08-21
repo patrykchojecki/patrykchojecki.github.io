@@ -1,3 +1,4 @@
+@use "sass:map";
 // Float Ends API
 // ==============
 
@@ -12,14 +13,14 @@
 // ----------
 // - [$flow]  : ltr | rtl
 @mixin float-last(
-  $flow: map-get($susy-defaults, flow),
-  $last-flow: map-get($susy-defaults, last-flow),
+  $flow: map.get($susy-defaults, flow),
+  $last-flow: map.get($susy-defaults, last-flow),
   $margin: 0
 ) {
   $to: to($flow);
 
   $output: (
-    float: if($last-flow == to, $to, null),
+    float: if(sass($last-flow == to): $to),
     margin-#{$to}: $margin,
   );
 
@@ -30,7 +31,7 @@
 // -----------
 // - [$flow]  : ltr | rtl
 @mixin float-first(
-  $flow: map-get($susy-defaults, flow)
+  $flow: map.get($susy-defaults, flow)
 ) {
   $output: (
     margin-#{from($flow)}: 0,

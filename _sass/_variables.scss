@@ -1,3 +1,4 @@
+@use "sass:color";
 /* ==========================================================================
    Variables
    ========================================================================== */
@@ -48,8 +49,8 @@ $type-size-8                : 0.625em;
    ========================================================================== */
 
 $gray                       : #8a8f98;
-$dark-gray                  : mix(#000, $gray, 40%);
-$darker-gray                : mix(#000, $gray, 60%);
+$dark-gray                  : color.mix(#000, $gray, 40%);
+$darker-gray                : color.mix(#000, $gray, 60%);
 $light-gray                 : #f5f6fa;
 $lighter-gray               : #f9fafb;
 
@@ -69,6 +70,48 @@ $success-color              : #62c462;
 $warning-color              : #f89406;
 $danger-color               : #ee5f5b;
 $info-color                 : #a84d1f;
+
+/* semantic light-theme surfaces */
+$footer-background-color    : $lighter-gray;
+$footer-border-color        : $light-gray;
+$footer-text-color          : $primary-color;
+$inverse-button-background  : $background-color;
+$inverse-button-text-color  : $primary-color;
+$inverse-button-border-color: $light-gray;
+
+/* semantic dark-theme palette */
+$dark-background-color      : #1a1a1a;
+$dark-masthead-color        : #141414;
+$dark-footer-color          : #0f0f0f;
+$dark-surface-color         : #1e1e1e;
+$dark-surface-raised-color  : #252525;
+$dark-control-color         : #2a2a2a;
+$dark-active-color          : #3a3a3a;
+$dark-code-inline-color     : #202020;
+$dark-border-color          : #2e2e2e;
+$dark-text-color            : #e0ddd8;
+$dark-text-strong-color     : #fff;
+$dark-text-secondary-color  : #b8b4b0;
+$dark-text-tertiary-color   : #9a9692;
+$dark-text-subtle-color     : #908a84;
+$dark-muted-color           : #888;
+$dark-disabled-color        : #555;
+$dark-link-color            : #e8935a;
+$dark-link-hover-color      : #d88956;
+$dark-selection-color       : #8f4317;
+$dark-danger-color          : #d86c6c;
+$dark-warning-color         : #d6aa58;
+$dark-success-color         : #73b276;
+$dark-info-color            : #58a6d6;
+
+/* dark syntax-highlight palette */
+$dark-syntax-text-color     : #f8f8f2;
+$dark-syntax-muted-color    : #75715e;
+$dark-syntax-red-color      : #f92672;
+$dark-syntax-green-color    : #a6e22e;
+$dark-syntax-yellow-color   : #e6db74;
+$dark-syntax-blue-color     : #66d9ef;
+$dark-syntax-purple-color   : #ae81ff;
 
 /* brands */
 $behance-color              : #1769FF;
@@ -132,7 +175,7 @@ $right-sidebar-width-wide   : 0px;
 $susy: (
   columns: 12,
   column-width: 120px,
-  gutters: 1/4,
+  gutters: 1*0.25,
   math: fluid,
   output: float,
   gutter-position: after,

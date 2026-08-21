@@ -1,3 +1,4 @@
+@use "sass:meta";
 // Browser Support
 // ===============
 
@@ -67,7 +68,14 @@
 
     @each $_type, $_req in $requirements {
       @each $_i in $_req {
-        $_pass: call(get-function(unquote("#{$_type}-exists")), $_i);
+        // Avoid constructing deprecated global *-exists functions dynamically.
+        $_pass: if(sass($_type == mixin): meta.mixin-exists($_i); else: false);
+
+        @if $_type == variable {
+          $_pass: meta.variable-exists($_i);
+        } @else if $_type == function {
+          $_pass: meta.function-exists($_i);
+        }
 
         @if not($_pass) {
           $_fail: true;
@@ -78,7 +86,7 @@
       }
     }
 
-    $_support: if($_fail, false, $_support);
+    $_support: if(sass($_fail): false; else: $_support);
   }
 
   @return $_support;

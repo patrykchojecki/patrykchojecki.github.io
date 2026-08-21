@@ -1,3 +1,6 @@
+@use "sass:list";
+@use "sass:map";
+@use "sass:meta";
 // Span Syntax
 // ===========
 
@@ -5,6 +8,8 @@
 // ------------
 // Set a spanning element using shorthand syntax.
 // - $span  : <span>
+@use "sass:math";
+
 @mixin span(
   $span
 ) {
@@ -15,8 +20,8 @@
   $clear: susy-get(clear, $span);
 
   $box: susy-get(box-sizing, $span);
-  $content-box: if(susy-get(global-box-sizing) != 'border-box', true, false);
-  $box: $box or if(is-inside($span) and $content-box, border-box, null);
+  $content-box: if(sass(susy-get(global-box-sizing) != 'border-box'): true; else: false);
+  $box: $box or if(sass(is-inside($span) and $content-box): border-box);
 
   @if $clear == break {
     @include break;
@@ -52,8 +57,8 @@
 @function span-math(
   $span
 ) {
-  $nest             : if(susy-get(role, $span) == nest, true, false);
-  $split-nest       : if(is-split($span) and $nest, true, false);
+  $nest             : if(sass(susy-get(role, $span) == nest): true; else: false);
+  $split-nest       : if(sass(is-split($span) and $nest): true; else: false);
   $edge             : get-edge($span);
   $location         : get-location($span);
 
@@ -64,21 +69,21 @@
   $margin-after     : null;
 
   // calculate widths
-  $spread: index(map-values($span), spread);
-  $span: if($split-nest and not($spread), map-merge($span, (spread: wide)), $span);
+  $spread: list.index(map.values($span), spread);
+  $span: if(sass($split-nest and not($spread)): map.merge($span, (spread: wide)); else: $span);
   $width: get-span-width($span);
   $gutters: get-gutters($span);
 
   // apply gutters
   @if is-inside($span) {
     @if not(susy-get(role, $span)) {
-      $padding-before: map-get($gutters, before);
-      $padding-after: map-get($gutters, after);
+      $padding-before: map.get($gutters, before);
+      $padding-after: map.get($gutters, after);
     }
   } @else {
     @if not($split-nest) {
-      $margin-before: map-get($gutters, before);
-      $margin-after: map-get($gutters, after);
+      $margin-before: map.get($gutters, before);
+      $margin-after: map.get($gutters, after);
     }
   }
 
@@ -138,14 +143,14 @@
   @if $n == 'full' {
     $pos: susy-get(gutter-position, $span);
     $role: susy-get(role, $span);
-    $n: if($pos == split and $role != nest, susy-count($columns), 100%);
+    $n: if(sass($pos == split and $role != nest): susy-count($columns); else: 100%);
   }
 
-  @if type-of($n) != number {
-    @warn "(#{type-of($n)}) #{$n} is not a valid span.";
-  } @else if unitless($n) {
-    $context: susy-sum($columns, $gutters, if(is-split($span), wide, narrow));
-    $spread: if(is-inside($span), $spread or wide, $spread);
+  @if meta.type-of($n) != number {
+    @warn "(#{meta.type-of($n)}) #{$n} is not a valid span.";
+  } @else if math.is-unitless($n) {
+    $context: susy-sum($columns, $gutters, if(sass(is-split($span)): wide; else: narrow));
+    $spread: if(sass(is-inside($span)): $spread or wide; else: $spread);
     $span-sum: susy($n, $location, $columns, $gutters, $spread);
 
     $_math: susy-get(math, $span);
@@ -153,7 +158,7 @@
     @if $_math == static {
       $width: $span-sum * valid-column-math($_math, $_column-width);
     } @else {
-      $width: percentage($span-sum / $context);
+      $width: math.percentage(math.div($span-sum, $context));
     }
   } @else {
     $width: $n;

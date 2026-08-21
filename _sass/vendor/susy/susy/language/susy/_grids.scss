@@ -60,5 +60,5 @@
   $clean: false
 ) {
   $layout: layout($layout);
-  @return if($clean, $layout, _susy-deep-merge($susy, $layout));
+  @return if(sass($clean): $layout; else: _susy-deep-merge($susy, $layout));
 }

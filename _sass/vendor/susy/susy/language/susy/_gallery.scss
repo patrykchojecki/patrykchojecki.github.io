@@ -1,3 +1,4 @@
+@use "sass:map";
 // Gallery Syntax
 // ==============
 
@@ -6,13 +7,15 @@
 // Create an isolated gallery
 // - $span        : <span>
 // - [$selector]  : child | of-type
+@use "sass:math";
+
 @mixin gallery(
   $span,
   $selector: child
 ) {
   $inspect    : $span;
   $span       : parse-span($span);
-  $span       : map-merge($span, (location: 1));
+  $span       : map.merge($span, (location: 1));
 
   $n            : susy-get(span, $span);
   $columns      : susy-get(columns, $span);
@@ -21,7 +24,7 @@
 
   $inside       : is-inside($span);
   $from         : from($flow);
-  $line         : floor($context / $n);
+  $line         : math.floor(math.div($context, $n));
   $symmetrical  : is-symmetrical($columns);
 
   $output: (
@@ -36,18 +39,18 @@
 
   @if $inside {
     $gutters: get-gutters($span);
-    $output: map-merge($output, (
-      padding-before: map-get($gutters, before),
-      padding-after: map-get($gutters, after),
+    $output: map.merge($output, (
+      padding-before: map.get($gutters, before),
+      padding-after: map.get($gutters, after),
     ));
   }
 
   @if $symmetrical {
-    $output: map-merge($output, (width: get-span-width($span)));
+    $output: map.merge($output, (width: get-span-width($span)));
   }
 
   $box          : susy-get(box-sizing, $span);
-  $global-box   : if(susy-get(global-box-sizing) == 'border-box', true, false);
+  $global-box   : if(sass(susy-get(global-box-sizing) == 'border-box'): true; else: false);
 
   @include susy-inspect(gallery, $inspect);
 
@@ -66,7 +69,7 @@
     &:nth-#{$selector}(#{$nth}) {
       // Individual Prep
       $output: (
-        width             : if($symmetrical, null, get-span-width($span)),
+        width             : if(not sass($symmetrical): get-span-width($span)),
         float             : null,
         margin-before     : get-isolation($span),
         margin-after      : -100%,
@@ -87,8 +90,8 @@
 
       // Individual Location Increment
       $location: get-location($span) + $n;
-      $location: if($location > $context, 1, $location);
-      $span: map-merge($span, (location: $location));
+      $location: if(sass($location > $context): 1; else: $location);
+      $span: map.merge($span, (location: $location));
     }
   }
 }

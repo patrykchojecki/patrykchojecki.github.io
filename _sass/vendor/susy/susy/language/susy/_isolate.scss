@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "sass:math";
+@use "sass:meta";
 // Isolation Syntax
 // ================
 
@@ -36,7 +39,7 @@
       span: null,
       location: $isolation,
     );
-    $isolate: map-merge($isolate, $new);
+    $isolate: map.merge($isolate, $new);
   }
 
   @return get-isolation($isolate);
@@ -54,12 +57,12 @@
   $columns    : susy-get(columns, $input);
   $width      : null;
 
-  @if type-of($location) == number and not(unitless($location)) {
+  @if meta.type-of($location) == number and not(math.is-unitless($location)) {
     $width: $location;
   } @else if $location {
     $push: $location - 1;
     @if $push > 0 {
-      $push: map-merge($input, (
+      $push: map.merge($input, (
         span: $push,
         location: 1,
         spread: wide,
@@ -70,7 +73,7 @@
 
   @if susy-get(gutter-position, $input) == split
       and susy-get(gutters, $input) > 0 {
-    $width: if($width == null, gutters($input), $width + gutters($input));
+    $width: if(sass($width == null): gutters($input); else: $width + gutters($input));
   }
 
   @return $width or 0;

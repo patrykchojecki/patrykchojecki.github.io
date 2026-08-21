@@ -1,3 +1,4 @@
+@use "sass:color";
 /* ==========================================================================
    BUTTONS
    ========================================================================== */
@@ -23,7 +24,7 @@
   cursor: pointer;
 
   &:hover {
-    background-color: mix(white, #000, 20%);
+    background-color: color.mix(white, #000, 20%);
   }
 
   .icon {
@@ -48,9 +49,9 @@
   /* for dark backgrounds */
 
   &--inverse {
-    color: $gray !important;
-    border: 1px solid $light-gray !important; /* override*/
-    background-color: #fff;
+    color: $inverse-button-text-color !important;
+    border: 1px solid $inverse-button-border-color !important; /* override*/
+    background-color: $inverse-button-background;
 
     &:hover {
       color: #fff !important;
@@ -71,7 +72,7 @@
     background-color: $info-color;
 
     &:hover {
-      background-color: mix(#000, $info-color, 20%);
+      background-color: color.mix(#000, $info-color, 20%);
     }
   }
 
@@ -81,7 +82,7 @@
     background-color: $warning-color;
 
     &:hover {
-      background-color: mix(#000, $warning-color, 20%);
+      background-color: color.mix(#000, $warning-color, 20%);
     }
   }
 
@@ -91,7 +92,7 @@
     background-color: $success-color;
 
     &:hover {
-      background-color: mix(#000, $success-color, 20%);
+      background-color: color.mix(#000, $success-color, 20%);
     }
   }
 
@@ -101,7 +102,7 @@
     background-color: $danger-color;
 
     &:hover {
-      background-color: mix(#000, $danger-color, 20%);
+      background-color: color.mix(#000, $danger-color, 20%);
     }
   }
 
@@ -128,7 +129,7 @@
       background-color: $color;
 
       &:hover {
-        background-color: mix(#000, $color, 20%);
+        background-color: color.mix(#000, $color, 20%);
       }
     }
   }

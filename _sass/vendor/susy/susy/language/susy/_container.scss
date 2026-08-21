@@ -1,3 +1,5 @@
+@use "sass:list";
+@use "sass:map";
 // Container Syntax
 // ================
 
@@ -13,7 +15,7 @@
 
   $_width     : get-container-width($layout);
   $_justify   : parse-container-position(susy-get(container-position, $layout));
-  $_property  : if(susy-get(math, $layout) == static, width, max-width);
+  $_property  : if(sass(susy-get(math, $layout) == static): width; else: max-width);
 
   $_box       : susy-get(box-sizing, $layout);
 
@@ -53,7 +55,7 @@
     @if valid-column-math($_math, $_column-width) {
       $_columns   : susy-get(columns, $layout);
       $_gutters   : susy-get(gutters, $layout);
-      $_spread    : if(is-split($layout), wide, narrow);
+      $_spread    : if(sass(is-split($layout)): wide; else: narrow);
       $_width     : susy-sum($_columns, $_gutters, $_spread) * $_column-width;
     } @else {
       $_width: 100%;
@@ -68,13 +70,13 @@
 // Parse the $container-position into margin values.
 // - [$justify]   : left | center | right | <length> [<length>]
 @function parse-container-position(
-  $justify: map-get($susy-defaults, container-position)
+  $justify: map.get($susy-defaults, container-position)
 ) {
-  $_return: if($justify == left, 0, auto) if($justify == right, 0, auto);
+  $_return: if(sass($justify == left): 0; else: auto) if(sass($justify == right): 0; else: auto);
 
-  @if not(index(left right center, $justify)) {
-    $_return: nth($justify, 1);
-    $_return: $_return if(length($justify) > 1, nth($justify, 2), $_return);
+  @if not(list.index(left right center, $justify)) {
+    $_return: list.nth($justify, 1);
+    $_return: $_return if(sass(list.length($justify) > 1): list.nth($justify, 2); else: $_return);
   }
 
   @return $_return;

@@ -1,3 +1,4 @@
+@use "sass:color";
 /* ==========================================================================
    SIDEBAR
    ========================================================================== */
@@ -126,7 +127,7 @@
 
 .author__bio {
   margin: 0;
-  color: mix(#fff, $text-color, 22%);
+  color: color.mix(#fff, $text-color, 22%);
   line-height: 1.45;
 
   @include breakpoint($large) {
