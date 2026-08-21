@@ -48,6 +48,17 @@ html[data-theme="dark"] {
   // Global link colour (set in _reset.scss)
   a {
     color: $dark-link-color;
+
+    &:focus-visible {
+      outline-color: $dark-link-color;
+    }
+  }
+
+  button,
+  .btn {
+    &:focus-visible {
+      outline-color: $dark-link-color;
+    }
   }
 
   // Horizontal rules
@@ -144,6 +155,14 @@ html[data-theme="dark"] {
     // nav underline indicator
     .visible-links a:before {
       background: color.mix($dark-background-color, $dark-link-color, 50%);
+    }
+
+    .visible-links a[aria-current="page"] {
+      color: $dark-text-strong-color;
+
+      &:before {
+        background: $dark-link-color;
+      }
     }
 
     // overflow dropdown

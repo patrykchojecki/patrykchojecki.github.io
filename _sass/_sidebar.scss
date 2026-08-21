@@ -73,7 +73,7 @@
 .author__avatar {
   display: table-cell;
   vertical-align: top;
-  width: 36px;
+  width: 44px;
   // set width only, for non-square avatars
   // height: 36px;
 
@@ -99,8 +99,8 @@
 .author__content {
   display: table-cell;
   vertical-align: top;
-  padding-left: 15px;
-  padding-right: 25px;
+  padding-left: 12px;
+  padding-right: 16px;
   line-height: 1;
 
   @include breakpoint($large) {
@@ -235,10 +235,10 @@
     white-space: nowrap;
 
     @include breakpoint($large) {
-      min-height: 0;
+      min-height: 32px;
 
       & + li {
-        margin-top: 0.3rem;
+        margin-top: 0.1rem;
       }
     }
   }
@@ -259,7 +259,7 @@
     text-decoration: none;
 
     @include breakpoint($large) {
-      min-height: 0;
+      min-height: 32px;
       padding-top: 0;
       padding-bottom: 0;
     }

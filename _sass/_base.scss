@@ -130,7 +130,7 @@ a {
 button,
 .btn {
   &:focus-visible {
-    outline: 2px solid $warning-color;
+    outline: 2px solid $focus-ring-color;
     outline-offset: 3px;
   }
 }
