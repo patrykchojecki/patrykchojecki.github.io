@@ -70,7 +70,7 @@
       return;
     }
 
-    if (activeTransition) {
+    if (activeTransition && activeTransition.skipTransition) {
       activeTransition.skipTransition();
     }
 
@@ -86,9 +86,17 @@
     document.documentElement.style.setProperty('--theme-reveal-x', x + 'px');
     document.documentElement.style.setProperty('--theme-reveal-y', y + 'px');
 
-    var transition = document.startViewTransition(function () {
+    var transition;
+
+    try {
+      transition = document.startViewTransition(function () {
+        setTheme(nextTheme, true);
+      });
+    } catch (error) {
+      document.documentElement.classList.remove('theme-transitioning');
       setTheme(nextTheme, true);
-    });
+      return;
+    }
     activeTransition = transition;
 
     transition.ready.then(function () {

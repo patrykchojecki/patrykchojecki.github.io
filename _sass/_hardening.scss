@@ -1,0 +1,116 @@
+/* ==========================================================================
+   INTERFACE HARDENING
+   ========================================================================== */
+
+.page__title,
+.archive__item-title,
+.project-card__title,
+.author__name,
+.author__bio,
+.xbox-activity__gamertag,
+.xbox-activity__name,
+.xbox-activity__game-name,
+.page__content a,
+.archive a {
+  overflow-wrap: anywhere;
+}
+
+.greedy-nav .hidden-links,
+.author__urls {
+  max-width: calc(100vw - 2rem);
+}
+
+.greedy-nav .hidden-links a,
+.author__urls a {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.author__urls li {
+  min-width: 0;
+  white-space: normal;
+}
+
+[data-resilient-image][hidden] {
+  display: none;
+}
+
+.no-js {
+  .theme-toggle,
+  .greedy-nav > button,
+  .author__urls-wrapper > button {
+    display: none;
+  }
+
+  .greedy-nav .visible-links {
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      display: block;
+    }
+  }
+
+  .author__urls-wrapper,
+  .author__urls {
+    display: block;
+    position: relative;
+  }
+
+  .author__urls {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+
+    &:before,
+    &:after {
+      display: none;
+    }
+  }
+}
+
+.page__error-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.8rem;
+  align-items: center;
+  margin-top: 1.5rem !important;
+
+  > a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .btn {
+    margin: 0;
+    text-decoration: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .site-progress__bar {
+    background: Highlight;
+  }
+
+  .project-card,
+  .project-detail-image,
+  .xbox-activity__row,
+  .xbox-activity__activity,
+  .xbox-activity__game-name {
+    border-color: CanvasText;
+  }
+
+  .xbox-activity__status-dot {
+    border: 1px solid CanvasText;
+  }
+}
+
+@media print {
+  .site-progress {
+    display: none;
+  }
+}

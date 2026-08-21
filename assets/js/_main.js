@@ -7,6 +7,9 @@
 
   var resizeCallbacks = [];
   var resizePending = false;
+  var requestFrame = window.requestAnimationFrame || function (callback) {
+    return window.setTimeout(callback, 16);
+  };
 
   function ready(callback) {
     if (document.readyState === "loading") {
@@ -26,7 +29,7 @@
     }
 
     resizePending = true;
-    window.requestAnimationFrame(function () {
+    requestFrame(function () {
       resizePending = false;
       resizeCallbacks.forEach(function (callback) {
         callback();
@@ -65,6 +68,10 @@
       var height;
       var ratio;
       var wrapper;
+
+      if (!parent) {
+        return;
+      }
 
       if (
         video.closest(".fitvidsignore") ||
@@ -129,6 +136,15 @@
         setOpen(button.classList.contains("open"));
       }
 
+      function closeAuthorLinks(returnFocus) {
+        var wasOpen = button.classList.contains("open");
+        setOpen(false);
+
+        if (returnFocus && wasOpen && isButtonVisible()) {
+          button.focus();
+        }
+      }
+
       setOpen(false);
       onResize(syncAuthorLinks);
 
@@ -136,9 +152,15 @@
         setOpen(!button.classList.contains("open"));
       });
 
+      document.addEventListener("click", function (event) {
+        if (!wrapper.contains(event.target)) {
+          closeAuthorLinks(false);
+        }
+      });
+
       document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape") {
-          setOpen(false);
+        if (event.key === "Escape" && button.classList.contains("open")) {
+          closeAuthorLinks(true);
         }
       });
     });
@@ -172,9 +194,14 @@
       button.setAttribute("aria-expanded", expanded ? "true" : "false");
     }
 
-    function closeHiddenLinks() {
+    function closeHiddenLinks(returnFocus) {
+      var wasExpanded = hiddenLinks.classList.contains("hidden") === false;
       hiddenLinks.classList.add("hidden");
       setMenuExpanded(false);
+
+      if (returnFocus && wasExpanded && !button.classList.contains("hidden")) {
+        button.focus();
+      }
     }
 
     function updateNav() {
@@ -191,7 +218,7 @@
 
       if (breaks.length < 1) {
         button.classList.add("hidden");
-        closeHiddenLinks();
+        closeHiddenLinks(false);
       }
 
       button.setAttribute("count", breaks.length);
@@ -202,7 +229,7 @@
     }
 
     function scheduleNavUpdate() {
-      window.requestAnimationFrame(updateNav);
+      requestFrame(updateNav);
     }
 
     button.addEventListener("click", function () {
@@ -212,13 +239,13 @@
 
     document.addEventListener("click", function (event) {
       if (!nav.contains(event.target)) {
-        closeHiddenLinks();
+        closeHiddenLinks(false);
       }
     });
 
     document.addEventListener("keydown", function (event) {
       if (event.key === "Escape") {
-        closeHiddenLinks();
+        closeHiddenLinks(true);
       }
     });
 
@@ -226,7 +253,7 @@
     window.addEventListener("load", scheduleNavUpdate);
 
     if (document.fonts && document.fonts.ready) {
-      document.fonts.ready.then(scheduleNavUpdate);
+      document.fonts.ready.then(scheduleNavUpdate).catch(function () {});
     }
 
     updateNav();
@@ -258,7 +285,11 @@
         return;
       }
 
-      id = decodeURIComponent(url.hash.slice(1));
+      try {
+        id = decodeURIComponent(url.hash.slice(1));
+      } catch (error) {
+        id = url.hash.slice(1);
+      }
       target = document.getElementById(id) || document.getElementsByName(id)[0];
 
       if (!target) {
@@ -267,8 +298,16 @@
 
       event.preventDefault();
       top = target.getBoundingClientRect().top + window.pageYOffset - 20;
-      window.scrollTo({ top: top, behavior: "smooth" });
-      window.history.pushState(null, "", url.hash);
+
+      try {
+        window.scrollTo({ top: top, behavior: "smooth" });
+      } catch (error) {
+        window.scrollTo(0, top);
+      }
+
+      try {
+        window.history.pushState(null, "", url.hash);
+      } catch (error) {}
     });
   }
 

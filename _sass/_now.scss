@@ -33,12 +33,41 @@
   padding-bottom: 1rem;
 }
 
-.xbox-activity__avatar {
+.xbox-activity__media {
+  position: relative;
+  display: grid;
   flex: 0 0 auto;
+  place-items: center;
+  overflow: hidden;
+  background: $lighter-gray;
+  color: $primary-color;
+  font-weight: 700;
+}
+
+.xbox-activity__media--avatar {
   width: 3.5rem;
   height: 3.5rem;
-  margin: 0;
   border-radius: 50%;
+}
+
+.xbox-activity__media--art {
+  width: 4.85rem;
+  height: 4.85rem;
+  border-radius: 0.38rem;
+}
+
+.xbox-activity__media-fallback {
+  line-height: 1;
+}
+
+.xbox-activity__avatar,
+.xbox-activity__art {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
   object-fit: cover;
 }
 
@@ -113,15 +142,6 @@
   border-top: 1px solid $border-color;
 }
 
-.xbox-activity__art {
-  flex: 0 0 auto;
-  width: 4.85rem;
-  height: 4.85rem;
-  margin: 0;
-  border-radius: 0.38rem;
-  object-fit: cover;
-}
-
 .xbox-activity__label,
 .xbox-activity__meta,
 .xbox-activity__game-name {
@@ -184,7 +204,7 @@
     align-items: flex-start;
   }
 
-  .xbox-activity__avatar {
+  .xbox-activity__media--avatar {
     width: 3rem;
     height: 3rem;
   }
@@ -194,7 +214,7 @@
     min-height: 5.65rem;
   }
 
-  .xbox-activity__art {
+  .xbox-activity__media--art {
     width: 4.25rem;
     height: 4.25rem;
   }
@@ -203,6 +223,11 @@
 html[data-theme="dark"] {
   .xbox-activity {
     color: #ededed;
+  }
+
+  .xbox-activity__media {
+    background: $dark-surface-raised-color;
+    color: $dark-text-secondary-color;
   }
 
   .xbox-activity__label,

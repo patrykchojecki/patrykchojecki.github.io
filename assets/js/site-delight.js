@@ -23,9 +23,26 @@
     window.requestAnimationFrame(updateProgress);
   }
 
+  function initResilientImages() {
+    Array.prototype.forEach.call(document.querySelectorAll('img[data-resilient-image]'), function (image) {
+      function hideUnavailableImage() {
+        image.hidden = true;
+        image.removeEventListener('error', hideUnavailableImage);
+      }
+
+      image.addEventListener('error', hideUnavailableImage);
+
+      if (image.complete && image.naturalWidth === 0) {
+        hideUnavailableImage();
+      }
+    });
+  }
+
   if (progressBar) {
     updateProgress();
     window.addEventListener('scroll', queueProgressUpdate, { passive: true });
     window.addEventListener('resize', queueProgressUpdate);
   }
+
+  initResilientImages();
 }());
