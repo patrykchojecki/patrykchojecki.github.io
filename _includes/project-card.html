@@ -1,10 +1,11 @@
 {% assign project = include.project %}
 {% assign project_image = project.image | default: project.header.teaser %}
+{% assign project_heading_id = "project-" | append: project.slug | append: "-title" %}
 
-<article class="project-card">
+<article class="project-card" aria-labelledby="{{ project_heading_id }}">
   {% if project_image %}
-    <a class="project-card__media" href="{{ project.url | relative_url }}" aria-label="Open {{ project.title }}">
-      <img src="{{ project_image | relative_url }}" alt="{{ project.image_alt | default: project.title }}">
+    <a class="project-card__media" href="{{ project.url | relative_url }}" aria-label="Read notes about {{ project.title | escape }}">
+      <img src="{{ project_image | relative_url }}" alt="{{ project.image_alt | default: project.title }}" decoding="async"{% if include.eager_image %} fetchpriority="high"{% else %} loading="lazy"{% endif %}>
     </a>
   {% endif %}
 
@@ -14,7 +15,7 @@
       {% if project.year %}<span>{{ project.year }}</span>{% endif %}
     </div>
 
-    <h2 class="project-card__title">
+    <h2 class="project-card__title" id="{{ project_heading_id }}">
       <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
     </h2>
 
@@ -33,14 +34,14 @@
     {% endif %}
 
     <div class="project-card__links">
-      <a href="{{ project.url | relative_url }}">Notes</a>
+      <a href="{{ project.url | relative_url }}" aria-label="Read notes about {{ project.title | escape }}">Notes</a>
       {% if project.github %}
-        <a href="{{ project.github }}">GitHub</a>
+        <a href="{{ project.github }}" aria-label="View {{ project.title | escape }} on GitHub">GitHub</a>
       {% elsif project.repo_visibility == "private" %}
         <span class="project-card__private">Private repo</span>
       {% endif %}
       {% if project.demo %}
-        <a href="{{ project.demo }}">Live site</a>
+        <a href="{{ project.demo }}" aria-label="Visit the {{ project.title | escape }} live site">Live site</a>
       {% endif %}
     </div>
   </div>

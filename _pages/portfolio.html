@@ -22,7 +22,7 @@ redirect_from:
   {% assign projects = site.portfolio | sort: "order" %}
   <div class="project-grid">
     {% for project in projects %}
-      {% include project-card.html project=project %}
+      {% include project-card.html project=project eager_image=forloop.first %}
     {% endfor %}
   </div>
 </div>
