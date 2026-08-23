@@ -45,7 +45,7 @@ jobs:
           npm run build:js
 
       - name: Test OpenXBL data mapping
-        run: node --test scripts/fetch-openxbl.test.mjs
+        run: npm test
 
       - name: Fetch Xbox activity
         run: node scripts/fetch-openxbl.mjs

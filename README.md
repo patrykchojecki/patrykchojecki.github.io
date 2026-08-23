@@ -57,7 +57,7 @@ npm run check
 Test the OpenXBL data normalization separately:
 
 ```sh
-node --test scripts/fetch-openxbl.test.mjs
+npm test
 ```
 
 The generated site is written to `_site/`.
