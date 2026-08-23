@@ -212,7 +212,8 @@
   }
 }
 
-.page__content--home > h2 {
+.page__content--home > h2,
+.archive > .page__section-title--accent {
   position: relative;
   display: inline-block;
   max-width: 100%;
