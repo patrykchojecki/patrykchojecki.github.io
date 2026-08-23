@@ -297,12 +297,9 @@ timezone: Asia/Taipei # http://en.wikipedia.org/wiki/List_of_tz_database_time_zo
 
 # Plugins
 plugins:
-  - jekyll-paginate
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-redirect-from
-  - jekyll-seo-tag
-  - jekyll-include-cache
 
 
 # Archives

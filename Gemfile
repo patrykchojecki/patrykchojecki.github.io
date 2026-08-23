@@ -19,8 +19,5 @@ gem "webrick"
 group :jekyll_plugins do
   gem "jekyll-feed"
   gem "jekyll-sitemap"
-  gem "jekyll-paginate"
   gem "jekyll-redirect-from"
-  gem "jekyll-seo-tag"
-  gem "jekyll-include-cache"
 end
