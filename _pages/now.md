@@ -24,7 +24,6 @@ redirect_from:
 {% endif %}
 
 ## About this Page
-{: .page__section-title--accent}
 
 This is a /now page inspired by [Derek Sivers](https://sive.rs). This is the place where I describe what I've been up to recently, what I'm currently focused on, and talk about some short-term goals. When I first learned about this concept, it immediately appeared very appealing to me because I rarely use social media.
 
