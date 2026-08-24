@@ -230,6 +230,11 @@
   @include headline-accent-underline($left: 0.01em);
 }
 
+.archive > .page__section-title--accent {
+  display: block;
+  width: fit-content;
+}
+
 .page__hero {
   position: relative;
   margin-bottom: 2em;
