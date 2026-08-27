@@ -11,7 +11,7 @@
 .projects-intro {
   max-width: 64ch;
   margin-bottom: 1.5rem;
-  color: color.mix(#000, $gray, 15%);
+  color: $primary-color;
 }
 
 .project-grid {
@@ -32,7 +32,7 @@
   max-width: 100%;
   overflow: hidden;
   background: #fff;
-  border: 1px solid color.mix(#000, $border-color, 8%);
+  border: 1px solid color.mix($text-color, $border-color, 8%);
   border-radius: 8px;
   transition: border-color 180ms ease-out;
 
@@ -75,15 +75,15 @@
   font-size: $type-size-8;
   font-weight: 700;
   letter-spacing: 0.035em;
-  color: color.mix(#000, $gray, 12%);
+  color: $primary-color;
   text-transform: uppercase;
 }
 
 .project-status {
   padding: 0.2rem 0.45rem;
-  color: #6f3515;
-  background: #f8e3d2;
-  border: 1px solid #f0c8a8;
+  color: $info-color;
+  background: color.mix($background-color, $hermes-desaturated, 80%);
+  border: 1px solid color.mix($background-color, $hermes-desaturated, 60%);
   border-radius: 999px;
 }
 
@@ -157,7 +157,7 @@
 }
 
 .project-card__private {
-  color: color.mix(#000, $gray, 12%);
+  color: $primary-color;
 }
 
 .project-detail-image {
@@ -180,7 +180,7 @@
 
 html[data-theme="dark"] {
   .projects-intro {
-    color: #b8b4b0;
+    color: $dark-text-secondary-color;
   }
 
   .project-card {
@@ -197,13 +197,13 @@ html[data-theme="dark"] {
   }
 
   .project-card__meta {
-    color: #888;
+    color: $dark-text-tertiary-color;
   }
 
   .project-status {
-    color: #f0c8a8;
-    background: #3a2115;
-    border-color: #6f3515;
+    color: $dark-link-color;
+    background: color.mix($dark-surface-color, $info-color, 78%);
+    border-color: color.mix($dark-border-color, $info-color, 55%);
   }
 
   .project-card__tags li {
@@ -212,7 +212,7 @@ html[data-theme="dark"] {
   }
 
   .project-card__private {
-    color: #888;
+    color: $dark-text-tertiary-color;
   }
 
   .project-detail-image {

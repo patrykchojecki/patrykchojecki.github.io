@@ -1,0 +1,241 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-27T03:17:11Z",
+  "title": "Design System: chojecki.net",
+  "extensions": {
+    "colorMeta": {
+      "deep-terracotta": {
+        "role": "primary",
+        "displayName": "Deep Terracotta",
+        "canonical": "#a84d1f",
+        "tonalRamp": ["oklch(15% 0.14 42)", "oklch(26% 0.14 42)", "oklch(38% 0.14 42)", "oklch(50% 0.14 42)", "oklch(62% 0.14 42)", "oklch(74% 0.14 42)", "oklch(86% 0.14 42)", "oklch(95% 0.14 42)"]
+      },
+      "cherry-ember": {
+        "role": "primary",
+        "displayName": "Cherry Ember",
+        "canonical": "#de7536",
+        "tonalRamp": ["oklch(15% 0.15 52)", "oklch(26% 0.15 52)", "oklch(38% 0.15 52)", "oklch(50% 0.15 52)", "oklch(62% 0.15 52)", "oklch(74% 0.15 52)", "oklch(86% 0.15 52)", "oklch(95% 0.15 52)"]
+      },
+      "vivid-ember": {
+        "role": "primary",
+        "displayName": "Vivid Ember",
+        "canonical": "#ff6a07",
+        "tonalRamp": ["oklch(15% 0.22 45)", "oklch(26% 0.22 45)", "oklch(38% 0.22 45)", "oklch(50% 0.22 45)", "oklch(62% 0.22 45)", "oklch(74% 0.22 45)", "oklch(86% 0.22 45)", "oklch(95% 0.22 45)"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#222222",
+        "tonalRamp": ["oklch(15% 0 0)", "oklch(26% 0 0)", "oklch(38% 0 0)", "oklch(50% 0 0)", "oklch(62% 0 0)", "oklch(74% 0 0)", "oklch(86% 0 0)", "oklch(95% 0 0)"]
+      },
+      "slate": {
+        "role": "neutral",
+        "displayName": "Slate",
+        "canonical": "#5f6870",
+        "tonalRamp": ["oklch(15% 0.025 240)", "oklch(26% 0.025 240)", "oklch(38% 0.025 240)", "oklch(50% 0.025 240)", "oklch(62% 0.025 240)", "oklch(74% 0.025 240)", "oklch(86% 0.025 240)", "oklch(95% 0.025 240)"]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#ffffff",
+        "tonalRamp": ["oklch(15% 0.004 95)", "oklch(26% 0.004 95)", "oklch(38% 0.004 95)", "oklch(50% 0.004 95)", "oklch(62% 0.004 95)", "oklch(74% 0.004 95)", "oklch(86% 0.004 95)", "oklch(95% 0.004 95)"]
+      },
+      "soft-paper": {
+        "role": "neutral",
+        "displayName": "Soft Paper",
+        "canonical": "#f9fafb",
+        "tonalRamp": ["oklch(15% 0.006 250)", "oklch(26% 0.006 250)", "oklch(38% 0.006 250)", "oklch(50% 0.006 250)", "oklch(62% 0.006 250)", "oklch(74% 0.006 250)", "oklch(86% 0.006 250)", "oklch(95% 0.006 250)"]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#f5f6fa",
+        "tonalRamp": ["oklch(15% 0.008 270)", "oklch(26% 0.008 270)", "oklch(38% 0.008 270)", "oklch(50% 0.008 270)", "oklch(62% 0.008 270)", "oklch(74% 0.008 270)", "oklch(86% 0.008 270)", "oklch(95% 0.008 270)"]
+      },
+      "dark-canvas": {
+        "role": "neutral",
+        "displayName": "Dark Canvas",
+        "canonical": "#1a1a1a",
+        "tonalRamp": ["oklch(15% 0 0)", "oklch(26% 0 0)", "oklch(38% 0 0)", "oklch(50% 0 0)", "oklch(62% 0 0)", "oklch(74% 0 0)", "oklch(86% 0 0)", "oklch(95% 0 0)"]
+      },
+      "dark-shell": {
+        "role": "neutral",
+        "displayName": "Dark Shell",
+        "canonical": "#141414",
+        "tonalRamp": ["oklch(15% 0 0)", "oklch(26% 0 0)", "oklch(38% 0 0)", "oklch(50% 0 0)", "oklch(62% 0 0)", "oklch(74% 0 0)", "oklch(86% 0 0)", "oklch(95% 0 0)"]
+      },
+      "dark-surface": {
+        "role": "neutral",
+        "displayName": "Dark Surface",
+        "canonical": "#1e1e1e",
+        "tonalRamp": ["oklch(15% 0 0)", "oklch(26% 0 0)", "oklch(38% 0 0)", "oklch(50% 0 0)", "oklch(62% 0 0)", "oklch(74% 0 0)", "oklch(86% 0 0)", "oklch(95% 0 0)"]
+      },
+      "dark-raised": {
+        "role": "neutral",
+        "displayName": "Dark Raised",
+        "canonical": "#252525",
+        "tonalRamp": ["oklch(15% 0 0)", "oklch(26% 0 0)", "oklch(38% 0 0)", "oklch(50% 0 0)", "oklch(62% 0 0)", "oklch(74% 0 0)", "oklch(86% 0 0)", "oklch(95% 0 0)"]
+      },
+      "dark-border": {
+        "role": "neutral",
+        "displayName": "Dark Border",
+        "canonical": "#2e2e2e",
+        "tonalRamp": ["oklch(15% 0 0)", "oklch(26% 0 0)", "oklch(38% 0 0)", "oklch(50% 0 0)", "oklch(62% 0 0)", "oklch(74% 0 0)", "oklch(86% 0 0)", "oklch(95% 0 0)"]
+      },
+      "dark-ink": {
+        "role": "neutral",
+        "displayName": "Dark Ink",
+        "canonical": "#e0ddd8",
+        "tonalRamp": ["oklch(15% 0.012 80)", "oklch(26% 0.012 80)", "oklch(38% 0.012 80)", "oklch(50% 0.012 80)", "oklch(62% 0.012 80)", "oklch(74% 0.012 80)", "oklch(86% 0.012 80)", "oklch(95% 0.012 80)"]
+      },
+      "dark-accent": {
+        "role": "primary",
+        "displayName": "Dark Cherry Ember",
+        "canonical": "#e8935a",
+        "tonalRamp": ["oklch(15% 0.12 58)", "oklch(26% 0.12 58)", "oklch(38% 0.12 58)", "oklch(50% 0.12 58)", "oklch(62% 0.12 58)", "oklch(74% 0.12 58)", "oklch(86% 0.12 58)", "oklch(95% 0.12 58)"]
+      },
+      "xbox-green": {
+        "role": "tertiary",
+        "displayName": "Xbox Activity Green",
+        "canonical": "#107c10",
+        "tonalRamp": ["oklch(15% 0.16 143)", "oklch(26% 0.16 143)", "oklch(38% 0.16 143)", "oklch(50% 0.16 143)", "oklch(62% 0.16 143)", "oklch(74% 0.16 143)", "oklch(86% 0.16 143)", "oklch(95% 0.16 143)"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Personal Display", "purpose": "Home greeting and Patryk’s name only." },
+      "headline": { "displayName": "Page Headline", "purpose": "Page titles and strongest section openings." },
+      "title": { "displayName": "Compact Title", "purpose": "Cards and compact component headings." },
+      "body": { "displayName": "Reading Body", "purpose": "Long-form first-person prose at a maximum 64ch measure." },
+      "label": { "displayName": "Utility Label", "purpose": "Metadata, statuses, navigation, and compact controls." },
+      "mono": { "displayName": "Code", "purpose": "Inline and block technical content." }
+    },
+    "shadows": [
+      { "name": "ambient-low", "value": "0 4px 16px rgba(0,0,0,0.06)", "purpose": "Inline code, table-of-contents panels, and form fields." },
+      { "name": "portrait-lift", "value": "0 10px 28px rgba(0,0,0,0.08)", "purpose": "Softly separates the circular author portrait from the page." },
+      { "name": "portrait-lift-dark", "value": "0 10px 28px rgba(0,0,0,0.35)", "purpose": "Maintains portrait separation on the dark canvas." },
+      { "name": "overlay-lift", "value": "0 0 10px rgba(0,0,0,0.25)", "purpose": "Dropdowns and image hover states." }
+    ],
+    "motion": [
+      { "name": "state-standard", "value": "0.2s ease-in-out", "purpose": "Default link, control, image, and color-state transition." },
+      { "name": "intro-fade", "value": "0.3s ease", "purpose": "Staggered shell entrance for masthead, content, and footer." },
+      { "name": "card-border", "value": "180ms ease-out", "purpose": "Project-card focus border response." },
+      { "name": "theme-colors", "value": "0.25s ease", "purpose": "Cross-fades semantic theme colors after first paint." },
+      { "name": "theme-reveal", "value": "460ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Circular View Transition reveal from the theme toggle." },
+      { "name": "greeting-wave", "value": "640ms cubic-bezier(0.16, 1, 0.3, 1) 380ms", "purpose": "One-time greeting wave on the home title." }
+    ],
+    "breakpoints": [
+      { "name": "small", "value": "600px" },
+      { "name": "medium", "value": "768px" },
+      { "name": "medium-wide", "value": "900px" },
+      { "name": "large", "value": "925px" },
+      { "name": "x-large", "value": "1280px" },
+      { "name": "xbox-compact", "value": "30rem" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Compact neutral action used when a control should remain subordinate to the writing.",
+      "html": "<button type=\"button\" class=\"ds-btn-primary\">Read notes</button>",
+      "css": ".ds-btn-primary { display:inline-block; padding:.5em 1em; color:#fff; font:700 .875em/1.5 -apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif; text-align:center; background:#5f6870; border:0; border-radius:4px; cursor:pointer; transition:all .2s ease-in-out; } .ds-btn-primary:hover { background:#333; } .ds-btn-primary:focus-visible { outline:2px solid #a84d1f; outline-offset:3px; } .ds-btn-primary:active { transform:translateY(1px); }"
+    },
+    {
+      "name": "Accent Button",
+      "kind": "button",
+      "refersTo": "button-accent",
+      "description": "Deep Terracotta action reserved for meaningful informational actions.",
+      "html": "<button type=\"button\" class=\"ds-btn-accent\">Get in touch</button>",
+      "css": ".ds-btn-accent { display:inline-block; padding:.5em 1em; color:#fff; font:700 .875em/1.5 -apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif; text-align:center; background:#a84d1f; border:0; border-radius:4px; cursor:pointer; transition:all .2s ease-in-out; } .ds-btn-accent:hover { background:#863e19; } .ds-btn-accent:focus-visible { outline:2px solid #a84d1f; outline-offset:3px; } .ds-btn-accent:active { transform:translateY(1px); }"
+    },
+    {
+      "name": "Inverse Button",
+      "kind": "button",
+      "refersTo": "button-inverse",
+      "description": "Quiet outlined action used for the compact Follow control and similar secondary actions.",
+      "html": "<button type=\"button\" class=\"ds-btn-inverse\">Follow</button>",
+      "css": ".ds-btn-inverse { display:inline-flex; min-height:44px; align-items:center; padding:.5em 1em; color:#5f6870; font:700 .875em/1.5 -apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif; background:#fff; border:1px solid #f5f6fa; border-radius:4px; cursor:pointer; transition:all .2s ease-in-out; } .ds-btn-inverse:hover { color:#fff; background:#5f6870; border-color:#8a8f98; } .ds-btn-inverse:focus-visible { outline:2px solid #a84d1f; outline-offset:3px; } .ds-btn-inverse:active { transform:translateY(1px); }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Compact softly layered field with neutral border and explicit focus treatment.",
+      "html": "<label class=\"ds-field\">Email<input class=\"ds-input\" type=\"email\" placeholder=\"you@example.com\"></label>",
+      "css": ".ds-field { display:grid; gap:.25em; color:#222; font:400 1rem/1.55 -apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif; } .ds-input { width:100%; box-sizing:border-box; padding:.5em; color:#222; font:inherit; background:#fff; border:1px solid #ccc; border-radius:4px; box-shadow:0 4px 16px rgba(0,0,0,.06); transition:all .2s ease-in-out; } .ds-input:hover { border-color:#afb3b8; } .ds-input:focus { border-color:#5f6870; outline:2px solid #a84d1f; outline-offset:2px; } .ds-input:disabled { cursor:not-allowed; opacity:.5; }"
+    },
+    {
+      "name": "Top Navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Priority-style masthead navigation with a restrained authored underline.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Primary\"><a class=\"ds-nav-brand\" href=\"#\">Patryk Chojecki</a><a class=\"ds-nav-link ds-nav-current\" href=\"#\">About me</a><a class=\"ds-nav-link\" href=\"#\">Projects</a><button class=\"ds-theme\" type=\"button\" aria-label=\"Switch theme\">◐</button></nav>",
+      "css": ".ds-nav { display:flex; align-items:center; gap:1rem; padding:1em; color:#5f6870; font:400 1rem/1.5 -apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif; background:#fff; border-bottom:1px solid #f9fafb; } .ds-nav a { position:relative; display:flex; min-height:44px; align-items:center; color:inherit; text-decoration:none; } .ds-nav-brand { margin-right:auto; font-weight:700; } .ds-nav-link::before { position:absolute; right:0; bottom:0; left:0; height:4px; background:#afb3b8; content:\"\"; transform:scaleX(0); transition:transform .2s ease-in-out; } .ds-nav-link:hover { color:#a84d1f; } .ds-nav-link:hover::before { transform:scaleX(1); } .ds-nav-current { color:#222 !important; } .ds-nav-current::before { height:2px; background:#a84d1f; transform:scaleX(1); } .ds-theme { width:44px; height:44px; color:#5f6870; background:transparent; border:0; border-radius:50%; cursor:pointer; } .ds-theme:hover { color:#a84d1f; background:#f9fafb; } .ds-theme:focus-visible { outline:2px solid #a84d1f; outline-offset:2px; }"
+    },
+    {
+      "name": "Metadata Chip",
+      "kind": "chip",
+      "refersTo": "metadata-chip",
+      "description": "Quiet pill used to classify project technologies and compact metadata.",
+      "html": "<span class=\"ds-chip\">Jekyll</span>",
+      "css": ".ds-chip { display:inline-flex; align-items:center; padding:.18rem .45rem; color:#5f6870; font:400 .75em/1.5 -apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif; background:#f9fafb; border:0; border-radius:999px; }"
+    },
+    {
+      "name": "Project Card",
+      "kind": "card",
+      "refersTo": "project-card",
+      "description": "Artifact-first project summary with intact media, compact metadata, and plain editorial links.",
+      "html": "<article class=\"ds-project-card\"><div class=\"ds-project-media\" aria-hidden=\"true\"><svg viewBox=\"0 0 160 90\" role=\"img\"><rect width=\"160\" height=\"90\" fill=\"#f9fafb\"/><path d=\"M24 65 58 31l22 22 16-14 40 26\" fill=\"none\" stroke=\"#de7536\" stroke-width=\"4\"/><circle cx=\"112\" cy=\"28\" r=\"9\" fill=\"#a84d1f\"/></svg></div><div class=\"ds-project-body\"><div class=\"ds-project-meta\"><span class=\"ds-project-status\">Active</span><span>2026</span></div><h3><a href=\"#\">Personal website</a></h3><p>An independent home for work, projects, and personal field notes.</p><div class=\"ds-project-tags\"><span>Jekyll</span><span>GitHub Pages</span></div><a class=\"ds-project-link\" href=\"#\">Notes</a></div></article>",
+      "css": ".ds-project-card { width:100%; max-width:360px; overflow:hidden; color:#222; font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif; background:#fff; border:1px solid #e5e6e7; border-radius:8px; transition:border-color 180ms ease-out; } .ds-project-card:focus-within { border-color:rgba(168,77,31,.55); } .ds-project-media { aspect-ratio:16/9; background:#f9fafb; } .ds-project-media svg { display:block; width:100%; height:100%; } .ds-project-body { display:grid; gap:.75rem; padding:1rem; } .ds-project-meta { display:flex; align-items:center; gap:.5rem; color:#747a80; font-size:.625em; font-weight:700; letter-spacing:.035em; text-transform:uppercase; } .ds-project-status { padding:.2rem .45rem; color:#6f3515; background:#f8e3d2; border:1px solid #f0c8a8; border-radius:999px; } .ds-project-card h3 { margin:0; font-size:1.25em; line-height:1.3; letter-spacing:-.015em; } .ds-project-card h3 a { color:#a84d1f; text-decoration:none; } .ds-project-card h3 a:hover { text-decoration:underline; } .ds-project-card h3 a:focus-visible,.ds-project-link:focus-visible { outline:2px solid #a84d1f; outline-offset:3px; } .ds-project-card p { margin:0; line-height:1.55; } .ds-project-tags { display:flex; flex-wrap:wrap; gap:.4rem; } .ds-project-tags span { padding:.18rem .45rem; color:#5f6870; font-size:.75em; background:#f9fafb; border-radius:999px; } .ds-project-link { color:#a84d1f; font-size:.875em; font-weight:600; text-underline-offset:.18em; }"
+    },
+    {
+      "name": "Author Profile",
+      "kind": "custom",
+      "description": "Persistent human anchor that remains quieter than the page title.",
+      "html": "<section class=\"ds-author\" aria-label=\"Author\"><div class=\"ds-author-avatar\" aria-hidden=\"true\">PC</div><div><strong>Patryk Chojecki</strong><p>Program Manager at 886 Studios</p></div></section>",
+      "css": ".ds-author { display:flex; align-items:center; gap:.8rem; color:#222; font:400 1rem/1.45 -apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif; } .ds-author-avatar { display:grid; width:64px; height:64px; flex:0 0 auto; place-items:center; color:#fff; font-weight:700; background:#5f6870; border:1px solid rgba(95,104,112,.14); border-radius:50%; box-shadow:0 10px 28px rgba(0,0,0,.08); } .ds-author strong { line-height:1.2; } .ds-author p { margin:.2rem 0 0; color:#686868; font-size:.875em; }"
+    },
+    {
+      "name": "Xbox Activity",
+      "kind": "custom",
+      "description": "Personal-data row that borrows Xbox green while retaining the site’s restrained structure.",
+      "html": "<section class=\"ds-xbox\"><h3>What I’m Playing</h3><div class=\"ds-xbox-row\"><div class=\"ds-xbox-art\" aria-hidden=\"true\">X</div><div><span class=\"ds-xbox-label\">Last played</span><strong>Current game</strong><span class=\"ds-xbox-state\"><i></i> Recently active</span></div></div></section>",
+      "css": ".ds-xbox { max-width:38rem; color:#222; font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif; } .ds-xbox h3 { margin:0 0 1.2rem; font-size:1.25em; letter-spacing:-.035em; } .ds-xbox-row { display:flex; min-height:6.4rem; align-items:center; gap:1rem; padding:.8rem 0; border-top:1px solid #f9fafb; } .ds-xbox-art { display:grid; width:4.85rem; height:4.85rem; flex:0 0 auto; place-items:center; color:#5f6870; font-weight:700; background:#f9fafb; border-radius:.38rem; } .ds-xbox-row strong,.ds-xbox-label,.ds-xbox-state { display:block; } .ds-xbox-row strong { margin:.15rem 0; font-size:1.12rem; line-height:1.25; } .ds-xbox-label { color:#767676; font-size:.875em; } .ds-xbox-state { color:#107c10; font-size:.875em; font-weight:600; } .ds-xbox-state i { display:inline-block; width:.48rem; height:.48rem; margin-right:.35rem; background:#107c10; border-radius:50%; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Independent Field Notes",
+    "overview": "The system feels like a well-kept personal notebook published on the open web: clean enough to trust, informal enough to reveal a person, and structured for curious browsing rather than conversion. It uses familiar system typography, a paper-and-ink foundation, and small Cherry Ember signatures so the content stays primary.\n\nIts mood is clean, pragmatic, and intellectually curious. Surfaces are softly layered, components are crisp and restrained, and personality arrives through real photographs, first-person writing, a hand-drawn headline underline, the cherry identity, and a few purposeful motions—not through spectacle.\n\nThe result must never drift into a flashy designer portfolio or a corporate résumé and consulting profile. Preserve quiet confidence: evidence and personal detail carry the experience, while the interface remains legible, direct, and owner-made.",
+    "keyCharacteristics": [
+      "Paper-like light surfaces with a complete charcoal dark counterpart.",
+      "System sans typography with bold, tightly tracked display moments.",
+      "Cherry Ember and Deep Terracotta used as signatures, links, focus, and progress.",
+      "Soft layering through hairline borders and low-contrast ambient shadows.",
+      "Personal details and motion that reward attention without interrupting reading."
+    ],
+    "rules": [
+      { "name": "The Ember Signature Rule", "body": "Orange is a marker, not a wash: use it for links, focus, active state, progress, and the headline stroke rather than large generic panels.", "section": "colors" },
+      { "name": "The Paired Theme Rule", "body": "Every new neutral surface and interaction state must work in both the paper light theme and the charcoal dark theme.", "section": "colors" },
+      { "name": "The System Voice Rule", "body": "Use the incumbent system stack for both display and body roles; personality comes from composition and copy, not ornamental typefaces.", "section": "typography" },
+      { "name": "The Reading Measure Rule", "body": "Long-form prose stays at a maximum of 64ch even when the surrounding layout is wider.", "section": "typography" },
+      { "name": "The Reading Column Rule", "body": "Let the shell organize the page, but let the 64ch prose column control comprehension.", "section": "layout" },
+      { "name": "The Soft Layer Rule", "body": "Elevation must explain stacking or interaction; never add heavy shadows merely to decorate a static surface.", "section": "elevation" },
+      { "name": "The Radius Hierarchy Rule", "body": "Use 4px for controls, 8px for contained content, 999px for tags and strokes, and 50% only for genuinely circular objects.", "section": "shapes" }
+    ],
+    "dos": [
+      "Do keep the interface subordinate to real writing, photographs, projects, and current activity.",
+      "Do use Cherry Ember and Deep Terracotta as small, repeatable authorship signals.",
+      "Do maintain both light and dark theme states for every new surface and component.",
+      "Do preserve a 64ch reading measure, responsive stacking, and 44px touch targets.",
+      "Do honor reduced-motion preferences while keeping purposeful motion for everyone else."
+    ],
+    "donts": [
+      "Don't turn the site into a flashy designer portfolio with full-screen spectacle, ornamental type, excessive animation, or effect-heavy cards.",
+      "Don't make it resemble a corporate résumé or consulting profile through rigid presentation grids, generic conversion panels, or institutional visual language.",
+      "Don't flood backgrounds with orange; the Ember family is effective because it is sparse.",
+      "Don't add heavy shadows, glass effects, or oversized radii that break the crisp, softly layered form language.",
+      "Don't crop personal or project imagery merely to manufacture drama."
+    ]
+  }
+}
