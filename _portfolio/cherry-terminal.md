@@ -14,6 +14,7 @@ tech:
   - Local storage
   - Yahoo Finance API
 image: "/images/projects/cherry-terminal.png"
+image_variants: "avif"
 image_alt: "Screenshot of the Cherry Terminal portfolio tracker"
 ---
 

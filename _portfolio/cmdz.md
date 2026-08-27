@@ -12,6 +12,7 @@ tech:
   - Chrome Extension APIs
   - Manifest V3
 image: "/images/projects/cmdz.png"
+image_variants: "avif"
 image_alt: "CmdZ promotional graphic showing a recently closed browser tab restored with Command+Z"
 image_width: 1280
 image_height: 800

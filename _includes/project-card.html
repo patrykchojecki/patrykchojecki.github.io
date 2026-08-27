@@ -1,11 +1,20 @@
 {% assign project = include.project %}
 {% assign project_image = project.image | default: project.header.teaser %}
+{% assign project_image_stem = project_image | remove: ".png" %}
 {% assign project_heading_id = "project-" | append: project.slug | append: "-title" %}
 
 <article class="project-card" aria-labelledby="{{ project_heading_id }}">
   {% if project_image %}
     <a class="project-card__media" href="{{ project.url | relative_url }}" aria-label="Read notes about {{ project.title | escape }}">
-      <img src="{{ project_image | relative_url }}" alt="{{ project.image_alt | default: project.title }}" decoding="async"{% if include.eager_image %} fetchpriority="high"{% else %} loading="lazy"{% endif %}>
+      <picture>
+        {% if project.image_variants == "avif" %}
+        <source
+          type="image/avif"
+          srcset="{{ project_image_stem | append: '-480.avif' | relative_url }} 480w, {{ project_image_stem | append: '-960.avif' | relative_url }} 960w"
+          sizes="(max-width: 599px) calc(100vw - 2rem), (max-width: 924px) calc((100vw - 3.25rem) / 2), 18.125rem">
+        {% endif %}
+        <img src="{{ project_image | relative_url }}" alt="{{ project.image_alt | default: project.title }}" decoding="async"{% if include.eager_image %} fetchpriority="high"{% else %} loading="lazy"{% endif %}>
+      </picture>
     </a>
   {% endif %}
 

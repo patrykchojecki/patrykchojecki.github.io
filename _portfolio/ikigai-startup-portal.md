@@ -13,6 +13,7 @@ tech:
   - Supabase
   - Cloudflare Pages
 image: "/images/projects/ikigai-startup-portal.png"
+image_variants: "avif"
 image_alt: "Screenshot of the ikigai Startup Portal founder metrics workspace"
 ---
 

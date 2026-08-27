@@ -14,6 +14,7 @@ tech:
   - GitHub Pages
   - JavaScript
 image: "/images/projects/personal-website.png"
+image_variants: "avif"
 image_alt: "Screenshot of the chojecki.net personal website"
 ---
 

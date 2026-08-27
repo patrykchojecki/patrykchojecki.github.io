@@ -14,6 +14,7 @@ tech:
   - CSS
   - Vercel
 image: "/images/projects/886studios-redesign.png"
+image_variants: "avif"
 image_alt: "Screenshot of the 886 Studios website redesign project"
 ---
 
