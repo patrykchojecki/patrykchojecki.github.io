@@ -28,7 +28,15 @@ redirect_from:
     <h2 id="cv-work-heading">Work experience</h2>
 
     <div class="cv__timeline">
-      <article class="cv__entry">
+      <article class="cv__entry cv__entry--current">
+        <span class="cv__current-mark" aria-hidden="true">
+          <svg viewBox="0 0 20 18" focusable="false">
+            <path class="cv__current-stem" d="M6.5 8.4C7.1 5.2 9.7 2.7 14.8 1.6M13.2 9.3C12.9 5.8 11 3.6 8.3 2.8" />
+            <path class="cv__current-leaf" d="M14.5 1.8c1.8-.8 3.4-.3 4.2 1.2-1.8.8-3.4.3-4.2-1.2Z" />
+            <circle class="cv__current-fruit" cx="6.2" cy="11.8" r="3.4" />
+            <circle class="cv__current-fruit" cx="13.3" cy="12.4" r="3.4" />
+          </svg>
+        </span>
         <header class="cv__entry-header">
           <h3>Program Manager <span class="cv__entry-company">at <em>886 Studios</em></span></h3>
           <p class="cv__entry-period"><span role="img" aria-label="Taiwan">🇹🇼</span> 2026–Present</p>
