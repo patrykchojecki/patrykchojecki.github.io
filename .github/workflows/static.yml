@@ -48,7 +48,6 @@ jobs:
         run: npm test
 
       - name: Fetch Xbox activity
-        continue-on-error: true
         run: node scripts/fetch-openxbl.mjs
         env:
           OPENXBL_API_KEY: ${{ secrets.OPENXBL_API_KEY }}
