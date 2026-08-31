@@ -24,12 +24,26 @@ Experienced in supporting early-stage founders on fundraising, product strategy,
 
 ## 👨‍💻 Work Experience
 
-### 🇹🇼 2026-Present | Program Manager at *886 Studios*
+<article class="cv-entry" markdown="1">
+<header class="cv-entry__header">
+<h3 class="cv-entry__title">Program Manager</h3>
+<p class="cv-entry__organization">at <em>886 Studios</em></p>
+<p class="cv-entry__period"><span role="img" aria-label="Taiwan">🇹🇼</span> 2026–Present</p>
+</header>
+
   * Ran 886 Studios’ early-stage accelerator, managing the program and working directly with founders, investors, and mentors.
   * Sourced and evaluated early-stage startups, managing the application pipeline and assessing companies for accelerator investment.
   * Supported portfolio founders on strategy, fundraising, and growth, connecting them with relevant investors, mentors, and partners.
 
-### 🇹🇼 2023-2026 | Associate at *CellTech Accelerator*
+</article>
+
+<article class="cv-entry" markdown="1">
+<header class="cv-entry__header">
+<h3 class="cv-entry__title">Associate</h3>
+<p class="cv-entry__organization">at <em>CellTech Accelerator</em></p>
+<p class="cv-entry__period"><span role="img" aria-label="Taiwan">🇹🇼</span> 2023–2026</p>
+</header>
+
   * Joined as the first full-time member and helped build the company’s main processes and cross-border network.
   * Contributed to the creation and launch of new ventures by shaping business plans, validating market opportunities, and preparing investor-ready narratives from concept stage.
   * Represented portfolio startups in executive-level meetings, pitching their technology and business plans to investors and corporate partners.
@@ -38,31 +52,73 @@ Experienced in supporting early-stage founders on fundraising, product strategy,
   * Created pitch decks, due diligence materials, and financial models for early- and growth-stage startups.
   * Headed 10+ investment and networking events in Taiwan and Japan, connecting 300+ investors, founders, and industry experts.
 
-### 🇹🇼 2022-2023 | Research Assistant at *Academia Sinica*
+</article>
+
+<article class="cv-entry" markdown="1">
+<header class="cv-entry__header">
+<h3 class="cv-entry__title">Research Assistant</h3>
+<p class="cv-entry__organization">at <em>Academia Sinica</em></p>
+<p class="cv-entry__period"><span role="img" aria-label="Taiwan">🇹🇼</span> 2022–2023</p>
+</header>
+
   * Collected and processed data on U.S. political institutions for academic publications and policy papers.
   * Produced advanced datasets and data coding schemes used in academic research.
   * Supervised and coordinated a team of 5+ research assistants to ensure accurate and on-time results.
 
-### 🇹🇼 2021-2022 | Contributing Researcher at *Taiwan Architecture & Building Center*
+</article>
+
+<article class="cv-entry" markdown="1">
+<header class="cv-entry__header">
+<h3 class="cv-entry__title">Contributing Researcher</h3>
+<p class="cv-entry__organization">at <em>Taiwan Architecture &amp; Building Center</em></p>
+<p class="cv-entry__period"><span role="img" aria-label="Taiwan">🇹🇼</span> 2021–2022</p>
+</header>
+
   * Co-developed a prototype of an AI generative-design tool that improved regulatory compliance for SMEs.
   * Published 10+ articles on governance and sustainable finance (English & Chinese) reaching industry leaders.
   * Successfully negotiated long-term partnerships with three European companies.
+
+</article>
 
 ---
 
 ## 🎓 Education
 
-### 🇹🇼 2020-2022 | International Master's Program in International Studies | *National Chengchi University, Taipei, Taiwan*
+<article class="cv-entry" markdown="1">
+<header class="cv-entry__header">
+<h3 class="cv-entry__title">International Master's Program in International Studies</h3>
+<p class="cv-entry__organization"><em>National Chengchi University</em></p>
+<p class="cv-entry__period"><span role="img" aria-label="Taiwan">🇹🇼</span> 2020–2022</p>
+</header>
+
   * **Thesis**: When Do BRI Participants Fall into Debt Traps?: Case Studies of Six Developing Countries
   * **Notable coursework**: International Relations Theory, Seminar on Energy and Environment, Political Economy, Development Economics, Advanced Research Methods
   * Recipient of the *Taiwan International Higher Education Scholarship* issued by TaiwanICDF
 
-### 🇵🇱 2016-2020 | Bachelor's Degree in East Asia Studies | *Jagiellonian University, Cracow, Poland*
+</article>
+
+<article class="cv-entry" markdown="1">
+<header class="cv-entry__header">
+<h3 class="cv-entry__title">Bachelor's Degree in East Asia Studies</h3>
+<p class="cv-entry__organization"><em>Jagiellonian University</em></p>
+<p class="cv-entry__period"><span role="img" aria-label="Poland">🇵🇱</span> 2016–2020</p>
+</header>
+
   * **Thesis**: China-Taiwan Relations After 2008
   * **Notable coursework**: Political Systems of Asia, Diplomatic Protocol, Economic Systems of Asia
 
-### 🇹🇼 2018-2019 | Intensive Mandarin Chinese Course | *Chinese Culture University, Taipei, Taiwan*
+</article>
+
+<article class="cv-entry" markdown="1">
+<header class="cv-entry__header">
+<h3 class="cv-entry__title">Intensive Mandarin Chinese Course</h3>
+<p class="cv-entry__organization"><em>Chinese Culture University</em></p>
+<p class="cv-entry__period"><span role="img" aria-label="Taiwan">🇹🇼</span> 2018–2019</p>
+</header>
+
   * Recipient of Huayu Enrichment Scholarship issued by the Ministry of Education, Republic of China (Taiwan)
+
+</article>
 
 ---
 

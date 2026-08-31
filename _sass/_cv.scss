@@ -1,0 +1,94 @@
+/* ==========================================================================
+   CV ENTRIES
+   ========================================================================== */
+
+.cv-entry {
+  min-width: 0;
+  margin-top: 1.75rem;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.cv-entry + .cv-entry {
+  margin-top: 2rem;
+}
+
+.cv-entry__header {
+  display: grid;
+  grid-template-areas:
+    "title period"
+    "organization period";
+  grid-template-columns: minmax(0, 1fr) max-content;
+  gap: 0.15rem 1rem;
+  align-items: start;
+  margin-bottom: 0.65rem;
+}
+
+.cv-entry__title {
+  grid-area: title;
+  min-width: 0;
+  margin: 0;
+  font-size: $type-size-4;
+  font-weight: 650;
+  letter-spacing: -0.012em;
+  line-height: 1.3;
+  text-wrap: pretty;
+}
+
+.cv-entry__organization {
+  grid-area: organization;
+  min-width: 0;
+  margin: 0;
+  color: $primary-color;
+  font-size: $type-size-5;
+  line-height: 1.45;
+  text-wrap: pretty;
+}
+
+.cv-entry__period {
+  grid-area: period;
+  margin: 0.2rem 0 0;
+  color: $primary-color;
+  font-size: $type-size-6;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.45;
+  white-space: nowrap;
+}
+
+.cv-entry > ul {
+  max-width: 64ch;
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.cv-entry > ul > li {
+  margin-bottom: 0.45rem;
+  padding-left: 0.15rem;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.cv-entry > ul > li:last-child {
+  margin-bottom: 0;
+}
+
+@include breakpoint(max-width $small) {
+  .cv-entry__header {
+    grid-template-areas:
+      "title"
+      "organization"
+      "period";
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cv-entry__period {
+    margin-top: 0.2rem;
+  }
+}
+
+html[data-theme="dark"] {
+  .cv-entry__organization,
+  .cv-entry__period {
+    color: $dark-text-secondary-color;
+  }
+}
