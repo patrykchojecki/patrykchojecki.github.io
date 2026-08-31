@@ -12,17 +12,20 @@ redirect_from:
 ---
 
 {% include base_path %}
-Last updated on 10 August 2026 in Taipei, Taiwan 🇹🇼.
+<p class="cv-meta">Last updated <time datetime="2026-08-10">10 August 2026</time> · Taipei, Taiwan <span role="img" aria-label="Taiwan">🇹🇼</span></p>
 
----
+<hr class="cv-divider">
 
 ## Professional Profile
+{: .cv-section-title}
 
 Experienced in supporting early-stage founders on fundraising, product strategy, market entry, and investor relations across APAC. Strong background in startup accelerators, venture capital, deal sourcing, due diligence, and portfolio support. Passionate about working with ambitious founders and helping them build and scale high-growth technology companies.
+{: .cv-profile}
 
----
+<hr class="cv-divider">
 
-## 👨‍💻 Work Experience
+## Work Experience
+{: .cv-section-title}
 
 <article class="cv-entry" markdown="1">
 <header class="cv-entry__header">
@@ -80,9 +83,10 @@ Experienced in supporting early-stage founders on fundraising, product strategy,
 
 </article>
 
----
+<hr class="cv-divider">
 
-## 🎓 Education
+## Education
+{: .cv-section-title}
 
 <article class="cv-entry" markdown="1">
 <header class="cv-entry__header">
@@ -120,11 +124,13 @@ Experienced in supporting early-stage founders on fundraising, product strategy,
 
 </article>
 
----
+<hr class="cv-divider">
 
 ## Languages
+{: .cv-section-title}
 
 * 🇬🇧 English C2
 * 🇵🇱 Polish C2
 * 🇹🇼 Mandarin Chinese B2
 * 🇩🇪 German A2
+{: .cv-languages}
