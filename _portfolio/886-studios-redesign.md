@@ -1,42 +1,42 @@
 ---
-title: "886 Studios Website Redesign"
-excerpt: "A complete redesign of the 886 Studios website."
-summary: "An Astro static-site rebuild for 886 Studios, structured around data-driven content, and reusable components."
+title: "886 Studios Website"
+excerpt: "The production website and publishing platform for 886 Studios."
+summary: "The production website for 886 Studios: accelerator programs, portfolio, events, founder resources, and a two-source blog in a maintainable Astro codebase."
 collection: portfolio
 order: 2
 year: 2026
 status: "active"
 github: "https://github.com/886-Studios/886studios-redesign"
-demo: "https://886studios.com"
+demo: "https://www.886studios.com"
 tech:
-  - Astro
+  - Astro 7
   - TypeScript
-  - CSS
   - Vercel
+  - Node.js
 image: "/images/projects/886studios-redesign.png"
 image_variants: "avif"
-image_alt: "Screenshot of the 886 Studios website redesign project"
+image_alt: "Screenshot of the current 886 Studios homepage"
 ---
 
 <figure class="project-detail-image">
-  <img src="/images/projects/886studios-redesign.png" alt="Screenshot of the 886 Studios website redesign project">
+  <img src="/images/projects/886studios-redesign.png" alt="Screenshot of the current 886 Studios homepage">
 </figure>
 
-This project is a rebuild of the 886 Studios website as a maintainable Astro site. The goal was to reinvent the brand and make the underlying structure easier to work with. The previous website was just a Notion page, which was difficult to maintain and not visually appealing.
+The 886 Studios website has grown from a visual redesign into the production publishing platform for our accelerator and venture work. It now brings together program information, the startup portfolio, events, founder resources, team profiles, and original writing in one coherent site.
 
 [GitHub](https://github.com/886-Studios/886studios-redesign){: .btn}
-[Live preview](https://886studios.com){: .btn}
+[Live site](https://www.886studios.com){: .btn}
 
 ## What it is
 
-An Astro static-site codebase for our company with route-level pages, reusable page components, shared layouts, centralized content data.
+An Astro 7 static site with thin route files, reusable page components, shared layouts, and centralized typed content. The blog merges ikigai Insights posts from Substack with local Markdown articles, while a scheduled GitHub Actions workflow keeps the public Luma event archive current. The build also runs regression checks for metadata, structured data, internal links, images, robots directives, and sitemap parity before deployment to Vercel.
 
 ## Why I made it
 
-Together with my colleague, we wanted a cleaner way to iterate on the site without treating every page as a one-off file. The previous version of this website was basically a [Notion](https://www.notion.com/) page, which was not only ugly but also difficult to manage and maintain. Redesigning it was a complete no-brainer.
+Together with my colleague, I wanted a credible home for 886 Studios that we could keep improving without treating every page as a one-off. The previous website was essentially a [Notion](https://www.notion.com/) page, which made both the brand and the content difficult to develop. The rebuild gave us a stronger identity and an operating system for publishing new programs, events, portfolio companies, and resources.
 
 ## What I learned
 
-- How to structure a small Astro site around reusable page sections.
-- How to separate site copy from visual layout.
-- How to create a new visual identity for a brand and improve maintainability.
+- How to structure a growing Astro site around reusable page-level components and typed content.
+- How to automate event and blog publishing while keeping the production output static and fast.
+- How to pair a new visual identity with durable SEO, analytics, accessibility, and content-maintenance checks.

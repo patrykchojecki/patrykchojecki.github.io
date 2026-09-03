@@ -1,7 +1,7 @@
 ---
 title: "Cherry Terminal"
-excerpt: "A local-first portfolio tracker for private multi-currency P/L, quotes, indexes, and allocation."
-summary: "A local-first portfolio tracker for private multi-currency P/L, quotes, indexes, allocation, and currency exposure. It runs in the browser with local storage and a small quote proxy."
+excerpt: "A local-first stock tracker for holdings, allocation, research watchlists, and multi-currency exposure."
+summary: "A local-first stock tracker for holdings, cash, allocation, research watchlists, and direct or ETF look-through exposure—with portfolio data kept in IndexedDB."
 collection: portfolio
 order: 4
 year: 2026
@@ -9,33 +9,35 @@ status: "active"
 repo_visibility: "private"
 demo: "https://cherry-terminal.pages.dev"
 tech:
-  - JavaScript
+  - React 19
+  - TypeScript
+  - IndexedDB
   - Cloudflare Pages
-  - Local storage
-  - Yahoo Finance API
 image: "/images/projects/cherry-terminal.png"
 image_variants: "avif"
-image_alt: "Screenshot of the Cherry Terminal portfolio tracker"
+image_alt: "Screenshot of the Cherry Terminal portfolio overview"
 ---
 
 <figure class="project-detail-image">
-  <img src="/images/projects/cherry-terminal.png" alt="Screenshot of the Cherry Terminal portfolio tracker">
+  <img src="/images/projects/cherry-terminal.png" alt="Screenshot of the Cherry Terminal portfolio overview">
 </figure>
 
-Cherry Terminal is a local-first web app for tracking portfolio positions, live quotes, global indexes, allocation, and currency exposure.
+Cherry Terminal has grown into a local-first stock tracker for understanding what I own now. It brings holdings, cash, gains, allocation, currency exposure, research watchlists, and direct or ETF look-through exposure into one focused workspace without requiring an account.
 
 [Live site](https://cherry-terminal.pages.dev){: .btn}
 
 ## What it is
 
-A private browser-based portfolio tracker with static HTML pages, native JavaScript modules, local browser storage, and a small Yahoo Finance proxy for quotes and symbol search.
+A React 19 and TypeScript app built with Vite and React Router. Dexie stores portfolio data in IndexedDB; TanStack Query manages market requests; Zustand handles transient interface state; and Zod and Decimal.js keep imported data and money calculations predictable. The app uses same-origin Cloudflare Functions for public market data, but quantities, costs, cash, accounts, and notes stay on the device.
+
+The main surfaces cover the portfolio overview, current holdings and concentration, underlying company exposure through ETFs, multiple research watchlists, backups and exports, appearance controls, and diagnostics. It supports global symbols and currencies through a deliberately layered set of public market-data sources.
 
 ## Why I made it
 
-I wanted a focused way to track positions, currency exposure, indexes, and history without creating an account or putting portfolio data into a server-side database. I originally created this tool for myself. After some consideration and positive feedback, I've decided to make it public and let others benefit from it too.
+I wanted a calmer way to review positions, concentration, ETF overlap, currency exposure, and ideas without creating another financial account or placing sensitive portfolio data in a server-side database. I originally built the tool for myself, then expanded it into a public app that other investors can use with the same local-first privacy model.
 
 ## What I learned
 
-- How to keep a browser app useful while storing user data locally.
-- How to normalize quote data behind a small internal API surface.
-- How to test responsive financial UI without adding a heavy frontend framework.
+- How to migrate a browser product from localStorage to a versioned IndexedDB domain model without losing existing data.
+- How to combine incomplete market, FX, regulatory, and ETF-holdings sources while keeping provenance and limitations visible.
+- How to keep a data-heavy React interface fast, accessible, responsive, and testable across routes, text sizes, and local states.
