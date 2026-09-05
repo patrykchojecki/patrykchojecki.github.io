@@ -157,7 +157,7 @@ html[data-theme="dark"] {
       background: color.mix($dark-background-color, $dark-link-color, 50%);
     }
 
-    .visible-links a[aria-current="page"] {
+    .visible-links a[aria-current] {
       color: $dark-text-strong-color;
 
       &:before {

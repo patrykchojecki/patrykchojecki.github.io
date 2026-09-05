@@ -258,7 +258,7 @@
       }
     }
 
-    a[aria-current="page"] {
+    a[aria-current] {
       color: $text-color;
 
       &:before {

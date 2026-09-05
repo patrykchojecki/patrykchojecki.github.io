@@ -1,16 +1,35 @@
 {% include base_path %}
-
-{% if page.previous or page.next %}
-  <nav class="pagination">
-    {% if page.previous %}
-      <a href="{{ base_path }}{{ page.previous.url }}" class="pagination--pager" title="{{ page.previous.title | markdownify | strip_html }}">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</a>
-    {% else %}
-      <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</a>
+{% assign previous_page = page.previous %}
+{% assign next_page = page.next %}
+{% if page.collection == "portfolio" %}
+  {% assign previous_page = nil %}
+  {% assign next_page = nil %}
+  {% assign projects = site.portfolio | sort: "order" %}
+  {% for project in projects %}
+    {% if project.url == page.url %}
+      {% unless forloop.first %}
+        {% assign previous_index = forloop.index0 | minus: 1 %}
+        {% assign previous_page = projects[previous_index] %}
+      {% endunless %}
+      {% unless forloop.last %}
+        {% assign next_page = projects[forloop.index] %}
+      {% endunless %}
+      {% break %}
     {% endif %}
-    {% if page.next %}
-      <a href="{{ base_path }}{{ page.next.url }}" class="pagination--pager" title="{{ page.next.title | markdownify | strip_html }}">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}</a>
+  {% endfor %}
+{% endif %}
+
+{% if previous_page or next_page %}
+  <nav class="pagination" aria-label="{% if page.collection == 'portfolio' %}Project{% else %}Post{% endif %} navigation">
+    {% if previous_page %}
+      <a href="{{ base_path }}{{ previous_page.url }}" class="pagination--pager" title="{{ previous_page.title | markdownify | strip_html | escape }}">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</a>
     {% else %}
-      <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}</a>
+      <span class="pagination--pager disabled" aria-disabled="true">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</span>
+    {% endif %}
+    {% if next_page %}
+      <a href="{{ base_path }}{{ next_page.url }}" class="pagination--pager" title="{{ next_page.title | markdownify | strip_html | escape }}">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}</a>
+    {% else %}
+      <span class="pagination--pager disabled" aria-disabled="true">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}</span>
     {% endif %}
   </nav>
 {% endif %}
