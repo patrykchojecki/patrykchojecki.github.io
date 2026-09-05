@@ -148,6 +148,12 @@
       setOpen(false);
       onResize(syncAuthorLinks);
 
+      wrapper.addEventListener("focusout", function (event) {
+        if (!wrapper.contains(event.relatedTarget)) {
+          closeAuthorLinks(false);
+        }
+      });
+
       button.addEventListener("click", function () {
         setOpen(!button.classList.contains("open"));
       });
@@ -171,7 +177,6 @@
     var button;
     var visibleLinks;
     var hiddenLinks;
-    var breaks = [];
 
     if (!nav) {
       return;
@@ -205,26 +210,42 @@
     }
 
     function updateNav() {
-      var availableSpace = button.classList.contains("hidden") ? width(nav) : width(nav) - width(button) - 30;
+      var focused = document.activeElement;
+      var availableSpace;
 
-      if (width(visibleLinks) > availableSpace && visibleLinks.children.length > 0) {
-        breaks.push(width(visibleLinks));
-        hiddenLinks.insertBefore(visibleLinks.lastElementChild, hiddenLinks.firstElementChild);
-        button.classList.remove("hidden");
-      } else if (breaks.length && availableSpace > breaks[breaks.length - 1] && hiddenLinks.children.length > 0) {
+      // Recalculate from the complete list so one resize restores every link
+      // that fits, even after a large viewport or text-size change.
+      while (hiddenLinks.firstElementChild) {
         visibleLinks.appendChild(hiddenLinks.firstElementChild);
-        breaks.pop();
+      }
+      button.classList.add("hidden");
+      availableSpace = width(nav);
+
+      if (width(visibleLinks) > availableSpace) {
+        button.classList.remove("hidden");
+        availableSpace -= width(button) + 30;
+
+        // Keep the site name visible as a reliable route back home.
+        while (visibleLinks.children.length > 1 && width(visibleLinks) > availableSpace) {
+          hiddenLinks.insertBefore(visibleLinks.lastElementChild, hiddenLinks.firstElementChild);
+        }
       }
 
-      if (breaks.length < 1) {
+      if (!hiddenLinks.children.length) {
         button.classList.add("hidden");
         closeHiddenLinks(false);
       }
 
-      button.setAttribute("count", breaks.length);
+      button.setAttribute("count", hiddenLinks.children.length);
 
-      if (visibleLinks.children.length > 0 && width(visibleLinks) > availableSpace) {
-        updateNav();
+      if (focused && nav.contains(focused)) {
+        if (focused === button && button.classList.contains("hidden")) {
+          visibleLinks.querySelector("a").focus();
+        } else if (hiddenLinks.contains(focused) && hiddenLinks.classList.contains("hidden")) {
+          button.focus();
+        } else if (document.activeElement !== focused) {
+          focused.focus();
+        }
       }
     }
 
@@ -249,6 +270,12 @@
       }
     });
 
+    nav.addEventListener("focusout", function (event) {
+      if (!nav.contains(event.relatedTarget)) {
+        closeHiddenLinks(false);
+      }
+    });
+
     onResize(scheduleNavUpdate);
     window.addEventListener("load", scheduleNavUpdate);
 
@@ -259,64 +286,11 @@
     updateNav();
   }
 
-  function initSmoothScroll() {
-    document.addEventListener("click", function (event) {
-      var link = event.target.closest ? event.target.closest("a[href*='#']") : null;
-      var url;
-      var target;
-      var id;
-      var top;
-
-      if (!link || event.defaultPrevented || (link.target && link.target !== "_self")) {
-        return;
-      }
-
-      try {
-        url = new URL(link.href, window.location.href);
-      } catch (error) {
-        return;
-      }
-
-      if (
-        url.origin !== window.location.origin ||
-        url.pathname.replace(/\/$/, "") !== window.location.pathname.replace(/\/$/, "") ||
-        url.hash.length < 2
-      ) {
-        return;
-      }
-
-      try {
-        id = decodeURIComponent(url.hash.slice(1));
-      } catch (error) {
-        id = url.hash.slice(1);
-      }
-      target = document.getElementById(id) || document.getElementsByName(id)[0];
-
-      if (!target) {
-        return;
-      }
-
-      event.preventDefault();
-      top = target.getBoundingClientRect().top + window.pageYOffset - 20;
-
-      try {
-        window.scrollTo({ top: top, behavior: "smooth" });
-      } catch (error) {
-        window.scrollTo(0, top);
-      }
-
-      try {
-        window.history.pushState(null, "", url.hash);
-      } catch (error) {}
-    });
-  }
-
   window.addEventListener("resize", runResizeCallbacks, { passive: true });
 
   ready(function () {
     initResponsiveVideos();
     initAuthorLinks();
     initGreedyNav();
-    initSmoothScroll();
   });
 }());

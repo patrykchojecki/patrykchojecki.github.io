@@ -4,7 +4,6 @@
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
-        <button type="button" aria-label="Toggle menu" aria-controls="site-nav-hidden-links" aria-expanded="false"><div class="navicon"></div></button>
         <ul class="visible-links">
           <li class="masthead__menu-item masthead__menu-item--lg"><a href="{{ base_path }}/">{{ site.title }}</a></li>
           {% for link in site.data.navigation.main %}
@@ -16,6 +15,7 @@
             <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title }}</a></li>
           {% endfor %}
         </ul>
+        <button type="button" aria-label="Toggle menu" aria-controls="site-nav-hidden-links" aria-expanded="false"><div class="navicon"></div></button>
         <ul id="site-nav-hidden-links" class="hidden-links hidden"></ul>
       </nav>
       <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">

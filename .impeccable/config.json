@@ -1,3 +1,45 @@
 {
-  "buildPath": "code"
+  "buildPath": "code",
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "design-system-font-size",
+        "value": "14px",
+        "files": [
+          "_sass/_navigation.scss"
+        ],
+        "createdAt": "2026-09-05T13:48:13.266Z",
+        "reason": "Codex reviewed: preserved pre-existing pagination styling; this bug fix only anchors the mobile menu button."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "1.25rem",
+        "files": [
+          "_sass/_navigation.scss"
+        ],
+        "createdAt": "2026-09-05T13:48:13.303Z",
+        "reason": "Codex reviewed: title-scale size matches DESIGN.md and preserves inherited navigation styling."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "0.8rem",
+        "files": [
+          "_sass/_navigation.scss"
+        ],
+        "createdAt": "2026-09-05T13:48:13.337Z",
+        "reason": "Codex reviewed: preserved inherited table-of-contents scale; this component is absent from current public journeys."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#000",
+        "files": [
+          "_sass/_navigation.scss"
+        ],
+        "createdAt": "2026-09-05T13:48:13.372Z",
+        "reason": "Codex reviewed: preserved existing inherited hover colors; no palette change is needed for the menu positioning fix."
+      }
+    ]
+  }
 }
