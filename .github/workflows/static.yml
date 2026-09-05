@@ -69,6 +69,9 @@ jobs:
         env:
           JEKYLL_ENV: production
 
+      - name: Check generated site
+        run: npm run check:site
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v5
         # defaults to uploading _site

@@ -9,5 +9,7 @@ robots: "noindex, follow"
 
 {% include base_path %}
 {% for post in site.pages %}
-  {% include archive-single.html %}
+  {% if post.title and post.layout != "redirect" %}
+    {% include archive-single.html %}
+  {% endif %}
 {% endfor %}

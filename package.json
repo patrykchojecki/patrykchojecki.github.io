@@ -29,7 +29,8 @@
   },
   "scripts": {
     "build": "run-s build:js build:site",
-    "build:site": "JEKYLL_ENV=production bundle exec jekyll build",
+    "build:site": "JEKYLL_ENV=production bundle exec jekyll build && npm run check:site",
+    "check:site": "python3 scripts/check-site.py",
     "check": "run-s test build",
     "serve": "bundle exec jekyll serve --config _config.yml,_config.dev.yml --host 127.0.0.1 --port 4001",
     "serve:prod": "JEKYLL_ENV=production bundle exec jekyll serve --host 127.0.0.1 --port 4001",

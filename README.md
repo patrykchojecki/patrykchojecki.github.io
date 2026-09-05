@@ -12,6 +12,7 @@ Install the versions pinned by the repository:
 - Bundler 4.0.9
 - Node.js 26
 - npm 10 or newer
+- Python 3.9 or newer (for generated-site checks; no Python packages required)
 
 Using a Ruby and Node version manager is recommended. Confirm the active toolchain before installing dependencies:
 
@@ -60,7 +61,7 @@ Test the OpenXBL data normalization separately:
 npm test
 ```
 
-The generated site is written to `_site/`.
+The generated site is written to `_site/`. The build checks its internal links, assets, fragment targets, page landmarks, sitemap destinations, and publication exclusions. Run `npm run check:site` to repeat these checks against an existing build.
 
 ## Xbox activity
 
@@ -75,7 +76,7 @@ Pushing to `master` triggers `.github/workflows/static.yml`, which:
 1. Installs the pinned Node and Ruby dependencies.
 2. Builds the JavaScript assets and tests the OpenXBL mapping.
 3. Fetches the latest Xbox activity.
-4. Builds and deploys the site to GitHub Pages.
+4. Builds Jekyll, checks the generated site, and deploys it to GitHub Pages.
 
 The workflow also refreshes the deployment every six hours and can be run manually from GitHub Actions.
 
