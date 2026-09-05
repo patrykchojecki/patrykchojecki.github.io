@@ -297,7 +297,8 @@
   },
   "mainEntityOfPage": {
     "@id": {{ webpage_id | jsonify }}
-  }{% if seo_image_url %},
+  }{% if page_modified_time %},
+  "dateModified": {{ page_modified_time | date_to_xmlschema | jsonify }}{% endif %}{% if seo_image_url %},
   "image": {{ seo_image_url | jsonify }}{% endif %}{% if page.tech %},
   "keywords": {{ page.tech | join: ", " | jsonify }}{% endif %}
 }

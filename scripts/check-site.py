@@ -1,7 +1,9 @@
 """Check the generated website using only the Python standard library."""
 
+import json
 import sys
 from collections import Counter
+from datetime import datetime
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urljoin, urlsplit
@@ -16,10 +18,15 @@ class Page(HTMLParser):
         self.headings = 0
         self.main = False
         self.redirect = False
+        self.structured_data = []
+        self.structured_data_errors = []
+        self.json_ld = None
         self.feed(source)
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        if tag == "script" and attrs.get("type") == "application/ld+json":
+            self.json_ld = []
         if attrs.get("id"):
             self.ids.append(attrs["id"])
         if tag == "a" and attrs.get("name"):
@@ -33,6 +40,40 @@ class Page(HTMLParser):
         if attrs.get("srcset") and not attrs["srcset"].startswith("data:"):
             self.references.extend(part.strip().split()[0] for part in attrs["srcset"].split(",") if part.strip())
 
+    def handle_data(self, data):
+        if self.json_ld is not None:
+            self.json_ld.append(data)
+
+    def handle_endtag(self, tag):
+        if tag == "script" and self.json_ld is not None:
+            try:
+                data = json.loads("".join(self.json_ld))
+                nodes = data if isinstance(data, list) else [data]
+                for node in nodes:
+                    if not isinstance(node, dict):
+                        raise ValueError("JSON-LD nodes must be objects")
+                    self.structured_data.extend(node.get("@graph", [node]))
+            except ValueError as error:
+                self.structured_data_errors.append(str(error))
+            self.json_ld = None
+
+
+def modification_dates(page, relative, errors):
+    dates = set()
+    for node in page.structured_data:
+        if not isinstance(node, dict):
+            errors.append(f"{relative}: JSON-LD nodes must be objects")
+            continue
+        value = node.get("dateModified")
+        if value is not None:
+            try:
+                dates.add(datetime.fromisoformat(value.replace("Z", "+00:00")))
+            except (AttributeError, TypeError, ValueError):
+                errors.append(f"{relative}: invalid JSON-LD dateModified {value!r}")
+    if len(dates) > 1:
+        errors.append(f"{relative}: inconsistent JSON-LD dateModified values")
+    return dates
+
 
 def check_site(directory):
     root = Path(directory).resolve()
@@ -44,6 +85,15 @@ def check_site(directory):
 
     for file, page in pages.items():
         relative = file.relative_to(root).as_posix()
+        for error in page.structured_data_errors:
+            errors.append(f"{relative}: invalid JSON-LD: {error}")
+        modification_dates(page, relative, errors)
+        if relative.startswith("projects/") and not page.redirect:
+            for schema_type in ("WebPage", "CreativeWork"):
+                nodes = [node for node in page.structured_data if isinstance(node, dict) and node.get("@type") == schema_type]
+                if schema_type == "WebPage" or relative != "projects/index.html":
+                    if not nodes or any(not node.get("dateModified") for node in nodes):
+                        errors.append(f"{relative}: expected {schema_type} with an explicit dateModified")
         if not page.redirect:
             if page.headings != 1 or not page.main:
                 errors.append(f"{relative}: expected one h1 and a main landmark")
@@ -75,17 +125,29 @@ def check_site(directory):
             errors.append(f"Internal source or template demo was published: {unwanted}")
 
     sitemap = ElementTree.parse(root / "sitemap.xml")
-    locations = sitemap.findall(".//{http://www.sitemaps.org/schemas/sitemap/0.9}loc")
-    for location in locations:
+    namespace = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+    entries = sitemap.findall("s:url", namespace)
+    for entry in entries:
+        location = entry.find("s:loc", namespace)
         target = root / unquote(urlsplit(location.text).path).lstrip("/")
         if target.is_dir():
             target /= "index.html"
         if not target.is_file():
             errors.append(f"Sitemap points to missing file: {location.text}")
+        elif target in pages:
+            dates = modification_dates(pages[target], target.relative_to(root).as_posix(), errors)
+            lastmod = entry.findtext("s:lastmod", namespaces=namespace)
+            # lastmod is optional outside the explicitly dated project pages.
+            if dates and (lastmod is not None or target.is_relative_to(root / "projects")):
+                try:
+                    if datetime.fromisoformat(lastmod.replace("Z", "+00:00")) not in dates:
+                        errors.append(f"Sitemap lastmod differs from JSON-LD dateModified: {location.text}")
+                except (AttributeError, ValueError):
+                    errors.append(f"Sitemap needs a valid lastmod matching JSON-LD: {location.text}")
 
     if errors:
         raise SystemExit("Site checks failed:\n" + "\n".join(sorted(set(errors))))
-    print(f"Site checks passed: {len(pages)} HTML files, internal links, fragments, assets, landmarks, and {len(locations)} sitemap entries.")
+    print(f"Site checks passed: {len(pages)} HTML files, internal links, fragments, assets, landmarks, JSON-LD, and {len(entries)} sitemap entries with consistent revision dates.")
 
 
 if __name__ == "__main__":

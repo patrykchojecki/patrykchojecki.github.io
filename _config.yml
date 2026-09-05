@@ -283,6 +283,34 @@ defaults:
       author_profile: true
       share: true
 
+  # Explicit project revision dates keep sitemap freshness independent of
+  # checkout/build time. Update the matching date when a page is revised.
+  # Initial dates come from the latest Git commit touching each source file.
+  - scope:
+      path: "_pages/portfolio.html"
+    values:
+      last_modified_at: "2026-09-03T10:24:15+08:00"
+  - scope:
+      path: "_portfolio/886-studios-redesign.md"
+    values:
+      last_modified_at: "2026-09-03T10:24:15+08:00"
+  - scope:
+      path: "_portfolio/cherry-terminal.md"
+    values:
+      last_modified_at: "2026-09-03T10:24:15+08:00"
+  - scope:
+      path: "_portfolio/cmdz.md"
+    values:
+      last_modified_at: "2026-09-03T10:24:15+08:00"
+  - scope:
+      path: "_portfolio/ikigai-startup-portal.md"
+    values:
+      last_modified_at: "2026-08-27T12:08:52+08:00"
+  - scope:
+      path: "_portfolio/personal-website.md"
+    values:
+      last_modified_at: "2026-09-03T10:24:15+08:00"
+
 # Sass/SCSS
 sass:
   sass_dir: _sass
