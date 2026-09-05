@@ -66,7 +66,7 @@ The generated site is written to `_site/`.
 
 The `/now` page displays Xbox activity from `_data/xbox.json`. GitHub Actions generates this ignored file with `scripts/fetch-openxbl.mjs`; local development falls back to the tracked preview data.
 
-Production requires an `OPENXBL_API_KEY` repository secret linked to an OpenXBL account whose Xbox profile and title history are visible. The key is not required to serve or build the site locally with preview data.
+Live Xbox activity requires an `OPENXBL_API_KEY` repository secret linked to an OpenXBL account whose Xbox profile and title history are visible. The key is not required to serve or build the site locally with preview data. If a production refresh fails or the secret is missing, the site still deploys with the activity card omitted. Unavailable achievement data does not hide a successfully fetched profile and game.
 
 ## Deployment
 

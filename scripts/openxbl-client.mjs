@@ -78,7 +78,7 @@ export async function fetchOpenXblData(apiKey) {
     .sort((a, b) => b.lastPlayed.getTime() - a.lastPlayed.getTime())
     .slice(0, 3)
     .map(({ title }) => title);
-  const achievementRequests = recentTitles.map(async (title, index) => {
+  const achievementRequests = recentTitles.map(async (title) => {
     const titleId = firstValue(title?.titleId, title?.id);
 
     if (!titleId) {
@@ -99,11 +99,8 @@ export async function fetchOpenXblData(apiKey) {
           ? achievement
           : { ...achievement, gameName: title?.name || "" }
       );
-    } catch (error) {
-      if (index === 0) {
-        throw error;
-      }
-
+    } catch {
+      // Achievements are optional, including for the most recently played game.
       return [];
     }
   });

@@ -188,3 +188,49 @@ test("fetches and unwraps OpenXBL data while tolerating older-title failures", a
   assert.equal(result.game.name, "Starfield");
   assert.equal(result.achievement.name, "The Long Way Around");
 });
+
+test("keeps the profile and game when all achievement endpoints fail", async (t) => {
+  t.mock.method(globalThis, "fetch", async (url) => {
+    const path = new URL(url).pathname;
+    if (path.includes("/achievements/")) {
+      return { ok: false, status: 503, text: async () => "Unavailable" };
+    }
+    return {
+      ok: true,
+      json: async () => path.endsWith("/account")
+        ? { id: "12345", gamertag: "Cherry Sando" }
+        : { titles: [{ titleId: "new", name: "Starfield", lastPlayedAt: "2026-07-28T10:00:00Z" }] },
+    };
+  });
+
+  const result = await fetchOpenXblData("test-key");
+  assert.equal(result.profile.gamertag, "Cherry Sando");
+  assert.equal(result.game.name, "Starfield");
+  assert.equal(result.achievement, null);
+});
+
+test("does not publish locked achievements or placeholder unlock dates", () => {
+  const result = normalizeOpenXblData({
+    account: { id: "12345", gamertag: "Cherry Sando" },
+    titleHistory: { titles: [{ name: "Starfield", lastPlayedAt: "2026-07-28T10:00:00Z" }] },
+    achievements: { achievements: [
+      { name: "Still locked", progressState: "NotAchieved", timeUnlocked: "2026-07-28T11:00:00Z" },
+      { name: "In progress", progressState: "InProgress", timeUnlocked: "0001-01-01T00:00:00Z" },
+      { name: "Unknown state", timeUnlocked: "0001-01-01T00:00:00Z" },
+    ] },
+  });
+  assert.equal(result.achievement, null);
+});
+
+test("preserves zero gamerscore values", () => {
+  const result = normalizeOpenXblData({
+    account: { id: "12345", gamertag: "Cherry Sando", gamerscore: 0 },
+    titleHistory: { titles: [{ name: "Starfield", lastPlayedAt: "2026-07-28T10:00:00Z" }] },
+    achievements: { achievements: [{
+      name: "A zero-point achievement", progressState: "Achieved",
+      timeUnlocked: "2026-07-28T09:00:00Z", gamerscore: 0,
+    }] },
+  });
+  assert.equal(result.profile.gamerscoreLabel, "0");
+  assert.equal(result.achievement.gamerscore, 0);
+});

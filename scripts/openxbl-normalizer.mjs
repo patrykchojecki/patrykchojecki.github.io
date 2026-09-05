@@ -8,7 +8,8 @@ function asArray(value) {
 
 function safeDate(value) {
   const parsed = value ? new Date(value) : null;
-  return parsed && !Number.isNaN(parsed.getTime()) ? parsed : null;
+  // Xbox uses ancient placeholder dates for achievements that are still locked.
+  return parsed && parsed.getTime() > 0 ? parsed : null;
 }
 
 function safeImageUrl(value) {
@@ -178,13 +179,15 @@ function achievementGamerscore(achievement) {
     achievement?.gamerscore,
     achievement?.score
   );
-  const score = Number.parseInt(String(raw || ""), 10);
+  const score = Number.parseInt(String(raw ?? ""), 10);
   return Number.isFinite(score) ? score : null;
 }
 
 function isUnlocked(achievement) {
   const state = String(firstValue(achievement?.progressState, achievement?.state) || "");
-  return /achieved|unlocked/i.test(state) || Boolean(achievementUnlockedAt(achievement));
+  return state
+    ? /^(achieved|unlocked)$/i.test(state)
+    : Boolean(achievementUnlockedAt(achievement));
 }
 
 export function normalizeOpenXblData(
@@ -224,7 +227,7 @@ export function normalizeOpenXblData(
     .filter(Boolean)
     .sort((a, b) => b.getTime() - a.getTime())[0];
   const gamerScore = Number.parseInt(
-    String(firstValue(settings.Gamerscore, profile.gamerscore) || ""),
+    String(firstValue(settings.Gamerscore, profile.gamerscore) ?? ""),
     10
   );
   const profileUrl = `https://account.xbox.com/en-us/Profile?gamertag=${encodeURIComponent(
