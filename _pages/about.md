@@ -19,7 +19,7 @@ At 886 Studios, we’re always looking for exceptional founders to back - so mak
 
 I graduated from [Jagiellonian University in Cracow](https://en.uj.edu.pl/en_GB/start) and later earned my master’s degree at [National Chengchi University](https://www.nccu.edu.tw/index.php?Lang=en) in Taiwan, where I was a recipient of the [Taiwan ICDF Scholarship](https://www.icdf.org.tw/wSite/np?ctNode=31561&mp=2). This program brought together top talent from around the world, giving me the opportunity to deepen my understanding of political economy while building strong international connections.
 
-My professional journey has taken me across multiple industries. I first contributed to the [Taiwan Architecture & Building Center (TABC)](https://www.tabc.org.tw/en/), focusing on business development, ESG investing, and digital transformation. My team was honored with the Excellence Award at the 2021 [DIGI+ X TCA](https://www.talentcirculationalliance.org/all-alliance-partners-en/mofa) Global Digital Talent Awards for our AI-driven compliance solution.
+My professional journey has taken me across multiple industries. I first contributed to the [Taiwan Architecture & Building Center (TABC)](https://www.tabc.org.tw/en/), focusing on business development, ESG investing, and digital transformation. My team was honored with the Excellence Award at the 2021 DIGI+ X TCA Global Digital Talent Awards for our AI-driven compliance solution.
 
 After that, I worked as a research assistant at [Academia Sinica](https://www.sinica.edu.tw/en), Taiwan’s most prestigious research institution, where I analyzed U.S. government agencies and their decision-making processes.
 
