@@ -6,7 +6,7 @@ description: "CV for Patryk Chojecki, Program Manager at 886 Studios, covering s
 excerpt: "CV for Patryk Chojecki, focused on startup accelerators, venture, fundraising, investor relations, market entry, and APAC founder support."
 permalink: /cv/
 author_profile: true
-last_modified_at: 2026-07-02
+last_modified_at: 2026-08-10
 redirect_from:
   - /resume
 ---

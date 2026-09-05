@@ -27,6 +27,6 @@ From 2023 to the beginning of 2026, I worked at a biotech venture firm based in 
 
 In my free time, I enjoy playing football and squash. I also love reading about technology, philosophy, and financial markets. When I’m not working, I enjoy traveling across Asia and discovering new macOS apps and productivity tools.
 
-If you’d like to know what I’m currently up to, visit my [/now page](https://chojecki.net/now/).
+If you’d like to know what I’m currently up to, visit my [/now page]({{ '/now/' | relative_url }}).
 
 I’d love to chat or connect on [LinkedIn](https://www.linkedin.com/in/patryk-chojecki/)!

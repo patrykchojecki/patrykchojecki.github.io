@@ -11,40 +11,40 @@ author_profile: true
 
 A list of all the posts and pages found on the site. For you robots out there is an [XML version]({{ base_path }}/sitemap.xml) available for digesting as well.
 
-<h2>Pages</h2>
+{% capture page_entries %}
 {% for post in site.pages %}
-  {% unless post.sitemap == false or post.robots contains "noindex" %}
-    {% include archive-single.html %}
-  {% endunless %}
-{% endfor %}
-
-<h2>Posts</h2>
-{% for post in site.posts %}
-  {% unless post.sitemap == false or post.robots contains "noindex" %}
-    {% include archive-single.html %}
-  {% endunless %}
-{% endfor %}
-
-{% capture written_label %}'None'{% endcapture %}
-
-{% for collection in site.collections %}
-{% unless collection.output == false or collection.label == "posts" %}
-  {% capture label %}{{ collection.label }}{% endcapture %}
-  {% if label == "portfolio" %}
-    {% assign display_label = "Projects" %}
-  {% else %}
-    {% assign display_label = label %}
-  {% endif %}
-  {% if label != written_label %}
-  <h2>{{ display_label }}</h2>
-  {% capture written_label %}{{ label }}{% endcapture %}
-  {% endif %}
-{% endunless %}
-{% for post in collection.docs %}
-  {% unless collection.output == false or collection.label == "posts" %}
+  {% if post.title and post.layout != "redirect" %}
     {% unless post.sitemap == false or post.robots contains "noindex" %}
       {% include archive-single.html %}
     {% endunless %}
-  {% endunless %}
+  {% endif %}
 {% endfor %}
+{% endcapture %}
+{% assign page_entries = page_entries | strip %}
+{% if page_entries != empty %}
+<h2>Pages</h2>
+{{ page_entries }}
+{% endif %}
+
+{% for collection in site.collections %}
+  {% if collection.output %}
+    {% assign documents = collection.docs %}
+    {% assign display_label = collection.label | capitalize %}
+    {% if collection.label == "portfolio" %}
+      {% assign documents = documents | sort: "order" %}
+      {% assign display_label = "Projects" %}
+    {% endif %}
+    {% capture collection_entries %}
+      {% for post in documents %}
+        {% unless post.sitemap == false or post.robots contains "noindex" %}
+          {% include archive-single.html %}
+        {% endunless %}
+      {% endfor %}
+    {% endcapture %}
+    {% assign collection_entries = collection_entries | strip %}
+    {% if collection_entries != empty %}
+      <h2>{{ display_label }}</h2>
+      {{ collection_entries }}
+    {% endif %}
+  {% endif %}
 {% endfor %}
