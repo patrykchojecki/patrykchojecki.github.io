@@ -15,10 +15,6 @@
 <meta name="color-scheme" content="light dark">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 
-<script>
-  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
-</script>
-
 <!-- For all browsers -->
 {% assign asset_version = site.github.build_revision | default: site.asset_version %}
 {% unless asset_version %}{% assign asset_version = site.time | date: '%s' %}{% endunless %}

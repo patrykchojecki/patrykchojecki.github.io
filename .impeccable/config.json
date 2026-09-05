@@ -39,6 +39,15 @@
         ],
         "createdAt": "2026-09-05T13:48:13.372Z",
         "reason": "Codex reviewed: preserved existing inherited hover colors; no palette change is needed for the menu positioning fix."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#000",
+        "files": [
+          "_sass/_base.scss"
+        ],
+        "createdAt": "2026-09-05T14:04:16.162Z",
+        "reason": "Codex reviewed: preserved the existing figure-caption hover color while fixing page background and print readability."
       }
     ]
   }

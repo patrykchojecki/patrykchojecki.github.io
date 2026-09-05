@@ -213,6 +213,7 @@
       var focused = document.activeElement;
       var availableSpace;
 
+      nav.classList.remove("greedy-nav--stacked");
       // Recalculate from the complete list so one resize restores every link
       // that fits, even after a large viewport or text-size change.
       while (hiddenLinks.firstElementChild) {
@@ -237,6 +238,8 @@
       }
 
       button.setAttribute("count", hiddenLinks.children.length);
+      nav.classList.toggle("greedy-nav--stacked",
+        hiddenLinks.children.length > 0 && width(visibleLinks) > availableSpace);
 
       if (focused && nav.contains(focused)) {
         if (focused === button && button.classList.contains("hidden")) {
@@ -289,6 +292,9 @@
   window.addEventListener("resize", runResizeCallbacks, { passive: true });
 
   ready(function () {
+    // Keep the accessible static layout until the interactive bundle has loaded.
+    document.documentElement.classList.remove("no-js");
+    document.documentElement.classList.add("js");
     initResponsiveVideos();
     initAuthorLinks();
     initGreedyNav();
