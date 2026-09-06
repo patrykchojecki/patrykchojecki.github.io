@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "interval_days": 14,
+  "engines": [
+    "chatgpt",
+    "claude",
+    "perplexity",
+    "gemini",
+    "google_ai_overview"
+  ],
+  "queries": [
+    {
+      "id": "identity",
+      "prompt": "Who is Patryk Chojecki, the startup program manager in Taipei? Search the web and cite your sources."
+    },
+    {
+      "id": "founder_support",
+      "prompt": "What experience does Patryk Chojecki in Taipei have supporting startup founders? Search the web and cite your sources."
+    },
+    {
+      "id": "projects",
+      "prompt": "What software projects has Patryk Chojecki in Taipei built? Search the web and cite your sources."
+    },
+    {
+      "id": "cmdz",
+      "prompt": "What is CmdZ, the browser extension by Patryk Chojecki, and how does it work? Search the web and cite your sources."
+    },
+    {
+      "id": "ikigai",
+      "prompt": "What is the ikigai Startup Portal built by Patryk Chojecki? Search the web and cite your sources."
+    }
+  ]
+}
