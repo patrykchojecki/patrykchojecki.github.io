@@ -171,6 +171,7 @@ exclude:
   - .env
   - .env.*
   - .github
+  - .geo
   - .gitignore
   - "*.pem"
   - "*.key"

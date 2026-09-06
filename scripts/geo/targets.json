@@ -1,0 +1,17 @@
+{
+  "origin": "https://chojecki.net",
+  "search_console_property": "sc-domain:chojecki.net",
+  "sitemap": "https://chojecki.net/sitemap.xml",
+  "pages": [
+    "/",
+    "/cv/",
+    "/now/",
+    "/projects/",
+    "/projects/personal-website/",
+    "/projects/886-studios-redesign/",
+    "/projects/ikigai-startup-portal/",
+    "/projects/cherry-terminal/",
+    "/projects/cmdz/"
+  ],
+  "search_crawlers": ["Googlebot", "Bingbot", "OAI-SearchBot", "Claude-SearchBot", "PerplexityBot"]
+}
