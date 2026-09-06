@@ -23,3 +23,11 @@ On 6 September 2026, the controls for Googlebot, BingBot, OAI-SearchBot, Claude-
 Keep detailed counts and account-specific evidence in `.geo/`. Check again after a real search-bot visit; distinguish a 404 from a firewall rejection and inspect the requested path before changing access rules.
 
 Reference: [Cloudflare verified bots](https://developers.cloudflare.com/bots/concepts/bot/verified-bots/).
+
+## Structured data
+
+`python3 scripts/check-site.py _site` validates JSON syntax, the site's schema relationships, canonical URLs, identity links, indexability of sitemap pages, and consistent revision dates. It is a regression check for this site's templates, not a complete Schema.org validator. Run its negative regression cases with `python3 -m unittest discover -s scripts -p 'test_*.py'`.
+
+The live homepage passed Google's Rich Results Test on 6 September 2026 with one valid ProfilePage item. Schema.org's URL fetch failed; its code-input fallback accepted the five published JSON-LD blocks with no errors or warnings. A code-input result does not establish crawler access. Keep result links and detailed observations in `.geo/`.
+
+Use [Rich Results Test](https://search.google.com/test/rich-results) for Google-supported features and [Schema.org Validator](https://validator.schema.org/) for general vocabulary validation. Project CreativeWork markup need not produce a Google rich result. Do not add unsupported types or visible claims merely to obtain a validator badge.
