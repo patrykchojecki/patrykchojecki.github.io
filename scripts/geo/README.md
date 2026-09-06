@@ -13,3 +13,13 @@ Check the Sitemaps report for `https://chojecki.net/sitemap.xml`. The existing s
 The blog and publication archives intentionally use `noindex`. Do not remove these exclusions as part of an indexing repair. Prefer investigating a specific target's reported failure over changing site-wide crawler rules.
 
 Reference: [Google sitemap guidance](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap).
+
+## Cloudflare crawler access
+
+In AI Crawl Control → Security, inspect each search crawler in `targets.json`, its block control, and allowed/unsuccessful requests for a stated time window. Record the HTTP status breakdown in Metrics. Verify real crawler identity through Cloudflare's verified-bot classification or the provider's published IP/signature method before considering any firewall exception. A local request with a crawler user-agent only checks response behavior; it does not prove a real crawler can reach the site.
+
+On 6 September 2026, the controls for Googlebot, BingBot, OAI-SearchBot, Claude-SearchBot and PerplexityBot were off (not blocked). The 24-hour report contained successful requests for the first two, but no requests for the three AI search bots. Their actual access remains unobserved in that window. No Cloudflare policy was changed. Preserve unrelated crawler restrictions unless a specific failure justifies changing them.
+
+Keep detailed counts and account-specific evidence in `.geo/`. Check again after a real search-bot visit; distinguish a 404 from a firewall rejection and inspect the requested path before changing access rules.
+
+Reference: [Cloudflare verified bots](https://developers.cloudflare.com/bots/concepts/bot/verified-bots/).
