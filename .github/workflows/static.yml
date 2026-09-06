@@ -22,6 +22,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    outputs:
+      search_manifest: ${{ steps.search_manifest.outputs.manifest }}
     permissions:
       contents: read
       pages: write
@@ -46,6 +48,9 @@ jobs:
 
       - name: Test OpenXBL data mapping
         run: npm test
+
+      - name: Test search metadata checks
+        run: npm run test:seo
 
       - name: Fetch Xbox activity
         # Optional personal activity must not block publishing the website.
@@ -72,6 +77,12 @@ jobs:
       - name: Check generated site
         run: npm run check:site
 
+      - name: Record expected search metadata
+        id: search_manifest
+        run: |
+          geo_manifest=$(python3 scripts/check-live-site.py --manifest-dir _site)
+          echo "manifest=$geo_manifest" >> "$GITHUB_OUTPUT"
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v5
         # defaults to uploading _site
@@ -90,3 +101,20 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+
+  verify-search:
+    needs: [build, deploy]
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Check published search metadata
+        env:
+          EXPECTED_SITE_MANIFEST: ${{ needs.build.outputs.search_manifest }}
+        run: python3 scripts/check-live-site.py --require-manifest --attempts 3 --retry-delay 20

@@ -31,3 +31,11 @@ Reference: [Cloudflare verified bots](https://developers.cloudflare.com/bots/con
 The live homepage passed Google's Rich Results Test on 6 September 2026 with one valid ProfilePage item. Schema.org's URL fetch failed; its code-input fallback accepted the five published JSON-LD blocks with no errors or warnings. A code-input result does not establish crawler access. Keep result links and detailed observations in `.geo/`.
 
 Use [Rich Results Test](https://search.google.com/test/rich-results) for Google-supported features and [Schema.org Validator](https://validator.schema.org/) for general vocabulary validation. Project CreativeWork markup need not produce a Google rich result. Do not add unsupported types or visible claims merely to obtain a validator badge.
+
+## Deployment checks
+
+`npm run test:seo` tests the checkers with malformed metadata, blocked robots, redirects, HTTP failures, stale deployments, and date mismatches. `npm run check:live -- --expected-dir _site --report .geo/live-site.json` checks the published sitemap's URLs plus robots.txt and sitemap.xml against a production build. Omit `--expected-dir` for a standalone health check, or use `--base-url http://127.0.0.1:8000` to test a locally served production build while keeping public canonical expectations.
+
+The Pages workflow records the build's sitemap, metadata fingerprints and static-asset hashes, then checks the public domain after a successful deployment. It retries three times, 20 seconds apart, to allow cache propagation, and fails the verification job with specific URLs if a problem remains. No API keys are required. This detects a problem after deployment; it does not roll back the site. The new job takes effect only once this workflow is pushed.
+
+PDF sitemap timestamps derive from checkout modification time, so the checker verifies the PDF bytes instead of comparing those dates across builds. HTML revision dates must still agree with their JSON-LD and the build manifest. Passing these checks establishes HTTP and metadata health, not indexing or AI citation.
