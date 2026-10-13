@@ -69,6 +69,8 @@ The `/now` page displays Xbox activity from `_data/xbox.json`. GitHub Actions ge
 
 Live Xbox activity requires an `OPENXBL_API_KEY` repository secret linked to an OpenXBL account whose Xbox profile and title history are visible. The key is not required to serve or build the site locally with preview data. If a production refresh fails or the secret is missing, the site still deploys with the activity card omitted. Unavailable achievement data does not hide a successfully fetched profile and game.
 
+Authenticated API requests reject redirects, and errors omit response bodies and parser details to keep private data out of build logs. If OpenXBL changes its API address, verify the new official endpoint and update `API_ROOT` in `scripts/openxbl-client.mjs`. Keep the key in GitHub Actions secrets; if it is ever exposed, revoke it at the provider and replace the repository secret.
+
 ## Deployment
 
 Pushing to `master` triggers `.github/workflows/static.yml`, which:
@@ -79,6 +81,10 @@ Pushing to `master` triggers `.github/workflows/static.yml`, which:
 4. Builds Jekyll, checks the generated site, and deploys it to GitHub Pages.
 
 The workflow also refreshes the deployment every six hours and can be run manually from GitHub Actions.
+
+Actions are pinned to verified commit hashes. Dependabot checks weekly and groups Action updates into one pull request; review and merge those updates normally. The build job has read-only Pages access, while the deployment job retains Pages write access. Pages must already be enabled with GitHub Actions as the build source.
+
+The existing `check:site` gate also rejects environment files, private keys, credential JSON files, and sensitive configuration directories anywhere in `_site/`. It reports paths only. Keep private files outside published content; adding a new secret filename convention requires updating the exclusions in `_config.yml` and `.gitignore` and the patterns in `scripts/check-site.py`.
 
 ## Troubleshooting
 

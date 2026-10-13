@@ -17,43 +17,50 @@ async function request(path, apiKey) {
       "X-Authorization": apiKey,
     },
     signal: AbortSignal.timeout(20000),
+    // Never forward the API key to a redirect destination.
+    redirect: "error",
+  }).catch(() => {
+    throw new Error(`OpenXBL ${path} request failed (network error, timeout, or redirect).`);
   });
 
   if (!response.ok) {
-    const body = await response.text();
-    const detail = body.trim().slice(0, 240);
-    throw new Error(
-      `OpenXBL ${path} returned ${response.status}${detail ? `: ${detail}` : ""}`
-    );
+    // Upstream error bodies may contain credentials or personal data.
+    await response.body?.cancel().catch(() => {});
+    throw new Error(`OpenXBL ${path} returned ${response.status}`);
   }
 
-  let payload = await response.json();
+  try {
+    let payload = await response.json();
 
-  for (let depth = 0; depth < 4; depth += 1) {
-    if (payload && typeof payload === "object" && "content" in payload) {
-      payload = payload.content;
-      continue;
+    for (let depth = 0; depth < 4; depth += 1) {
+      if (payload && typeof payload === "object" && "content" in payload) {
+        payload = payload.content;
+        continue;
+      }
+
+      if (typeof payload === "string" && /^[\[{]/.test(payload.trim())) {
+        payload = JSON.parse(payload);
+        continue;
+      }
+
+      if (
+        Array.isArray(payload) &&
+        payload.length === 1 &&
+        typeof payload[0] === "string" &&
+        /^[\[{]/.test(payload[0].trim())
+      ) {
+        payload = JSON.parse(payload[0]);
+        continue;
+      }
+
+      break;
     }
 
-    if (typeof payload === "string" && /^[\[{]/.test(payload.trim())) {
-      payload = JSON.parse(payload);
-      continue;
-    }
-
-    if (
-      Array.isArray(payload) &&
-      payload.length === 1 &&
-      typeof payload[0] === "string" &&
-      /^[\[{]/.test(payload[0].trim())
-    ) {
-      payload = JSON.parse(payload[0]);
-      continue;
-    }
-
-    break;
+    return payload;
+  } catch {
+    // JSON parser errors can include snippets of the response body too.
+    throw new Error(`OpenXBL ${path} returned invalid JSON`);
   }
-
-  return payload;
 }
 
 export async function fetchOpenXblData(apiKey) {

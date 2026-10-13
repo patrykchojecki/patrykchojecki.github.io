@@ -4,10 +4,27 @@ import json
 import sys
 from collections import Counter
 from datetime import datetime
+from fnmatch import fnmatchcase
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urljoin, urlsplit
 from xml.etree import ElementTree
+
+
+def sensitive_artifact_errors(root):
+    """Enforce secret-file exclusions even if a file bypassed the Jekyll build."""
+    patterns = (
+        ".git", ".svn", ".aws", ".ssh", ".bundle", ".env", ".env.*",
+        "*.pem", "*.key", "*.p12", "*.pfx", "id_rsa*", "*_rsa",
+        "id_ed25519*", "id_ecdsa*", "id_dsa*",
+        "credentials*.json", "secrets*.json",
+    )
+    errors = []
+    for path in root.rglob("*"):
+        relative = path.relative_to(root)
+        if any(fnmatchcase(part.lower(), pattern) for part in relative.parts for pattern in patterns):
+            errors.append(f"Sensitive file or directory was published: {relative.as_posix()}")
+    return errors
 
 
 class Page(HTMLParser):
@@ -179,7 +196,7 @@ def check_site(directory):
     if not (root / "index.html").is_file():
         raise SystemExit(f"Build the site before checking it: {root}/index.html is missing")
     pages = {file: Page(file.read_text()) for file in root.rglob("*.html")}
-    errors = []
+    errors = sensitive_artifact_errors(root)
     internal_hosts = {"chojecki.net", "www.chojecki.net", "patrykchojecki.github.io", "localhost", "127.0.0.1"}
 
     for file, page in pages.items():

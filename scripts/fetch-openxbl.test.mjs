@@ -182,11 +182,55 @@ test("fetches and unwraps OpenXBL data while tolerating older-title failures", a
   assert.ok(
     requests.every(
       ({ options }) => options.headers["X-Authorization"] === "secret-key"
+        && options.redirect === "error"
     )
   );
   assert.equal(result.profile.gamertag, "Cherry Sando");
   assert.equal(result.game.name, "Starfield");
   assert.equal(result.achievement.name, "The Long Way Around");
+});
+
+test("does not read or log upstream error bodies", async (t) => {
+  let bodyRead = false;
+  let bodyCancelled = false;
+  t.mock.method(globalThis, "fetch", async () => ({
+    ok: false,
+    status: 401,
+    body: { cancel: async () => { bodyCancelled = true; } },
+    text: async () => {
+      bodyRead = true;
+      return "credential-and-private-account-data";
+    },
+  }));
+  await assert.rejects(fetchOpenXblData("test-key"), {
+    message: "OpenXBL /account returned 401",
+  });
+  assert.equal(bodyRead, false);
+  assert.equal(bodyCancelled, true);
+});
+
+test("does not log network or redirect exception details", async (t) => {
+  t.mock.method(globalThis, "fetch", async () => {
+    throw new Error("private-response-or-redirect-details");
+  });
+  await assert.rejects(fetchOpenXblData("test-key"), {
+    message: "OpenXBL /account request failed (network error, timeout, or redirect).",
+  });
+});
+
+test("does not log response snippets from malformed JSON", async (t) => {
+  for (const json of [
+    async () => { throw new SyntaxError("private-response-snippet"); },
+    async () => ({ content: '{"private-data":broken}' }),
+    async () => ['{"private-data":broken}'],
+  ]) {
+    await t.test("invalid response", async (t) => {
+      t.mock.method(globalThis, "fetch", async () => ({ ok: true, json }));
+      await assert.rejects(fetchOpenXblData("test-key"), {
+        message: "OpenXBL /account returned invalid JSON",
+      });
+    });
+  }
 });
 
 test("keeps the profile and game when all achievement endpoints fail", async (t) => {

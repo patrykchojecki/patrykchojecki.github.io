@@ -179,6 +179,9 @@ exclude:
   - "*.pfx"
   - "id_rsa*"
   - "*_rsa"
+  - "id_ed25519*"
+  - "id_ecdsa*"
+  - "id_dsa*"
   - "credentials*.json"
   - "secrets*.json"
 keep_files:
