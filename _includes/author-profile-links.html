@@ -3,7 +3,13 @@
 {% for item in profile_links.plain %}
   {% assign value = author[item.key] %}
   {% if value %}
-    <li><i class="{{ item.icon }}" aria-hidden="true"></i><span>{{ value }}</span></li>
+    <li>
+      {% if item.url_key and author[item.url_key] %}
+        <a href="{{ author[item.url_key] | escape }}"><i class="{{ item.icon }}" aria-hidden="true"></i><span>{{ value }}</span></a>
+      {% else %}
+        <i class="{{ item.icon }}" aria-hidden="true"></i><span>{{ value }}</span>
+      {% endif %}
+    </li>
   {% endif %}
 {% endfor %}
 

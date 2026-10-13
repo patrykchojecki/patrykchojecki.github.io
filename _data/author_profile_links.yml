@@ -3,6 +3,7 @@ plain:
     icon: "fa fa-fw fa-map-marker"
   - key: employer
     icon: "fas fa-fw fa-briefcase"
+    url_key: employer_url
 
 links:
   - key: email
