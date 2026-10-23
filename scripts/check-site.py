@@ -191,12 +191,46 @@ def modification_dates(page, relative, errors):
     return dates
 
 
+def contained_path(root, path):
+    """Resolve a path within an already-resolved, local build directory."""
+    try:
+        resolved = path.resolve()
+    except (OSError, RuntimeError) as error:
+        raise ValueError("cannot resolve build path") from error
+    if not resolved.is_relative_to(root):
+        raise ValueError("path leaves build directory")
+    return resolved
+
+
+def local_target(root, url_path, *, html_fallback=False):
+    """Check containment again after choosing an index or extension fallback."""
+    target = contained_path(root, root / unquote(url_path).lstrip("/"))
+    if target.is_dir():
+        return contained_path(root, target / "index.html")
+    if html_fallback and not target.suffix:
+        fallback = contained_path(root, target.with_suffix(".html"))
+        if fallback.is_file():
+            return fallback
+    return target
+
+
 def check_site(directory):
     root = Path(directory).resolve()
-    if not (root / "index.html").is_file():
+    try:
+        index = contained_path(root, root / "index.html")
+    except ValueError as error:
+        raise SystemExit(f"Site checks failed:\nindex.html: {error}") from error
+    if not index.is_file():
         raise SystemExit(f"Build the site before checking it: {root}/index.html is missing")
-    pages = {file: Page(file.read_text()) for file in root.rglob("*.html")}
     errors = sensitive_artifact_errors(root)
+    pages = {}
+    for file in root.rglob("*.html"):
+        try:
+            target = contained_path(root, file)
+        except ValueError as error:
+            errors.append(f"{file.relative_to(root)}: {error}")
+            continue
+        pages[file] = Page(target.read_text())
     internal_hosts = {"chojecki.net", "www.chojecki.net", "patrykchojecki.github.io", "localhost", "127.0.0.1"}
 
     for file, page in pages.items():
@@ -222,14 +256,11 @@ def check_site(directory):
             url = urlsplit(urljoin(f"https://chojecki.net/{relative}", reference))
             if url.scheme not in ("http", "https") or url.hostname not in internal_hosts:
                 continue
-            target = (root / unquote(url.path).lstrip("/")).resolve()
-            if not target.is_relative_to(root):
-                errors.append(f"{relative}: path leaves the site: {reference}")
+            try:
+                target = local_target(root, url.path, html_fallback=True)
+            except ValueError as error:
+                errors.append(f"{relative}: {error}: {reference}")
                 continue
-            if target.is_dir():
-                target /= "index.html"
-            elif not target.suffix and target.with_suffix(".html").is_file():
-                target = target.with_suffix(".html")
             if not target.is_file():
                 errors.append(f"{relative}: missing destination {reference}")
             elif url.fragment and target in pages and not pages[target].redirect:
@@ -241,14 +272,21 @@ def check_site(directory):
         if (root / unwanted).exists():
             errors.append(f"Internal source or template demo was published: {unwanted}")
 
-    sitemap = ElementTree.parse(root / "sitemap.xml")
     namespace = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
-    entries = sitemap.findall("s:url", namespace)
+    try:
+        sitemap_path = contained_path(root, root / "sitemap.xml")
+    except ValueError as error:
+        errors.append(f"sitemap.xml: {error}")
+        entries = []
+    else:
+        entries = ElementTree.parse(sitemap_path).findall("s:url", namespace)
     for entry in entries:
         location = entry.find("s:loc", namespace)
-        target = root / unquote(urlsplit(location.text).path).lstrip("/")
-        if target.is_dir():
-            target /= "index.html"
+        try:
+            target = local_target(root, urlsplit(location.text).path)
+        except ValueError as error:
+            errors.append(f"Sitemap {error}: {location.text}")
+            continue
         if not target.is_file():
             errors.append(f"Sitemap points to missing file: {location.text}")
         elif target in pages:

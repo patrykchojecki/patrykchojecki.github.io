@@ -12,7 +12,7 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.error import HTTPError, URLError
-from urllib.parse import quote, unquote, urlsplit
+from urllib.parse import quote, urlsplit
 from urllib.request import HTTPRedirectHandler, Request, build_opener
 from urllib.robotparser import RobotFileParser
 from xml.etree import ElementTree
@@ -67,14 +67,11 @@ def metadata_fingerprint(page):
 
 def build_manifest(directory, targets):
     root = Path(directory).resolve()
-    entries = sitemap_entries((root / "sitemap.xml").read_bytes(), targets["origin"])
+    sitemap_path = site.contained_path(root, root / "sitemap.xml")
+    entries = sitemap_entries(sitemap_path.read_bytes(), targets["origin"])
     metadata, assets = {}, {}
     for url in entries:
-        path = (root / unquote(urlsplit(url).path).lstrip("/")).resolve()
-        if not path.is_relative_to(root):
-            raise ValueError("sitemap path leaves build directory")
-        if path.is_dir():
-            path /= "index.html"
+        path = site.local_target(root, urlsplit(url).path)
         if path.suffix == ".html":
             metadata[url] = metadata_fingerprint(site.Page(path.read_text()))
         elif not path.is_file():
