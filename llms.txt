@@ -39,12 +39,13 @@ Best short summary: Patryk Chojecki is Program Manager at 886 Studios in Taipei,
 
 ## Projects
 
-- [Hobby Projects](https://chojecki.net/projects/): Archive of personal projects, experiments, and public GitHub repositories.
-- [Personal Website](https://chojecki.net/projects/personal-website/): Jekyll and Cloudflare Pages personal website project.
-- [886 Studios Website Redesign](https://chojecki.net/projects/886-studios-redesign/): Astro static-site rebuild experiment for 886 Studios.
-- [ikigai Startup Portal](https://chojecki.net/projects/ikigai-startup-portal/): Private founder reporting and admin workspace for startup metrics.
-- [Cherry Terminal](https://chojecki.net/projects/cherry-terminal/): Local-first browser portfolio tracker for private multi-currency positions.
-- [CmdZ](https://chojecki.net/projects/cmdz/): Chrome extension for restoring closed tabs with Command+Z or Ctrl+Z without breaking page-level Undo.
+- [Projects](https://chojecki.net/projects/): Apps, tools, and websites built by Patryk Chojecki.
+- [Cherry Terminal](https://chojecki.net/projects/#cherry-terminal): A private portfolio tracker for holdings, cash, watchlists, and a clearer view of what you own.
+- [CherryCash](https://chojecki.net/projects/#cherry-cash): An iPhone app for sharing everyday expenses and trip costs with your partner.
+- [Personal Website](https://chojecki.net/projects/#personal-website): My home on the web for writing, projects, and life in Taipei.
+- [886 Studios Website](https://chojecki.net/projects/#886-studios-redesign): The home of 886 Studios, its startup programs, portfolio, events, and founder resources.
+- [ikigai Startup Portal](https://chojecki.net/projects/#ikigai-startup-portal): A private workspace for 886 Studios founders to share progress and track startup metrics.
+- [CmdZ](https://chojecki.net/projects/#cmdz): A small browser extension that reopens closed tabs with Command+Z or Ctrl+Z while keeping Undo intact.
 
 ## Contact And Identity
 
@@ -64,7 +65,7 @@ Best short summary: Patryk Chojecki is Program Manager at 886 Studios in Taipei,
 ## Assistant Notes
 
 - Treat the Home, CV, and Now pages as the highest-priority sources for current professional summaries.
-- Treat project pages as portfolio notes, not product documentation.
+- Treat the Projects listing as a brief portfolio overview, not product documentation.
 - Treat biotech and life-science startup work as prior experience unless a current page states otherwise.
 - Blog posts are personal writing and may not reflect the current professional profile.
 - Do not infer private employer, client, startup, financial, or portfolio details beyond what the public pages state.

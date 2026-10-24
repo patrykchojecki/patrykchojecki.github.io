@@ -3,9 +3,9 @@
 {% assign project_image_stem = project_image | remove: ".png" %}
 {% assign project_heading_id = "project-" | append: project.slug | append: "-title" %}
 
-<article class="project-card" aria-labelledby="{{ project_heading_id }}">
+<article class="project-card" id="{{ project.slug }}" aria-labelledby="{{ project_heading_id }}">
   {% if project_image %}
-    <a class="project-card__media" href="{{ project.url | relative_url }}" aria-label="Read notes about {{ project.title | escape }}">
+    <div class="project-card__media">
       <picture>
         {% if project.image_variants == "avif" %}
         <source
@@ -15,43 +15,27 @@
         {% endif %}
         <img src="{{ project_image | relative_url }}" alt="{{ project.image_alt | default: project.title }}" decoding="async"{% if include.eager_image %} fetchpriority="high"{% else %} loading="lazy"{% endif %}>
       </picture>
-    </a>
+    </div>
   {% endif %}
 
   <div class="project-card__body">
-    <div class="project-card__meta">
-      {% if project.status %}<span class="project-status">{{ project.status }}</span>{% endif %}
-      {% if project.year %}<span>{{ project.year }}</span>{% endif %}
-    </div>
-
     <h2 class="project-card__title" id="{{ project_heading_id }}">
-      <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
+      {{ project.title }}
     </h2>
 
     {% if project.summary %}
       <p class="project-card__summary">{{ project.summary }}</p>
-    {% elsif project.excerpt %}
-      <p class="project-card__summary">{{ project.excerpt | strip_html }}</p>
     {% endif %}
 
-    {% if project.tech %}
-      <ul class="project-card__tags" aria-label="Technologies used">
-        {% for item in project.tech %}
-          <li>{{ item }}</li>
-        {% endfor %}
-      </ul>
-    {% endif %}
-
+    {% if project.github or project.demo %}
     <div class="project-card__links">
-      <a href="{{ project.url | relative_url }}" aria-label="Read notes about {{ project.title | escape }}">Notes</a>
       {% if project.github %}
         <a href="{{ project.github }}" aria-label="View {{ project.title | escape }} on GitHub">GitHub</a>
-      {% elsif project.repo_visibility == "private" %}
-        <span class="project-card__private">Private repo</span>
       {% endif %}
       {% if project.demo %}
         <a href="{{ project.demo }}" aria-label="Visit the {{ project.title | escape }} live site">Live site</a>
       {% endif %}
     </div>
+    {% endif %}
   </div>
 </article>

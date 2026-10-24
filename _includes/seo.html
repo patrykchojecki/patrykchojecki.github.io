@@ -283,28 +283,6 @@
 }
 </script>
 
-{% if page.collection == "portfolio" %}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "@id": {{ canonical_url | append: "#creativework" | jsonify }},
-  "url": {{ canonical_url | jsonify }},
-  "name": {{ page.title | jsonify }},
-  "description": {{ seo_description_plain | jsonify }},
-  "author": {
-    "@id": {{ person_id | jsonify }}
-  },
-  "mainEntityOfPage": {
-    "@id": {{ webpage_id | jsonify }}
-  }{% if page_modified_time %},
-  "dateModified": {{ page_modified_time | date_to_xmlschema | jsonify }}{% endif %}{% if seo_image_url %},
-  "image": {{ seo_image_url | jsonify }}{% endif %}{% if page.tech %},
-  "keywords": {{ page.tech | join: ", " | jsonify }}{% endif %}
-}
-</script>
-{% endif %}
-
 {% if page.url == "/" %}
 <script type="application/ld+json">
 {

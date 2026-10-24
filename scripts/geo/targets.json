@@ -6,12 +6,7 @@
     "/",
     "/cv/",
     "/now/",
-    "/projects/",
-    "/projects/personal-website/",
-    "/projects/886-studios-redesign/",
-    "/projects/ikigai-startup-portal/",
-    "/projects/cherry-terminal/",
-    "/projects/cmdz/"
+    "/projects/"
   ],
   "search_crawlers": ["Googlebot", "Bingbot", "OAI-SearchBot", "Claude-SearchBot", "PerplexityBot"]
 }
