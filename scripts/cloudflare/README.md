@@ -27,6 +27,7 @@ Do not switch DNS until the Cloudflare deployment passes the preview gate.
 
 ## Deployment configuration
 
+- Source repository: `patrykchojecki/chojecki.net`, production branch `master`.
 - Pages project: `chojecki-net` (Direct Upload, production branch `master`).
 - Production Pages origin: `https://chojecki-net.pages.dev`.
 - Verification preview: `https://verification.chojecki-net.pages.dev`.
@@ -121,6 +122,8 @@ The existing HTTP-to-HTTPS behavior on the apex remains enabled.
 
 ## Starting state
 
+This section records the state before the hosting migration and repository rename.
+
 - Repository: `patrykchojecki/patrykchojecki.github.io`, production branch `master`.
 - Starting commit: `6f96ae5161c24706a26a22b917542d8325111cbe`.
 - GitHub CLI is authenticated as `patrykchojecki` with repository admin access.
@@ -135,6 +138,37 @@ The existing HTTP-to-HTTPS behavior on the apex remains enabled.
 - `OPENXBL_API_KEY` is already a GitHub Actions secret. It must stay there.
 - Existing local dependency, watcher, and documentation changes predate this
   migration and must be preserved separately.
+
+## Repository rename
+
+Renamed `patrykchojecki/patrykchojecki.github.io` to
+`patrykchojecki/chojecki.net` on 2026-10-24. The repository ID remains `652917996`;
+history, Actions workflows, environments, secrets, and variables are retained.
+Cloudflare's `chojecki-net` project uses Direct Upload (`source: null`) and is
+independent of the GitHub repository name. Its domains and production branch
+remain unchanged, as do the website's canonical URL and empty Jekyll base path.
+
+Updated the source links, Jekyll repository setting, package metadata, author
+website, clone instructions, and the existing checkout's `origin` remote. The
+local directory name need not match the repository name. For other clones, run:
+
+```sh
+git remote set-url origin https://github.com/patrykchojecki/chojecki.net.git
+```
+
+GitHub redirects the old repository and Actions links to the new name. Do not
+create another repository with the old name, which would remove those redirects.
+The existing GitHub Pages custom-domain association remains `chojecki.net` for
+manual rollback. Immediately after renaming, both the old `github.io` homepage
+and `/cv/` still redirected to the canonical site; the production site and `www`
+redirect also passed their HTTP checks. Default GitHub Pages URLs do not share
+GitHub's repository redirect guarantee; publish and share `https://chojecki.net`.
+
+The previous `patrykchojecki.github.io` DNS target in the rollback table is a
+GitHub Pages hostname, not a repository slug; keep it unchanged. The old-host
+allowlist in `scripts/check-site.py` intentionally still recognizes legacy links.
+
+See [GitHub's repository rename guidance](https://docs.github.com/en/repositories/creating-and-managing-repositories/renaming-a-repository).
 
 ## Rollback procedure
 
