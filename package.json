@@ -23,8 +23,8 @@
     "npm": ">=10.0.0"
   },
   "devDependencies": {
-    "npm-run-all2": "^9.0.2",
-    "terser": "^5.39.0"
+    "npm-run-all2": "^9.0.3",
+    "terser": "^5.51.2"
   },
   "scripts": {
     "build": "run-s build:js build:site",
