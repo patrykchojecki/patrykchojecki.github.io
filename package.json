@@ -24,7 +24,6 @@
   },
   "devDependencies": {
     "npm-run-all2": "^9.0.2",
-    "onchange": "^7.1.0",
     "terser": "^5.39.0"
   },
   "scripts": {
@@ -38,7 +37,7 @@
     "serve:prod": "JEKYLL_ENV=production bundle exec jekyll serve --host 127.0.0.1 --port 4001",
     "test": "node --test scripts/*.test.mjs",
     "uglify": "terser assets/js/_main.js -c -m -o assets/js/main.min.js",
-    "watch:js": "onchange \"assets/js/**/*.js\" -e \"assets/js/main.min.js\" -- npm run build:js",
+    "watch:js": "node scripts/watch-js.mjs",
     "build:js": "npm run uglify"
   }
 }

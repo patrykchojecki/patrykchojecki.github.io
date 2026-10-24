@@ -156,7 +156,7 @@ DEPENDENCIES
   webrick
 
 RUBY VERSION
-  ruby 3.4.4
+  ruby 3.4.11
 
 BUNDLED WITH
   4.0.9

@@ -8,7 +8,7 @@ The project began as a fork of [Academic Pages](https://github.com/academicpages
 
 Install the versions pinned by the repository:
 
-- Ruby 3.4.4
+- Ruby 3.4.11
 - Bundler 4.0.9
 - Node.js 26
 - npm 10 or newer
@@ -46,6 +46,11 @@ npm run serve
 Open [http://127.0.0.1:4001](http://127.0.0.1:4001). Development mode disables analytics, generates expanded CSS with source maps, and uses `_data/xbox_preview.yml` when live Xbox data is unavailable.
 
 Restart the server after changing `_config.yml` or `_config.dev.yml`; Jekyll does not reload configuration changes automatically.
+
+Run `npm run watch:js` in another terminal to rebuild `assets/js/main.min.js` when
+its source, `assets/js/_main.js`, changes. The watcher uses Node's built-in file
+watching and handles file replacement on save. Other JavaScript files are served
+directly and do not need minification.
 
 ## Build and test
 
@@ -100,7 +105,9 @@ The previous `.github/workflows/static.yml` is a manual GitHub Pages rollback
 workflow. Its custom-domain association and `CNAME` file are retained; it no
 longer runs on pushes or a schedule.
 
-Actions are pinned to verified commit hashes. Dependabot checks weekly and groups Action updates into one pull request; review and merge those updates normally.
+Actions are pinned to verified commit hashes. Dependabot checks GitHub Actions,
+npm, and Bundler dependencies weekly, grouping version updates into a separate
+pull request for each ecosystem; review and merge those updates normally.
 The Cloudflare workflow has read-only repository access and publishes using the scoped deployment token.
 
 The existing `check:site` gate also rejects environment files, private keys, credential JSON files, and sensitive configuration directories anywhere in `_site/`. It reports paths only. Keep private files outside published content; adding a new secret filename convention requires updating the exclusions in `_config.yml` and `.gitignore` and the patterns in `scripts/check-site.py`.
@@ -109,7 +116,7 @@ The existing `check:site` gate also rejects environment files, private keys, cre
 
 ### Bundler cannot find the required version
 
-Confirm that `ruby --version` reports Ruby 3.4.4 and that `which ruby` points to the intended version manager, then reinstall the locked Bundler version:
+Confirm that `ruby --version` reports Ruby 3.4.11 and that `which ruby` points to the intended version manager, then reinstall the locked Bundler version:
 
 ```sh
 gem install bundler -v 4.0.9
