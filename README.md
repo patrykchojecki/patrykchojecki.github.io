@@ -26,8 +26,8 @@ npm --version
 ## Setup
 
 ```sh
-git clone https://github.com/patrykchojecki/patrykchojecki.github.io.git
-cd patrykchojecki.github.io
+git clone https://github.com/patrykchojecki/chojecki.net.git
+cd chojecki.net
 gem install bundler -v 4.0.9
 bundle install
 npm ci
@@ -100,6 +100,10 @@ proxying enabled. A zone Single Redirect sends `www.chojecki.net` to the HTTPS
 apex while preserving paths and queries. Mail and verification DNS records are
 independent of hosting. See [the migration runbook](scripts/cloudflare/README.md)
 for configuration, validation history, and rollback instructions.
+
+The repository is `patrykchojecki/chojecki.net`. The old
+`patrykchojecki.github.io` website address is retired; use `https://chojecki.net`.
+Old GitHub repository links redirect to the renamed repository.
 
 The previous `.github/workflows/static.yml` is a manual GitHub Pages rollback
 workflow. Its custom-domain association and `CNAME` file are retained; it no

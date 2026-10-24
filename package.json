@@ -1,11 +1,11 @@
 {
-  "name": "patrykchojecki.github.io",
+  "name": "chojecki.net",
   "version": "1.0.0",
   "private": true,
   "description": "Build tooling for chojecki.net",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/patrykchojecki/patrykchojecki.github.io.git"
+    "url": "git+https://github.com/patrykchojecki/chojecki.net.git"
   },
   "keywords": [
     "jekyll",
@@ -15,7 +15,7 @@
   "author": "Patryk Chojecki",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/patrykchojecki/patrykchojecki.github.io/issues"
+    "url": "https://github.com/patrykchojecki/chojecki.net/issues"
   },
   "homepage": "https://chojecki.net/",
   "engines": {

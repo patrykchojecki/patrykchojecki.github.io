@@ -27,6 +27,7 @@ Do not switch DNS until the Cloudflare deployment passes the preview gate.
 
 ## Deployment configuration
 
+- Source repository: `patrykchojecki/chojecki.net`, production branch `master`.
 - Pages project: `chojecki-net` (Direct Upload, production branch `master`).
 - Production Pages origin: `https://chojecki-net.pages.dev`.
 - Verification preview: `https://verification.chojecki-net.pages.dev`.
@@ -121,6 +122,8 @@ The existing HTTP-to-HTTPS behavior on the apex remains enabled.
 
 ## Starting state
 
+This section records the state before the hosting migration and repository rename.
+
 - Repository: `patrykchojecki/patrykchojecki.github.io`, production branch `master`.
 - Starting commit: `6f96ae5161c24706a26a22b917542d8325111cbe`.
 - GitHub CLI is authenticated as `patrykchojecki` with repository admin access.
@@ -136,14 +139,15 @@ The existing HTTP-to-HTTPS behavior on the apex remains enabled.
 - Existing local dependency, watcher, and documentation changes predate this
   migration and must be preserved separately.
 
-## Repository rename check
+## Repository rename
 
-On 2026-10-24, tested renaming the repository to `patrykchojecki/chojecki.net`.
+Renamed the repository to `patrykchojecki/chojecki.net` on 2026-10-24 with the
+owner's explicit decision to retire the old `patrykchojecki.github.io` website.
 Cloudflare's `chojecki-net` project uses Direct Upload (`source: null`), so it
 does not depend on the GitHub name. Repository ID `652917996`, history, Actions
 workflows, environments, secrets, and variables were retained. The complete
-preview and production deployment passed in
-[Actions run 40078683410](https://github.com/patrykchojecki/patrykchojecki.github.io/actions/runs/40078683410):
+preview and production deployment passed during the initial rename test in
+[Actions run 40078683410](https://github.com/patrykchojecki/chojecki.net/actions/runs/40078683410):
 59 regression tests, 63 pages/assets, 14 discovery resources, and 12 production
 redirect/404 checks.
 
@@ -154,14 +158,25 @@ work because GitHub's CDN still cached the old redirects. Uncached requests to
 `/chojecki.net/` project prefix, a unique probe correctly returned 301. Restoring
 the original repository name restored a fresh root-path probe to HTTP 301.
 
-The original name and local Git remote have therefore been restored pending
-the owner's choice. The canonical Cloudflare site stayed available throughout.
-To rename while retaining the legacy website address, keep a separate minimal
-`patrykchojecki.github.io` redirect repository. Reusing that repository name
-removes GitHub's automatic old-repository redirects, so old source/Actions links
-would need consideration. Alternatively, keep the existing name or explicitly
-retire the legacy website address. Do not repeat the rename without resolving
-this tradeoff, and do not treat cached legacy redirects as proof of success.
+The initial test was restored while the owner considered this tradeoff. The
+owner then chose to complete the rename and retire the legacy website address.
+The canonical Cloudflare site stayed available throughout. Cached redirects
+from the old website address may persist temporarily; it is no longer supported.
+
+Updated source links, Jekyll repository settings, package metadata, the author
+website, clone instructions, and this checkout's Git remote. The existing local
+directory can retain its old name. Other clones should update their remote:
+
+```sh
+git remote set-url origin https://github.com/patrykchojecki/chojecki.net.git
+```
+
+Old GitHub repository and Actions links redirect to the renamed repository.
+Do not create a replacement repository with the old name, which would remove
+those redirects. The GitHub Pages custom-domain association remains `chojecki.net`
+for manual rollback. The old DNS target in the rollback table is GitHub's Pages
+hostname, not a repository slug; it remains correct after the rename. The
+old-host allowlist in `scripts/check-site.py` still recognizes legacy links.
 
 See [GitHub's repository rename guidance](https://docs.github.com/en/repositories/creating-and-managing-repositories/renaming-a-repository).
 
