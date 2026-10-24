@@ -8,6 +8,8 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from urllib.parse import quote, urljoin, urlsplit
 
+from cloudflare_assets import FINGERPRINT, header_rules
+
 spec = importlib.util.spec_from_file_location("live", Path(__file__).with_name("check-live-site.py"))
 live = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(live)
@@ -17,6 +19,7 @@ def check(root, base, check_hosts=False):
     root = Path(root).resolve()
     base = base.rstrip("/")
     errors = []
+    response_rules = header_rules(root) if (root / "_headers").is_file() else {}
     aliases = json.loads((root / "redirects.json").read_text())
     redirect_files = set()
     for path in aliases:
@@ -31,6 +34,14 @@ def check(root, base, check_hosts=False):
         status, headers, body = live.fetch(base + quote(route, safe="/"))
         if status != 200:
             return f"{route}: expected HTTP 200, got {status}"
+        actual_headers = {key.lower(): value for key, value in headers.items()}
+        for key, expected_value in response_rules.get(route, {}).items():
+            if actual_headers.get(key) != expected_value:
+                return f"{route}: unexpected {key} header"
+        if FINGERPRINT.search(path.name):
+            digest = hashlib.sha256(path.read_bytes()).hexdigest()[:16]
+            if f".{digest}." not in path.name:
+                return f"{route}: fingerprint does not match asset bytes"
         if path.suffix == ".html":
             expected = live.site.Page(path.read_text())
             actual = live.site.Page(body.decode("utf-8"))
@@ -38,6 +49,14 @@ def check(root, base, check_hosts=False):
                 return f"{route}: HTML metadata differs from this build"
             if actual.headings != expected.headings or actual.main != expected.main or actual.redirect:
                 return f"{route}: page structure differs from this build"
+            if response_rules:
+                expected_assets = [ref for ref in expected.references if FINGERPRINT.search(urlsplit(ref).path)]
+                if any(ref not in actual.references for ref in expected_assets):
+                    return f"{route}: versioned rendering assets differ from this build"
+                if "max-age=0" not in actual_headers.get("cache-control", ""):
+                    return f"{route}: HTML must revalidate instead of retaining stale content"
+                if b"rocket-loader.min.js" in body:
+                    return f"{route}: redundant Rocket Loader rewriting is enabled"
         # Cloudflare can append managed crawler rules to robots.txt. The live
         # metadata check validates its effective access and canonical sitemap.
         elif relative != "robots.txt" and hashlib.sha256(body).digest() != hashlib.sha256(path.read_bytes()).digest():

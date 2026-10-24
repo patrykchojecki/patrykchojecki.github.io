@@ -82,8 +82,8 @@ Pushing to `master` triggers `.github/workflows/cloudflare.yml`, which:
 
 1. Installs the pinned Node and Ruby dependencies and runs the regression tests.
 2. Builds JavaScript and fetches the latest Xbox activity.
-3. Builds Jekyll, checks the generated site, and prepares static files and legacy redirects.
-4. Uploads to the `chojecki-net` Cloudflare Pages project.
+3. Builds Jekyll, checks the generated site, and prepares redirects, content-hashed assets, caching headers, and stylesheet preload hints.
+4. Uploads and verifies a Cloudflare Pages preview, then publishes the same build to production only after it passes.
 5. Verifies pages, asset bytes, PDFs, metadata, redirects, and 404 behavior on both the Pages origin and `https://chojecki.net`.
 
 The workflow also refreshes the deployment every six hours (`17 */6 * * *`, UTC)

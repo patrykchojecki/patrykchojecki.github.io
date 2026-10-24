@@ -28,7 +28,8 @@ Do not switch DNS until the Cloudflare deployment passes the preview gate.
 ## Deployment configuration
 
 - Pages project: `chojecki-net` (Direct Upload, production branch `master`).
-- Preview origin: `https://chojecki-net.pages.dev`.
+- Production Pages origin: `https://chojecki-net.pages.dev`.
+- Verification preview: `https://verification.chojecki-net.pages.dev`.
 - Workflow: `.github/workflows/cloudflare.yml` (pushes to `master`, the existing
   six-hour schedule, and manual runs). GitHub Pages is manual rollback only.
 - Repository variable `CLOUDFLARE_ACCOUNT_ID`: the Cloudflare account ID.
@@ -44,6 +45,10 @@ For a manual local upload, first build and validate the site, then run:
 ```sh
 npm run check
 python3 scripts/prepare-cloudflare.py
+npm run check:site
+npx --yes wrangler@4.152.0 pages deploy _site --project-name chojecki-net --branch verification
+python3 scripts/check-live-site.py --base-url https://verification.chojecki-net.pages.dev --allow-preview-noindex --expected-dir _site
+python3 scripts/check-hosting.py --base-url https://verification.chojecki-net.pages.dev --site-dir _site
 npx --yes wrangler@4.152.0 pages deploy _site --project-name chojecki-net --branch master
 python3 scripts/check-live-site.py --base-url https://chojecki-net.pages.dev --expected-dir _site
 python3 scripts/check-hosting.py --base-url https://chojecki-net.pages.dev --site-dir _site
@@ -53,6 +58,18 @@ The preparation step enforces the Free plan's file count/size limits, requires a
 real 404 page, rejects runtime functions, and generates HTTP redirects from
 Jekyll's existing aliases. The canonical URLs remain on `https://chojecki.net`.
 The HTML alias files remain usable on GitHub Pages for rollback.
+
+Preparation also publishes content-hashed CSS, JavaScript, and fonts with a
+one-year immutable browser cache, while retaining their original URLs. It
+generates an exact stylesheet preload Link header for each styled page; HTML
+keeps Pages' revalidation policy. No source asset or Jekyll template is rewritten.
+See the [delivery review](PERFORMANCE.md) for the rationale and validation.
+
+CI uploads and checks the same build on the verification preview before changing
+production. Preview checks allow only Cloudflare's expected `noindex` response
+header on that exact preview hostname; production and HTML metadata checks
+remain strict. Stop a manual deployment if any preceding command fails. Avoid
+manual uploads during an active CI run because they share the preview alias.
 
 ## Production DNS and hostname redirect
 

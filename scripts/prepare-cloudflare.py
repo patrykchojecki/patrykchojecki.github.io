@@ -5,6 +5,8 @@ import json
 from pathlib import Path
 from urllib.parse import urlsplit
 
+from cloudflare_assets import optimize
+
 
 def prepare(root):
     root = Path(root).resolve()
@@ -12,8 +14,11 @@ def prepare(root):
         raise ValueError("404.html is required to prevent SPA fallback for missing URLs")
     if (root / "_worker.js").exists() or (root / "functions").exists():
         raise ValueError("This deployment must contain only static files")
-    files = [path for path in root.rglob("*") if path.is_file()]
-    if len(files) + 1 > 20000:
+    entries = list(root.rglob("*"))
+    if any(path.is_symlink() for path in entries):
+        raise ValueError("Symlinks are not allowed in the upload directory")
+    files = [path for path in entries if path.is_file()]
+    if len(files) + 2 > 20000:
         raise ValueError("The site exceeds the Cloudflare Pages Free file limit")
     for path in files:
         if path.is_symlink() or not path.resolve().is_relative_to(root):
@@ -48,7 +53,12 @@ def prepare(root):
     if len(rules) > 2000:
         raise ValueError("Too many static redirect rules")
     (root / "_redirects").write_text("\n".join(lines) + "\n")
-    print(f"Cloudflare upload ready: {len(files)} files, {len(rules)} legacy redirects, static-only hosting.")
+    assets = optimize(root)
+    files = [path for path in root.rglob("*") if path.is_file()]
+    if len(files) > 20000 or any(path.stat().st_size > 25 * 1024 * 1024 for path in files):
+        raise ValueError("Prepared assets exceed the Cloudflare Pages Free limits")
+    print(f"Cloudflare upload ready: {len(files)} files, {len(rules)} legacy redirects, "
+          f"{len(assets)} immutable assets, static-only hosting.")
 
 
 if __name__ == "__main__":

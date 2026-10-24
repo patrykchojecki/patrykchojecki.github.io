@@ -53,6 +53,35 @@ class LiveTests(unittest.TestCase):
         self.responses[ORIGIN] = (200, {"Content-Type": "text/html", "X-Robots-Tag": "googlebot: noindex"}, self.html.encode())
         self.assertTrue(any("X-Robots-Tag" in e for e in self.audit()))
 
+    def test_preview_noindex_requires_explicit_exception(self):
+        preview = "https://verification.chojecki-net.pages.dev"
+        def fetcher(url):
+            status, headers, body = self.responses[url.replace(preview + "/", ORIGIN, 1)]
+            return status, {**headers, "X-Robots-Tag": "noindex"}, body
+        self.assertTrue(live.audit(self.targets, base_url=preview, fetcher=fetcher)["errors"])
+        self.assertEqual(live.audit(self.targets, base_url=preview, fetcher=fetcher,
+                                   allow_preview_noindex=True)["errors"], [])
+        # The header exception must not hide an accidental noindex in HTML.
+        self.responses[ORIGIN] = (200, {"Content-Type": "text/html"},
+                                 ('<h1>Profile</h1><main></main>' + document(nodes(), robots="noindex")).encode())
+        self.assertTrue(live.audit(self.targets, base_url=preview, fetcher=fetcher,
+                                  allow_preview_noindex=True)["errors"])
+
+    def test_preview_exception_cannot_disable_production_checks(self):
+        for origin in (None, ORIGIN, "https://chojecki-net.pages.dev", "https://unrelated.example"):
+            with self.subTest(origin=origin), self.assertRaises(ValueError):
+                live.audit(self.targets, base_url=origin, allow_preview_noindex=True)
+
+    def test_preview_exception_still_rejects_other_robot_restrictions(self):
+        preview = "https://verification.chojecki-net.pages.dev"
+        for value in ("noindex, nosnippet", "googlebot: noindex", "none", "max-snippet:0"):
+            def fetcher(url):
+                status, headers, body = self.responses[url.replace(preview + "/", ORIGIN, 1)]
+                return status, {**headers, "X-Robots-Tag": value}, body
+            with self.subTest(value=value):
+                self.assertTrue(live.audit(self.targets, base_url=preview, fetcher=fetcher,
+                                          allow_preview_noindex=True)["errors"])
+
     def test_noindex_meta_and_wrong_canonical(self):
         source = '<h1>Profile</h1><main></main>' + document(nodes(), canonical="https://wrong.example/", robots="noindex")
         self.responses[ORIGIN] = (200, {"Content-Type": "text/html"}, source.encode())

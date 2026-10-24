@@ -86,9 +86,11 @@ def indexing_blocked(value):
     return bool(re.search(r"\b(?:noindex|none|nosnippet)\b|\bmax-snippet\s*:\s*0\b", value, re.I))
 
 
-def audit(targets, expected=None, base_url=None, fetcher=fetch):
+def audit(targets, expected=None, base_url=None, fetcher=fetch, allow_preview_noindex=False):
     origin = targets["origin"]
     base_url = (base_url or origin).rstrip("/")
+    if allow_preview_noindex and base_url != "https://verification.chojecki-net.pages.dev":
+        raise ValueError("The noindex exception is restricted to the verification preview")
     errors, resources, pages = [], {}, {}
 
     def get(url):
@@ -98,7 +100,9 @@ def audit(targets, expected=None, base_url=None, fetcher=fetch):
             result = {"status": status, "content_type": headers.get("content-type", "")}
             if status != 200:
                 result["error"] = f"HTTP {status}; expected 200 without redirects"
-            elif indexing_blocked(headers.get("x-robots-tag", "")):
+            elif indexing_blocked(headers.get("x-robots-tag", "")) and not (
+                allow_preview_noindex and headers.get("x-robots-tag", "").strip().lower() == "noindex"
+            ):
                 result["error"] = "X-Robots-Tag blocks indexing or snippets"
             return url, result, headers, body
         except (OSError, URLError, ValueError) as error:
@@ -186,6 +190,8 @@ def main():
     parser.add_argument("--expected-dir", type=Path, help="Compare published metadata with this build")
     parser.add_argument("--require-manifest", action="store_true", help="Fail if no build manifest was supplied (CI)")
     parser.add_argument("--base-url", help="Fetch from another origin; canonical expectations stay unchanged")
+    parser.add_argument("--allow-preview-noindex", action="store_true",
+                        help="Allow Cloudflare's noindex header only on the verification preview")
     parser.add_argument("--report", type=Path)
     parser.add_argument("--attempts", type=int, choices=range(1, 6), default=1)
     parser.add_argument("--retry-delay", type=int, choices=range(0, 61), default=20)
@@ -200,7 +206,7 @@ def main():
     if args.require_manifest and not expected:
         parser.error("a nonempty build manifest is required")
     for attempt in range(args.attempts):
-        result = audit(targets, expected, args.base_url)
+        result = audit(targets, expected, args.base_url, allow_preview_noindex=args.allow_preview_noindex)
         result["attempt"] = attempt + 1
         if not result["errors"] or attempt + 1 == args.attempts:
             break
