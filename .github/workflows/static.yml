@@ -20,7 +20,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     outputs:
       search_manifest: ${{ steps.search_manifest.outputs.manifest }}
@@ -91,7 +91,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: build
     timeout-minutes: 10
     permissions:
@@ -104,7 +104,7 @@ jobs:
 
   verify-search:
     needs: [build, deploy]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 6
     permissions:
       contents: read
