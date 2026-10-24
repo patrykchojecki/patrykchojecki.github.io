@@ -40,7 +40,7 @@ Best short summary: Patryk Chojecki is Program Manager at 886 Studios in Taipei,
 ## Projects
 
 - [Projects](https://chojecki.net/projects/): Apps, tools, and websites built by Patryk Chojecki.
-- [Cherry Terminal](https://chojecki.net/projects/#cherry-terminal): A private portfolio tracker for holdings, cash, watchlists, and a clearer view of what you own.
+- [CherryTerminal](https://chojecki.net/projects/#cherry-terminal): A private portfolio tracker for holdings, cash, watchlists, and a clearer view of what you own.
 - [CherryCash](https://chojecki.net/projects/#cherry-cash): An iPhone app for sharing everyday expenses and trip costs with your partner.
 - [Personal Website](https://chojecki.net/projects/#personal-website): My home on the web for writing, projects, and life in Taipei.
 - [886 Studios Website](https://chojecki.net/projects/#886-studios-redesign): The home of 886 Studios, its startup programs, portfolio, events, and founder resources.

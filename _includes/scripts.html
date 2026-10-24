@@ -3,6 +3,9 @@
 <script src="{{ base_path }}/assets/js/main.min.js?v={{ asset_version }}" defer></script>
 <script src="{{ base_path }}/assets/js/theme-toggle.js?v={{ asset_version }}" defer></script>
 <script src="{{ base_path }}/assets/js/site-delight.js?v={{ asset_version }}" defer></script>
+{% if page.url == "/projects/" %}
+<script src="{{ base_path }}/assets/js/project-preview.js?v={{ asset_version }}" defer></script>
+{% endif %}
 
 {% include analytics.html %}
 {% include /comments-providers/scripts.html %}
