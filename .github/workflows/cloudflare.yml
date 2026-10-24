@@ -1,8 +1,11 @@
 name: Build and deploy to Cloudflare Pages
 
-# Enabled manually during migration. The existing GitHub Pages workflow remains
-# the production publisher until the custom-domain verification gate passes.
 on:
+  push:
+    branches: ["master"]
+  schedule:
+    # Refresh the OpenXBL snapshot every six hours.
+    - cron: "17 */6 * * *"
   workflow_dispatch:
 
 permissions:
@@ -21,7 +24,7 @@ jobs:
     timeout-minutes: 20
     environment:
       name: cloudflare-pages
-      url: https://chojecki-net.pages.dev
+      url: https://chojecki.net
     env:
       BUNDLE_WITHOUT: development
     steps:

@@ -2,7 +2,7 @@
 
 Migration started on 2026-10-24 (Asia/Taipei). The canonical address remains
 `https://chojecki.net`. GitHub remains the source repository and build runner;
-Cloudflare Pages will serve the generated static files on its Free plan.
+Cloudflare Pages serves the generated static files on its Free plan.
 
 ## Execution schedule and gates
 
@@ -29,13 +29,13 @@ Do not switch DNS until the Cloudflare deployment passes the preview gate.
 
 - Pages project: `chojecki-net` (Direct Upload, production branch `master`).
 - Preview origin: `https://chojecki-net.pages.dev`.
-- Workflow: `.github/workflows/cloudflare.yml` (manual until cutover).
+- Workflow: `.github/workflows/cloudflare.yml` (pushes to `master`, the existing
+  six-hour schedule, and manual runs). GitHub Pages is manual rollback only.
 - Repository variable `CLOUDFLARE_ACCOUNT_ID`: the Cloudflare account ID.
 - Repository secret `CLOUDFLARE_API_TOKEN`: a token limited to **Account →
   Cloudflare Pages → Edit** for the owner's account. It needs no DNS access.
-- Repository variable `CLOUDFLARE_CUSTOM_DOMAIN_ACTIVE`: set to `true` only
-  after the custom domain is attached and DNS is switched. This enables the
-  additional production-domain checks.
+- Repository variable `CLOUDFLARE_CUSTOM_DOMAIN_ACTIVE`: `true`, enabling
+  additional production-domain checks after every deployment.
 - `OPENXBL_API_KEY` remains in GitHub; the build fetches activity before upload.
 - Wrangler is pinned to `4.152.0`; no Pages Functions or Workers are deployed.
 
@@ -54,6 +54,21 @@ real 404 page, rejects runtime functions, and generates HTTP redirects from
 Jekyll's existing aliases. The canonical URLs remain on `https://chojecki.net`.
 The HTML alias files remain usable on GitHub Pages for rollback.
 
+## Production DNS and hostname redirect
+
+Both `chojecki.net` and `www.chojecki.net` are associated with the Pages project.
+Their CNAME targets are `chojecki-net.pages.dev`, Proxied, TTL Auto.
+
+The zone Single Redirect **chojecki.net canonical www redirect** is enabled:
+
+- Match: `(http.host eq "www.chojecki.net")`.
+- Dynamic target: `concat("https://chojecki.net", http.request.uri.path)`.
+- Status: `301`; preserve query string: enabled.
+
+This rule covers both HTTP and HTTPS. Domain-level redirects are not supported
+in Pages' `_redirects` file, so that generated file contains path aliases only.
+The existing HTTP-to-HTTPS behavior on the apex remains enabled.
+
 ## Validation log
 
 - `b327798`: repaired GitHub build, deployment, and live verification succeeded
@@ -65,8 +80,15 @@ The HTML alias files remain usable on GitHub Pages for rollback.
   eight legacy redirect checks, one real-404 check, and 14 discovery resources.
 - The four migration regression tests and all 46 pre-existing tests pass.
 - Automated Cloudflare publishing passed in Actions run `40075989328`, using
-  the scoped deployment token stored in GitHub Actions.
-- The custom-domain switch is still pending.
+  the scoped deployment token stored in GitHub Actions; Xbox activity refreshed
+  successfully in that run.
+- Switched the apex CNAME on 2026-10-24 around 08:02 UTC. The first request
+  returned HTTP 522 during activation; HTTPS was serving normally within about
+  25 seconds and all 14 live discovery checks passed.
+- Production validation passed in Actions run `40076530498`: the exact build
+  passed the preview and custom-domain gates, including the `www` and HTTPS
+  redirects. OpenXBL returned no profile in this run, invoking the existing
+  optional-card fallback also observed on GitHub before migration.
 
 ## Starting state
 
@@ -103,6 +125,10 @@ Keep the last working GitHub Pages deployment and its custom-domain association
 intact. If production verification fails, restore the website DNS records above
 and verify `https://chojecki.net` again.
 Do not change unrelated zone records to recover website hosting.
+The zone `www` redirect can remain enabled during a GitHub rollback. To publish
+a newer GitHub rollback build, run `.github/workflows/static.yml` manually after
+restoring the apex DNS target; its final check expects the canonical domain to
+serve that GitHub build. Pause the Cloudflare workflow if continuing on GitHub.
 
 For later Cloudflare deployments, use Pages' rollback to the preceding verified
 production deployment. A source rollback should use a normal revert commit.

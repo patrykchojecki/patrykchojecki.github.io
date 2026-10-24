@@ -313,7 +313,7 @@ defaults:
   - scope:
       path: "_portfolio/personal-website.md"
     values:
-      last_modified_at: "2026-09-03T10:24:15+08:00"
+      last_modified_at: "2026-10-24T16:05:00+08:00"
 
 # Sass/SCSS
 sass:

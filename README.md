@@ -1,6 +1,6 @@
 # chojecki.net
 
-Source for [chojecki.net](https://chojecki.net), Patryk Chojecki’s personal website. The site is built with Jekyll and deployed to GitHub Pages from the `master` branch.
+Source for [chojecki.net](https://chojecki.net), Patryk Chojecki’s personal website. The site is built with Jekyll and deployed to Cloudflare Pages on its Free plan from the `master` branch. GitHub hosts the repository and runs the builds.
 
 The project began as a fork of [Academic Pages](https://github.com/academicpages/academicpages.github.io), which is based on the [Minimal Mistakes Jekyll theme](https://mmistakes.github.io/minimal-mistakes/).
 
@@ -73,16 +73,35 @@ Authenticated API requests reject redirects, and errors omit response bodies and
 
 ## Deployment
 
-Pushing to `master` triggers `.github/workflows/static.yml`, which:
+Pushing to `master` triggers `.github/workflows/cloudflare.yml`, which:
 
-1. Installs the pinned Node and Ruby dependencies.
-2. Builds the JavaScript assets and tests the OpenXBL mapping.
-3. Fetches the latest Xbox activity.
-4. Builds Jekyll, checks the generated site, and deploys it to GitHub Pages.
+1. Installs the pinned Node and Ruby dependencies and runs the regression tests.
+2. Builds JavaScript and fetches the latest Xbox activity.
+3. Builds Jekyll, checks the generated site, and prepares static files and legacy redirects.
+4. Uploads to the `chojecki-net` Cloudflare Pages project.
+5. Verifies pages, asset bytes, PDFs, metadata, redirects, and 404 behavior on both the Pages origin and `https://chojecki.net`.
 
-The workflow also refreshes the deployment every six hours and can be run manually from GitHub Actions.
+The workflow also refreshes the deployment every six hours (`17 */6 * * *`, UTC)
+and can be run manually from GitHub Actions. It reads Ruby from `.ruby-version`.
+No Workers or Pages Functions are required.
 
-Actions are pinned to verified commit hashes. Dependabot checks weekly and groups Action updates into one pull request; review and merge those updates normally. The build job has read-only Pages access, while the deployment job retains Pages write access. Pages must already be enabled with GitHub Actions as the build source.
+Configure the repository variable `CLOUDFLARE_ACCOUNT_ID`, the encrypted Actions
+secret `CLOUDFLARE_API_TOKEN` (Account → Cloudflare Pages → Edit for the owner's
+account), and `CLOUDFLARE_CUSTOM_DOMAIN_ACTIVE=true`. The token needs no DNS access.
+The existing `OPENXBL_API_KEY` secret remains unchanged.
+
+Both website CNAME records point to `chojecki-net.pages.dev`, with Cloudflare
+proxying enabled. A zone Single Redirect sends `www.chojecki.net` to the HTTPS
+apex while preserving paths and queries. Mail and verification DNS records are
+independent of hosting. See [the migration runbook](scripts/cloudflare/README.md)
+for configuration, validation history, and rollback instructions.
+
+The previous `.github/workflows/static.yml` is a manual GitHub Pages rollback
+workflow. Its custom-domain association and `CNAME` file are retained; it no
+longer runs on pushes or a schedule.
+
+Actions are pinned to verified commit hashes. Dependabot checks weekly and groups Action updates into one pull request; review and merge those updates normally.
+The Cloudflare workflow has read-only repository access and publishes using the scoped deployment token.
 
 The existing `check:site` gate also rejects environment files, private keys, credential JSON files, and sensitive configuration directories anywhere in `_site/`. It reports paths only. Keep private files outside published content; adding a new secret filename convention requires updating the exclusions in `_config.yml` and `.gitignore` and the patterns in `scripts/check-site.py`.
 
@@ -117,4 +136,5 @@ The inherited themes and this repository are available under the [MIT License](L
 
 ## Reference
 
-- [Configure a custom GitHub Pages domain with Cloudflare](https://ictsolved.github.io/configure-custom-domain-and-sub-domain-with-github-pages-in-cloudflare/)
+- [Cloudflare Pages Direct Upload with CI](https://developers.cloudflare.com/pages/how-to/use-direct-upload-with-continuous-integration/)
+- [Cloudflare Pages custom domains](https://developers.cloudflare.com/pages/configuration/custom-domains/)

@@ -1,7 +1,7 @@
 ---
 title: "Personal Website"
-excerpt: "My independent home on the web, built with Jekyll and hosted on GitHub Pages."
-summary: "My independent Jekyll site for writing, project notes, a CV, and a live Now page—with accessible themes and automated GitHub Pages deployment."
+excerpt: "My independent home on the web, built with Jekyll and hosted on Cloudflare Pages."
+summary: "My independent Jekyll site for writing, project notes, a CV, and a live Now page—with accessible themes and automated Cloudflare Pages deployment."
 collection: portfolio
 order: 1
 year: "2023–present"
@@ -12,7 +12,7 @@ tech:
   - Jekyll
   - SCSS
   - GitHub Actions
-  - GitHub Pages
+  - Cloudflare Pages
 image: "/images/projects/personal-website.png"
 image_variants: "avif"
 image_alt: "Screenshot of the chojecki.net personal website"
@@ -29,7 +29,7 @@ This website is the project I keep coming back to. It is part home page, part no
 
 ## What it is
 
-A Jekyll site customized from the Academic Pages and Minimal Mistakes theme lineage, with responsive light and dark themes, structured project notes, a web and PDF CV, writing archives, and a Now page. GitHub Actions runs the tests and production build, refreshes Xbox activity through OpenXBL every six hours, and deploys the result to GitHub Pages behind the custom domain.
+A Jekyll site customized from the Academic Pages and Minimal Mistakes theme lineage, with responsive light and dark themes, structured project notes, a web and PDF CV, writing archives, and a Now page. GitHub Actions runs the tests and production build, refreshes Xbox activity through OpenXBL every six hours, and deploys the result to Cloudflare Pages behind the custom domain.
 
 ## Why I made it
 

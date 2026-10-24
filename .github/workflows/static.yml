@@ -1,11 +1,7 @@
-name: Build and deploy to GitHub Pages
+name: Deploy to GitHub Pages (manual rollback)
 
+# Keep the previous host available; restore DNS before verifying a rollback.
 on:
-  push:
-    branches: ["master"]
-  schedule:
-    # Refresh the OpenXBL snapshot every six hours.
-    - cron: "17 */6 * * *"
   workflow_dispatch:
 
 permissions: {}

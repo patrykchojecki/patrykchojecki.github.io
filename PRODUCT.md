@@ -30,7 +30,7 @@ Visitors browse the public website at `chojecki.net` through a set of complement
 - the `/now` page shares current activities and interests;
 - contact and social links provide optional ways to continue the relationship.
 
-The site is maintained as a Jekyll project, deployed to GitHub Pages, and owned independently through the existing custom domain.
+The site is maintained as a Jekyll project, built with GitHub Actions and deployed to Cloudflare Pages on its Free plan, and owned independently through the existing custom domain.
 
 ## Capabilities and Constraints
 
@@ -38,7 +38,7 @@ The site is maintained as a Jekyll project, deployed to GitHub Pages, and owned 
 - Preserve founder support as a central part of Patryk’s professional identity.
 - Represent investment interests across both Patryk’s professional work and personal life.
 - Maintain the CV and project archive as substantive parts of the site.
-- Keep the public site compatible with the existing Jekyll and GitHub Pages deployment workflow unless Patryk explicitly approves a platform change.
+- Keep the public site compatible with the Jekyll, GitHub Actions, and static Cloudflare Pages deployment workflow unless Patryk explicitly approves a platform change.
 - Do not narrow the whole product toward one audience or one conversion action without explicit direction.
 - Do not invent employers, investments, outcomes, testimonials, credentials, or quantitative claims.
 

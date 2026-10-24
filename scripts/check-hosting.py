@@ -56,6 +56,7 @@ def check(root, base, check_hosts=False):
     if check_hosts:
         rules.extend([
             ("https://www.chojecki.net/cv/?hosting-check=1", "https://chojecki.net/cv/?hosting-check=1", 301),
+            ("http://www.chojecki.net/cv/?hosting-check=1", "https://chojecki.net/cv/?hosting-check=1", 301),
             ("http://chojecki.net/cv/?hosting-check=1", "https://chojecki.net/cv/?hosting-check=1", 301),
         ])
     for source, destination, expected_status in rules:
