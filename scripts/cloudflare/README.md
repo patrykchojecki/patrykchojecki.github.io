@@ -89,6 +89,18 @@ The existing HTTP-to-HTTPS behavior on the apex remains enabled.
   passed the preview and custom-domain gates, including the `www` and HTTPS
   redirects. OpenXBL returned no profile in this run, invoking the existing
   optional-card fallback also observed on GitHub before migration.
+- The push-triggered production run `40076623700` passed all 50 regression tests,
+  generated-site validation, 55 page/asset checks, 12 production redirect/404
+  checks, and 14 discovery-resource checks. Xbox activity refreshed successfully.
+- Both custom domains report **Active**, with SSL enabled. The previously broken
+  `www` hostname now returns the intended permanent redirect.
+- Browser checks on the production domain passed: homepage rendering, dark/light
+  theme switching and persistence, CV/Now navigation, and the live Xbox card.
+- Public DNS checks confirm the eight mail/verification records and both
+  nameservers match the pre-migration values. GitHub Pages retains its previous
+  successful deployment and custom-domain association for rollback.
+- Updated README, product constraints, project metadata, privacy hosting text,
+  package metadata, and `llms.txt` to reflect the completed migration.
 
 ## Starting state
 
@@ -139,3 +151,4 @@ production deployment. A source rollback should use a normal revert commit.
 - [Custom domains](https://developers.cloudflare.com/pages/configuration/custom-domains/)
 - [Serving pages and 404 behavior](https://developers.cloudflare.com/pages/configuration/serving-pages/)
 - [Free plan limits](https://developers.cloudflare.com/pages/platform/limits/)
+- [Single Redirect settings](https://developers.cloudflare.com/rules/url-forwarding/single-redirects/settings/)
