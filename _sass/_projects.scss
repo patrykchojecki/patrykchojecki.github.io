@@ -6,6 +6,7 @@
 .projects-page {
   max-width: 100%;
   min-width: 0;
+  container-type: inline-size;
 }
 
 .projects-intro {
@@ -17,27 +18,32 @@
 .project-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.25rem;
   margin-top: 1.5rem;
-
-  @include breakpoint($small) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 .project-card {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  gap: 1rem;
   min-width: 0;
   max-width: 100%;
-  overflow: hidden;
-  background: $background-color;
-  border: 1px solid color.mix($text-color, $border-color, 8%);
-  border-radius: 8px;
-  transition: border-color 180ms ease-out;
+  padding: 1.5rem 0;
 
-  &:focus-within {
-    border-color: rgba($focus-ring-color, 0.55);
+  &:first-child {
+    padding-top: 0;
+  }
+
+  & + & {
+    border-top: 1px solid color.mix($text-color, $border-color, 8%);
+  }
+}
+
+// Respond to the reading column's width, including when the author rail appears.
+@container (min-width: 34rem) {
+  .project-card {
+    grid-template-columns: minmax(0, 4fr) minmax(0, 5fr);
+    gap: 1.5rem;
   }
 }
 
@@ -48,6 +54,7 @@
   min-width: 0;
   aspect-ratio: 16 / 9;
   overflow: hidden;
+  border-radius: 8px;
   background: $lighter-gray;
   cursor: zoom-in;
 
@@ -100,10 +107,9 @@
 
 .project-card__body {
   display: flex;
-  flex: 1;
   flex-direction: column;
-  gap: 0.75rem;
-  padding: 1rem;
+  min-width: 0;
+  gap: 0.5rem;
 }
 
 .project-card__title {
@@ -126,7 +132,7 @@
   flex-wrap: wrap;
   gap: 0.75rem;
   align-items: center;
-  margin-top: auto;
+  margin-top: 0.25rem;
   font-family: $sans-serif;
   font-size: $type-size-6;
   font-weight: 600;
@@ -155,13 +161,8 @@ html[data-theme="dark"] {
     color: $dark-text-secondary-color;
   }
 
-  .project-card {
-    background: $dark-surface-color;
+  .project-card + .project-card {
     border-color: $dark-border-color;
-
-    &:focus-within {
-      border-color: rgba($dark-link-color, 0.7);
-    }
   }
 
   .project-card__media {

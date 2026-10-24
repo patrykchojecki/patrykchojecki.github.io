@@ -11,7 +11,7 @@
         <source
           type="image/avif"
           srcset="{{ project_image_stem | append: '-480.avif' | relative_url }} 480w, {{ project_image_stem | append: '-960.avif' | relative_url }} 960w"
-          sizes="(max-width: 599px) calc(100vw - 2rem), (max-width: 924px) calc((100vw - 3.25rem) / 2), 18.125rem">
+          sizes="(max-width: 575px) calc(100vw - 2rem), (max-width: 924px) 42vw, 18.125rem">
         {% endif %}
         <img src="{{ project_image | relative_url }}" alt="{{ project.image_alt | default: project.title }}" decoding="async"{% if include.eager_image %} fetchpriority="high"{% else %} loading="lazy"{% endif %}>
       </picture>
