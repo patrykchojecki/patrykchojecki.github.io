@@ -55,6 +55,14 @@ pages or bypass redirects. Pages already provides CDN caching and Tiered Cache.
 Keep Speed Brain off: its documented Pages incompatibility makes it unsuitable
 here. Do not enable paid products or change DNS, mail, security, or analytics.
 
+## Applied dashboard change
+
+Rocket Loader was switched **Off** on 2026-10-24. Public HTML now keeps the
+three native deferred scripts and the inline theme bootstrap without the
+additional Rocket Loader request or rewritten script types. The 14-resource
+live discovery check passed immediately after this change. Safari checks passed
+for homepage rendering, the theme switch, and theme persistence when opening CV.
+
 ## Rollback
 
 Revert the relevant source commit and let the normal workflow publish it. Original
