@@ -63,6 +63,53 @@ additional Rocket Loader request or rewritten script types. The 14-resource
 live discovery check passed immediately after this change. Safari checks passed
 for homepage rendering, the theme switch, and theme persistence when opening CV.
 
+## Production results
+
+Implemented in `03b35a4` and deployed successfully in
+[Actions run 40078120618](https://github.com/patrykchojecki/patrykchojecki.github.io/actions/runs/40078120618).
+The verification preview passed before the same files were published as
+production deployment `194ca535.chojecki-net.pages.dev`.
+
+- All 59 regression tests passed, followed by generated-site checks for 24 HTML
+  files, internal links/assets, and 12 sitemap entries.
+- Preview, production Pages origin, and the custom domain each passed checks
+  for 63 pages/assets and 14 discovery resources. Production additionally passed
+  12 redirect/404 checks, including canonical host and HTTPS redirects.
+- Eight content-hashed assets return `public, max-age=31536000, immutable`.
+  Public repeated requests for CSS, all three scripts, and the sampled WOFF2
+  font returned CDN `HIT`. Original asset URLs still return their original bytes.
+- Homepage, CV, Projects, and Now retain
+  `public, max-age=0, must-revalidate`. Their Link headers reference the exact
+  stylesheet in their HTML. A public homepage request also received **HTTP 103
+  Early Hints** with that stylesheet before its final HTTP 200 response.
+- Rocket Loader's extra request and script rewriting are absent. Native deferred
+  scripts remain; Safari checks passed for CV/Projects/Now navigation, dark/light
+  switching and persistence, project images, social icons, and the Xbox card.
+- Regression cases confirm unchanged asset bytes keep the same URLs across
+  activity-only builds; changing a font invalidates both its own URL and the
+  stylesheet that references it. Production indexing restrictions remain strict.
+
+The practical gain is reusable browser-cached CSS/JS/fonts beyond the old
+four-hour lifetime, without invalidating unchanged CSS/JS every six-hour build,
+plus earlier stylesheet discovery and one fewer script-processing dependency.
+Browsers can evict cached files; a one-year cache policy does not guarantee they
+retain them for that duration. No paid service or runtime backend was added.
+
+The same three-request, fresh-connection sampling method produced these results
+after deployment (milliseconds):
+
+| Resource | Before median TTFB | After median TTFB |
+| --- | ---: | ---: |
+| `/` | 574.6 | 252.0 |
+| `/cv/` | 606.7 | 211.2 |
+| `/projects/` | 829.8 | 475.7 |
+| `/now/` | 330.1 | 608.0 |
+| Main stylesheet | 323.4 | 292.8 |
+
+These samples vary by route and connection; they do not establish a universal
+latency improvement or measure browser LCP. The verified cache policies, stable
+URLs, removed request, and observed Early Hints are the durable delivery changes.
+
 ## Rollback
 
 Revert the relevant source commit and let the normal workflow publish it. Original
