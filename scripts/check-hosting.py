@@ -4,6 +4,8 @@ import argparse
 import hashlib
 import importlib.util
 import json
+import sys
+import time
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from urllib.parse import quote, urljoin, urlsplit
@@ -13,6 +15,10 @@ from cloudflare_assets import FINGERPRINT, header_rules
 spec = importlib.util.spec_from_file_location("live", Path(__file__).with_name("check-live-site.py"))
 live = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(live)
+
+
+class HostingCheckError(Exception):
+    """A deployed response does not match the expected build."""
 
 
 def check(root, base, check_hosts=False):
@@ -87,17 +93,37 @@ def check(root, base, check_hosts=False):
             if urljoin(source, location) != destination:
                 errors.append(f"{source}: incorrect redirect destination")
     if errors:
-        raise SystemExit("Hosting checks failed:\n" + "\n".join(errors))
+        raise HostingCheckError("Hosting checks failed:\n" + "\n".join(errors))
     print(f"Hosting checks passed: {len(files)} pages/assets and {len(rules)} redirect/404 checks at {base}.")
 
 
-if __name__ == "__main__":
+def check_with_retries(root, base, check_hosts=False, attempts=1, retry_delay=20):
+    for attempt in range(1, attempts + 1):
+        try:
+            check(root, base, check_hosts)
+            return
+        except HostingCheckError as error:
+            if attempt == attempts:
+                raise SystemExit(str(error)) from error
+            print(f"{error}\nHosting check attempt {attempt}/{attempts} failed; "
+                  f"retrying after {retry_delay}s.", file=sys.stderr)
+            time.sleep(retry_delay)
+
+
+def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--site-dir", type=Path, default=Path("_site"))
     parser.add_argument("--base-url", required=True)
     parser.add_argument("--check-host-redirects", action="store_true")
+    parser.add_argument("--attempts", type=int, choices=range(1, 6), default=1)
+    parser.add_argument("--retry-delay", type=int, choices=range(0, 61), default=20)
     args = parser.parse_args()
     origin = urlsplit(args.base_url)
     if origin.scheme != "https" or not origin.netloc or origin.path not in ("", "/") or origin.query or origin.fragment:
         parser.error("--base-url must be an HTTPS origin")
-    check(args.site_dir, args.base_url, args.check_host_redirects)
+    check_with_retries(args.site_dir, args.base_url, args.check_host_redirects,
+                       args.attempts, args.retry_delay)
+
+
+if __name__ == "__main__":
+    main()

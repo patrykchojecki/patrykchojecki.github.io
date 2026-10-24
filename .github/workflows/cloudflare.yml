@@ -73,7 +73,7 @@ jobs:
       - name: Verify the preview before changing production
         run: |
           python3 scripts/check-live-site.py --base-url https://verification.chojecki-net.pages.dev --allow-preview-noindex --expected-dir _site --attempts 3 --retry-delay 20
-          python3 scripts/check-hosting.py --base-url https://verification.chojecki-net.pages.dev --site-dir _site
+          python3 scripts/check-hosting.py --base-url https://verification.chojecki-net.pages.dev --site-dir _site --attempts 3 --retry-delay 20
 
       - name: Deploy static files to Cloudflare Pages
         run: npx --yes wrangler@4.152.0 pages deploy _site --project-name chojecki-net --branch master --commit-hash "$GITHUB_SHA"
@@ -85,10 +85,10 @@ jobs:
       - name: Verify the Cloudflare deployment against this build
         run: |
           python3 scripts/check-live-site.py --base-url https://chojecki-net.pages.dev --expected-dir _site --attempts 3 --retry-delay 20
-          python3 scripts/check-hosting.py --base-url https://chojecki-net.pages.dev --site-dir _site
+          python3 scripts/check-hosting.py --base-url https://chojecki-net.pages.dev --site-dir _site --attempts 3 --retry-delay 20
 
       - name: Verify the custom domain after cutover
         if: vars.CLOUDFLARE_CUSTOM_DOMAIN_ACTIVE == 'true'
         run: |
           python3 scripts/check-live-site.py --expected-dir _site --attempts 3 --retry-delay 20
-          python3 scripts/check-hosting.py --base-url https://chojecki.net --site-dir _site --check-host-redirects
+          python3 scripts/check-hosting.py --base-url https://chojecki.net --site-dir _site --check-host-redirects --attempts 3 --retry-delay 20
