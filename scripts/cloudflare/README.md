@@ -25,6 +25,49 @@ not deadlines; a failed gate postpones the DNS switch.
 Each significant code/configuration phase receives a separate reviewed commit.
 Do not switch DNS until the Cloudflare deployment passes the preview gate.
 
+## Deployment configuration
+
+- Pages project: `chojecki-net` (Direct Upload, production branch `master`).
+- Preview origin: `https://chojecki-net.pages.dev`.
+- Workflow: `.github/workflows/cloudflare.yml` (manual until cutover).
+- Repository variable `CLOUDFLARE_ACCOUNT_ID`: the Cloudflare account ID.
+- Repository secret `CLOUDFLARE_API_TOKEN`: a token limited to **Account →
+  Cloudflare Pages → Edit** for the owner's account. It needs no DNS access.
+- Repository variable `CLOUDFLARE_CUSTOM_DOMAIN_ACTIVE`: set to `true` only
+  after the custom domain is attached and DNS is switched. This enables the
+  additional production-domain checks.
+- `OPENXBL_API_KEY` remains in GitHub; the build fetches activity before upload.
+- Wrangler is pinned to `4.152.0`; no Pages Functions or Workers are deployed.
+
+For a manual local upload, first build and validate the site, then run:
+
+```sh
+npm run check
+python3 scripts/prepare-cloudflare.py
+npx --yes wrangler@4.152.0 pages deploy _site --project-name chojecki-net --branch master
+python3 scripts/check-live-site.py --base-url https://chojecki-net.pages.dev --expected-dir _site
+python3 scripts/check-hosting.py --base-url https://chojecki-net.pages.dev --site-dir _site
+```
+
+The preparation step enforces the Free plan's file count/size limits, requires a
+real 404 page, rejects runtime functions, and generates HTTP redirects from
+Jekyll's existing aliases. The canonical URLs remain on `https://chojecki.net`.
+The HTML alias files remain usable on GitHub Pages for rollback.
+
+## Validation log
+
+- `b327798`: repaired GitHub build, deployment, and live verification succeeded
+  in Actions run `40075278718`.
+- The successful GitHub artifact contains 61 files, 6,755,643 bytes total;
+  the largest file is 2,990,752 bytes (well below Pages' 25 MiB limit).
+- Uploaded the same artifact to Pages, then added generated HTTP redirects.
+- Pages deployment `a8aaabbc.chojecki-net.pages.dev` passed 55 page/asset checks,
+  eight legacy redirect checks, one real-404 check, and 14 discovery resources.
+- The four migration regression tests and all 46 pre-existing tests pass.
+- Automated Cloudflare publishing passed in Actions run `40075989328`, using
+  the scoped deployment token stored in GitHub Actions.
+- The custom-domain switch is still pending.
+
 ## Starting state
 
 - Repository: `patrykchojecki/patrykchojecki.github.io`, production branch `master`.
@@ -44,10 +87,21 @@ Do not switch DNS until the Cloudflare deployment passes the preview gate.
 
 ## Rollback procedure
 
-Before switching DNS, record the exact old website record types, values, proxy
-settings, and TTLs in this runbook. Keep the last working GitHub Pages deployment
-and its custom-domain association intact. If production verification fails,
-restore those website DNS records and verify `https://chojecki.net` again.
+The dashboard showed these website records before cutover:
+
+| Type | Name | Original target | Proxy | TTL |
+| --- | --- | --- | --- | --- |
+| CNAME | `chojecki.net` | `patrykchojecki.github.io` | Proxied | Auto |
+| CNAME | `www.chojecki.net` | `chojecki.net` | Proxied | Auto |
+
+The zone has ten records total. The other eight records serve iCloud Mail
+(MX, SPF, DKIM, DMARC), Apple/Google verification, and the Bluesky handle. Preserve
+them unchanged. The pre-existing `www` hostname returned HTTP 526; attaching it
+to Pages and redirecting it to the apex is included in the migration.
+
+Keep the last working GitHub Pages deployment and its custom-domain association
+intact. If production verification fails, restore the website DNS records above
+and verify `https://chojecki.net` again.
 Do not change unrelated zone records to recover website hosting.
 
 For later Cloudflare deployments, use Pages' rollback to the preceding verified
