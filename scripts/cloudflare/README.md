@@ -27,7 +27,6 @@ Do not switch DNS until the Cloudflare deployment passes the preview gate.
 
 ## Deployment configuration
 
-- Source repository: `patrykchojecki/chojecki.net`, production branch `master`.
 - Pages project: `chojecki-net` (Direct Upload, production branch `master`).
 - Production Pages origin: `https://chojecki-net.pages.dev`.
 - Verification preview: `https://verification.chojecki-net.pages.dev`.
@@ -122,8 +121,6 @@ The existing HTTP-to-HTTPS behavior on the apex remains enabled.
 
 ## Starting state
 
-This section records the state before the hosting migration and repository rename.
-
 - Repository: `patrykchojecki/patrykchojecki.github.io`, production branch `master`.
 - Starting commit: `6f96ae5161c24706a26a22b917542d8325111cbe`.
 - GitHub CLI is authenticated as `patrykchojecki` with repository admin access.
@@ -139,34 +136,32 @@ This section records the state before the hosting migration and repository renam
 - Existing local dependency, watcher, and documentation changes predate this
   migration and must be preserved separately.
 
-## Repository rename
+## Repository rename check
 
-Renamed `patrykchojecki/patrykchojecki.github.io` to
-`patrykchojecki/chojecki.net` on 2026-10-24. The repository ID remains `652917996`;
-history, Actions workflows, environments, secrets, and variables are retained.
-Cloudflare's `chojecki-net` project uses Direct Upload (`source: null`) and is
-independent of the GitHub repository name. Its domains and production branch
-remain unchanged, as do the website's canonical URL and empty Jekyll base path.
+On 2026-10-24, tested renaming the repository to `patrykchojecki/chojecki.net`.
+Cloudflare's `chojecki-net` project uses Direct Upload (`source: null`), so it
+does not depend on the GitHub name. Repository ID `652917996`, history, Actions
+workflows, environments, secrets, and variables were retained. The complete
+preview and production deployment passed in
+[Actions run 40078683410](https://github.com/patrykchojecki/patrykchojecki.github.io/actions/runs/40078683410):
+59 regression tests, 63 pages/assets, 14 discovery resources, and 12 production
+redirect/404 checks.
 
-Updated the source links, Jekyll repository setting, package metadata, author
-website, clone instructions, and the existing checkout's `origin` remote. The
-local directory name need not match the repository name. For other clones, run:
+However, renaming the specially named user-site repository removes its root
+GitHub Pages route. Initial requests to `patrykchojecki.github.io` appeared to
+work because GitHub's CDN still cached the old redirects. Uncached requests to
+`/index.html`, `/cv/index.html`, and a unique probe returned 404. Under the new
+`/chojecki.net/` project prefix, a unique probe correctly returned 301. Restoring
+the original repository name restored a fresh root-path probe to HTTP 301.
 
-```sh
-git remote set-url origin https://github.com/patrykchojecki/chojecki.net.git
-```
-
-GitHub redirects the old repository and Actions links to the new name. Do not
-create another repository with the old name, which would remove those redirects.
-The existing GitHub Pages custom-domain association remains `chojecki.net` for
-manual rollback. Immediately after renaming, both the old `github.io` homepage
-and `/cv/` still redirected to the canonical site; the production site and `www`
-redirect also passed their HTTP checks. Default GitHub Pages URLs do not share
-GitHub's repository redirect guarantee; publish and share `https://chojecki.net`.
-
-The previous `patrykchojecki.github.io` DNS target in the rollback table is a
-GitHub Pages hostname, not a repository slug; keep it unchanged. The old-host
-allowlist in `scripts/check-site.py` intentionally still recognizes legacy links.
+The original name and local Git remote have therefore been restored pending
+the owner's choice. The canonical Cloudflare site stayed available throughout.
+To rename while retaining the legacy website address, keep a separate minimal
+`patrykchojecki.github.io` redirect repository. Reusing that repository name
+removes GitHub's automatic old-repository redirects, so old source/Actions links
+would need consideration. Alternatively, keep the existing name or explicitly
+retire the legacy website address. Do not repeat the rename without resolving
+this tradeoff, and do not treat cached legacy redirects as proof of success.
 
 See [GitHub's repository rename guidance](https://docs.github.com/en/repositories/creating-and-managing-repositories/renaming-a-repository).
 

@@ -14,7 +14,7 @@ name                     : &name "Patryk Chojecki"
 description              : &description "Patryk Chojecki is a Program Manager at 886 Studios focused on startup accelerator programs, early-stage investment, founder support, fundraising readiness, investor relations, market entry, and cross-border growth across Taiwan and APAC."
 url                      : https://chojecki.net # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of the site, e.g. "/blog"
-repository               : "patrykchojecki/chojecki.net"
+repository               : "patrykchojecki/patrykchojecki.github.io"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160

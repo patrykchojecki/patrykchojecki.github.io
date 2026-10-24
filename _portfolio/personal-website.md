@@ -6,7 +6,7 @@ collection: portfolio
 order: 1
 year: "2023–present"
 status: "active"
-github: "https://github.com/patrykchojecki/chojecki.net"
+github: "https://github.com/patrykchojecki/patrykchojecki.github.io"
 demo: "https://chojecki.net"
 tech:
   - Jekyll
@@ -24,7 +24,7 @@ image_alt: "Screenshot of the chojecki.net personal website"
 
 This website is the project I keep coming back to. It is part home page, part notebook, part project archive, and a continuing experiment in owning my corner of the web instead of keeping everything on hosted platforms.
 
-[GitHub](https://github.com/patrykchojecki/chojecki.net){: .btn}
+[GitHub](https://github.com/patrykchojecki/patrykchojecki.github.io){: .btn}
 [Live site](https://chojecki.net){: .btn}
 
 ## What it is

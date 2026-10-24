@@ -26,8 +26,8 @@ npm --version
 ## Setup
 
 ```sh
-git clone https://github.com/patrykchojecki/chojecki.net.git
-cd chojecki.net
+git clone https://github.com/patrykchojecki/patrykchojecki.github.io.git
+cd patrykchojecki.github.io
 gem install bundler -v 4.0.9
 bundle install
 npm ci

@@ -66,7 +66,7 @@ for homepage rendering, the theme switch, and theme persistence when opening CV.
 ## Production results
 
 Implemented in `03b35a4` and deployed successfully in
-[Actions run 40078120618](https://github.com/patrykchojecki/chojecki.net/actions/runs/40078120618).
+[Actions run 40078120618](https://github.com/patrykchojecki/patrykchojecki.github.io/actions/runs/40078120618).
 The verification preview passed before the same files were published as
 production deployment `194ca535.chojecki-net.pages.dev`.
 
